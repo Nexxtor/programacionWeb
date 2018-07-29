@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intermediate HTML | Tables </title>
+</head>
+<body>
+    <h1>How use a tables whit semantic</h1>
+    <!-- Later no use border, cellpadding cellspacing, use CSS for styling-->
+    <table border="1" cellpadding="10", cellspacing="0"> 
+        <thead> <!-- Is for semantic and util in css manipulated-->
+            <tr>
+                <th>Producto</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+        </thead> 
+        <tbody> <!-- Rrpesente de content of the table, is semantic-->
+            <tr>
+                <td>Computadora</td>
+                <td>$ 10.00</td>
+                <td>1 </td>
+                <td>$ 10.00</td>
+            </tr>
+            <tr>
+                <td>Mouse</td>
+                <td>$ 5.00</td>
+                <td>5 </td>
+                <td>$ 10.00</td>
+            </tr>
+        </tbody>
+        <tfoot> <!-- Represent result in the table, onlie is necessary-->
+            <tr>
+                <td colspan="2"><strong>Total</strong></td>
+                <td>6</td>
+                <td>$ 20.00</td>
+            </tr>
+        </tfoot>
+    </table> <!-- end of table-->
+</body>
+</html>
