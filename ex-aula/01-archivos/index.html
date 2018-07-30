@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,6 +28,7 @@
             <li><a href="#Introduccion">Introducción</a></li>
             <li><a href="#Extensiones">Extensiones de archivos</a></li>
             <li><a href="#Rutas">Rutas</a></li>
+            <li><a href="#Tipos de Archivos">Tipos de Archivos</li>
             <li><a href="#Archivos">Manipulación de archivos</a></li>
             <li><a href="#Rutas">Grupos</a></li>
             <li><a href="#Permisos">Permisos</a></li>
@@ -39,27 +40,45 @@
             <h2>Introducción</h2>
             <p>parrafo: introducción a archivos en ubuntu</p>
         </section>
-        
+
         <section id="Extensiones">
             <h2>Extensiones de archivos</h2>
             <p>parrafo: tipos de archivos (extensiones)</p>
         </section>
-        
+
         <section id="Rutas">
             <h2>Rutas</h2>
             <p>parrafo: rutas de archivos (absolutas, relativas)</p>
         </section>
-        
+
+        <section id="Tipos de Archivos">
+            <h2>Tipos de Archivos</h2>
+            <p>
+                En Linux existen básicamente 5 tipos de archivos:
+                <ul>
+                    <li><b>Archivos ordinarios: </b>Contienen la información con la que trabaja cada usuario.</li>
+                    <br>
+                    <li><b>Enlaces físicos o duros (hard links): </b>No es específicamente una clase de archivo sino un segundo nombre que se le da a un archivo. Supón que dos usuarios necesitan compartir información de un mismo archivo. Si cada uno tuviera una copia del archivo se soluciona el problema, pero las modificaciones que realice un usuario no las vería el otro. Sin embargo, si creamos un enlace duro al archivo para cada usuario cada vez que uno de ellos modifique cualquier cosa en el archivo, el otro lo podrá ver puesto que realmente están viendo y modificando el mismo archivo. El enlace sirve para localizar el archivo en su ubicación actual, pero no es el archivo real, sino un segundo nombre que se le da. De esta forma, con tener un solo archivo real este se podrá utilizar por todos los usuarios que lo necesiten mediante estos enlaces duros sin necesidad de duplicar o triplicar el archivo.</li>
+                    <br>
+                    <li><b>Enlaces simbólicos: </b>También se utilizan para asignar un segundo nombre a un archivo. La diferencia con los enlaces duros es que los simbólicos solamente hacen referencia al nombre del archivo original, mientras que los duros hacen referencia al inodo en el que están situados los datos del archivo original. De esta manera, si tenemos un enlace simbólico y borramos el archivo original perderemos los datos, mientras que si tenemos un enlace duro los datos no se borrarán hasta que se hayan borrado todos y cada uno de los enlaces duros que existen hacia esos datos en el sistema de ficheros. El conteo del número de enlaces duros que tiene un fichero se realiza, como ya vimos, en el inodo correspondiente a los datos del fichero.</li>
+                    <br>
+                    <li><b>Directorios: </b>Son archivos especiales que contienen referencias a otros archivos o directorios.</li>
+                    <br>
+                    <li><b>Archivos especiales: </b>Suelen representar dispositivos físicos, como unidades de almacenamiento, impresoras, terminales, etc. En Linux, todo dispositivo físico que se conecte al ordenador está asociado a un archivo. Linux trata los archivos especiales como archivos ordinarios.</li>
+                </ul>
+            </p>
+        </section>
+
         <section id="Archivos">
             <h2>Manipulación de archivos</h2>
             <p>parrafo: introducción y comandos de manipulación de archivos</p>
         </section>
-        
+
         <section id="Grupos">
             <h2>Usuarios y grupos</h2>
             <p>parrafo: introducción y commandos de creación de grupos de usuarios</p>
         </section>
-        
+
         <section id="Permisos">
             <h2>Permisos</h2>
             <p>parrafo: introducción y commandos de modificación de permisos de acceso a archivos</p>
