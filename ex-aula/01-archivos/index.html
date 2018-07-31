@@ -107,7 +107,66 @@
 
         <section id="Permisos">
             <h2>Permisos</h2>
-            <p>parrafo: introducción y commandos de modificación de permisos de acceso a archivos</p>
+            <p>
+                En un sistema Unix todos los archivos pertenecen obligatoriamente a un usuario y a un grupo. 
+                Al momento que un usuario crea un nuevo archivo, el propietario es el usuario creador y el grupo 
+                del archivo será el grupo principal del mismo usuario.
+            </p>
+            <p>
+                En la consola al utilizar el comando <strong><em>ls –l</em></strong> (formato largo), Se puede visualizar el usuario propietario 
+                y el grupo propietario del archivo.
+            </p>
+            <section>
+                <h3>Tipo de permisos.</h3>
+                <p>
+                    En los sistemas Unix, la gestión de los permisos que los usuarios y los grupos de usuarios tienen sobre los archivos y las carpetas, 
+                    se realiza mediante un sencillos esquema de tres tipos de permisos:
+                </p>
+                <ul>
+                    <li>Permisos de lectura</li>
+                    <li>Permisos de escritura</li>
+                    <li>Permisos de ejecución</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Permisos de lectura.</h4>
+                <p>
+                    Cuando un usuario tiene permiso de lectura de un archivo significa que puede leerlo o visualizarlo, 
+                    bien sea con una aplicación o mediante comandos. Ejemplo, si tenemos permiso de lectura sobre el 
+                    archivo <strong>labo.txt</strong>, significa que podemos ver el contenido del archivo. Si el usuario no tiene permiso de 
+                    lectura, no podrá ver el contenido del archivo.
+                </p>
+                <p>
+                    El permiso de lectura se simboliza con la letra <strong>'r'</strong> del inglés <strong>'read'</strong>.
+                </p>
+            </section>
+            <section>
+                <h4>Permiso de escritura.</h4>
+                <p>
+                    Cuando un usuario tiene permiso de escritura sobre un archivo significa que puede modificar su contenido,
+                    e incluso borrarlo. También le da derecho a cambiar los permisos del archivo mediante el comando 
+                    <strong>chmod</strong> así como cambiar su propietario y el grupo propietario mediante el comando <strong>chown</strong>.
+                    Si el usuario no tiene permiso de escritura, no podrá modificar el contenido del archivo.
+                </p>
+                <p>
+                    El permiso de escritura se simboliza con la letra <strong>'w'</strong> del inglés <strong>'write'</strong>.
+                </p>
+            </section>
+            <section>
+                <h4>Permiso de ejecución.</h4>
+                <p>
+                    Cuando un usuario tiene permiso de ejecución de un archivo significa que puede ejecutarlo. 
+                    Si el usuario no dispone de permiso de ejecución, no podrá ejecutarlo, aunque sea una aplicación.
+                </p>
+                <p>
+                    Los únicos archivos ejecutables son las aplicaciones y los archivos de comandos (scripts). 
+                    Si tratamos de ejecutar un archivo no ejecutable, dará errores.
+                </p>
+                <p>
+                    El permiso de ejecución se simboliza con la letra <strong>'x'</strong> del inglés <strong>'eXecute'</strong>.
+                </p>
+            </section>
+
         </section>
 
         <nav id="Referencias">
@@ -122,6 +181,9 @@
                 </li>
                 <li>
                     [3]"About files and the file system", Tldp.org, 2018. [En linea]. Disponible: <a href="http://www.tldp.org/LDP/intro-linux/html/chap_03.html">http://www.tldp.org/LDP/intro-linux/html/chap_03.html</a>. [Accesado: 30- Jul- 2018].
+                </li>
+                <li>
+                    [4]"Permisos de archivos y carpetas", ite.educacion.es, 2005. [En linea]. Disponible: <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html">http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html</a>. [Accesado: 31- Jul- 2018].
                 </li>
             </ul>
         </nav>
