@@ -25,14 +25,29 @@
         <h2>Contenido</h2>
 
         <ol>
-            <li><a href="#Introduccion">Introducción</a></li>
-            <li><a href="#Extensiones">Extensiones de archivos</a></li>
-            <li><a href="#Rutas">Rutas</a></li>
-            <li><a href="#Tipos de Archivos">Tipos de Archivos</li>
-            <li><a href="#Archivos">Manipulación de archivos</a></li>
-            <li><a href="#Rutas">Grupos</a></li>
-            <li><a href="#Permisos">Permisos</a></li>
-            <li><a href="#Referencias">Referencias</a></li>
+            <li>
+                <a href="#Introduccion">Introducción</a>
+            </li>
+            <li>
+                <a href="#Extensiones">Extensiones de archivos</a>
+            </li>
+            <li>
+                <a href="#Rutas">Rutas</a>
+            </li>
+            <li>
+                <a href="#Tipos de Archivos">Tipos de Archivos</li>
+            <li>
+                <a href="#Archivos">Manipulación de archivos</a>
+            </li>
+            <li>
+                <a href="#Rutas">Grupos</a>
+            </li>
+            <li>
+                <a href="#Permisos">Permisos</a>
+            </li>
+            <li>
+                <a href="#Referencias">Referencias</a>
+            </li>
         </ol>
     </nav>
 
@@ -40,7 +55,9 @@
         <section id="Introduccion">
             <h2>Introducción</h2>
             <p>
-                Sin importar el dispositivo que se utilize, toda la información en una computadora es almacenada como archivos. Un archivo es en escencia un conjunto de información; agrupada en determinada estructura. De acuerdo a esta estructura los archivos se clasifican en tipos: audio, video, imagen, texto y muchos otros.
+                Sin importar el dispositivo que se utilize, toda la información en una computadora es almacenada como archivos. Un archivo
+                es en escencia un conjunto de información; agrupada en determinada estructura. De acuerdo a esta estructura
+                los archivos se clasifican en tipos: audio, video, imagen, texto y muchos otros.
             </p>
 
 
@@ -50,14 +67,16 @@
             </p>
             <dl>
                 <dt>Nombre</dt>
-                <dd>Su principal propósito es ayudar al usuario a identificar el contenido del archivo e identificarlo de entre otros archivos.</dd>
-                
+                <dd>Su principal propósito es ayudar al usuario a identificar el contenido del archivo e identificarlo de entre
+                    otros archivos.</dd>
+
                 <dt>Extensión (opcional)</dt>
-                <dd>Es parte del nombre del archivo. Al final del nombre se coloca un punto seguido de unas pocas letras o números que definen la extensión del archivo.</dd>
+                <dd>Es parte del nombre del archivo. Al final del nombre se coloca un punto seguido de unas pocas letras o números
+                    que definen la extensión del archivo.</dd>
 
                 <dt>Tamaño</dt>
                 <dd>Es el espacio que el archivo necesita para ser guardado en el almacenamiento del dispositivo.</dd>
-                
+
                 <dt>Tipo</dt>
                 <dd>Indica el programa utilizado para acceder al contenido del archivo.</dd>
 
@@ -82,22 +101,133 @@
             <p>
                 En Linux existen básicamente 5 tipos de archivos:
                 <ul>
-                    <li><b>Archivos ordinarios: </b>Contienen la información con la que trabaja cada usuario.</li>
+                    <li>
+                        <b>Archivos ordinarios: </b>Contienen la información con la que trabaja cada usuario.</li>
                     <br>
-                    <li><b>Enlaces físicos o duros (hard links): </b>No es específicamente una clase de archivo sino un segundo nombre que se le da a un archivo. Supón que dos usuarios necesitan compartir información de un mismo archivo. Si cada uno tuviera una copia del archivo se soluciona el problema, pero las modificaciones que realice un usuario no las vería el otro. Sin embargo, si creamos un enlace duro al archivo para cada usuario cada vez que uno de ellos modifique cualquier cosa en el archivo, el otro lo podrá ver puesto que realmente están viendo y modificando el mismo archivo. El enlace sirve para localizar el archivo en su ubicación actual, pero no es el archivo real, sino un segundo nombre que se le da. De esta forma, con tener un solo archivo real este se podrá utilizar por todos los usuarios que lo necesiten mediante estos enlaces duros sin necesidad de duplicar o triplicar el archivo.</li>
+                    <li>
+                        <b>Enlaces físicos o duros (hard links): </b>No es específicamente una clase de archivo sino un segundo
+                        nombre que se le da a un archivo. Supón que dos usuarios necesitan compartir información de un mismo
+                        archivo. Si cada uno tuviera una copia del archivo se soluciona el problema, pero las modificaciones
+                        que realice un usuario no las vería el otro. Sin embargo, si creamos un enlace duro al archivo para
+                        cada usuario cada vez que uno de ellos modifique cualquier cosa en el archivo, el otro lo podrá ver
+                        puesto que realmente están viendo y modificando el mismo archivo. El enlace sirve para localizar
+                        el archivo en su ubicación actual, pero no es el archivo real, sino un segundo nombre que se le da.
+                        De esta forma, con tener un solo archivo real este se podrá utilizar por todos los usuarios que lo
+                        necesiten mediante estos enlaces duros sin necesidad de duplicar o triplicar el archivo.</li>
                     <br>
-                    <li><b>Enlaces simbólicos: </b>También se utilizan para asignar un segundo nombre a un archivo. La diferencia con los enlaces duros es que los simbólicos solamente hacen referencia al nombre del archivo original, mientras que los duros hacen referencia al inodo en el que están situados los datos del archivo original. De esta manera, si tenemos un enlace simbólico y borramos el archivo original perderemos los datos, mientras que si tenemos un enlace duro los datos no se borrarán hasta que se hayan borrado todos y cada uno de los enlaces duros que existen hacia esos datos en el sistema de ficheros. El conteo del número de enlaces duros que tiene un fichero se realiza, como ya vimos, en el inodo correspondiente a los datos del fichero.</li>
+                    <li>
+                        <b>Enlaces simbólicos: </b>También se utilizan para asignar un segundo nombre a un archivo. La diferencia
+                        con los enlaces duros es que los simbólicos solamente hacen referencia al nombre del archivo original,
+                        mientras que los duros hacen referencia al inodo en el que están situados los datos del archivo original.
+                        De esta manera, si tenemos un enlace simbólico y borramos el archivo original perderemos los datos,
+                        mientras que si tenemos un enlace duro los datos no se borrarán hasta que se hayan borrado todos
+                        y cada uno de los enlaces duros que existen hacia esos datos en el sistema de ficheros. El conteo
+                        del número de enlaces duros que tiene un fichero se realiza, como ya vimos, en el inodo correspondiente
+                        a los datos del fichero.</li>
                     <br>
-                    <li><b>Directorios: </b>Son archivos especiales que contienen referencias a otros archivos o directorios.</li>
+                    <li>
+                        <b>Directorios: </b>Son archivos especiales que contienen referencias a otros archivos o directorios.</li>
                     <br>
-                    <li><b>Archivos especiales: </b>Suelen representar dispositivos físicos, como unidades de almacenamiento, impresoras, terminales, etc. En Linux, todo dispositivo físico que se conecte al ordenador está asociado a un archivo. Linux trata los archivos especiales como archivos ordinarios.</li>
+                    <li>
+                        <b>Archivos especiales: </b>Suelen representar dispositivos físicos, como unidades de almacenamiento,
+                        impresoras, terminales, etc. En Linux, todo dispositivo físico que se conecte al ordenador está asociado
+                        a un archivo. Linux trata los archivos especiales como archivos ordinarios.</li>
                 </ul>
             </p>
         </section>
 
         <section id="Archivos">
             <h2>Manipulación de archivos</h2>
-            <p>parrafo: introducción y comandos de manipulación de archivos</p>
+            <p>Linux dispone de una seria de comandos para el manejo de archivos por medio de consola. Esto nos permite terner
+                una mayor control sobre ellos, puesto que podemos realizar operaciones mas complejas.</p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Comando</th>
+                        <th>Descripci&oacute;n</th>
+                        <th>Sintaxis</th>
+                        <th>Argumentos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cat</td>
+                        <td>Contatena varios archivos, para mostrarlos en pantalla.</td>
+                        <td>cat -argumentos ficheros</td>
+                        <td>
+                            <b>-n</b>: numerea el n&uacute;mero l&iacute;eas mostradas
+                            <br>
+                            <br>
+                            <b>-b</b>: numerea el n&uacute;mero l&iacute;eas mostradas, pero no muestra las vacias.
+                            <br>
+                            <br>
+                            <b>-s</b>: Elimina las lineas vacias seguidas, y las hace una sola.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>touch</td>
+                        <td>Crea un archivo vac&iacute;o, si este exite actualiza la hora de modificaci&oacute;n</td>
+                        <td>touch archivo</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>cp</td>
+                        <td>Permite copiar un archivo a otro directorio</td>
+                        <td>
+                            cp archivo_origen directorio_destino
+                        </td>
+                        <td>
+                            <b>-d</b>: copia enlaces simbolicos.
+                            <br>
+                            <br>
+                            <b>-f</b>: Fuerza a sobreescribir los archivos de destino si existe.
+                            <br>
+                            <br>
+                            <b>-i</b>: Muestra un mensaje antes de sobreescribir los cambios.
+                            <br>
+                            <br>
+                            <b>-r</b>: Copia directorios y sus archivos de forma recursiva.
+                            <br>
+                            <br>
+                            <b>-t</b>: Se utiliza cuando se deseean copiar multiples archivos a un solo destino.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>rm</td>
+                        <td>Elimina un archivo</td>
+                        <td>rm -argumento archivo</td>
+                        <td>
+                            <b>-f</b>: Forzar a la eliminaci&oacute;n del archivo.
+                            <br>
+                            <br>
+                            <b>-i</b>: Pregunta antes de eliminar el archivo.
+                            <br>
+                            <br>
+                            <b>-r</b>: Elimina directorios y sus contenido.
+                            <br>
+                            <br>
+                            <b>-d</b>: Elimina directorios vac&iacute;os.
+                            <br>
+                            <br>
+                            <b>-v</b>: Mustra el proceso que se esta realizando.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>mv</td>
+                        <td>Permite mover un archivo a otro directorio</td>
+                        <td></td>
+                        <td>
+                            <b>-f</b>: No pide permiso para mover el archivo.
+                            <br>
+                            <br>
+                            <b>-i</b>: Pregunta si quiero mover el archivo.
+                            <br>
+                            <br>
+                            <b>-n</b>: No sobreescribe si hay un archivo existente.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section id="Grupos">
@@ -108,19 +238,21 @@
         <section id="Permisos">
             <h2>Permisos</h2>
             <p>
-                En un sistema Unix todos los archivos pertenecen obligatoriamente a un usuario y a un grupo. 
-                Al momento que un usuario crea un nuevo archivo, el propietario es el usuario creador y el grupo 
-                del archivo será el grupo principal del mismo usuario.
+                En un sistema Unix todos los archivos pertenecen obligatoriamente a un usuario y a un grupo. Al momento que un usuario crea
+                un nuevo archivo, el propietario es el usuario creador y el grupo del archivo será el grupo principal del
+                mismo usuario.
             </p>
             <p>
-                En la consola al utilizar el comando <strong><em>ls –l</em></strong> (formato largo), Se puede visualizar el usuario propietario 
-                y el grupo propietario del archivo.
+                En la consola al utilizar el comando
+                <strong>
+                    <em>ls –l</em>
+                </strong> (formato largo), Se puede visualizar el usuario propietario y el grupo propietario del archivo.
             </p>
             <section>
                 <h3>Tipo de permisos.</h3>
                 <p>
-                    En los sistemas Unix, la gestión de los permisos que los usuarios y los grupos de usuarios tienen sobre los archivos y las carpetas, 
-                    se realiza mediante un sencillos esquema de tres tipos de permisos:
+                    En los sistemas Unix, la gestión de los permisos que los usuarios y los grupos de usuarios tienen sobre los archivos y las
+                    carpetas, se realiza mediante un sencillos esquema de tres tipos de permisos:
                 </p>
                 <ul>
                     <li>Permisos de lectura</li>
@@ -131,39 +263,45 @@
             <section>
                 <h4>Permisos de lectura.</h4>
                 <p>
-                    Cuando un usuario tiene permiso de lectura de un archivo significa que puede leerlo o visualizarlo, 
-                    bien sea con una aplicación o mediante comandos. Ejemplo, si tenemos permiso de lectura sobre el 
-                    archivo <strong>labo.txt</strong>, significa que podemos ver el contenido del archivo. Si el usuario no tiene permiso de 
-                    lectura, no podrá ver el contenido del archivo.
+                    Cuando un usuario tiene permiso de lectura de un archivo significa que puede leerlo o visualizarlo, bien sea con una aplicación
+                    o mediante comandos. Ejemplo, si tenemos permiso de lectura sobre el archivo
+                    <strong>labo.txt</strong>, significa que podemos ver el contenido del archivo. Si el usuario no tiene permiso
+                    de lectura, no podrá ver el contenido del archivo.
                 </p>
                 <p>
-                    El permiso de lectura se simboliza con la letra <strong>'r'</strong> del inglés <strong>'read'</strong>.
+                    El permiso de lectura se simboliza con la letra
+                    <strong>'r'</strong> del inglés
+                    <strong>'read'</strong>.
                 </p>
             </section>
             <section>
                 <h4>Permiso de escritura.</h4>
                 <p>
-                    Cuando un usuario tiene permiso de escritura sobre un archivo significa que puede modificar su contenido,
-                    e incluso borrarlo. También le da derecho a cambiar los permisos del archivo mediante el comando 
-                    <strong>chmod</strong> así como cambiar su propietario y el grupo propietario mediante el comando <strong>chown</strong>.
-                    Si el usuario no tiene permiso de escritura, no podrá modificar el contenido del archivo.
+                    Cuando un usuario tiene permiso de escritura sobre un archivo significa que puede modificar su contenido, e incluso borrarlo.
+                    También le da derecho a cambiar los permisos del archivo mediante el comando
+                    <strong>chmod</strong> así como cambiar su propietario y el grupo propietario mediante el comando
+                    <strong>chown</strong>. Si el usuario no tiene permiso de escritura, no podrá modificar el contenido del archivo.
                 </p>
                 <p>
-                    El permiso de escritura se simboliza con la letra <strong>'w'</strong> del inglés <strong>'write'</strong>.
+                    El permiso de escritura se simboliza con la letra
+                    <strong>'w'</strong> del inglés
+                    <strong>'write'</strong>.
                 </p>
             </section>
             <section>
                 <h4>Permiso de ejecución.</h4>
                 <p>
-                    Cuando un usuario tiene permiso de ejecución de un archivo significa que puede ejecutarlo. 
-                    Si el usuario no dispone de permiso de ejecución, no podrá ejecutarlo, aunque sea una aplicación.
+                    Cuando un usuario tiene permiso de ejecución de un archivo significa que puede ejecutarlo. Si el usuario no dispone de permiso
+                    de ejecución, no podrá ejecutarlo, aunque sea una aplicación.
                 </p>
                 <p>
-                    Los únicos archivos ejecutables son las aplicaciones y los archivos de comandos (scripts). 
-                    Si tratamos de ejecutar un archivo no ejecutable, dará errores.
+                    Los únicos archivos ejecutables son las aplicaciones y los archivos de comandos (scripts). Si tratamos de ejecutar un archivo
+                    no ejecutable, dará errores.
                 </p>
                 <p>
-                    El permiso de ejecución se simboliza con la letra <strong>'x'</strong> del inglés <strong>'eXecute'</strong>.
+                    El permiso de ejecución se simboliza con la letra
+                    <strong>'x'</strong> del inglés
+                    <strong>'eXecute'</strong>.
                 </p>
             </section>
 
@@ -174,16 +312,25 @@
 
             <ul>
                 <li>
-                    [1]"Basic Computer Tutorial", Comptechdoc.org, 2018. [En linea]. Disponible: <a href="http://www.comptechdoc.org/basic/basictut/index.html">http://www.comptechdoc.org/basic/basictut/index.html</a>. [Accesado: 30- Jul- 2018].
+                    [1]"Basic Computer Tutorial", Comptechdoc.org, 2018. [En linea]. Disponible:
+                    <a href="http://www.comptechdoc.org/basic/basictut/index.html">http://www.comptechdoc.org/basic/basictut/index.html</a>. [Accesado: 30- Jul- 2018].
                 </li>
                 <li>
-                    [2]"Computer Skills Course: File Management, Part 1", YouTube, 2018. [En linea]. Disponible: <a href="https://www.youtube.com/watch?v=k-EID5_2D9U">https://www.youtube.com/watch?v=k-EID5_2D9U</a>. [Accesado: 30- Jul- 2018].
+                    [2]"Computer Skills Course: File Management, Part 1", YouTube, 2018. [En linea]. Disponible:
+                    <a href="https://www.youtube.com/watch?v=k-EID5_2D9U">https://www.youtube.com/watch?v=k-EID5_2D9U</a>. [Accesado: 30- Jul- 2018].
                 </li>
                 <li>
-                    [3]"About files and the file system", Tldp.org, 2018. [En linea]. Disponible: <a href="http://www.tldp.org/LDP/intro-linux/html/chap_03.html">http://www.tldp.org/LDP/intro-linux/html/chap_03.html</a>. [Accesado: 30- Jul- 2018].
+                    [3]"About files and the file system", Tldp.org, 2018. [En linea]. Disponible:
+                    <a href="http://www.tldp.org/LDP/intro-linux/html/chap_03.html">http://www.tldp.org/LDP/intro-linux/html/chap_03.html</a>. [Accesado: 30- Jul- 2018].
                 </li>
                 <li>
-                    [4]"Permisos de archivos y carpetas", ite.educacion.es, 2005. [En linea]. Disponible: <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html">http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html</a>. [Accesado: 31- Jul- 2018].
+                    [4]"Permisos de archivos y carpetas", ite.educacion.es, 2005. [En linea]. Disponible:
+                    <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html">http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html</a>.
+                    [Accesado: 31- Jul- 2018].
+                </li>
+                <li>
+                    [5]"Linux man pages [En linea]. Disponible:
+                    <a href="http://man.he.net/">http://man.he.net/</a>. [Accesado: 31- Jul- 2018].
                 </li>
             </ul>
         </nav>
