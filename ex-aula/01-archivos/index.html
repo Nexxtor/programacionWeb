@@ -46,6 +46,9 @@
                 <a href="#Permisos">Permisos</a>
             </li>
             <li>
+                <a href="#Cambio-Permisos">Cambio de permisos</a>
+            </li>
+            <li>
                 <a href="#Referencias">Referencias</a>
             </li>
         </ol>
@@ -311,34 +314,172 @@
             </section>
 
         </section>
+        <section id="Cambio-Permisos">
+            <h2>Cambio de permisos de archivos en GNU LINUX.</h2>
+
+            <p>
+                En Linux, los archivos y ficheros utilizan permisos, los cuales pueden ser configurados o cambiados por el creador del del mismo, para impedir a otros usuarios de la red o del equipo, ver, ejecutar o escribir en este.
+            </p>
+            <p>
+                Como vimos anteriormente, los permisos que podemos cambiar o configurar en Linux son los siguientes: <i>Lectura</i> (r) el cual nos permitirá leer algún archivo o fichero, <i>Escritura</i> (w) que modifica un archivo o fichero y <i>Ejecución</i> (x) que ejecuta cualquier programa creado por un usuario.
+            </p>
+            <p>
+                Para el cambio de permisos nos apoyaremos con el uso del comando chmod, el cual posee una sintaxis de la siguiente forma: <code>chmod ugo nombre_del_fichero</code>
+            </p>
+            <p>
+                La parte de “<b><i>ugo</i></b>” del commando representa un numero en formato decimal que hace referencia a los permisos en sí. La letra U representa los permisos del usuario administrador, la letra G los del grupo al que pertenece, y la O a cualquier otro usuario no registrado en el grupo.
+            </p>
+            <p>
+                Serán 3 números que van del 0 al 7:
+            </p>
+            <ul>
+                <li><b>Primer número</b>: permisos de propietario.</li>
+                <li><b>Segundo número</b>: permisos de grupo.</li>
+                <li><b>Tercer número</b>: permisos para el resto.</li>
+            </ul>
+            <p>
+                Para representar del 0 al 7 necesitamos 3 bits, que son los 3 bits utilizados para dar permisos a propietario, grupo y al resto. Con un '1' damos permiso y con un '0' se lo quitamos. Va en el siguiente orden: <b>rwx</b>.
+            </p>
+            <img src="img/ugo-chmod.jpg" alt="chmod image">
+            
+            <p>
+                A continuación, se especifican todas las combinaciones posibles de permisos (en casos particulares).
+            </p>
+
+            <table border="i">
+                <thead>
+                    <tr>
+                        <th>Binario</th>
+                        <th>Decimal</th>
+                        <th>Permiso</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>000</td>
+                        <td>0</td>
+                        <td>---</td>
+                        <td>Ninguno</td>
+                    </tr>
+                    <tr>
+                        <td>001</td>
+                        <td>1</td>
+                        <td>--x</td>
+                        <td>Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>010</td>
+                        <td>2</td>
+                        <td>-w-</td>
+                        <td>Escritura</td>
+                    </tr>
+                    <tr>
+                        <td>011</td>
+                        <td>3</td>
+                        <td>-wx</td>
+                        <td>Escritura y Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>4</td>
+                        <td>r--</td>
+                        <td>Lectura</td>
+                    </tr>
+                    <tr>
+                        <td>101</td>
+                        <td>5</td>
+                        <td>r-x</td>
+                        <td>Lectura y Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td>6</td>
+                        <td>rw-</td>
+                        <td>Lectura y Escritura</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>7</td>
+                        <td>rwx</td>
+                        <td>Lectura, Escritura y Ejecución</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                    Algunos ejemplos de aplicación:
+            </p>
+            <ol>
+                <li>
+                    <b>644:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura y escritura.</li>
+                    </ul> 
+                    <ul>
+                        <li><b>Grupo:</b> lectura.</li>
+                    </ul> 
+                    <ul>
+                        <li><b>Otros:</b> lectura.</li>
+                    </ul> 
+                </li>
+                <li>
+                    <b>754:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
+                    </ul> 
+                    <ul>
+                        <li><b>Grupo:</b>lectura y ejecución</li>
+                    </ul> 
+                    <ul>
+                        <li><b>Otros:</b> lectura.</li>
+                    </ul> 
+                </li>
+                <li>
+                    <b>777:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
+                    </ul> 
+                    <ul>
+                        <li><b>Grupo:</b> lectura, escritura y ejecución.</li>
+                    </ul> 
+                    <ul>
+                        <li><b>Otros:</b> lectura, escritura y ejecución.</li>
+                    </ul> 
+                </li>
+            </ol>
+        </section>
 
         <nav id="Referencias">
             <h2>Referencias</h2>
 
             <ul>
                 <li>
-                    [1]"Basic Computer Tutorial", Comptechdoc.org, 2018. [En linea]. Disponible:
+                    [1]"Basic Computer Tutorial", Comptechdoc.org, 2018. [En línea]. Disponible:
                     <a href="http://www.comptechdoc.org/basic/basictut/index.html">http://www.comptechdoc.org/basic/basictut/index.html</a>. [Accesado: 30- Jul- 2018].
                 </li>
                 <li>
-                    [2]"Computer Skills Course: File Management, Part 1", YouTube, 2018. [En linea]. Disponible:
+                    [2]"Computer Skills Course: File Management, Part 1", YouTube, 2018. [En línea]. Disponible:
                     <a href="https://www.youtube.com/watch?v=k-EID5_2D9U">https://www.youtube.com/watch?v=k-EID5_2D9U</a>. [Accesado: 30- Jul- 2018].
                 </li>
                 <li>
-                    [3]"About files and the file system", Tldp.org, 2018. [En linea]. Disponible:
+                    [3]"About files and the file system", Tldp.org, 2018. [En línea]. Disponible:
                     <a href="http://www.tldp.org/LDP/intro-linux/html/chap_03.html">http://www.tldp.org/LDP/intro-linux/html/chap_03.html</a>. [Accesado: 30- Jul- 2018].
                 </li>
                 <li>
-                    [4]"Permisos de archivos y carpetas", ite.educacion.es, 2005. [En linea]. Disponible:
+                    [4]"Permisos de archivos y carpetas", ite.educacion.es, 2005. [En línea]. Disponible:
                     <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html">http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html</a>.
                     [Accesado: 31- Jul- 2018].
                 </li>
                 <li>
-                    [5]"Linux man pages [En linea]. Disponible:
+                    [5]"Linux man pages [En línea]. Disponible:
                     <a href="http://man.he.net/">http://man.he.net/</a>. [Accesado: 31- Jul- 2018].
                 </li>
                 <li>
                     [5]"MIME Types Explained: Why Linux and Mac OS X Don’t Need File Extensions", Howtogeek.com, 2018. [En linea]. Disponible: <a href="https://www.howtogeek.com/192628/mime-types-explained-why-linux-and-mac-os-x-dont-need-file-extensions/">https://www.howtogeek.com/192628/mime-types-explained-why-linux-and-mac-os-x-dont-need-file-extensions/</a>. [Accesado: 31- Jul- 2018].
+                </li>
+                <li>
+                    [6]"Cómo cambiar los permisos de archivos en Linux", culturacion.com, 2000 [En línea]. Dsiponible:
+                    <a href="http://culturacion.com/como-cambiar-los-permisos-de-archivos-en-linux/">http://culturacion.com/como-cambiar-los-permisos-de-archivos-en-linux/</a>. [Accesado: 30-Jul-2018].
                 </li>
             </ul>
         </nav>
