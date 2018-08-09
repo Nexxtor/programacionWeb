@@ -269,7 +269,72 @@
 
         <section id="Grupos">
             <h2>Usuarios y grupos</h2>
-            <p>parrafo: introducción y commandos de creación de grupos de usuarios</p>
+            <p>
+                El objetivo principal de el uso de usuarios y grupos en un sistema Linux, es permitir que múltiples usuarios hagan uso del sistema, pero de una manera ordenada y segura.
+            </p>
+            <p>
+                De una manera que ninguna de las tareas realizadas por cualquier usuario pueda poner en riesgo todo el sistema. A través de la gestión de usuarios y grupos, se establecen los mecanismos y políticas de seguridad para la protección de los datos de cada usuario, así como para asegurar y proteger el funcionamiento de todo el sistema.
+            </p>
+            <section>
+                <h3>Usuarios.</h3>
+                <p>
+                    Para poder usar el sistema operativo Linux, se es necesario tener una cuenta de usuario. Esta cuenta se compone por un nombre de usuario y de una contraseña.
+                </p>
+                <p>
+                    Las cuentas de usuarios son manejadas y creadas solo por el administrador del sistema, que en el caso de ser un sistema operativo Linux a este se le conoce como el usuario <strong>root</strong>.
+                </p>
+                <p>
+                    Cada usuario debe de pertenecer obligatoriamente a un grupo de usuario. Al momento de ingresar al sistema, el usuario debe de identificarse con su cuenta de usuario y en caso de equivocarse el sistema le denegara el acceso.
+                </p>
+                <p>
+                    Luego de identificarse satisfactoriamente, el usuario podrá hacer uso del sistema y ejecutar todas las aplicaciones que tenga <em>permitido</em>, así como realizar acciones(leer, modificar o borrar) sobre los archivos en el que tenga permitido.
+                </p>
+                <p>
+                    Por otra parte, una cuenta de usuario no solo provee un simple nombre, también es el punto de partida para poder establecer la ruta en donde se almacenan los documentos y el perfil del usuario. En linux, generalmente es dentro de la carpeta de /home/<strong>nombre-usuario</strong>
+                </p>
+            </section>
+            <section>
+                <h4>Creación de usuarios.</h4>
+                <p>
+                    Para poder añadir un usuario, indicando sus parametros de información utilizamos en la consola (terminal) el comando <strong>useradd</strong>. Su sintaxis es:
+                </p>
+                <p> 
+                    <ul>
+                            <li>
+                                <code>useradd [opciones] nombre-usuario</code>
+                            </li>
+                    </ul>
+                </p>
+                <p>
+                    Donde, <em>[opciones]</em> puede ser remplazado por las siguientes:
+                    <ul>
+                        <li>-g: Grupoo inicial que sera asignado al usuario.</li>
+                        <li>-d: Para asignar la carpeta home del usuario. Generalmente es <code>/home/nombre-usuario</code></li>
+                        <li>-m: Crear la carpeta home en caso de que esta no exista.</li>
+                        <li>-s: Intérprete de comandos (shell) del usuario. Este suele ser <code>/bin/bash</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Por ejemplo, se quiere crear un usuario llamado "pedro" y que su grupo inicial sea "instructores", que tenga asignada como carpeta home "<code>/home/luis</code>" y que sus comandos sean interpretados en <code>"/bin/bash"</code>(lugar por defecto). El comando correcto que se debe ejecutar es el siguiente:
+                    <ul>
+                        <li><code>sudo useradd -g instructores -d /home/luis -m  -s bin/bash Pedro</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Ahora solo nos queda asignarle su contraseña, mediante el uso del comando <strong>passwd</strong>:
+                    <ul>
+                        <li><code>sudo passwd pedro</code></li>
+                    </ul>
+                </p>
+                <p>El sistema nos solicitará la contraseña dos veces y listo, esta sera asignada.</p>
+                <p>
+                    Dos cosas a tomar en cuenta:
+                    <ol>
+                        <li>Todos estos comandos se ejecutan junto el comando sudo, ya que este permite al usuario actual, poder ejecutar programas con privilegios de seguridad del usuario root (solo si se le ha otorgado tales privilegios), y como se mencionó anteriormente, el único capaz de gestionar los usuarios es el administrador (usuario root)</li>
+                        <li>Otra cosa a tomar en cuenta es el hecho de crear los nombres de usuario en minúsculas, porque para el sistema operativo Linux, "Pedro" es distinto que "pedro", ya que distingue entre mayúsculas y minúsculas. También se puede incluir el uso de números y algún signo como guión o guión bajo.</li>
+                    </ol>
+                </p>
+            </section>
         </section>
 
         <section id="Permisos">
