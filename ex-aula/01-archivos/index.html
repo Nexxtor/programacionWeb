@@ -308,7 +308,7 @@
                 <p>
                     Donde, <em>[opciones]</em> puede ser remplazado por las siguientes:
                     <ul>
-                        <li>-g: Grupoo inicial que sera asignado al usuario.</li>
+                        <li>-g: Grupo principal que sera asignado al usuario.</li>
                         <li>-d: Para asignar la carpeta home del usuario. Generalmente es <code>/home/nombre-usuario</code></li>
                         <li>-m: Crear la carpeta home en caso de que esta no exista.</li>
                         <li>-s: Intérprete de comandos (shell) del usuario. Este suele ser <code>/bin/bash</code></li>
@@ -317,7 +317,7 @@
                 <p>
                     Por ejemplo, se quiere crear un usuario llamado "pedro" y que su grupo inicial sea "instructores", que tenga asignada como carpeta home "<code>/home/luis</code>" y que sus comandos sean interpretados en <code>"/bin/bash"</code>(lugar por defecto). El comando correcto que se debe ejecutar es el siguiente:
                     <ul>
-                        <li><code>sudo useradd -g instructores -d /home/luis -m  -s bin/bash Pedro</code></li>
+                        <li><code>sudo useradd -g instructores -d /home/pedro -m Pedro</code></li>
                     </ul>
                 </p>
                 <p>
@@ -335,8 +335,128 @@
                     </ol>
                 </p>
             </section>
+            <section>
+                <h3>Modificación de usuarios.</h3>
+                <p>
+                    Para poder realizar modificaciones sobre los usuarios, se utiliza el comando <strong>usermod</strong>. Este permite hacer cambios al nombre, a la carpeta home asignada, a su interpretador de comandos asignado, sus grupos, entre otros.  
+                </p>
+                <p>
+                    Por ejemplos, si se quisiera cambiar el nombre del usuario "pedro" a "obdulio" se realiza de la siguiente manera:
+                    <ul>
+                        <li><code>sudo usermod -l obdulio pedro</code></li>
+                    </ul>
+                </p>
+            </section>
+            <section>
+                <h3>Eliminación de usuarios.</h3>
+                <p>
+                    La eliminación de un usuario se realiza por medio de el uso del comando <strong>userdel</strong> seguido del nombre de usuario. Si se le añade la opción <code>-r</code>, su carpeta home respectiva también sera eliminada.
+                </p>
+                <p>
+                    Por ejemplo, si se quisiera eliminar el usuario obdulio, se realiza de la siguiente manera:
+                    <ul>
+                        <li><code>sudo userdel obdulio</code></li>
+                    </ul>
+                </p>
+            </section>
+            <section>
+                <h2>Grupos.</h2>
+                <p>
+                    Para que exista una administración flexible de los permisos de los usuarios, el sistema operativo Linux permite catalogar los usuarios a través de grupos y los permisos pueden ser asignados a un grupo. Por ejemplo, se cuenta con un grupo de instructores para una materia en específico, este grupo tiene acceso a ciertos archivos, al momento de incorporar a un nuevo instructor, solo se le asigna a la cuenta del instructor el grupo "instructores". 
+                </p>
+                <p>
+                    Como se mencionó anteriormente, todos los usuarios deben pertenecer a un grupo principal o primario obligatoriamente, pero puede pertenecer a otros grupos, a los cuales se les considera secundarios. Todos los grupos de usuarios sólo pueden contener varios usuarios, pero no pueden contener a otros grupos.
+                </p>
+                <p>
+                    Cada grupo de usuario en el sistema Linux es identificado con un numero diferente. A esto se le conoce como <strong>identificador de grupo o gid (Group IDentifier).</strong>. El sistema, internamente realiza los trabajos bajo el gid y no bajo el nombre del grupo. Por lo general, cuando se crean los grupos, el sistema asigna un gid de "1000" en adelante, ya que los gid menores a "1000" están reservados para uso del sistema y sus grupos especiales.
+                </p>
+                <p>
+                    Por defecto en el sistema Linux, la información de los grupos se guarda en el archivo <code>/etc/group</code>, el cual puede ser visualizado por cualquier editor de texto. 
+                </p>
+            </section>
+            <section>
+                <h3>Creación de grupos.</h3>
+                <p>
+                    Para poder realizar la creación, se hace mediante el comando <strong>groupadd</strong>, tan solo se debe indicar el nombre del grupo como parámetro. Su sintaxis es:
+                    <ul>
+                        <li><code>sudo groupadd nombre-grupo</code></li>
+                    </ul>
+                </p>
+                <p>
+                    Por ejemplo, si se quisiera crear un grupo llamado "alumnos", se realiza de la siguiente manera:
+                    <ul>
+                        <li><code>sudo groupadd alumnos</code></li>
+                    </ul>
+                </p> 
+            </section>
+            <section>
+                <h3>Modificación de grupos.</h3>
+                <p>
+                    Los grupos también pueden ser modificados al igual que los usuarios. Para ellos, se hace uso del comando <strong>groupmod.</strong> Su sintaxis es: 
+                    <ul>
+                        <li><code>sudo groupmod [opción] nombre-grupo</code></li>
+                    </ul>
+                </p>
+                <p>
+                    En donde <em>[opciones]</em> puede ser remplazado por las siguientes:
+                    <ul>
+                        <li>-g: Sirve para poder cambiar el identificador de grupo.</li>
+                        <li>-n: Sirve para renombrar el grupo.</li>
+                    </ul>
+                </p>
+                <p>
+                    Por ejemplo, si se quiere cambiar el nombre del grupo "alumnos" a "estudiantes", se realiza de la siguiente manera:
+                    <ul>
+                        <li><code>sudo groupmod -n estudiantes alumnos</code></li>
+                    </ul>
+                </p>
+            </section>
+            <section>
+                <h3>Eliminación de grupos.</h3>
+                <p>
+                    Para poder eliminar un grupo se hace por medio del comando <strong>groupdel</strong> seguido del nombre del grupo. El grupo se eliminara sólo en el caso de que no tenga usuarios con el grupo asignado como principal, si existe algun usuario con esta condición, el grupo no se eliminará.
+                </p>
+                <p>
+                    Por ejemplo, si se quiere eliminar el grupo estudiantes, se realiza de la siguiente manera:
+                    <ul>
+                        <li><code>sudo groupdel estudiantes</code></li>
+                    </ul>
+                </p>
+            </section>
+            <section>
+                <h3>Añadir usuarios a un grupo.</h3>
+                <p>
+                    Para poder añadir usuarios a un grupo se hace por medio del comando <strong>adduser</strong> seguido del nombre del usuario y el nombre del grupo.
+                </p>
+                <p>
+                    Por ejemplo, si se quiere agregar el usuario "roberto" al grupo de "estudiantes", se realiza de la siguiente manera:
+                    <ul>
+                        <li><code>sudo adduser roberto estudiantes</code></li>
+                    </ul>
+                </p>
+            </section>
+            <section>
+                <h3>Quitar usuarios de un grupo.</h3>
+                <p>Si se quiere eliminar un usuario de un grupo, utilizamos el comando <strong>deluser</strong> seguido del nombre del usuario y el nombre del grupo.</p>
+                <p>Por ejemplo, si queremos quitar al usuario "obdulio" del grupo de "instructores", se realiza de la siguiente manera:
+                    <ul>
+                        <li><code>sudo deluser obdulio instructores</code></li>
+                    </ul>
+                </p>
+            </section>
+            <p>
+                Si se quiere conocer más acerca de todas las opciones disponibles de cada comando, se hace uso del comando <strong>man</strong> seguido del comando del que queremos.
+            </p>
+            <p>
+                Por ejemplo, si se quiere saber cuales son las opciones del comando <strong>usermod</strong>, se realiza de la siguiente manera:
+                <ul>
+                    <li><code>man usermod</code></li>
+                </ul>
+            </p>
+            <section>
+                <h2>Asignación de permisos.</h2>
+            </section>
         </section>
-
         <section id="Permisos">
             <h2>Permisos</h2>
             <p>
