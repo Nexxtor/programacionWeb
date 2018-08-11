@@ -7,38 +7,60 @@
     <title>Laboratorio 1</title>
 </head>
 <body>
-    <section>
+    <header>
         <h1>Guía de Laboratorio 1</h1>
-        <p><b>Introducción a HTML</b> | Viernes 17 de Agosto de 2018</p>
-        <img width="30%" src="img/html_code.jpg">
-    </section>
+        <p><b>Introducción a HTML</b> | <time datetime="2018-07-17">
+            Viernes 17 de Agosto de 2018
+        </time></p>
+        <img width="30%" src="img/html_code.jpg" alt="">
+    </header>
 
     <section>
         <h2>¿Que es HTML?</h2>
-        <p>HTML, que significa Lenguaje de Marcado para Hipertextos (HyperText Markup Language) es el elemento de construcción más básico de una página web y se usa para crear y representar visualmente una página web. Determina el contenido de la página web por medio del uso de etiquetas</p>
-        <section>
-            <h3>Estructura HTML Básica</h3>
-           <img src="img/estructura-basica-html.JPG" />
-        </section>
-        <section>
-        <h3>Etiquetas a utilizar:</h3>
-            <dl>
-                <dt><code><b>&lt;h1&gt;</b></code>:</dt> 
-                    <dd>Es una etiqueta de encabezado que implementan seis niveles de encabezado del documento, <code>&lt;h1&gt;</code> es el más importante, y <code>&lt;h6&gt;</code>, el menos importante.</dd> 
-                <dt><code><b>&lt;p&gt;</b></code>:</dt> 
-                    <dd>El elemento p (párrafo) es el apropiado para distribuir el texto en párrafos.</dd>
-                <dt><code><b>&lt;img&gt;</b></code>:</dt> 
-                    <dd>Representa una imagen en el documento.</dd>
-                <dt><code><b>&lt;b&gt;</b></code>:</dt>
-                    <dd>Indica que el texto debe ser representado con una variable bold, o negrita, de la tipografía que se esté usando.</dd>
-                <dt><code><b>&lt;strong&gt;</b></code>:</dt>
-                    <dd>Marca con especial énfasis las partes más importantes de un texto.</dd>
-                <dt><code><b>&lt;i&gt;</b></code>:</dt>
-                    <dd>Muestra el texto marcado con un estilo en cursiva o italica.</dd>
-                <dt><code><b>&lt;em&gt;</b></code>:</dt>
-                    <dd>Es el apropiado para marcar con énfasis las partes importantes de un texto.</dd>
-            </dl>
-        </section>
+        <p>HTML, que significa Lenguaje de Marcado para Hipertextos, es el elemento de construcción más básico de una página web y se usa para crear y representar una página web. Determina el <strong>contenido</strong> de la página web por medio del uso de etiquetas.</p>
+    </section>
+
+    <section>
+        <h2>Estructura HTML Básica</h2>
+        <img src="img/estructura-basica-html.JPG" alt="Estructura básica de un documento HTML"/>
+        <p>
+            Al inicio de todo documento html debería de haber una indicación del tipo de documento. Esto es para informar al navegador de ciertas reglas para interpretar el código. Para documentos que utilizan la versión HTML5, esto se logra con: <code>&lt;!DOCTYPE html&gt;</code>.
+        </p>
+
+        <p>
+            Seguido al tipo de documento se utiliza la etiqueta <code>&lt;html&gt;</code>. Todo lo que pertenezca a la página web es colocado <em>dentro</em> de esta etiqueta. Este <em>contenedor</em> representa la <strong>raiz</strong> del documento.
+        </p>
+
+        <p>
+            Dentro de la etiqueta <code>&lt;html&gt;</code> se coloca el <strong>encabezado</strong> con la etiqueta <code>&lt;head&gt;</code>, que contiene elementos que no son incluidos en el <em>contenido</em> del documento, pero son escenciales para los buscadores y el navegador. Es dentro de esta etiqueta en donde se coloca la meta-data (información sobre el documento), como es el título de la página.
+        </p>
+        
+        <p>
+            El título es una indicación del contenido de la página, este ayuda a buscadores y facilita la navegación si se tienen varias pestañas abiertas en el navegador. El título se coloca dentro de la etiqueta <code>&lt;title&gt;</code>, que a su vez está dentro de la etiqueta <code>&lt;head&gt;</code>. Es importante no omitir esta etiqueta, esta es el <em>nombre</em> del documento, el hacerlo daría una mala impresión a los visitantes de la página. ¿Confiaría en una página que no tiene siquiera un título? 
+        </p>
+
+        <p>
+            Lo último es separar el <strong>encabezado</strong> del <strong>cuerpo</strong> del documento. Este último es colocado <em>junto al encabezado</em> con la etiqueta <code>&lt;body&gt;</code>. Es aquí donde se incluye todo el <strong>contenido</strong> del documento y es mostrado por el navegador.
+        </p>
+    </section>
+    <section>
+        <h2>Etiquetas a utilizar:</h2>
+        <dl>
+            <dt><code><b>&lt;h1&gt;</b></code>:</dt> 
+                <dd>Es una etiqueta de encabezado que implementan seis niveles de encabezado del documento, <code>&lt;h1&gt;</code> es el más importante, y <code>&lt;h6&gt;</code>, el menos importante.</dd> 
+            <dt><code><b>&lt;p&gt;</b></code>:</dt> 
+                <dd>El elemento p (párrafo) es el apropiado para distribuir el texto en párrafos.</dd>
+            <dt><code><b>&lt;img&gt;</b></code>:</dt> 
+                <dd>Representa una imagen en el documento.</dd>
+            <dt><code><b>&lt;b&gt;</b></code>:</dt>
+                <dd>Indica que el texto debe ser representado con una variable bold, o negrita, de la tipografía que se esté usando.</dd>
+            <dt><code><b>&lt;strong&gt;</b></code>:</dt>
+                <dd>Marca con especial énfasis las partes más importantes de un texto.</dd>
+            <dt><code><b>&lt;i&gt;</b></code>:</dt>
+                <dd>Muestra el texto marcado con un estilo en cursiva o italica.</dd>
+            <dt><code><b>&lt;em&gt;</b></code>:</dt>
+                <dd>Es el apropiado para marcar con énfasis las partes importantes de un texto.</dd>
+        </dl>
     </section>
 </body>
 </html>
