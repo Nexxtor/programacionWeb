@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
 
     <section>
         <h2>¿Que es HTML?</h2>
-        <p>HTML, que significa Lenguaje de Marcado para Hipertextos, es el elemento de construcción más básico de una página web y se usa para crear y representar una página web. Determina el <strong>contenido</strong> de la página web por medio del uso de etiquetas.</p>
+        <p><abbr title="Hypertext Markup Language">HTML</abbr>, que significa Lenguaje de Marcado para Hipertextos, es el elemento de construcción más básico de una página web y se usa para crear y representar una página web. Determina el <strong>contenido</strong> de la página web por medio del uso de etiquetas.</p>
     </section>
 
     <section>
@@ -42,6 +42,35 @@
         <p>
             Lo último es separar el <strong>encabezado</strong> del <strong>cuerpo</strong> del documento. Este último es colocado <em>junto al encabezado</em> con la etiqueta <code>&lt;body&gt;</code>. Es aquí donde se incluye todo el <strong>contenido</strong> del documento y es mostrado por el navegador.
         </p>
+    </section>
+
+    <section>
+        <h2>Atributos</h2>
+        <p>
+            Los atributos son modificadores en HTML, siempre son escritos después de la <em>etiqueta</em> y dentro de los delimitadores <code>&lt; &gt;</code>. Es posible agregar más de un atributo a una etiqueta.
+        </p>
+        <code>&lt;etiqueta atributo="valor"&gt;</code>
+        <p>
+            Los atributos son utilizados debido a que muchas etiquetas por si solas no contienen suficiente información, con los atributos es posible agregar mucha información extra. Por ejemplo:
+        </p>
+        <code>&lt;html lang="es"&gt;</code>
+        <p>
+            Con esto se está indicando que el documento está escrito en idioma español. También se utilizan atributos al utilizar imágenes:
+        </p>
+
+        <figure>
+            <img src="https://images.unsplash.com/photo-1507289872412-523fc6b2db5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=20ca9d0eba2016344894aec7bb453a2d&auto=format&fit=crop&w=748&q=80" alt="Ejemplo de imagenes en HTML">
+
+            <figcaption>
+                    Photo by Hello I'm Nik on Unsplash
+            </figcaption> 
+        </figure>
+
+        <p>
+            En este caso la etiqueta <code>img</code> fué modificada con el atributo <code>src</code>, lo que le indica al navegador que obtenga la información de la imagen desde: <a href="https://unsplash.com/photos/SNOBlDeV5cU">https://unsplash.com/photos/SNOBlDeV5cU</a>
+        </p>
+        
+
     </section>
     <section>
         <h2>Etiquetas a utilizar:</h2>
