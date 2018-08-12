@@ -86,7 +86,7 @@
 
         <section id="Extensiones">
             <h2>Extensiones de archivos</h2>
-            
+
             <p>
                 Las extensiones son únicamente un grupo de caracteres que, precedidos de un punto, son agregados al final del nombre del archivo.
             </p>
@@ -106,7 +106,7 @@
                 Cuando se trabaja con comandos es habitual tener que pasar como parámetros archivos o directorios.  Para indicar un archivo o directorio se utiliza la ruta o path, que puede ser absoluta o relativa
             </p>
             <p>
-                A diferencia de Windows, Linux no tiene unidades, así que os podéis olvidar de A:\, C:\, D:\ y todas las letras del alfabeto. En Linux hay un sistema de archivos principal que es la raíz y se representa por el carácter /. El resto de particiones, pendrives, discos duros, unidades de cd, unidades de dvd y cualquier otra cosa que contenga un sistema de archivos, cuelga de algún directorio que esté en el sistema de archivos principal. 
+                A diferencia de Windows, Linux no tiene unidades, así que os podéis olvidar de A:\, C:\, D:\ y todas las letras del alfabeto. En Linux hay un sistema de archivos principal que es la raíz y se representa por el carácter /. El resto de particiones, pendrives, discos duros, unidades de cd, unidades de dvd y cualquier otra cosa que contenga un sistema de archivos, cuelga de algún directorio que esté en el sistema de archivos principal.
             </p>
             <p>
                 Las rutas absolutas se caracterizan por empezar <b>siempre</b> desde la raíz, es decir la <code>/</code>, y contener todos los directorios que hay desde la raíz hasta el archivo o directorio que queremos indicar, sólo es posible escribir de una forma una ruta absoluta. Todas las rutas siguientes son rutas absolutas por que empiezan desde la raíz. Algunos ejemplos serían:
@@ -143,25 +143,24 @@
                         <b>Archivos ordinarios: </b>Contienen la información con la que trabaja cada usuario.</li>
                     <br>
                     <li>
-                        <b>Enlaces físicos o duros (hard links): </b>No es específicamente una clase de archivo sino un segundo
-                        nombre que se le da a un archivo. Supón que dos usuarios necesitan compartir información de un mismo
-                        archivo. Si cada uno tuviera una copia del archivo se soluciona el problema, pero las modificaciones
-                        que realice un usuario no las vería el otro. Sin embargo, si creamos un enlace duro al archivo para
-                        cada usuario cada vez que uno de ellos modifique cualquier cosa en el archivo, el otro lo podrá ver
-                        puesto que realmente están viendo y modificando el mismo archivo. El enlace sirve para localizar
-                        el archivo en su ubicación actual, pero no es el archivo real, sino un segundo nombre que se le da.
-                        De esta forma, con tener un solo archivo real este se podrá utilizar por todos los usuarios que lo
-                        necesiten mediante estos enlaces duros sin necesidad de duplicar o triplicar el archivo.</li>
+                        <b>Enlaces físicos o duros (hard links): </b>Para lograr entender que es un enlace fisico, primero
+                        se debe comprender que es un inodo. Un <strong>inodo</strong> es una estructura de datos propia
+                        de los sistemas de archivos tradicionalmente empleados en los sistemas operativos tipo UNIX como es el
+                        caso de Linux. Un inodo contiene las características de un archivo regular, directorio, o cualquier otro
+                        objeto que pueda contener el sistema de ficheros.
+                        <img src="img/inodo.gif" alt="Imagen: Que es un inodo?"/>
+                        <br>
+                        Una vez comprendido esto, un <strong>enlace duro</strong> es un archivo que apunta al mismo contenido
+                        almacenado en disco que el archivo original. Por lo tanto los archivos originales y los enlaces duros
+                        dispondrán del mismo inodo y consecuentemente ambos estarán apuntando hacia el mismo contenido almacenado
+                        en el disco duro.
+                        <br>                                                                                                                                                                                                                                                                                                                                                                                                 <br>
+                        <img src="img/hard-links.gif" alt="Figura sobre un hardlink"/></li>
                     <br>
                     <li>
-                        <b>Enlaces simbólicos: </b>También se utilizan para asignar un segundo nombre a un archivo. La diferencia
-                        con los enlaces duros es que los simbólicos solamente hacen referencia al nombre del archivo original,
-                        mientras que los duros hacen referencia al inodo en el que están situados los datos del archivo original.
-                        De esta manera, si tenemos un enlace simbólico y borramos el archivo original perderemos los datos,
-                        mientras que si tenemos un enlace duro los datos no se borrarán hasta que se hayan borrado todos
-                        y cada uno de los enlaces duros que existen hacia esos datos en el sistema de ficheros. El conteo
-                        del número de enlaces duros que tiene un fichero se realiza, como ya vimos, en el inodo correspondiente
-                        a los datos del fichero.</li>
+                        <b>Enlaces simbólicos: </b>Los enlaces simbólicos apuntan al nombre de un archivo y posteriormente el archivo
+                        apunta a un contenido almacenado en el disco duro.</li>
+                        <img src="img/soft-link.jpg" alt="Figura sobre un softlink"/>
                     <br>
                     <li>
                         <b>Directorios: </b>Son archivos especiales que contienen referencias a otros archivos o directorios.</li>
@@ -349,7 +348,7 @@
                 Para representar del 0 al 7 necesitamos 3 bits, que son los 3 bits utilizados para dar permisos a propietario, grupo y al resto. Con un '1' damos permiso y con un '0' se lo quitamos. Va en el siguiente orden: <b>rwx</b>.
             </p>
             <img src="img/ugo-chmod.jpg" alt="chmod image">
-            
+
             <p>
                 A continuación, se especifican todas las combinaciones posibles de permisos (en casos particulares).
             </p>
@@ -422,37 +421,37 @@
                     <b>644:</b>
                     <ul>
                         <li><b>Propietario:</b> lectura y escritura.</li>
-                    </ul> 
+                    </ul>
                     <ul>
                         <li><b>Grupo:</b> lectura.</li>
-                    </ul> 
+                    </ul>
                     <ul>
                         <li><b>Otros:</b> lectura.</li>
-                    </ul> 
+                    </ul>
                 </li>
                 <li>
                     <b>754:</b>
                     <ul>
                         <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
-                    </ul> 
+                    </ul>
                     <ul>
                         <li><b>Grupo:</b>lectura y ejecución</li>
-                    </ul> 
+                    </ul>
                     <ul>
                         <li><b>Otros:</b> lectura.</li>
-                    </ul> 
+                    </ul>
                 </li>
                 <li>
                     <b>777:</b>
                     <ul>
                         <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
-                    </ul> 
+                    </ul>
                     <ul>
                         <li><b>Grupo:</b> lectura, escritura y ejecución.</li>
-                    </ul> 
+                    </ul>
                     <ul>
                         <li><b>Otros:</b> lectura, escritura y ejecución.</li>
-                    </ul> 
+                    </ul>
                 </li>
             </ol>
         </section>
@@ -488,7 +487,7 @@
                     <p>
                         Para poder añadir un usuario, indicando sus parametros de información utilizamos en la consola (terminal) el comando <strong>useradd</strong>. Su sintaxis es:
                     </p>
-                    <p> 
+                    <p>
                         <ul>
                                 <li>
                                     <code>useradd [opciones] nombre-usuario</code>
@@ -528,7 +527,7 @@
                 <section>
                     <h4>Modificación de usuarios.</h4>
                     <p>
-                        Para poder realizar modificaciones sobre los usuarios, se utiliza el comando <strong>usermod</strong>. Este permite hacer cambios al nombre, a la carpeta home asignada, a su interpretador de comandos asignado, sus grupos, entre otros.  
+                        Para poder realizar modificaciones sobre los usuarios, se utiliza el comando <strong>usermod</strong>. Este permite hacer cambios al nombre, a la carpeta home asignada, a su interpretador de comandos asignado, sus grupos, entre otros.
                     </p>
                     <p>
                         Por ejemplos, si se quisiera cambiar el nombre del usuario "pedro" a "obdulio" se realiza de la siguiente manera:
@@ -552,7 +551,7 @@
                 <section>
                     <h3>Grupos.</h3>
                     <p>
-                        Para que exista una administración flexible de los permisos de los usuarios, el sistema operativo Linux permite catalogar los usuarios a través de grupos y los permisos pueden ser asignados a un grupo. Por ejemplo, se cuenta con un grupo de instructores para una materia en específico, este grupo tiene acceso a ciertos archivos, al momento de incorporar a un nuevo instructor, solo se le asigna a la cuenta del instructor el grupo "instructores". 
+                        Para que exista una administración flexible de los permisos de los usuarios, el sistema operativo Linux permite catalogar los usuarios a través de grupos y los permisos pueden ser asignados a un grupo. Por ejemplo, se cuenta con un grupo de instructores para una materia en específico, este grupo tiene acceso a ciertos archivos, al momento de incorporar a un nuevo instructor, solo se le asigna a la cuenta del instructor el grupo "instructores".
                     </p>
                     <p>
                         Como se mencionó anteriormente, todos los usuarios deben pertenecer a un grupo principal o primario obligatoriamente, pero puede pertenecer a otros grupos, a los cuales se les considera secundarios. Todos los grupos de usuarios sólo pueden contener varios usuarios, pero no pueden contener a otros grupos.
@@ -561,7 +560,7 @@
                         Cada grupo de usuario en el sistema Linux es identificado con un numero diferente. A esto se le conoce como <strong>identificador de grupo o gid (Group IDentifier).</strong>. El sistema, internamente realiza los trabajos bajo el gid y no bajo el nombre del grupo. Por lo general, cuando se crean los grupos, el sistema asigna un gid de "1000" en adelante, ya que los gid menores a "1000" están reservados para uso del sistema y sus grupos especiales.
                     </p>
                     <p>
-                        Por defecto en el sistema Linux, la información de los grupos se guarda en el archivo <code>/etc/group</code>, el cual puede ser visualizado por cualquier editor de texto. 
+                        Por defecto en el sistema Linux, la información de los grupos se guarda en el archivo <code>/etc/group</code>, el cual puede ser visualizado por cualquier editor de texto.
                     </p>
                 </section>
                 <section>
@@ -577,12 +576,12 @@
                         <ul>
                             <li><code>sudo groupadd alumnos</code></li>
                         </ul>
-                    </p> 
+                    </p>
                 </section>
                 <section>
                     <h4>Modificación de grupos.</h4>
                     <p>
-                        Los grupos también pueden ser modificados al igual que los usuarios. Para ellos, se hace uso del comando <strong>groupmod.</strong> Su sintaxis es: 
+                        Los grupos también pueden ser modificados al igual que los usuarios. Para ellos, se hace uso del comando <strong>groupmod.</strong> Su sintaxis es:
                         <ul>
                             <li><code>sudo groupmod [opción] nombre-grupo</code></li>
                         </ul>
@@ -666,7 +665,7 @@
                         Con el comando <strong>chgrp (CHange GRouP)</strong> se pude modificar al grupo propietario de un fichero.
                     </p>
                     <p>
-                        Para poder ejecutar este comando es necesario el uso de dos parámetros, el grupo que va a ser propietario y el objeto al que se le va a establecer la propiedad. Este comando, al igual que el comando chown, es independiente de chmod, por lo que si a un fichero se le asigna un nuevo grupo propietario, este nuevo grupo propietario conservará los permisos. 
+                        Para poder ejecutar este comando es necesario el uso de dos parámetros, el grupo que va a ser propietario y el objeto al que se le va a establecer la propiedad. Este comando, al igual que el comando chown, es independiente de chmod, por lo que si a un fichero se le asigna un nuevo grupo propietario, este nuevo grupo propietario conservará los permisos.
                     </p>
                     <p>
                         Este comando está restringido, solo lo pueden usar los usuarios de forma limitada. Un usuario puede cambiar el grupo de un fichero si forma parte del nuevo grupo propietario.
