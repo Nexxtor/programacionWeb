@@ -34,9 +34,9 @@
         <p>
             Dentro de la etiqueta <code>&lt;html&gt;</code> se coloca el <strong>encabezado</strong> con la etiqueta <code>&lt;head&gt;</code>, que contiene elementos que no son incluidos en el <em>contenido</em> del documento, pero son escenciales para los buscadores y el navegador. Es dentro de esta etiqueta en donde se coloca la meta-data (información sobre el documento), como es el título de la página.
         </p>
-        
+
         <p>
-            El título es una indicación del contenido de la página, este ayuda a buscadores y facilita la navegación si se tienen varias pestañas abiertas en el navegador. El título se coloca dentro de la etiqueta <code>&lt;title&gt;</code>, que a su vez está dentro de la etiqueta <code>&lt;head&gt;</code>. Es importante no omitir esta etiqueta, esta es el <em>nombre</em> del documento, el hacerlo daría una mala impresión a los visitantes de la página. ¿Confiaría en una página que no tiene siquiera un título? 
+            El título es una indicación del contenido de la página, este ayuda a buscadores y facilita la navegación si se tienen varias pestañas abiertas en el navegador. El título se coloca dentro de la etiqueta <code>&lt;title&gt;</code>, que a su vez está dentro de la etiqueta <code>&lt;head&gt;</code>. Es importante no omitir esta etiqueta, esta es el <em>nombre</em> del documento, el hacerlo daría una mala impresión a los visitantes de la página. ¿Confiaría en una página que no tiene siquiera un título?
         </p>
 
         <p>
@@ -63,23 +63,106 @@
 
             <figcaption>
                     Photo by Hello I'm Nik on Unsplash
-            </figcaption> 
+            </figcaption>
         </figure>
 
         <p>
             En este caso la etiqueta <code>img</code> fué modificada con el atributo <code>src</code>, lo que le indica al navegador que obtenga la información de la imagen desde: <a href="https://unsplash.com/photos/SNOBlDeV5cU">https://unsplash.com/photos/SNOBlDeV5cU</a>
         </p>
-        
+
 
     </section>
+
+    <section>
+        <h2>Listas</h2>
+          <p>A continuacion se daran a conocer tres tipos de listas:</p>
+            <h3>Listas Ordenadas</h3>
+              <p>
+              Las listas ordenadas van enmarcadas dentro de las etiquetas <code>&lt;ol&gt;</code> <code>&lt;/ol&gt;</code>. Cada punto de
+              la lista se escribe dentro las etiquetas:<code> &lt;li&gt;</code> <code> &lt;/li&gt;</code>. Pero al ser listas ordenadas los
+              símbolos serán números (por defecto) y éstos se irán generando automáticamente por orden, conforme se agregen mas elementos a
+              la lista. Ejemplo:
+              </p>
+              <figure>
+                <img src="img/lista-ordenada.png" alt="codigo html de una lista ordenada numericamente">
+                <figcaption>
+                  Ejemplo de una lista ordenada
+                </figcaption>
+              </figure>
+              <p>
+                Mientras que en el navegador se vera asi:
+              </p>
+              <figure>
+                <img src="img/lista-ordenada-browser.png" alt="Una lista ordenada numericamente">
+                <figcaption>
+                  Lista ordenada vista en un navegador
+                </figcaption>
+              </figure>
+            <h3>Listas no ordenadas</h3>
+              <p>
+                Las listas no ordenadas van dentro de la etiqueta <code>&lt;ul&gt;</code> y de su cierre <code>&lt;/ul&gt;</code>.
+                Cada punto que queramos añadir a la lista, lo haremos dentro de la etiqueta <code>&lt;li&gt;</code> y su cierre <code>&lt;/li&gt;</code>.
+                La caracteristica principal es que los elementos de la lista se van marcando por simbolos.
+                Ejemplo:
+              </p>
+              <figure>
+                <img src="img/lista-no-ordenada-html.png" alt="codigo html de una lista no ordenada">
+                <figcaption>
+                  Ejemplo de una lista no ordenada
+                </figcaption>
+              </figure>
+              <p>
+                Mientras que en el navegador se vera asi:
+              </p>
+              <figure>
+                <img src="img/lista-no-ordenada-browser.png" alt="Una lista no ordenada">
+                <figcaption>
+                  Lista no ordenada vista en un navegador
+                </figcaption>
+              </figure>
+            <h3>Listas de definiciones</h3>
+              <p>
+                Si se necesita trabajar en una lista de definiciones, se pueden usar las etiquetas<code> &lt;dl&gt;, &lt;dt&gt; y &lt;dd&gt;</code>.
+                A continuacion se explicaran cada una de estas:
+              </p>
+              <p>
+                La etiqueta <code>&lt;dl&gt;</code> viene de los términos <i>Definiton list</i> e indica que dentro de ella va
+                a ir una definición.
+              </p>
+              <p>
+                La etiqueta <code>&lt;dt&gt;</code> viene de los términos <i>Definition term</i> y dentro de ella irá el término que sera definido.
+              </p>
+              <p>
+                Finalmente, la etiqueta <code>&lt;dd&gt;</code> viene de los términos <i>Definition description</i> e indica que dentro de ésta
+                irá la definición.
+              </p>
+              <figure>
+                <img src="img/lista-definicion-html.png" alt="Ejemplo de lista de definiciones">
+                <figcaption>
+                  Ejemplo de lista de definiciones
+                </figcaption>
+              </figure>
+              <p>
+                El listado de definiciones se vera en el navegador asi:
+              </p>
+              <figure>
+                <img src="img/definiciones-browser.png" alt="Una lista de deficiones de kiwi y electron">
+                <figcaption>
+                  Lista de definiciones vista en un navegador
+                </figcaption>
+              </figure>
+
+
+    </section>
+
     <section>
         <h2>Etiquetas a utilizar:</h2>
         <dl>
-            <dt><code><b>&lt;h1&gt;</b></code>:</dt> 
-                <dd>Es una etiqueta de encabezado que implementan seis niveles de encabezado del documento, <code>&lt;h1&gt;</code> es el más importante, y <code>&lt;h6&gt;</code>, el menos importante.</dd> 
-            <dt><code><b>&lt;p&gt;</b></code>:</dt> 
+            <dt><code><b>&lt;h1&gt;</b></code>:</dt>
+                <dd>Es una etiqueta de encabezado que implementan seis niveles de encabezado del documento, <code>&lt;h1&gt;</code> es el más importante, y <code>&lt;h6&gt;</code>, el menos importante.</dd>
+            <dt><code><b>&lt;p&gt;</b></code>:</dt>
                 <dd>El elemento p (párrafo) es el apropiado para distribuir el texto en párrafos.</dd>
-            <dt><code><b>&lt;img&gt;</b></code>:</dt> 
+            <dt><code><b>&lt;img&gt;</b></code>:</dt>
                 <dd>Representa una imagen en el documento.</dd>
             <dt><code><b>&lt;b&gt;</b></code>:</dt>
                 <dd>Indica que el texto debe ser representado con una variable bold, o negrita, de la tipografía que se esté usando.</dd>
