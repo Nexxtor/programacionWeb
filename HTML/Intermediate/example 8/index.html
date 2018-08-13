@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intermediate HTML | Forms </title>
+</head>
+<body>
+    <h1>Basic Forms</h1>
+    <form action="index.html" method="GET">
+
+        <fieldset>
+            <legend>Información Personal</legend>
+        
+            <label for="name">Firts Name</label>
+            <input type="text" name="name" id="name">
+
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname">
+        
+            <label for="tel">Number Phone</label>
+            <input type="tel" name="tel" id="tel">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+
+            <label for="favColor">Favorite Color</label>
+            <input type="color" name="favColor" id="favColor">
+
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday" id="birthday">
+
+            <fieldset>
+                <legend>Gender</legend>
+                <label> 
+                    <input type="radio" name="gender" value="m">
+                    Male
+                </label>
+                
+                <label>
+                    <input type="radio" name="gender" value="f">
+                    Female
+                </label>
+            </fieldset>
+
+        </fieldset>
+    
+        <fieldset>
+            <legend>Security</legend>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Write your password">
+
+                <label for="password">Confirm Password</label>
+                <input type="password" name="password" id="password" placeholder="Repeat Password">
+            </div>
+            <div>
+                <label for="pet-select">Choose a pet:</label>
+
+                <select id="pet-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="parrot">Parrot</option>
+                    <option value="spider">Spider</option>
+                    <option value="goldfish">Goldfish</option>
+                </select>
+
+                <label for="securityQuestion">Select security question</label> 
+                
+                <select name="securityQuestion" id="securityQuestion">
+                    <option value="not">Not Use</option>
+                    <optgroup label="Personal">
+                        <option value="fear">What is your worst fear</option>
+                        <option value="firtsLove">What is the name of your first love</option>
+                    </optgroup>
+                    <optgroup label="Random">
+                        <option value="politics">Who is the worst politician</option>
+                        <option value="what">What?</option>
+                    </optgroup>
+                </select>
+            </div>
+        </fieldset>
+
+        <input type="submit" value="Sing In">
+        <label>
+            <input type="checkbox" name="notification" id="notification">
+            Deseo recibir noticias por correo electronico
+        </label>        
+        
+    </form>
+</body>
+</html>
