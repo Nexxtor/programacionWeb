@@ -182,7 +182,7 @@
         <section id="Archivos">
             <h2>Manipulación de archivos</h2>
             <p>Linux dispone de una seria de comandos para el manejo de archivos por medio de consola. Esto nos permite terner
-                una mayor control sobre ellos, puesto que podemos realizar operaciones mas complejas.</p>
+                una mayor control sobre ellos, puesto que podemos realizar operaciones básicas como crear, copiar, mover, entre otros.</p>
             <table border="1">
                 <thead>
                     <tr>
@@ -194,20 +194,6 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>cat</td>
-                        <td>Contatena varios archivos, para mostrarlos en pantalla.</td>
-                        <td>cat -argumentos ficheros</td>
-                        <td>
-                            <b>-n</b>: numerea el n&uacute;mero l&iacute;eas mostradas
-                            <br>
-                            <br>
-                            <b>-b</b>: numerea el n&uacute;mero l&iacute;eas mostradas, pero no muestra las vacias.
-                            <br>
-                            <br>
-                            <b>-s</b>: Elimina las lineas vacias seguidas, y las hace una sola.
-                        </td>
-                    </tr>
-                    <tr>
                         <td>touch</td>
                         <td>Crea un archivo vac&iacute;o, si este exite actualiza la hora de modificaci&oacute;n</td>
                         <td>touch archivo</td>
@@ -217,7 +203,7 @@
                         <td>cp</td>
                         <td>Permite copiar un archivo a otro directorio</td>
                         <td>
-                            cp archivo_origen directorio_destino
+                            cp &lt;archivo_origen&gt; &lt;directorio_destino&gt;
                         </td>
                         <td>
                             <b>-d</b>: copia enlaces simbolicos.
@@ -367,16 +353,25 @@
             <h2>Cambio de permisos de archivos en GNU LINUX.</h2>
 
             <p>
-                En Linux, los archivos y ficheros utilizan permisos, los cuales pueden ser configurados o cambiados por el creador del del mismo, para impedir a otros usuarios de la red o del equipo, ver, ejecutar o escribir en este.
+                En Linux, los archivos y ficheros utilizan permisos, los cuales pueden ser configurados o
+                cambiados por el creador del del mismo, para impedir a otros usuarios de la red o del equipo, ver, 
+                ejecutar o escribir en este.
             </p>
             <p>
-                Como vimos anteriormente, los permisos que podemos cambiar o configurar en Linux son los siguientes: <i>Lectura</i> (r) el cual nos permitirá leer algún archivo o fichero, <i>Escritura</i> (w) que modifica un archivo o fichero y <i>Ejecución</i> (x) que ejecuta cualquier programa creado por un usuario.
+                Como vimos anteriormente, los permisos que podemos cambiar o configurar en Linux son los siguientes: 
+                <i>Lectura</i> (r) el cual nos permitirá leer algún archivo o fichero, 
+                <i>Escritura</i> (w) que modifica un archivo o fichero y <i>Ejecución</i> 
+                (x) que ejecuta cualquier programa creado por un usuario.
             </p>
             <p>
-                Para el cambio de permisos nos apoyaremos con el uso del comando chmod, el cual posee una sintaxis de la siguiente forma: <code>chmod ugo nombre_del_fichero</code>
+                Para el cambio de permisos nos apoyaremos con el uso del comando chmod, 
+                el cual posee una sintaxis de la siguiente forma: <code>chmod ugo nombre_del_fichero</code>
             </p>
             <p>
-                La parte de “<b><i>ugo</i></b>” del commando representa un numero en formato decimal que hace referencia a los permisos en sí. La letra U representa los permisos del usuario administrador, la letra G los del grupo al que pertenece, y la O a cualquier otro usuario no registrado en el grupo.
+                La parte de “<b><i>ugo</i></b>” del commando representa un numero en 
+                formato decimal que hace referencia a los permisos en sí. La letra U 
+                representa los permisos del usuario administrador, la letra G los del grupo al que 
+                pertenece, y la O a cualquier otro usuario no registrado en el grupo.
             </p>
             <p>
                 Serán 3 números que van del 0 al 7:
@@ -387,7 +382,9 @@
                 <li><b>Tercer número</b>: permisos para el resto.</li>
             </ul>
             <p>
-                Para representar del 0 al 7 necesitamos 3 bits, que son los 3 bits utilizados para dar permisos a propietario, grupo y al resto. Con un '1' damos permiso y con un '0' se lo quitamos. Va en el siguiente orden: <b>rwx</b>.
+                Para representar del 0 al 7 necesitamos 3 bits, que son los 3 bits utilizados para dar 
+                permisos a propietario, grupo y al resto. Con un '1' damos permiso y con un '0' se lo quitamos. 
+                Va en el siguiente orden: <b>rwx</b>.
             </p>
             <img src="img/ugo-chmod.jpg" alt="chmod image">
 
