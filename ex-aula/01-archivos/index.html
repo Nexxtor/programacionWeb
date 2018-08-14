@@ -302,207 +302,6 @@
                 </tbody>
             </table>
         </section>
-
-        <section id="Permisos">
-            <h2>Permisos</h2>
-            <p>
-                Los permisos definen, de una manera simple y efectiva, reglas de acceso en lectura (r), escritura (w) o ejecución (x) a determinados archivos (si éstos no son ejecutables, el de ejecución no procede al igual que ocurre con las carpetas o directorios).
-            </p>
-            <p>
-                En un sistema Unix todos los archivos pertenecen obligatoriamente a un usuario y a un grupo. Al momento que un usuario crea un nuevo archivo, el propietario es el usuario creador y el grupo del archivo será el grupo principal del mismo usuario.
-            </p>
-            <p>
-                En la consola al utilizar el comando<code>ls –l</code>(formato largo), Se puede visualizar el usuario propietario y el grupo propietario del archivo.
-            </p>
-            <section>
-                <h3>Tipo de permisos.</h3>
-                <p>
-                    En los sistemas Unix, la gestión de los permisos que los usuarios y los grupos de usuarios tienen sobre los archivos y las carpetas, se realiza mediante un sencillos esquema de tres tipos de permisos:
-                </p>
-                <ul>
-                    <li>Permisos de lectura</li>
-                    <li>Permisos de escritura</li>
-                    <li>Permisos de ejecución</li>
-                </ul>
-            </section>
-            <section>
-                <h4>Permisos de lectura.</h4>
-                <p>
-                    Cuando un usuario tiene permiso de lectura de un archivo significa que puede leerlo o visualizarlo, bien sea con una aplicación o mediante comandos. Ejemplo, si tenemos permiso de lectura sobre el archivo<strong>labo.txt</strong>, significa que podemos ver el contenido del archivo. Si el usuario no tiene permiso de lectura, no podrá ver el contenido del archivo.
-                </p>
-                <p>
-                    El permiso de lectura se simboliza con la letra<strong>'r'</strong> del inglés<strong>'read'</strong>.
-                </p>
-                <img src="img/permiso-lectura.png"/>
-            </section>
-            <section>
-                <h4>Permiso de escritura.</h4>
-                <p>
-                    Cuando un usuario tiene permiso de escritura sobre un archivo significa que puede modificar su contenido, e incluso borrarlo. También le da derecho a cambiar los permisos del archivo mediante el comando<code>chmod</code> así como cambiar su propietario y el grupo propietario mediante el comando<code>chown</code>. Si el usuario no tiene permiso de escritura, no podrá modificar el contenido del archivo.
-                </p>
-                <p>
-                    El permiso de escritura se simboliza con la letra<strong>'w'</strong> del inglés<strong>'write'</strong>.
-                </p>
-                <img src="img/permiso-escritura.png"/>
-            </section>
-            <section>
-                <h4>Permiso de ejecución.</h4>
-                <p>
-                        Los permisos de ejecución se utilizan principalmente en aplicaciones y scripts. Si dispones de permisos puedes ejecutar la aplicación/script.
-                </p>
-                <p>
-                    El permiso de ejecución se simboliza con la letra <strong>'x'</strong> del inglés <strong>'eXecute'</strong>.
-                </p>
-                <img src="img/permiso-ejecucion.png"/>
-            </section>
-
-        </section>
-        <section id="Cambio-Permisos">
-            <h2>Cambio de permisos de archivos en GNU LINUX.</h2>
-
-            <p>
-                En Linux, los archivos y ficheros utilizan permisos, los cuales pueden ser configurados o
-                cambiados por el creador del del mismo, para impedir a otros usuarios de la red o del equipo, ver, 
-                ejecutar o escribir en este.
-            </p>
-            <p>
-                Como vimos anteriormente, los permisos que podemos cambiar o configurar en Linux son los siguientes: 
-                <i>Lectura</i> (r) el cual nos permitirá leer algún archivo o fichero, 
-                <i>Escritura</i> (w) que modifica un archivo o fichero y <i>Ejecución</i> 
-                (x) que ejecuta cualquier programa creado por un usuario.
-            </p>
-            <p>
-                Para el cambio de permisos nos apoyaremos con el uso del comando chmod, 
-                el cual posee una sintaxis de la siguiente forma: <code>chmod ugo nombre_del_fichero</code>
-            </p>
-            <p>
-                La parte de “<b><i>ugo</i></b>” del commando representa un numero en 
-                formato decimal que hace referencia a los permisos en sí. La letra U 
-                representa los permisos del usuario administrador, la letra G los del grupo al que 
-                pertenece, y la O a cualquier otro usuario no registrado en el grupo.
-            </p>
-            <p>
-                Serán 3 números que van del 0 al 7:
-            </p>
-            <ul>
-                <li><b>Primer número</b>: permisos de propietario.</li>
-                <li><b>Segundo número</b>: permisos de grupo.</li>
-                <li><b>Tercer número</b>: permisos para el resto.</li>
-            </ul>
-            <p>
-                Para representar del 0 al 7 necesitamos 3 bits, que son los 3 bits utilizados para dar 
-                permisos a propietario, grupo y al resto. Con un '1' damos permiso y con un '0' se lo quitamos. 
-                Va en el siguiente orden: <b>rwx</b>.
-            </p>
-            <img src="img/ugo-chmod.jpg" alt="chmod image">
-
-            <p>
-                A continuación, se especifican todas las combinaciones posibles de permisos (en casos particulares).
-            </p>
-
-            <table border="i">
-                <thead>
-                    <tr>
-                        <th>Binario</th>
-                        <th>Decimal</th>
-                        <th>Permiso</th>
-                        <th>Descripción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>000</td>
-                        <td>0</td>
-                        <td>---</td>
-                        <td>Ninguno</td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>1</td>
-                        <td>--x</td>
-                        <td>Ejecución</td>
-                    </tr>
-                    <tr>
-                        <td>010</td>
-                        <td>2</td>
-                        <td>-w-</td>
-                        <td>Escritura</td>
-                    </tr>
-                    <tr>
-                        <td>011</td>
-                        <td>3</td>
-                        <td>-wx</td>
-                        <td>Escritura y Ejecución</td>
-                    </tr>
-                    <tr>
-                        <td>100</td>
-                        <td>4</td>
-                        <td>r--</td>
-                        <td>Lectura</td>
-                    </tr>
-                    <tr>
-                        <td>101</td>
-                        <td>5</td>
-                        <td>r-x</td>
-                        <td>Lectura y Ejecución</td>
-                    </tr>
-                    <tr>
-                        <td>110</td>
-                        <td>6</td>
-                        <td>rw-</td>
-                        <td>Lectura y Escritura</td>
-                    </tr>
-                    <tr>
-                        <td>111</td>
-                        <td>7</td>
-                        <td>rwx</td>
-                        <td>Lectura, Escritura y Ejecución</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                    Algunos ejemplos de aplicación:
-            </p>
-            <ol>
-                <li>
-                    <b>644:</b>
-                    <ul>
-                        <li><b>Propietario:</b> lectura y escritura.</li>
-                    </ul>
-                    <ul>
-                        <li><b>Grupo:</b> lectura.</li>
-                    </ul>
-                    <ul>
-                        <li><b>Otros:</b> lectura.</li>
-                    </ul>
-                </li>
-                <li>
-                    <b>754:</b>
-                    <ul>
-                        <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
-                    </ul>
-                    <ul>
-                        <li><b>Grupo:</b>lectura y ejecución</li>
-                    </ul>
-                    <ul>
-                        <li><b>Otros:</b> lectura.</li>
-                    </ul>
-                </li>
-                <li>
-                    <b>777:</b>
-                    <ul>
-                        <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
-                    </ul>
-                    <ul>
-                        <li><b>Grupo:</b> lectura, escritura y ejecución.</li>
-                    </ul>
-                    <ul>
-                        <li><b>Otros:</b> lectura, escritura y ejecución.</li>
-                    </ul>
-                </li>
-            </ol>
-        </section>
-
         <section id="Grupos">
                 <h2>Usuarios y grupos</h2>
                 <p>
@@ -724,7 +523,207 @@
                             </ul>
                         </p>
                 </section>
+        </section>
+        <section id="Permisos">
+            <h2>Permisos</h2>
+            <p>
+                En Linux, los archivos y ficheros utilizan permisos, los cuales pueden ser configurados o
+                cambiados por el creador del del mismo, para impedir a otros usuarios de la red o del equipo, ver, 
+                ejecutar o escribir en este.
+            </p>
+            <p>
+                Los permisos definen, de una manera simple y efectiva, reglas de acceso en lectura (r), escritura (w) o ejecución (x) a determinados archivos.
+            </p>
+            <p>
+                En un sistema Unix todos los archivos pertenecen obligatoriamente a un usuario y a un grupo. Al momento que un usuario crea un nuevo archivo, el propietario es el usuario creador y el grupo del archivo será el grupo principal del mismo usuario.
+            </p>
+            <p>
+                En la consola al utilizar el comando<code>ls –l</code>(formato largo), Se puede visualizar el usuario propietario y el grupo propietario del archivo.
+            </p>
+            <section>
+                <h3>Tipo de permisos.</h3>
+                <p>
+                    En los sistemas Unix, la gestión de los permisos que los usuarios y los grupos de usuarios tienen sobre los archivos y las carpetas, se realiza mediante un sencillos esquema de tres tipos de permisos:
+                </p>
+                <ul>
+                    <li>Permisos de lectura</li>
+                    <li>Permisos de escritura</li>
+                    <li>Permisos de ejecución</li>
+                </ul>
             </section>
+            <section>
+                <h4>Permisos de lectura.</h4>
+                <p>
+                    Cuando un usuario tiene permiso de lectura de un archivo significa que puede leerlo o visualizarlo, bien sea con una aplicación o mediante comandos. Ejemplo, si tenemos permiso de lectura sobre el archivo<strong>labo.txt</strong>, significa que podemos ver el contenido del archivo. Si el usuario no tiene permiso de lectura, no podrá ver el contenido del archivo.
+                </p>
+                <p>
+                    El permiso de lectura se simboliza con la letra<strong>'r'</strong> del inglés<strong>'read'</strong>.
+                </p>
+                <img src="img/permiso-lectura.png"/>
+            </section>
+            <section>
+                <h4>Permiso de escritura.</h4>
+                <p>
+                    Cuando un usuario tiene permiso de escritura sobre un archivo significa que puede modificar su contenido, e incluso borrarlo. También le da derecho a cambiar los permisos del archivo mediante el comando<code>chmod</code> así como cambiar su propietario y el grupo propietario mediante el comando<code>chown</code>. Si el usuario no tiene permiso de escritura, no podrá modificar el contenido del archivo.
+                </p>
+                <p>
+                    El permiso de escritura se simboliza con la letra<strong>'w'</strong> del inglés<strong>'write'</strong>.
+                </p>
+                <img src="img/permiso-escritura.png"/>
+            </section>
+            <section>
+                <h4>Permiso de ejecución.</h4>
+                <p>
+                        Los permisos de ejecución se utilizan principalmente en aplicaciones y scripts. Si dispones de permisos puedes ejecutar la aplicación/script.
+                </p>
+                <p>
+                    El permiso de ejecución se simboliza con la letra <strong>'x'</strong> del inglés <strong>'eXecute'</strong>.
+                </p>
+                <img src="img/permiso-ejecucion.png"/>
+            </section>
+
+        </section>
+        <section id="Cambio-Permisos">
+            <h2>Cambio de permisos de archivos en GNU LINUX.</h2>
+            <p>
+                Como vimos anteriormente, los permisos que podemos cambiar o configurar en Linux son los siguientes: 
+                <i>Lectura</i> (r) el cual nos permitirá leer algún archivo o fichero, 
+                <i>Escritura</i> (w) que modifica un archivo o fichero y <i>Ejecución</i> 
+                (x) que ejecuta cualquier programa creado por un usuario.
+            </p>
+            <p>
+                Para el cambio de permisos nos apoyaremos con el uso del comando chmod, 
+                el cual posee una sintaxis de la siguiente forma: <code>chmod ugo nombre_del_fichero</code>
+            </p>
+            <p>
+                La parte de “<b><i>ugo</i></b>” del commando representa un numero en 
+                formato decimal que hace referencia a los permisos en sí. La letra U 
+                representa los permisos del usuario administrador, la letra G los del grupo al que 
+                pertenece, y la O a cualquier otro usuario no registrado en el grupo.
+            </p>
+            <p>
+                Serán 3 números que van del 0 al 7:
+            </p>
+            <ul>
+                <li><b>Primer número</b>: permisos de propietario.</li>
+                <li><b>Segundo número</b>: permisos de grupo.</li>
+                <li><b>Tercer número</b>: permisos para el resto.</li>
+            </ul>
+            <p>
+                Para representar del 0 al 7 necesitamos 3 bits, que son los 3 bits utilizados para dar 
+                permisos a propietario, grupo y al resto. Con un '1' damos permiso y con un '0' se lo quitamos. 
+                Va en el siguiente orden: <b>rwx</b>.
+            </p>
+            <img src="img/ugo-chmod.jpg" alt="chmod image">
+
+            <p>
+                A continuación, se especifican todas las combinaciones posibles de permisos (en casos particulares).
+            </p>
+
+            <table border="i">
+                <thead>
+                    <tr>
+                        <th>Binario</th>
+                        <th>Decimal</th>
+                        <th>Permiso</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>000</td>
+                        <td>0</td>
+                        <td>---</td>
+                        <td>Ninguno</td>
+                    </tr>
+                    <tr>
+                        <td>001</td>
+                        <td>1</td>
+                        <td>--x</td>
+                        <td>Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>010</td>
+                        <td>2</td>
+                        <td>-w-</td>
+                        <td>Escritura</td>
+                    </tr>
+                    <tr>
+                        <td>011</td>
+                        <td>3</td>
+                        <td>-wx</td>
+                        <td>Escritura y Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>4</td>
+                        <td>r--</td>
+                        <td>Lectura</td>
+                    </tr>
+                    <tr>
+                        <td>101</td>
+                        <td>5</td>
+                        <td>r-x</td>
+                        <td>Lectura y Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td>6</td>
+                        <td>rw-</td>
+                        <td>Lectura y Escritura</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>7</td>
+                        <td>rwx</td>
+                        <td>Lectura, Escritura y Ejecución</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                    Algunos ejemplos de aplicación:
+            </p>
+            <ol>
+                <li>
+                    <b>644:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura y escritura.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Grupo:</b> lectura.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Otros:</b> lectura.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>754:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Grupo:</b>lectura y ejecución</li>
+                    </ul>
+                    <ul>
+                        <li><b>Otros:</b> lectura.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>777:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Grupo:</b> lectura, escritura y ejecución.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Otros:</b> lectura, escritura y ejecución.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        
 
             <section id="Ejercicios">
                 <h2>Ejercicios</h2>
@@ -753,7 +752,6 @@
                     </li><br>
                 </ol>
             </section>
-
         <nav id="Referencias">
             <h2>Referencias</h2>
 
