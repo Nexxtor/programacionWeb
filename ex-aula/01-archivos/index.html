@@ -15,7 +15,7 @@
         <h1>Uso de archivos en Ubuntu</h1>
         <!-- Propósito -->
         <p>
-            La presente es un guía ex-aula acerca del uso de archivos en el sistema operativo linux. El objetivo de esta es resolver de antemano algunas de las dudas que puedan surgir respecto al tema durante el desarrollo del curso.
+            La presente es un guía ex-aula acerca del uso de archivos en el sistema operativo Linux. El objetivo de esta es resolver de antemano algunas de las dudas que puedan surgir respecto al tema durante el desarrollo del curso de Programación Web.
         </p>
 
     </header>
@@ -82,7 +82,7 @@
                 <dd>Indica el programa utilizado para acceder al contenido del archivo.</dd>
 
                 <dt><b>Fecha de modificación</b></dt>
-                <dd>Es la última fecha en que el archivo fué modificado o creado.</dd>
+                <dd>Es la última fecha en que el archivo fue modificado o creado.</dd>
             </dl>
 
         </section>
@@ -95,24 +95,25 @@
             </p>
 
             <p>
-                En sistemas operativos linux se agrega el <strong>tipo de archivo</strong> <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> al inicio de este, de manera que la extensión no es necesaria sin embargo, la extensión es utilizada como ayuda al usuario para identificar el tipo de archivo. Si el tipo de archivo no está claro la extensión es utilizada para determinar el tipo de archivo, lo que puede ocurrir si se transfieren archivos desde un sistema operativo Windows a otro Linux.
+                En sistemas operativos Linux se agrega el <strong>tipo de archivo</strong> <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> al inicio de este, de manera que la extensión no es necesaria, sin embargo la extensión es utilizada como ayuda al usuario para identificar el tipo de archivo. 
+                Si el tipo de archivo no está claro la extensión es utilizada para determinarlo.Esto púede ocurrir cuando se transfieren archivos desde un sistema operativo Windows a Linux.
             </p>
 
             <p>
-                Sistemas operativos Windows se basan únicamente en la extensión para saber el tipo de archivo y para evitar que usuarios modifiquen esta extensión oculta las extensiones de archivos de manera predeterminada, sin embargo, es posible cambiar esto. Si se utiliza un sistema Windows se debe tener especial cuidado al crear o renombrar un archivo. Es común que no se pueda acceder a un archivo debido a que este posee una extensión incorrecta o no posea ninguna.
+                Los sistemas operativos Windows se basan únicamente en la extensión para saber el tipo de archivo; para evitar que usuarios modifiquen esta extensión, Windows oculta las extensiones de archivos de manera predeterminada. Esta opción puede ser cambiada en la configuración de usuario. Si se utiliza un sistema Windows se debe tener especial cuidado al crear o renombrar un archivo. Es común que no se pueda acceder a un archivo debido a que este posee una extensión incorrecta o no posea ninguna.
             </p>
         </section>
 
         <section id="Rutas">
             <h2>Rutas</h2>
             <p>
-                Cuando se trabaja con comandos es habitual tener que pasar como parámetros archivos o directorios.  Para indicar un archivo o directorio se utiliza la ruta o path, que puede ser absoluta o relativa
+                Cuando se trabaja con comandos es habitual tener que pasar como parámetros archivos o directorios.  Para indicar un archivo o directorio se utiliza la ruta o <i lang="en">path</i>, que puede ser absoluta o relativa
             </p>
             <p>
-                A diferencia de Windows, Linux no tiene unidades, así que os podéis olvidar de A:\, C:\, D:\ y todas las letras del alfabeto. En Linux hay un sistema de archivos principal que es la raíz y se representa por el carácter /. El resto de particiones, pendrives, discos duros, unidades de cd, unidades de dvd y cualquier otra cosa que contenga un sistema de archivos, cuelga de algún directorio que esté en el sistema de archivos principal.
+                A diferencia de Windows, Linux no tiene unidades, así que no es necesario utilizar identificadores como A:\, C:\, D:\ y todas las letras del alfabeto. El sistema de archivos en Linux funciona con nodos, y cada nodo representa un archivo; el nodo principal puede ser accedido con el caracter /. El resto de particiones, discos duros, unidades de cd, unidades de dvd y cualquier otra cosa que contenga un sistema de archivos, se deben acceder desde directorio pŕincipal cono si fuese un archivo normal.
             </p>
             <p>
-                Las rutas absolutas se caracterizan por empezar <b>siempre</b> desde la raíz, es decir la <code>/</code>, y contener todos los directorios que hay desde la raíz hasta el archivo o directorio que queremos indicar, sólo es posible escribir de una forma una ruta absoluta. Todas las rutas siguientes son rutas absolutas por que empiezan desde la raíz. Algunos ejemplos serían:
+                Las rutas absolutas se caracterizan por empezar <b>siempre</b> desde la raíz, es decir la <code>/</code>, y contener todos los directorios que hay desde la raíz hasta el archivo o directorio que queremos indicar, sólo es posible escribir de una forma una ruta absoluta. Todas las rutas siguientes son rutas absolutas:
             </p>
             <ul>
                 <li><code>/home/DHdezT/Desktop</code></li>
@@ -120,16 +121,18 @@
                 <li><code>/home/DHdezT/Images/Foto-clan.jpg</code></li>
             </ul>
             <p>
-                Cuando tienen la / al final significa que la ruta es de un directorio, aunque no es necesaria la /. Cuando la ruta es de un archivo NUNCA se pone la / al final.
+                Cuando el cararter / aparece al final significa que se está accediendo a un direcctorio, pero puede omitirse.
             </p>
             <p>
-                En cambio las rutas relativas <b>nunca</b> empiezan por la / y puede haber varias rutas relativas para el mismo archivo o directorio que queremos indicar. Esto es así por que la ruta relativa depende del directorio en el que se esté trabajando. Por ejemplo si estamos en el mismo directorio que el archivo Foto-clan.jpg, la ruta relativa es simplemente el nombre del archivo:
+                En cambio las rutas relativas <b>nunca</b> empiezan por el caracter / y puede haber varias rutas relativas para el mismo archivo o directorio al que se quiere acceder. Esto es así por que la ruta relativa depende del directorio en el que se está trabajando. 
+                Por ejemplo,si el directorio Imagenes contiene el archivo Foto-clan.jpg,se puede acceder a este archivo con diferentes rutas relativas de acuerdo con las siguientes situaciones:
+                Si nos encotramos en el directorio Imagenes, bastará con la siguiente ruta:
             </p>
             <ul>
                 <li><code>Foto-clan.jpg</code></li>
             </ul>
             <p>
-                En cambio, si nos encontramos dentro de la carpeta DHdezT del ejemplo de rutas absolutas; la ruta relativa para esta misma imagen sería:
+                En cambio, si nos encontramos dentro de la carpeta DHdezT que contiene la carpeta Imagenes; la ruta relativa para esta misma imagen sería:
             </p>
             <ul>
                 <li><code>Images/Foto-clan.jpg</code></li>
