@@ -153,7 +153,7 @@
                         se debe comprender que es un inodo. Un <strong>inodo</strong> es una estructura de datos propia
                         de los sistemas de archivos tradicionalmente empleados en los sistemas operativos tipo UNIX como es el
                         caso de Linux. Un inodo contiene las características de un archivo regular, directorio, o cualquier otro
-                        objeto que pueda contener el sistema de ficheros.
+                        objeto que pueda contener el sistema de ficheros.<br>
                         <img src="img/inodo.gif" alt="Imagen: Que es un inodo?"/>
                         <br>
                         Una vez comprendido esto, un <strong>enlace duro</strong> es un archivo que apunta al mismo contenido
@@ -164,12 +164,17 @@
                         <img src="img/hard-links.gif" alt="Figura sobre un hardlink"/></li>
                         <br>
                         <p>
-                            En la imagen se observa 
+                            En la imagen de arriba se puede observar como funciona un enlace duro. En el cual en el disco duro
+                            se encuentran los datos y 2 los enlaces duros apuntan hacia la informacion en el disco duro.
                         </p>
                     <li>
                         <b>Enlaces simbólicos: </b>Los enlaces simbólicos apuntan al nombre de un archivo y posteriormente el archivo
                         apunta a un contenido almacenado en el disco duro.</li>
                         <img src="img/soft-link.jpg" alt="Figura sobre un softlink"/>
+                        <p>
+                            En la imagen de arriba se puede observar como funciona un enlace simbólico.Se puede observar que 
+                            el enlace simbólico apunta hacia un enlace duro, lo que lo diferencia de los enlaces duros.
+                        </p>
                     <br>
                     <li>
                         <b>Directorios: </b>Son archivos especiales que contienen referencias a otros archivos o directorios.</li>
