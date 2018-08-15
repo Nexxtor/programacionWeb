@@ -72,8 +72,9 @@
                 <dt><b>Nombre</b></dt>
                 <dd>Su principal propósito es identificarlo de otros archivos y ayudar al usuario a conocer su contenido.</dd>
 
-                <dt><b>Extensión (opcional)</b></dt>
-                <dd>Es parte del nombre del archivo. Al final del nombre se coloca un punto seguido de unas pocas letras o números que definen la extensión.</dd>
+                <dt><b>Extensión</b></dt>
+                <dd>Es parte del nombre del archivo. Al final del nombre se coloca un punto seguido de unas pocas letras o números que definen la extensión.
+                  El uso de una extensiones es opcional en sistemas operativos basados en Unix.</dd>
 
                 <dt><b>Tamaño</b></dt>
                 <dd>Es el espacio que el archivo necesita para ser almacenado en el dispositivo.</dd>
@@ -95,7 +96,7 @@
             </p>
 
             <p>
-                En sistemas operativos Linux se agrega el <strong>tipo de archivo</strong> <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> al inicio de este, de manera que la extensión no es necesaria, sin embargo la extensión es utilizada como ayuda al usuario para identificar el tipo de archivo.
+                En sistemas operativos Linux se agrega el <strong>tipo de archivo</strong> <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> al inicio de este, de manera que la extensión no es necesaria, sin embargo, la extensión es utilizada como ayuda al usuario para identificar el tipo de archivo.
                 Si este no está claro la extensión es utilizada para determinarlo.Esto púede ocurrir cuando se transfieren archivos desde un sistema operativo Windows a Linux.
             </p>
 
@@ -110,7 +111,7 @@
                 Cuando se trabaja con comandos es habitual tener que pasar como parámetros archivos o directorios.  Para indicar alguno de estos se utiliza la ruta o <i lang="en">path</i>, que puede ser absoluta o relativa.
             </p>
             <p>
-                A diferencia de Windows, Linux no tiene unidades, así que no es necesario utilizar identificadores como A:\, C:\, D:\ ,etc. El sistema de archivos en Linux funciona con nodos, y cada nodo representa un archivo; el nodo principal puede ser accedido con el caracter /. El resto de particiones, discos duros, unidades de cd, unidades de dvd y cualquier otra cosa que contenga un sistema de archivos, se deben acceder desde directorio principal como si fuese un archivo normal.
+                A diferencia de Windows, Linux no tiene unidades, así que no es necesario utilizar identificadores como <code>A:\</code>,<code> C:\</code>, <code>D:\</code> ,etc. El sistema de archivos en Linux funciona con nodos, y cada nodo representa un archivo; el nodo principal puede ser accedido con el caracter /. El resto de particiones, discos duros, unidades de cd, unidades de dvd y cualquier otra cosa que contenga un sistema de archivos, se deben acceder desde directorio principal como si fuese un archivo normal.
             </p>
             <p>
                 Las rutas absolutas se caracterizan por empezar <b>siempre</b> desde la raíz, es decir la <code>/</code>, y contener todos los directorios que hay desde este hasta el archivo o directorio que queremos indicar; sólo es posible escribir de una forma una ruta absoluta. Todas las rutas siguientes son rutas absolutas:
@@ -124,7 +125,7 @@
                 Cuando el cararter / aparece al final significa que se está accediendo a un direcctorio, pero puede omitirse.
             </p>
             <p>
-                En cambio las rutas relativas <b>nunca</b> empiezan por el caracter / y puede haber varias rutas relativas para el mismo archivo o directorio al que se quiere acceder. Esto es así por que la ruta relativa depende del directorio en el que se está trabajando.
+                En cambio las rutas relativas <b>nunca</b> empiezan por el caracter / y puede haber varias rutas relativas para el mismo archivo o directorio al que se quiere acceder. Esto es así porque la ruta relativa depende del directorio en el que se está trabajando.
                 Por ejemplo,si el directorio Imagenes contiene el archivo Foto-clan.jpg,se puede acceder a este archivo con diferentes rutas relativas de acuerdo con las siguientes situaciones:
                 Si nos encotramos en el directorio Imagenes, bastará con la siguiente ruta:
             </p>
@@ -180,7 +181,7 @@
                     <br>
                     <li>
                         <b>Archivos especiales: </b>Suelen representar dispositivos físicos, como unidades de almacenamiento,
-                        impresoras, terminales, etc. En Linux, todo dispositivo físico que se conecte al ordenador está asociado
+                        impresoras, terminales, entre otros. En Linux, todo dispositivo físico que se conecte al ordenador está asociado
                         a un archivo. Linux trata los archivos especiales como archivos ordinarios.</li>
                 </ul>
             </p>
@@ -290,21 +291,13 @@
                             <b>.. </b>: navegacion un directorio atras.
                         </td>
                     </tr>
-                    <tr>
-                        <td>sudo</td>
-                        <td>Permite ejecutar un comando con privilegios elevados (generalmente como "<i>root</i>").</td>
-                        <td><i>sudo &lt;opción&gt;</i></td>
-                        <td>
-                            <b>su</b>: cambia a usuario root.
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </section>
         <section id="Grupos">
                 <h2>Usuarios y grupos</h2>
                 <p>
-                    El objetivo principal de el uso de usuarios y grupos en un sistema Linux, es permitir que múltiples usuarios hagan uso del sistema, pero de una manera ordenada y segura. De manera que ninguna de las tareas realizadas por cualquier usuario pueda poner en riesgo todo el sistema. A través de la gestión de usuarios y grupos, se establecen los mecanismos y políticas de seguridad para la protección de los datos de cada usuario, así como para asegurar y proteger el funcionamiento de todo el sistema.
+                    El objetivo principal de el uso de usuarios y grupos en un sistema Linux, es permitir que múltiples usuarios hagan uso del sistema, pero de una manera ordenada y segura. Asegurando que ninguna de las tareas realizadas por cualquier usuario pueda poner en riesgo todo el sistema. A través de la gestión de usuarios y grupos, se establecen los mecanismos y políticas de seguridad para la protección de los datos de cada usuario, así como para asegurar y proteger el funcionamiento de todo el sistema.
                 </p>
 
                 <section>
@@ -313,7 +306,7 @@
                         Para poder usar el sistema operativo Linux, se es necesario tener una cuenta de usuario. Esta cuenta se compone por un nombre de usuario y de una contraseña.
                     </p>
                     <p>
-                        Las cuentas de usuarios son manejadas y creadas solo por el administrador del sistema, que en este se le conoce como el usuario <strong>root</strong>.
+                        Las cuentas de usuarios son manejadas y creadas solo por el administrador del sistema, que se le conoce como el usuario <strong>root</strong>.
                     </p>
                     <p>
                         Cada usuario debe de pertenecer obligatoriamente a un grupo de usuario. Al momento de ingresar al sistema, el usuario debe de identificarse con su cuenta, y en caso de equivocarse el sistema le denegara el acceso.
@@ -328,7 +321,7 @@
                 <section>
                     <h4>Creación de usuarios.</h4>
                     <p>
-                        Para poder añadir un usuario, indicando sus parametros de información utilizamos en la consola (terminal) el comando <strong>useradd</strong>. Su sintaxis es:
+                        Para poder añadir un usuario, se utiliza la consola (terminal), con el comando <strong>useradd</strong>. Su sintaxis es:
                     </p>
                     <p>
                         <ul>
@@ -347,18 +340,18 @@
                         </ul>
                     </p>
                     <p>
-                        Por ejemplo, se quiere crear un usuario llamado "pedro" y que su grupo inicial sea "instructores", que tenga asignada como carpeta home "<code>/home/luis</code>" y que sus comandos sean interpretados en <code>"/bin/bash"</code>(lugar por defecto). El comando correcto que se debe ejecutar es el siguiente:
+                        Por ejemplo, se quiere crear un usuario llamado "pedro" y que su grupo inicial sea "instructores", que tenga asignada como carpeta home "<code>/home/pedro</code>" y que sus comandos sean interpretados en <code>"/bin/bash"</code>(lugar por defecto). El comando correcto que se debe ejecutar es el siguiente:
                         <ul>
                             <li><code>sudo useradd -g instructores -d /home/pedro -m Pedro</code></li>
                         </ul>
                     </p>
                     <p>
-                        Ahora solo nos queda asignarle su contraseña, mediante el uso del comando <strong>passwd</strong>:
+                        Ahora solo queda asignarle su contraseña, mediante el uso del comando <strong>passwd</strong>:
                         <ul>
                             <li><code>sudo passwd pedro</code></li>
                         </ul>
                     </p>
-                    <p>El sistema nos solicitará la contraseña dos veces y listo, esta sera asignada.</p>
+                    <p>El sistema solicitará la contraseña dos veces y listo, esta sera asignada.</p>
                     <p>
                         Dos cosas a tomar en cuenta:
                         <ol>
@@ -426,7 +419,7 @@
                     <p>
                         Los grupos también pueden ser modificados al igual que los usuarios. Para ellos, se hace uso del comando <strong>groupmod.</strong> Su sintaxis es:
                         <ul>
-                            <li><code>sudo groupmod [opción] nombre-grupo</code></li>
+                            <li><code>sudo groupmod [opciones] nombre-grupo</code></li>
                         </ul>
                     </p>
                     <p>
@@ -446,7 +439,7 @@
                 <section>
                     <h4>Eliminación de grupos.</h4>
                     <p>
-                        Para poder eliminar un grupo se hace por medio del comando <strong>groupdel</strong> seguido del nombre del grupo. El grupo se eliminara sólo en el caso de que no tenga usuarios con el grupo asignado como principal, si existe algun usuario con esta condición, el grupo no se eliminará.
+                        Para poder eliminar un grupo se hace por medio del comando <strong>groupdel</strong> seguido del nombre del grupo. El grupo se eliminará sólo en el caso de que no tenga usuarios con el grupo asignado como principal, si existe algun usuario con esta condición, el grupo no se eliminará.
                     </p>
                     <p>
                         Por ejemplo, si se quiere eliminar el grupo estudiantes, se realiza de la siguiente manera:
@@ -496,7 +489,7 @@
                             Para ejecutar este comando es necesario el uso de dos parámetros, el usuario que va a ser propietario y el objeto al que se le va a establecer la propiedad. Este comando es independiente de chmod, por lo que si a un fichero se le asigna un nuevo propietario, este nuevo propietario conservará los permisos. Este comando solo lo puede ejecutar el usuario <strong>root.</strong>
                         </p>
                         <p>
-                            Por ejemplo, se quiere que al fichero de nombre "notas" que se encuentra en la carpeta home del usuario nestor, se le asigne como nuevo propietario a obdulio, para realizarlo se hace de la siguiente manera:
+                            Por ejemplo, se quiere que al fichero de nombre "notas" que se encuentra en la carpeta home del usuario <b>nestor</b>, se le asigne como nuevo propietario a <b>obdulio</b>, para realizarlo se hace de la siguiente manera:
                             <ul>
                                 <li><code>sudo chown obdulio /home/nestor/notas</code></li>
                             </ul>
@@ -514,7 +507,7 @@
                         Este comando está restringido, solo lo pueden usar los usuarios de forma limitada. Un usuario puede cambiar el grupo de un fichero si forma parte del nuevo grupo propietario.
                     </p>
                         <p>
-                            Por ejemplo, se quiere que al fichero de nombre "laboratorios" que se encuentra en el directorio de documents que está en la carpeta home, se le asigne como nuevo grupo propietario a "instructores", para realizarlo se hace de la siguiente manera:
+                            Por ejemplo, se quiere que al fichero de nombre "laboratorios" que se encuentra en el directorio de <b>documents</b> que está en la carpeta <b>home</b>, se le asigne como nuevo grupo propietario a "instructores", para realizarlo se hace de la siguiente manera:
                             <ul>
                                 <li><code>sudo chgrp instructores /home/documents/laboratorios</code></li>
                             </ul>
@@ -525,7 +518,7 @@
             <h2>Permisos</h2>
             <p>
                 En Linux, los archivos y ficheros utilizan permisos, los cuales pueden ser configurados o
-                cambiados por el creador del del mismo, para impedir a otros usuarios de la red o del equipo, ver,
+                cambiados por el propietario del mismo, para impedir a otros usuarios de la red o del equipo, ver,
                 ejecutar o escribir en este.
             </p>
             <p>
@@ -540,7 +533,7 @@
             <section>
                 <h3>Tipo de permisos.</h3>
                 <p>
-                    En los sistemas Unix, la gestión de los permisos que los usuarios y los grupos de usuarios tienen sobre los archivos y las carpetas, se realiza mediante un sencillos esquema de tres tipos de permisos:
+                    En los sistemas Unix, la gestión de los permisos que los usuarios y los grupos tienen sobre los archivos y las carpetas, se realiza mediante un sencillos esquema de tres tipos de permisos:
                 </p>
                 <ul>
                     <li>Permisos de lectura</li>
@@ -551,8 +544,7 @@
             <section>
                 <h4>Permisos de lectura.</h4>
                 <p>
-                    Cuando un usuario tiene pe]"Basic Computer Tutorial", Comptechdoc.org, 2018. [En línea]. Disponible: http://www.comptechdoc.org/basic/basictut/index.html. [Accesado: 30- Jul- 2018].
-[2rmiso de lectura de un archivo significa que puede leerlo o visualizarlo, bien sea con una aplicación o mediante comandos. Ejemplo, si tenemos permiso de lectura sobre el archivo <strong>labo.txt</strong>, significa que podemos ver el contenido del archivo. Si el usuario no tiene permiso de lectura, no podrá ver el contenido.
+                    Cuando un usuario tiene permiso de lectura de un archivo significa que puede leerlo o visualizarlo, bien sea con una aplicación o mediante comandos. Ejemplo, si tenemos permiso de lectura sobre el archivo <strong>labo.txt</strong>, significa que podemos ver el contenido del archivo. Si el usuario no tiene permiso de lectura, no podrá ver el contenido.
                 </p>
                 <p>
                     El permiso de lectura se simboliza con la letra <strong>'r'</strong> del inglés <strong>'read'</strong>.
@@ -588,13 +580,13 @@
                 <i>Lectura</i> (r), <i>Escritura</i> (w) y <i>Ejecución</i> (x).
             </p>
             <p>
-                Para el cambio de permisos nos apoyaremos con el uso del comando chmod,
+                Para el cambio de permisos se utiliza el comando chmod,
                 el cual posee una sintaxis de la siguiente forma: <code>chmod &lt;ugo&gt; &lt;nombre_archivo&gt;</code>
             </p>
             <p>
                 La parte de “<b><i>ugo</i></b>” del commando representa un numero en
                 formato decimal que hace referencia a los permisos en sí. La letra U
-                representa los permisos del usuario administrador, la letra G los del grupo al que
+                representa los permisos del usuario propietario, la letra G los del grupo al que
                 pertenece, y la O a cualquier otro usuario no registrado en el grupo.
             </p>
             <p>
@@ -726,9 +718,9 @@
                     A continuación se presentan algunos ejercicios para que pueda poner en practica lo aprendido.
                 </p>
                 <ol>
-                    <li>Entrar a la terminal y navegar a la carpeta Desktop.</li><br>
+                    <li>Entrar a la terminal y acceder a la carpeta Desktop.</li><br>
                     <li>Una vez en el directorio Desktop, crear una carpeta llamada: "Ejercicios".</code></li><br>
-                    <li>Navegar a la carpeta "Ejercicios" y crear 3 archivos: "index.html", "index.txt" e "index.js".</li><br>
+                    <li>Acceder a la carpeta "Ejercicios" y crear 3 archivos: "index.html", "index.txt" e "index.js".</li><br>
                     <li>Abra los archivos con un editor y digite "Hola Mundo" en los 3 archivos.</li><br>
                     <li>
                       En la interfaz grafica, abra los 3 archivos y analize.
