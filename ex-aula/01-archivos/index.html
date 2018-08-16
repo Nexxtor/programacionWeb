@@ -1,0 +1,805 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Archivos</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Título -->
+        <h1>Uso de archivos en Ubuntu</h1>
+        <!-- Propósito -->
+        <p>
+            La presente es un guía ex-aula acerca del uso de archivos en el sistema operativo Linux. El objetivo de esta es resolver de antemano algunas de las dudas que puedan surgir respecto al tema durante el desarrollo del curso de Programación Web.
+        </p>
+
+    </header>
+
+    <nav>
+        <h2>Contenido</h2>
+
+        <ol>
+            <li>
+                <a href="#Introduccion">Introducción</a>
+            </li>
+            <li>
+                <a href="#Extensiones">Extensiones de archivos</a>
+            </li>
+            <li>
+                <a href="#Rutas">Rutas</a>
+            </li>
+            <li>
+                <a href="#Tipos de Archivos">Tipos de Archivos</li>
+            <li>
+                <a href="#Archivos">Manipulación de archivos</a>
+            </li>
+            <li>
+                    <a href="#Grupos">Usuarios y Grupos</a>
+            </li>
+            <li>
+                <a href="#Permisos">Permisos</a>
+            </li>
+            <li>
+                <a href="#Cambio-Permisos">Cambio de permisos</a>
+            </li>
+            <li>
+                    <a href="#Ejercicios">Ejercicios</a>
+            </li>
+            <li>
+                <a href="#Referencias">Referencias</a>
+            </li>
+        </ol>
+    </nav>
+
+    <main>
+        <section id="Introduccion">
+            <h2>Introducción</h2>
+            <p>
+                Un archivo es en escencia un conjunto de información, agrupada en determinada estructura. Sin importar el dispositivo que se utilize, toda la información en una computadora es almacenada como archivos. De acuerdo a su estructura, los archivos se clasifican en tipos: audio, video, imagen, texto y muchos otros.
+            </p>
+
+
+            <h3>Características de archivos</h3>
+            <p>
+                Todo archivo posee las siguientes características:
+            </p>
+            <dl>
+                <dt><b>Nombre</b></dt>
+                <dd>Su principal propósito es identificarlo de otros archivos y ayudar al usuario a conocer su contenido.</dd>
+
+                <dt><b>Extensión</b></dt>
+                <dd>Es parte del nombre del archivo. Al final del nombre se coloca un punto seguido de unas pocas letras o números que definen la extensión.
+                  El uso de una extensiones es opcional en sistemas operativos basados en Unix.</dd>
+
+                <dt><b>Tamaño</b></dt>
+                <dd>Es el espacio que el archivo necesita para ser almacenado en el dispositivo.</dd>
+
+                <dt><b>Tipo</b></dt>
+                <dd>Indica el programa utilizado para acceder al contenido del archivo.</dd>
+
+                <dt><b>Fecha de modificación</b></dt>
+                <dd>Es la última fecha en que el archivo fue modificado o creado.</dd>
+            </dl>
+
+        </section>
+
+        <section id="Extensiones">
+            <h2>Extensiones de archivos</h2>
+
+            <p>
+                Las extensiones son únicamente un grupo de caracteres que, precedidos de un punto, son agregados al final del nombre del archivo.
+            </p>
+
+            <p>
+                En sistemas operativos Linux se agrega el <strong>tipo de archivo</strong> <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> al inicio de este, de manera que la extensión no es necesaria, sin embargo, la extensión es utilizada como ayuda al usuario para identificar el tipo de archivo.
+                Si este no está claro la extensión es utilizada para determinarlo.Esto púede ocurrir cuando se transfieren archivos desde un sistema operativo Windows a Linux.
+            </p>
+
+            <p>
+                Los sistemas operativos Windows se basan únicamente en la extensión para saber el tipo de archivo; para evitar que usuarios modifiquen esta extensión, Windows oculta las extensiones de archivos de manera predeterminada. Esta opción puede ser cambiada en la configuración de usuario. Si se utiliza un sistema Windows se debe tener especial cuidado al crear o renombrar un archivo. Es común que no se pueda acceder a alguno debido a que este posee una extensión incorrecta o no posea ninguna.
+            </p>
+        </section>
+
+        <section id="Rutas">
+            <h2>Rutas</h2>
+            <p>
+                Cuando se trabaja con comandos es habitual tener que pasar como parámetros archivos o directorios.  Para indicar alguno de estos se utiliza la ruta o <i lang="en">path</i>, que puede ser absoluta o relativa.
+            </p>
+            <p>
+                A diferencia de Windows, Linux no tiene unidades, así que no es necesario utilizar identificadores como <code>A:\</code>,<code> C:\</code>, <code>D:\</code> ,etc. El sistema de archivos en Linux funciona con nodos, y cada nodo representa un archivo; el nodo principal puede ser accedido con el caracter /. El resto de particiones, discos duros, unidades de cd, unidades de dvd y cualquier otra cosa que contenga un sistema de archivos, se deben acceder desde directorio principal como si fuese un archivo normal.
+            </p>
+            <p>
+                Las rutas absolutas se caracterizan por empezar <b>siempre</b> desde la raíz, es decir la <code>/</code>, y contener todos los directorios que hay desde este hasta el archivo o directorio que queremos indicar; sólo es posible escribir de una forma una ruta absoluta. Todas las rutas siguientes son rutas absolutas:
+            </p>
+            <ul>
+                <li><code>/home/DHdezT/Desktop</code></li>
+                <li><code>/home/DHdezT/Documents/Web2/index.html</code></li>
+                <li><code>/home/DHdezT/Images/Foto-clan.jpg</code></li>
+            </ul>
+            <p>
+                Cuando el cararter / aparece al final significa que se está accediendo a un direcctorio, pero puede omitirse.
+            </p>
+            <p>
+                En cambio las rutas relativas <b>nunca</b> empiezan por el caracter / y puede haber varias rutas relativas para el mismo archivo o directorio al que se quiere acceder. Esto es así porque la ruta relativa depende del directorio en el que se está trabajando.
+                Por ejemplo,si el directorio Imagenes contiene el archivo Foto-clan.jpg,se puede acceder a este archivo con diferentes rutas relativas de acuerdo con las siguientes situaciones:
+                Si nos encotramos en el directorio Imagenes, bastará con la siguiente ruta:
+            </p>
+            <ul>
+                <li><code>Foto-clan.jpg</code></li>
+            </ul>
+            <p>
+                En cambio, si nos encontramos dentro de la carpeta DHdezT que contiene la carpeta Imagenes; la ruta relativa para esta misma imagen sería:
+            </p>
+            <ul>
+                <li><code>Images/Foto-clan.jpg</code></li>
+            </ul>
+
+        </section>
+
+        <section id="Tipos de Archivos">
+            <h2>Tipos de Archivos</h2>
+            <p>
+                En Linux existen básicamente 5 tipos de archivos:
+                <ul>
+                    <li>
+                        <b>Archivos ordinarios: </b>Contienen la información con la que trabaja cada usuario.</li>
+                    <br>
+                    <li>
+                        <b>Enlaces físicos o duros (hard links): </b>Para lograr entender que es un enlace fisico, primero
+                        se debe comprender que es un inodo. Un <strong>inodo</strong> es una estructura de datos propia
+                        de los sistemas de archivos tradicionalmente empleados en los sistemas operativos tipo UNIX como es el
+                        caso de Linux. Un inodo contiene las características de un archivo regular, directorio, o cualquier otro
+                        objeto que pueda contener el sistema de ficheros.<br>
+                        <img src="img/inodo.gif" alt="Imagen: Que es un inodo?"/>
+                        <br>
+                        Una vez comprendido esto, un <strong>enlace duro</strong> es un archivo que apunta al mismo contenido
+                        almacenado en disco que el archivo original. Por lo tanto los archivos originales y los enlaces duros
+                        dispondrán del mismo inodo y consecuentemente ambos estarán apuntando hacia el mismo contenido almacenado
+                        en el disco duro.
+                        <br>                                                                                                                                                                                                                                                                                                                                                                                                 <br>
+                        <img src="img/hard-links.gif" alt="Figura sobre un hardlink"/></li>
+                        <br>
+                        <p>
+                            En la imagen de arriba se puede observar su funcionamiento. En el cual en el disco duro
+                            se encuentran los datos y los dos enlaces duros apuntan hacia la informacion en el disco duro.
+                        </p>
+                    <li>
+                        <b>Enlaces simbólicos: </b>Los enlaces simbólicos apuntan al nombre de un archivo y posteriormente el archivo
+                        apunta a un contenido almacenado en el disco duro.</li><br>
+                        <img src="img/soft-link.jpg" alt="Figura sobre un softlink"/><br>
+                        <p>
+                            En la imagen de arriba se puede observar su funcionamiento, donde este apunta a un enlace duro.
+                        </p>
+                    <br>
+                    <li>
+                        <b>Directorios: </b>Son archivos especiales que contienen referencias a otros archivos o directorios.</li>
+                    <br>
+                    <li>
+                        <b>Archivos especiales: </b>Suelen representar dispositivos físicos, como unidades de almacenamiento,
+                        impresoras, terminales, entre otros. En Linux, todo dispositivo físico que se conecte al ordenador está asociado
+                        a un archivo. Linux trata los archivos especiales como archivos ordinarios.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="Archivos">
+            <h2>Manipulación de archivos</h2>
+            <p>Linux dispone de una serie de comandos para el manejo de archivos por medio de consola. Esto nos permite terner
+                una mayor control sobre ellos, puesto que podemos realizar operaciones básicas como crear, copiar, mover, entre otros.</p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Comando</th>
+                        <th>Descripci&oacute;n</th>
+                        <th>Sintaxis</th>
+                        <th>Argumentos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>touch</td>
+                        <td>Crea un archivo vac&iacute;o, si este exite actualiza la hora de modificaci&oacute;n</td>
+                        <td>touch &lt;nombre_archivo&gt;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>cp</td>
+                        <td>Permite copiar un archivo a otro directorio</td>
+                        <td>
+                            cp &lt;archivo_origen&gt; &lt;directorio_destino&gt;
+                        </td>
+                        <td>
+                            <b>-d</b>: copia enlaces simbolicos.
+                            <br>
+                            <br>
+                            <b>-f</b>: Fuerza a sobreescribir los archivos de destino si existe.
+                            <br>
+                            <br>
+                            <b>-i</b>: Muestra un mensaje antes de sobreescribir los cambios.
+                            <br>
+                            <br>
+                            <b>-r</b>: Copia directorios y sus archivos de forma recursiva.
+                            <br>
+                            <br>
+                            <b>-t</b>: Se utiliza cuando se deseean copiar multiples archivos a un solo destino.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>rm</td>
+                        <td>Elimina un archivo</td>
+                        <td>rm -argumento &lt;archivo&gt;</td>
+                        <td>
+                            <b>-f</b>: Forzar a la eliminaci&oacute;n del archivo.
+                            <br>
+                            <br>
+                            <b>-i</b>: Pregunta antes de eliminar el archivo.
+                            <br>
+                            <br>
+                            <b>-r</b>: Elimina directorios y sus contenido.
+                            <br>
+                            <br>
+                            <b>-d</b>: Elimina directorios vac&iacute;os.
+                            <br>
+                            <br>
+                            <b>-v</b>: Muestra el proceso que se esta realizando.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>mv</td>
+                        <td>Permite mover un archivo a otro directorio. Tip: Este comando sirve para renombrar archivos; simplemente moverlo a la misma carpeta con otro nombre</td>
+                        <td>mv &lt;archivo_origen&gt; &lt;archivo_destino&gt;</td>
+                        <td>
+                            <b>-f</b>: No pide permiso para mover el archivo.
+                            <br>
+                            <br>
+                            <b>-i</b>: Pregunta si quiero mover el archivo.
+                            <br>
+                            <br>
+                            <b>-n</b>: No sobreescribe si hay un archivo existente.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>mkdir</td>
+                        <td>Permite la creación de directorios, si estos no existen</td>
+                        <td><i>mkdir &lt;argumentos&gt; &lt;directorios&gt;</i></td>
+                        <td>
+                            <b>-p</b>: permite la creación de directorios padres, si estos no existen.
+                            <br>
+                            <br>
+                            <b>-m</b>: permite agregar permisos en la creacion del directorio.
+                            <br>
+                            <br>
+                            <b>-v</b>: muestra detalles completos de la operación que está realizando.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>cd</td>
+                        <td>Permite la navegacion entre directorios</td>
+                        <td><i>cd &lt;ruta_a_navegar&gt;</i></td>
+                        <td>
+                            <b>/ </b>: ruta al directorio raiz.
+                            <br>
+                            <br>
+                            <b>~ </b>: ruta al directorio de inicio.
+                            <br>
+                            <br>
+                            <b>.. </b>: navegacion un directorio atras.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="Grupos">
+                <h2>Usuarios y grupos</h2>
+                <p>
+                    El objetivo principal de el uso de usuarios y grupos en un sistema Linux, es permitir que múltiples usuarios hagan uso del sistema, pero de una manera ordenada y segura. Asegurando que ninguna de las tareas realizadas por cualquier usuario pueda poner en riesgo todo el sistema. A través de la gestión de usuarios y grupos, se establecen los mecanismos y políticas de seguridad para la protección de los datos de cada usuario, así como para asegurar y proteger el funcionamiento de todo el sistema.
+                </p>
+
+                <section>
+                    <h3>Usuarios.</h3>
+                    <p>
+                        Para poder usar el sistema operativo Linux, se es necesario tener una cuenta de usuario. Esta cuenta se compone por un nombre de usuario y de una contraseña.
+                    </p>
+                    <p>
+                        Las cuentas de usuarios son manejadas y creadas solo por el administrador del sistema, que se le conoce como el usuario <strong>root</strong>.
+                    </p>
+                    <p>
+                        Cada usuario debe de pertenecer obligatoriamente a un grupo de usuario. Al momento de ingresar al sistema, el usuario debe de identificarse con su cuenta, y en caso de equivocarse el sistema le denegara el acceso.
+                    </p>
+                    <p>
+                        Luego de identificarse, el usuario podrá hacer uso del sistema y ejecutar todas las aplicaciones que tenga <em>permitido</em>, así como realizar acciones(leer, modificar o borrar) sobre los archivos en los que tenga permisos.
+                    </p>
+                    <p>
+                        Por otra parte, una cuenta de usuario no solo provee un simple nombre, también es el punto de partida para poder establecer la ruta en donde se almacenan los documentos y el perfil del usuario. En Linux, generalmente es dentro de la carpeta de /home/<strong>nombre-usuario</strong>
+                    </p>
+                </section>
+                <section>
+                    <h4>Creación de usuarios.</h4>
+                    <p>
+                        Para poder añadir un usuario, se utiliza la consola (terminal), con el comando <strong>useradd</strong>. Su sintaxis es:
+                    </p>
+                    <p>
+                        <ul>
+                                <li>
+                                    <code>useradd [opciones] &lt;nombre_usuario&gt;</code>
+                                </li>
+                        </ul>
+                    </p>
+                    <p>
+                        Donde, <em>[opciones]</em> puede ser remplazado por las siguientes:
+                        <ul>
+                            <li>-g: Grupo principal que sera asignado al usuario.</li>
+                            <li>-d: Para asignar la carpeta home del usuario. Generalmente es <code>/home/nombre-usuario</code></li>
+                            <li>-m: Crear la carpeta home en caso de que esta no exista.</li>
+                            <li>-s: Intérprete de comandos (shell) del usuario. Este suele ser <code>/bin/bash</code></li>
+                        </ul>
+                    </p>
+                    <p>
+                        Por ejemplo, se quiere crear un usuario llamado "pedro" y que su grupo inicial sea "instructores", que tenga asignada como carpeta home "<code>/home/pedro</code>" y que sus comandos sean interpretados en <code>"/bin/bash"</code>(lugar por defecto). El comando correcto que se debe ejecutar es el siguiente:
+                        <ul>
+                            <li><code>sudo useradd -g instructores -d /home/pedro -m Pedro</code></li>
+                        </ul>
+                    </p>
+                    <p>
+                        Ahora solo queda asignarle su contraseña, mediante el uso del comando <strong>passwd</strong>:
+                        <ul>
+                            <li><code>sudo passwd pedro</code></li>
+                        </ul>
+                    </p>
+                    <p>El sistema solicitará la contraseña dos veces y listo, esta sera asignada.</p>
+                    <p>
+                        Dos cosas a tomar en cuenta:
+                        <ol>
+                            <li>Todos estos comandos se ejecutan junto el comando sudo, ya que este permite al usuario actual, poder ejecutar programas con privilegios de seguridad del usuario root (solo si se le ha otorgado tales privilegios), y como se mencionó anteriormente, el único capaz de gestionar los usuarios es el administrador (usuario root)</li>
+                            <li>Otra cosa a tomar en cuenta es el hecho de crear los nombres de usuario en minúsculas, porque para el sistema operativo Linux, "Pedro" es distinto que "pedro", ya que distingue entre mayúsculas y minúsculas. También se puede incluir el uso de números y algún signo como guión o guión bajo.</li>
+                        </ol>
+                    </p>
+                </section>
+                <section>
+                    <h4>Modificación de usuarios.</h4>
+                    <p>
+                        Para poder realizar modificaciones sobre los usuarios, se utiliza el comando <strong>usermod</strong>. Este permite hacer cambios al nombre, a la carpeta home asignada, a su interpretador de comandos asignado, sus grupos, entre otros.
+                    </p>
+                    <p>
+                        Por ejemplos, si se quisiera cambiar el nombre del usuario "pedro" a "obdulio" se realiza de la siguiente manera:
+                        <ul>
+                            <li><code>sudo usermod -l obdulio pedro</code></li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h4>Eliminación de usuarios.</h4>
+                    <p>
+                        La eliminación de un usuario se realiza por medio de el uso del comando <strong>userdel</strong> seguido del nombre de usuario. Si se le añade la opción <code>-r</code>, su carpeta home respectiva también sera eliminada.
+                    </p>
+                    <p>
+                        Por ejemplo, si se quisiera eliminar el usuario obdulio, se realiza de la siguiente manera:
+                        <ul>
+                            <li><code>sudo userdel obdulio</code></li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h3>Grupos.</h3>
+                    <p>
+                        Para que exista una administración flexible de los permisos de los usuarios, el sistema operativo Linux permite catalogar a los usuarios a través de grupos y los permisos pueden ser asignados a un grupo. Por ejemplo, se cuenta con un grupo de instructores para una materia en específico, este grupo tiene acceso a ciertos archivos, al momento de incorporar a un nuevo instructor, solo se le asigna a la cuenta del instructor el grupo "instructores".
+                    </p>
+                    <p>
+                        Como se mencionó anteriormente, todos los usuarios deben pertenecer a un grupo principal o primario obligatoriamente, pero puede pertenecer a otros grupos, a los cuales se les considera secundarios. Todos los grupos de usuarios pueden contener varios usuarios, pero no pueden contener a otros grupos.
+                    </p>
+                    <p>
+                        Cada grupo de usuario en el sistema Linux es identificado con un numero diferente. A esto se le conoce como <strong>identificador de grupo o gid (Group IDentifier)</strong>. El sistema, internamente realiza los trabajos bajo el gid y no bajo el nombre del grupo. Por lo general, cuando se crean los grupos, el sistema asigna un gid de "1000" en adelante, ya que los gid menores a "1000" están reservados para uso del sistema y sus grupos especiales.
+                    </p>
+                    <p>
+                        Por defecto, la información de los grupos se guarda en el archivo <code>/etc/group</code>, el cual puede ser visualizado por cualquier editor de texto.
+                    </p>
+                </section>
+                <section>
+                    <h4>Creación de grupos.</h4>
+                    <p>
+                        Para poder realizar la creación, se hace mediante el comando <strong>groupadd</strong>, tan solo se debe indicar el nombre del grupo como parámetro. Su sintaxis es:
+                        <ul>
+                            <li><code>sudo groupadd &lt;nombre_grupo&gt;</code></li>
+                        </ul>
+                    </p>
+                    <p>
+                        Por ejemplo, si se quisiera crear un grupo llamado "alumnos", se realiza de la siguiente manera:
+                        <ul>
+                            <li><code>sudo groupadd alumnos</code></li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h4>Modificación de grupos.</h4>
+                    <p>
+                        Los grupos también pueden ser modificados al igual que los usuarios. Para ellos, se hace uso del comando <strong>groupmod.</strong> Su sintaxis es:
+                        <ul>
+                            <li><code>sudo groupmod [opciones] nombre-grupo</code></li>
+                        </ul>
+                    </p>
+                    <p>
+                        En donde <em>[opciones]</em> puede ser remplazado por las siguientes:
+                        <ul>
+                            <li>-g: Sirve para poder cambiar el identificador de grupo.</li>
+                            <li>-n: Sirve para renombrar el grupo.</li>
+                        </ul>
+                    </p>
+                    <p>
+                        Por ejemplo, si se quiere cambiar el nombre del grupo "alumnos" a "estudiantes", se realiza de la siguiente manera:
+                        <ul>
+                            <li><code>sudo groupmod -n estudiantes alumnos</code></li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h4>Eliminación de grupos.</h4>
+                    <p>
+                        Para poder eliminar un grupo se hace por medio del comando <strong>groupdel</strong> seguido del nombre del grupo. El grupo se eliminará sólo en el caso de que no tenga usuarios con el grupo asignado como principal, si existe algun usuario con esta condición, el grupo no se eliminará.
+                    </p>
+                    <p>
+                        Por ejemplo, si se quiere eliminar el grupo estudiantes, se realiza de la siguiente manera:
+                        <ul>
+                            <li><code>sudo groupdel estudiantes</code></li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h4>Añadir usuarios a un grupo.</h4>
+                    <p>
+                        Para poder añadir usuarios a un grupo se hace por medio del comando <strong>adduser</strong> seguido del nombre del usuario y el nombre del grupo.
+                    </p>
+                    <p>
+                        Por ejemplo, si se quiere agregar el usuario "roberto" al grupo de "estudiantes", se realiza de la siguiente manera:
+                        <ul>
+                            <li><code>sudo adduser roberto estudiantes</code></li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h4>Quitar usuarios de un grupo.</h4>
+                    <p>Si se quiere eliminar un usuario de un grupo, utilizamos el comando <strong>deluser</strong> seguido del nombre del usuario y el nombre del grupo.</p>
+                    <p>Por ejemplo, si queremos quitar al usuario "obdulio" del grupo de "instructores", se realiza de la siguiente manera:
+                        <ul>
+                            <li><code>sudo deluser obdulio instructores</code></li>
+                        </ul>
+                    </p>
+                </section>
+                <p>
+                    Si se quiere conocer más acerca de todas las opciones disponibles de cada comando, se hace uso del comando <strong>man</strong> seguido del comando del que queremos.
+                </p>
+                <p>
+                    Por ejemplo, si se quiere saber cuales son las opciones del comando <strong>usermod</strong>, se realiza de la siguiente manera:
+                    <ul>
+                        <li><code>man usermod</code></li>
+                    </ul>
+                </p>
+                <section>
+                    <h3>Asignación de grupos y usuarios a archivos.</h3>
+                    <p>Como se mencionó al principio, el objetivo principal de los usuarios y los grupos es obtener un uso óptimo del sistema, pero para eso se necesita poner en práctica el conocimiento acerca de los permisos en los usuarios y grupos.</p>
+                </section>
+                <section>
+                        <h4>Cambiar de propietario (chown)</h4>
+                        <p>Con el comando <strong>chown (CHange OWNer)</strong> se puede cambiar el usuario propietario de un fichero.</p>
+                        <p>
+                            Para ejecutar este comando es necesario el uso de dos parámetros, el usuario que va a ser propietario y el objeto al que se le va a establecer la propiedad. Este comando es independiente de chmod, por lo que si a un fichero se le asigna un nuevo propietario, este nuevo propietario conservará los permisos. Este comando solo lo puede ejecutar el usuario <strong>root.</strong>
+                        </p>
+                        <p>
+                            Por ejemplo, se quiere que al fichero de nombre "notas" que se encuentra en la carpeta home del usuario <b>nestor</b>, se le asigne como nuevo propietario a <b>obdulio</b>, para realizarlo se hace de la siguiente manera:
+                            <ul>
+                                <li><code>sudo chown obdulio /home/nestor/notas</code></li>
+                            </ul>
+                        </p>
+                </section>
+                <section>
+                    <h4>Cambiar de grupo propietario (chgrp)</h4>
+                    <p>
+                        Con el comando <strong>chgrp (CHange GRouP)</strong> se pude modificar al grupo propietario de un fichero.
+                    </p>
+                    <p>
+                        Para poder ejecutar este comando es necesario el uso de dos parámetros, el grupo que va a ser propietario y el objeto al que se le va a establecer la propiedad. Este comando, al igual que el comando chown, es independiente de chmod, por lo que si a un fichero se le asigna un nuevo grupo propietario, este nuevo grupo propietario conservará los permisos.
+                    </p>
+                    <p>
+                        Este comando está restringido, solo lo pueden usar los usuarios de forma limitada. Un usuario puede cambiar el grupo de un fichero si forma parte del nuevo grupo propietario.
+                    </p>
+                        <p>
+                            Por ejemplo, se quiere que al fichero de nombre "laboratorios" que se encuentra en el directorio de <b>documents</b> que está en la carpeta <b>home</b>, se le asigne como nuevo grupo propietario a "instructores", para realizarlo se hace de la siguiente manera:
+                            <ul>
+                                <li><code>sudo chgrp instructores /home/documents/laboratorios</code></li>
+                            </ul>
+                        </p>
+                </section>
+        </section>
+        <section id="Permisos">
+            <h2>Permisos</h2>
+            <p>
+                En Linux, los archivos y ficheros utilizan permisos, los cuales pueden ser configurados o
+                cambiados por el propietario del mismo, para impedir a otros usuarios de la red o del equipo, ver,
+                ejecutar o escribir en este.
+            </p>
+            <p>
+                Los permisos definen, de una manera simple y efectiva, reglas de acceso en lectura (r), escritura (w) o ejecución (x) a determinados archivos.
+            </p>
+            <p>
+                En un sistema Unix todos los archivos pertenecen obligatoriamente a un usuario y a un grupo. Al momento que un usuario crea un nuevo archivo, el propietario es el usuario creador y el grupo del archivo será el grupo principal del mismo usuario.
+            </p>
+            <p>
+                En la consola al utilizar el comando <code>ls –l</code> (formato largo), Se puede visualizar el usuario propietario y el grupo propietario del archivo.
+            </p>
+            <section>
+                <h3>Tipo de permisos.</h3>
+                <p>
+                    En los sistemas Unix, la gestión de los permisos que los usuarios y los grupos tienen sobre los archivos y las carpetas, se realiza mediante un sencillos esquema de tres tipos de permisos:
+                </p>
+                <ul>
+                    <li>Permisos de lectura</li>
+                    <li>Permisos de escritura</li>
+                    <li>Permisos de ejecución</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Permisos de lectura.</h4>
+                <p>
+                    Cuando un usuario tiene permiso de lectura de un archivo significa que puede leerlo o visualizarlo, bien sea con una aplicación o mediante comandos. Ejemplo, si tenemos permiso de lectura sobre el archivo <strong>labo.txt</strong>, significa que podemos ver el contenido del archivo. Si el usuario no tiene permiso de lectura, no podrá ver el contenido.
+                </p>
+                <p>
+                    El permiso de lectura se simboliza con la letra <strong>'r'</strong> del inglés <strong>'read'</strong>.
+                </p>
+                <img src="img/permiso-lectura.png"/>
+            </section>
+            <section>
+                <h4>Permiso de escritura.</h4>
+                <p>
+                    Cuando un usuario tiene permiso de escritura sobre un archivo significa que puede modificar su contenido, e incluso borrarlo. También le da derecho a cambiar los permisos del archivo, así como cambiar su propietario y el grupo propietario. Si el usuario no tiene permiso de escritura, no podrá modificar el contenido del archivo.
+                </p>
+                <p>
+                    El permiso de escritura se simboliza con la letra <strong>'w'</strong> del inglés <strong>'write'</strong>.
+                </p>
+                <img src="img/permiso-escritura.png"/>
+            </section>
+            <section>
+                <h4>Permiso de ejecución.</h4>
+                <p>
+                        Los permisos de ejecución se utilizan principalmente en aplicaciones y scripts. Si dispones de este permiso puedes ejecutar la aplicación/script.
+                </p>
+                <p>
+                    El permiso de ejecución se simboliza con la letra <strong>'x'</strong> del inglés <strong>'eXecute'</strong>.
+                </p>
+                <img src="img/permiso-ejecucion.png"/>
+            </section>
+
+        </section>
+        <section id="Cambio-Permisos">
+            <h2>Cambio de permisos de archivos en GNU LINUX.</h2>
+            <p>
+                Como vimos anteriormente, los permisos que podemos cambiar o configurar en Linux son los siguientes:
+                <i>Lectura</i> (r), <i>Escritura</i> (w) y <i>Ejecución</i> (x).
+            </p>
+            <p>
+                Para el cambio de permisos se utiliza el comando chmod,
+                el cual posee una sintaxis de la siguiente forma: <code>chmod &lt;ugo&gt; &lt;nombre_archivo&gt;</code>
+            </p>
+            <p>
+                La parte de “<b><i>ugo</i></b>” del commando representa un numero en
+                formato decimal que hace referencia a los permisos en sí. La letra U
+                representa los permisos del usuario propietario, la letra G los del grupo al que
+                pertenece, y la O a cualquier otro usuario no registrado en el grupo.
+            </p>
+            <p>
+                Serán 3 números que van del 0 al 7:
+            </p>
+            <ul>
+                <li><b>Primer número</b>: permisos de propietario.</li>
+                <li><b>Segundo número</b>: permisos de grupo.</li>
+                <li><b>Tercer número</b>: permisos para el resto.</li>
+            </ul>
+            <p>
+                Para representar del 0 al 7 necesitamos 3 bits, que son utilizados para dar
+                permisos a propietario, grupo y al resto. Con un '1' damos permiso y con un '0' se lo quitamos; Esto aplica en el siguiente orden: <b>rwx</b>.
+            </p>
+            <img src="img/ugo-chmod.jpg" alt="chmod image">
+
+            <p>
+                A continuación, se especifican todas las combinaciones posibles de permisos (en casos particulares).
+            </p>
+
+            <table border="i">
+                <thead>
+                    <tr>
+                        <th>Binario</th>
+                        <th>Decimal</th>
+                        <th>Permiso</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>000</td>
+                        <td>0</td>
+                        <td>---</td>
+                        <td>Ninguno</td>
+                    </tr>
+                    <tr>
+                        <td>001</td>
+                        <td>1</td>
+                        <td>--x</td>
+                        <td>Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>010</td>
+                        <td>2</td>
+                        <td>-w-</td>
+                        <td>Escritura</td>
+                    </tr>
+                    <tr>
+                        <td>011</td>
+                        <td>3</td>
+                        <td>-wx</td>
+                        <td>Escritura y Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>4</td>
+                        <td>r--</td>
+                        <td>Lectura</td>
+                    </tr>
+                    <tr>
+                        <td>101</td>
+                        <td>5</td>
+                        <td>r-x</td>
+                        <td>Lectura y Ejecución</td>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td>6</td>
+                        <td>rw-</td>
+                        <td>Lectura y Escritura</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>7</td>
+                        <td>rwx</td>
+                        <td>Lectura, Escritura y Ejecución</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                    Algunos ejemplos de aplicación:
+            </p>
+            <ol>
+                <li>
+                    <b>644:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura y escritura.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Grupo:</b> lectura.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Otros:</b> lectura.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>754:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Grupo:</b>lectura y ejecución</li>
+                    </ul>
+                    <ul>
+                        <li><b>Otros:</b> lectura.</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>777:</b>
+                    <ul>
+                        <li><b>Propietario:</b> lectura, escritura y ejecución.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Grupo:</b> lectura, escritura y ejecución.</li>
+                    </ul>
+                    <ul>
+                        <li><b>Otros:</b> lectura, escritura y ejecución.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+
+
+            <section id="Ejercicios">
+                <h2>Ejercicios</h2>
+                <p>
+                    A continuación se presentan algunos ejercicios para que pueda poner en practica lo aprendido.
+                </p>
+                <ol>
+                    <li>Entrar a la terminal y acceder a la carpeta Desktop.</li><br>
+                    <li>Una vez en el directorio Desktop, crear una carpeta llamada: "Ejercicios".</code></li><br>
+                    <li>Acceder a la carpeta "Ejercicios" y crear 3 archivos: "index.html", "index.txt" e "index.js".</li><br>
+                    <li>Abra los archivos con un editor y digite "Hola Mundo" en los 3 archivos.</li><br>
+                    <li>
+                      En la interfaz grafica, abra los 3 archivos y analize.
+                        <ul>
+                          <li>El archivo con extensión .html, ¿Que programa te indica el sistema operativo para abrirlo?</li>
+                          <li>El archivo con extensión .txt, ¿Que programa te indica el sistema operativo para abrirlo?</li>
+                          <li>El archivo con extensión .js, ¿Que programa te indica el sistema operativo para abrirlo?</li>
+                        </ul>
+                    </li><br>
+                    <li>Vuelva a abrir la terminal, cambie de usuario a usuario root y cree un archivo dentro de la carpeta "Ejercicios"
+                      llamado: "hola.html".
+                    </li><br>
+                    <li>Regrese a la interfaz grafica y trate de eliminar el archivo "hola.html". ¿Que fue lo que paso?</li><br>
+                    <li>Regrese a la terminal (siempre en usuario root), cambie el permiso del archivo "hola.html". Cambie el permiso
+                      777 y elimine el archivo en la interfaz grafica. ¿Que fue lo que paso?
+                    </li><br>
+                </ol>
+            </section>
+        <nav id="Referencias">
+            <h2>Referencias</h2>
+
+            <ul>
+                <li>
+                    [1]"Basic Computer Tutorial", Comptechdoc.org, 2018. [En línea]. Disponible:
+                    <a href="http://www.comptechdoc.org/basic/basictut/index.html">http://www.comptechdoc.org/basic/basictut/index.html</a>. [Accesado: 30- Jul- 2018].
+                </li>
+                <li>
+                    [2]"Computer Skills Course: File Management, Part 1", YouTube, 2018. [En línea]. Disponible:
+                    <a href="https://www.youtube.com/watch?v=k-EID5_2D9U">https://www.youtube.com/watch?v=k-EID5_2D9U</a>. [Accesado: 30- Jul- 2018].
+                </li>
+                <li>
+                    [3]"About files and the file system", Tldp.org, 2018. [En línea]. Disponible:
+                    <a href="http://www.tldp.org/LDP/intro-Linux/html/chap_03.html">http://www.tldp.org/LDP/intro-Linux/html/chap_03.html</a>. [Accesado: 30- Jul- 2018].
+                </li>
+                <li>
+                    [4]"Permisos de archivos y carpetas", ite.educacion.es, 2005. [En línea]. Disponible:
+                    <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/Linux/m1/permisos_de_archivos_y_carpetas.html">http://www.ite.educacion.es/formacion/materiales/85/cd/Linux/m1/permisos_de_archivos_y_carpetas.html</a>.
+                    [Accesado: 31- Jul- 2018].
+                </li>
+                <li>
+                    [5]"Linux man pages [En línea]. Disponible:
+                    <a href="http://man.he.net/">http://man.he.net/</a>. [Accesado: 31- Jul- 2018].
+                </li>
+                <li>
+                    [6]"Cómo cambiar los permisos de archivos en Linux", culturacion.com, 2000 [En línea]. Dsiponible:
+                    <a href="http://culturacion.com/como-cambiar-los-permisos-de-archivos-en-Linux/">http://culturacion.com/como-cambiar-los-permisos-de-archivos-en-Linux/</a>. [Accesado: 30-Jul-2018].
+                </li>
+                <li>
+                    [7]"¿Para qué sirven los permisos de los archivos? (I)", hipertextual.com, 2012 [En línea]. Dsiponible:
+                    <a href="https://hipertextual.com/archivo/2012/08/permisos-archivos-i/">https://hipertextual.com/archivo/2012/08/permisos-archivos-i/</a>. [Accesado: 09-Ago-2018].
+                </li>
+                <li>
+                    [8]"Gestión de permisos en Linux con chmod", theLinuxalchemist.wordpress.com, 2017 [En línea]. Dsiponible:
+                    <a href="https://theLinuxalchemist.wordpress.com/2017/04/04/gestion-de-permisos-en-Linux/">https://theLinuxalchemist.wordpress.com/2017/04/04/gestion-de-permisos-en-Linux/</a>. [Accesado: 09-Ago-2018].
+                </li>
+                <li>
+                    [9]"Como gestionar usuarios y permisos en Linux. La guía completa", computernewage.com, 2016 [En línea]. Disponible:
+                    <a href="https://computernewage.com/2016/05/22/gestionar-usuarios-y-permisos-en-Linux/#cambiar-permisos-fichero">https://computernewage.com/2016/05/22/gestionar-usuarios-y-permisos-en-Linux/#cambiar-permisos-fichero</a>. [Accesado: 08-Ago-2018].
+                </li>
+                <li>
+                    [10]"Gestionar usuarios y grupos en Linux", professionalreview.com, 2017 [En línea]. Disponible:
+                    <a href="https://www.profesionalreview.com/2017/03/11/gestionar-usuarios-grupos-Linux/">https://www.profesionalreview.com/2017/03/11/gestionar-usuarios-grupos-Linux/</a>. [Accesado: 30-Jul-2018].
+                </li>
+                <li>
+                    [11]"Permisos básicos en Linux: chmod, chown, chgrp", enekoamieva.com, 2015 [En línea]. Disponible:
+                    <a href="https://enekoamieva.com/permisos-basicos-en-Linux-chmod-chown-chgrp/">https://enekoamieva.com/permisos-basicos-en-Linux-chmod-chown-chgrp/</a>. [Accesado: 09-Ago-2018].
+                </li>
+                <li>
+                    [12]"Administración de usuarios y grupos", ite.education.es, 2005 [En línea]. Disponible:
+                    <a href="http://www.ite.educacion.es/formacion/materiales/85/cd/Linux/m1/administracin_de_usuarios_y_grupos.html">http://www.ite.educacion.es/formacion/materiales/85/cd/Linux/m1/administracin_de_usuarios_y_grupos.html</a>. [Accesado: 29-Jul-2018]
+                </li>
+                <li>
+                    [13]"MIME Types Explained: Why Linux and Mac OS X Don’t Need File Extensions", Howtogeek.com, 2018. [En linea]. Disponible: <a href="https://www.howtogeek.com/192628/mime-types-explained-why-Linux-and-mac-os-x-dont-need-file-extensions/">https://www.howtogeek.com/192628/mime-types-explained-why-Linux-and-mac-os-x-dont-need-file-extensions/</a>. [Accesado: 31- Jul- 2018].
+                </li>
+            </ul>
+        </nav>
+
+    </main>
+
+</body>
+
+</html>
