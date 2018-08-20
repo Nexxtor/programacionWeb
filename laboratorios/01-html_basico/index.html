@@ -17,30 +17,40 @@
 
     <section>
         <h2>¿Que es HTML?</h2>
-        <p><abbr title="Hypertext Markup Language">HTML</abbr>, que significa Lenguaje de Marcado para Hipertextos, es el elemento de construcción más básico de una página web y se usa para crear y representar una página web. Determina el <strong>contenido</strong> de la página web por medio del uso de etiquetas.</p>
+        <p>
+            <abbr title="Hypertext Markup Language">HTML</abbr> define el contenido de una página web haciendo uso de etiquetas. Deriba de el lenguaje <abbr title="eXtensive Markup Language">XML</abbr> el cual sirve para describir información y HTML sirve para darle formato y presentarla en un navegador. .
+        </p>
     </section>
 
     <section>
-        <h2>Estructura HTML Básica</h2>
+        <h2>Estructura Básica de un documento HTML</h2>
         <img src="img/estructura-basica-html.JPG" alt="Estructura básica de un documento HTML"/>
         <p>
-            Al inicio de todo documento html debería de haber una indicación del tipo de documento. Esto es para informar al navegador de ciertas reglas para interpretar el código. Para documentos que utilizan la versión HTML5, esto se logra con: <code>&lt;!DOCTYPE html&gt;</code>.
+            Al inicio de todo documento HTML debería de haber una <em>etiqueta</em> que indique el <em>tipo</em> de documento. Esto es para informar al navegador de ciertas reglas para interpretar el código. Para documentos que utilizan la versión HTML5, esto se logra con: <code>&lt;!DOCTYPE html&gt;</code>.
         </p>
 
         <p>
-            Seguido al tipo de documento se utiliza la etiqueta <code>&lt;html&gt;</code>. Todo lo que pertenezca a la página web es colocado <em>dentro</em> de esta etiqueta. Este <em>contenedor</em> representa la <strong>raiz</strong> del documento.
+            Seguido al tipo de documento se utiliza la etiqueta <code>&lt;html&gt;</code>.
+            Todo lo que pertenezca a la página web es colocado <em>dentro</em> de esta etiqueta. Este <em>contenedor</em> representa la <strong>raiz</strong> del documento.
         </p>
 
         <p>
-            Dentro de la etiqueta <code>&lt;html&gt;</code> se coloca el <strong>encabezado</strong> con la etiqueta <code>&lt;head&gt;</code>, que contiene elementos que no son incluidos en el <em>contenido</em> del documento, pero son escenciales para los buscadores y el navegador. Es dentro de esta etiqueta en donde se coloca la meta-data (información sobre el documento), como es el título de la página.
+            Dentro de la etiqueta <code>&lt;html&gt;</code> se coloca el <strong>encabezado</strong>
+            con la etiqueta <code>&lt;head&gt;</code>, que contiene elementos que no son incluidos en el contenido <em>visual</em> del documento, pero son escenciales para los buscadores y navegadores. Es dentro de esta etiqueta donde se coloca la meta-data (información sobre el documento), como es el título, autor y descripción de la página.
         </p>
 
         <p>
-            El título es una indicación del contenido de la página, este ayuda a buscadores y facilita la navegación si se tienen varias pestañas abiertas en el navegador. El título se coloca dentro de la etiqueta <code>&lt;title&gt;</code>, que a su vez está dentro de la etiqueta <code>&lt;head&gt;</code>. Es importante no omitir esta etiqueta, esta es el <em>nombre</em> del documento, el hacerlo daría una mala impresión a los visitantes de la página. ¿Confiaría en una página que no tiene siquiera un título?
+            El título es una indicación del contenido de la página,
+            este ayuda a buscadores y facilita la navegación si se tienen varias pestañas abiertas en el navegador.
+            El título se coloca dentro de la etiqueta <code>&lt;title&gt;</code>,
+            que a su vez está dentro de la etiqueta <code>&lt;head&gt;</code>.
+            Es importante no omitir esta etiqueta, ¿Confiaría en una página que no muestre su título?
         </p>
 
         <p>
-            Lo último es separar el <strong>encabezado</strong> del <strong>cuerpo</strong> del documento. Este último es colocado <em>junto al encabezado</em> con la etiqueta <code>&lt;body&gt;</code>. Es aquí donde se incluye todo el <strong>contenido</strong> del documento y es mostrado por el navegador.
+            Lo último para completar la estructura HTML, es agregar el cuerpo del documento.
+            Este último es colocado <em>junto al encabezado</em> con la etiqueta <code>&lt;body&gt;</code>.
+            Es aquí donde se incluye todo el <strong>contenido</strong> del documento y es mostrado por el navegador.
         </p>
     </section>
 
@@ -51,17 +61,18 @@
         </p>
         <code>&lt;etiqueta atributo="valor"&gt;</code>
         <p>
-            Los atributos son utilizados debido a que muchas etiquetas por si solas no contienen suficiente información, con los atributos es posible agregar mucha información extra. Por ejemplo:
+            Los atributos son utilizados debido a que muchas etiquetas por si solas no contienen suficiente información,
+            con los atributos es posible agregar mucha información extra. Por ejemplo:
         </p>
         <code>&lt;html lang="es"&gt;</code>
         <p>
-            Con esto se está indicando que el documento está escrito en idioma español. También se utilizan atributos al utilizar imágenes:
+            Con el atributo <code>lang</code> se está indicando que el documento está escrito en idioma español. También se utilizan atributos al utilizar imágenes:
         </p>
 
         <figure>
             <img src="https://images.unsplash.com/photo-1507289872412-523fc6b2db5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=20ca9d0eba2016344894aec7bb453a2d&auto=format&fit=crop&w=748&q=80" alt="Ejemplo de imagenes en HTML">
 
-            <figcaption>
+            <figcaption lang="en">
                     Photo by Hello I'm Nik on Unsplash
             </figcaption>
         </figure>
@@ -75,16 +86,14 @@
 
     <section>
         <h2>Listas</h2>
-          <p>A continuacion se daran a conocer tres tipos de listas:</p>
+          <p>HTML ofrece algunos metodos para especificar listas de información. Todas las listas deben contener uno a más elementos. Existen tres tipos de listas:</p>
             <h3>Listas Ordenadas</h3>
               <p>
-              Las listas ordenadas van enmarcadas dentro de las etiquetas <code>&lt;ol&gt;</code> <code>&lt;/ol&gt;</code>. Cada punto de
-              la lista se escribe dentro las etiquetas:<code> &lt;li&gt;</code> <code> &lt;/li&gt;</code>. Pero al ser listas ordenadas los
-              símbolos serán números (por defecto) y éstos se irán generando automáticamente por orden, conforme se agregen mas elementos a
-              la lista. Ejemplo:
+              Las listas ordenadas son utilizadas cuando se desea enfatizar un orden en la información presentada.Se representan con las etiquetas <code>&lt;ol&gt;</code> <code>&lt;/ol&gt;</code>. Cada elemento de
+              la lista se escribe dentro las etiquetas:<code> &lt;li&gt;</code> <code> &lt;/li&gt;</code>. Visualmente cada elemento de la lista se enmunera automaticamente. Ejemplo:
               </p>
               <figure>
-                <img src="img/lista-ordenada.png" alt="codigo html de una lista ordenada numericamente">
+                <img src="img/lista-ordenada.PNG" alt="codigo html de una lista ordenada numericamente">
                 <figcaption>
                   Ejemplo de una lista ordenada
                 </figcaption>
@@ -93,20 +102,20 @@
                 Mientras que en el navegador se vera asi:
               </p>
               <figure>
-                <img src="img/lista-ordenada-browser.png" alt="Una lista ordenada numericamente">
+                <img src="img/lista-ordenada-browser.PNG" alt="Una lista ordenada numericamente">
                 <figcaption>
                   Lista ordenada vista en un navegador
                 </figcaption>
               </figure>
             <h3>Listas no ordenadas</h3>
               <p>
-                Las listas no ordenadas van dentro de la etiqueta <code>&lt;ul&gt;</code> y de su cierre <code>&lt;/ul&gt;</code>.
-                Cada punto que queramos añadir a la lista, lo haremos dentro de la etiqueta <code>&lt;li&gt;</code> y su cierre <code>&lt;/li&gt;</code>.
-                La caracteristica principal es que los elementos de la lista se van marcando por simbolos.
+                Las listas no ordenadas van dentro de la etiqueta de apertura <code>&lt;ul&gt;</code> y de su cierre <code>&lt;/ul&gt;</code>.
+                Cada punto que queramos añadir a la lista, lo haremos dentro de la etiqueta de apertura <code>&lt;li&gt;</code> y su cierre <code>&lt;/li&gt;</code>.
+                La caracteristica principal es que los elementos de la lista se van marcando por simbolos y su orden no interesa.
                 Ejemplo:
               </p>
               <figure>
-                <img src="img/lista-no-ordenada-html.png" alt="codigo html de una lista no ordenada">
+                <img src="img/lista-no-ordenada-html.PNG" alt="codigo html de una lista no ordenada">
                 <figcaption>
                   Ejemplo de una lista no ordenada
                 </figcaption>
@@ -115,29 +124,28 @@
                 Mientras que en el navegador se vera asi:
               </p>
               <figure>
-                <img src="img/lista-no-ordenada-browser.png" alt="Una lista no ordenada">
+                <img src="img/lista-no-ordenada-browser.PNG" alt="Una lista no ordenada">
                 <figcaption>
                   Lista no ordenada vista en un navegador
                 </figcaption>
               </figure>
             <h3>Listas de definiciones</h3>
               <p>
-                Si se necesita trabajar en una lista de definiciones, se pueden usar las etiquetas<code> &lt;dl&gt;, &lt;dt&gt; y &lt;dd&gt;</code>.
+                Las listas de definiciones se conforman por una serie de pares termino/definición, en ellas se utilizan las etiquetas<code> &lt;dl&gt;, &lt;dt&gt; y &lt;dd&gt;</code>.
                 A continuacion se explicaran cada una de estas:
               </p>
               <p>
-                La etiqueta <code>&lt;dl&gt;</code> viene de los términos <i>Definiton list</i> e indica que dentro de ella va
-                a ir una definición.
+                La etiqueta <code>&lt;dl&gt;</code> deriva del termino <i>Definiton list</i> e indica que dentro de ella se escribira una lista de definiciones.
               </p>
               <p>
-                La etiqueta <code>&lt;dt&gt;</code> viene de los términos <i>Definition term</i> y dentro de ella irá el término que sera definido.
+                La etiqueta <code>&lt;dt&gt;</code> deriva del termino <i>Definition term</i> y dentro de ella irá el término que sera definido.
               </p>
               <p>
-                Finalmente, la etiqueta <code>&lt;dd&gt;</code> viene de los términos <i>Definition description</i> e indica que dentro de ésta
+                Finalmente, la etiqueta <code>&lt;dd&gt;</code> deriva del termino <i>Definition description</i> e indica que dentro de ésta
                 irá la definición.
               </p>
               <figure>
-                <img src="img/lista-definicion-html.png" alt="Ejemplo de lista de definiciones">
+                <img src="img/lista-definicion-html.PNG" alt="Ejemplo de lista de definiciones">
                 <figcaption>
                   Ejemplo de lista de definiciones
                 </figcaption>
@@ -146,7 +154,7 @@
                 El listado de definiciones se vera en el navegador asi:
               </p>
               <figure>
-                <img src="img/definiciones-browser.png" alt="Una lista de deficiones de kiwi y electron">
+                <img src="img/definiciones-browser.PNG" alt="Una lista de deficiones de kiwi y electron">
                 <figcaption>
                   Lista de definiciones vista en un navegador
                 </figcaption>
@@ -154,25 +162,50 @@
 
 
     </section>
+    <section>
+        <h2>Ejercicio</h2>
+        <p>
+            A continuación se muestra el ejemplo de la entrada de un blog:
+        </p>
+        <a target="_blank" href="ejercicio/ejercicio.png">Una buena práctica para escribir código: nombrar elementos</a>
+        <p>
+            Represente el contenido en la imagen utilizando las etiquetas HTML que considere apropiadas. Las secciones de código son representadas utilizando imagenes, las cuales puede encontrar a continuación:
+        </p>
+        <ol>
+            <li><a target="_blank" href="ejercicio/img/1.png">Receipt</a></li>
+            <li><a target="_blank" href="ejercicio/img/2.png">a_b</a></li>
+            <li><a target="_blank" href="ejercicio/img/3.png">post_likes</a></li>
+            <li><a target="_blank" href="ejercicio/img/4.png">post_words</a></li>
+        </ol>
+        <section>
+            <h3>Etiquetas a practicar:</h3>
+            <dl>
+                <dt><code><b>&lt;h1&gt;</b></code>:</dt>
+                    <dd>Es una etiqueta de encabezado que implementan seis niveles de encabezado del documento, <code>&lt;h1&gt;</code> es el más importante, y <code>&lt;h6&gt;</code>, el menos importante.</dd>
+                <dt><code><b>&lt;p&gt;</b></code>:</dt>
+                    <dd>El elemento p (párrafo) es el apropiado para distribuir el texto en párrafos.</dd>
+                <dt><code><b>&lt;img&gt;</b></code>:</dt>
+                    <dd>Representa una imagen en el documento.</dd>
+                <dt><code><b>&lt;b&gt;</b></code>:</dt>
+                    <dd>Indica que el texto debe ser representado con una variable bold, o negrita, de la tipografía que se esté usando.</dd>
+                <dt><code><b>&lt;strong&gt;</b></code>:</dt>
+                    <dd>Marca con especial énfasis las partes más importantes de un texto.</dd>
+                <dt><code><b>&lt;i&gt;</b></code>:</dt>
+                    <dd>Muestra el texto marcado con un estilo en cursiva o italica.</dd>
+                <dt><code><b>&lt;em&gt;</b></code>:</dt>
+                    <dd>Es el apropiado para marcar con énfasis las partes importantes de un texto.</dd>
+            </dl>
+        </section>
+
+    </section>
 
     <section>
-        <h2>Etiquetas a utilizar:</h2>
-        <dl>
-            <dt><code><b>&lt;h1&gt;</b></code>:</dt>
-                <dd>Es una etiqueta de encabezado que implementan seis niveles de encabezado del documento, <code>&lt;h1&gt;</code> es el más importante, y <code>&lt;h6&gt;</code>, el menos importante.</dd>
-            <dt><code><b>&lt;p&gt;</b></code>:</dt>
-                <dd>El elemento p (párrafo) es el apropiado para distribuir el texto en párrafos.</dd>
-            <dt><code><b>&lt;img&gt;</b></code>:</dt>
-                <dd>Representa una imagen en el documento.</dd>
-            <dt><code><b>&lt;b&gt;</b></code>:</dt>
-                <dd>Indica que el texto debe ser representado con una variable bold, o negrita, de la tipografía que se esté usando.</dd>
-            <dt><code><b>&lt;strong&gt;</b></code>:</dt>
-                <dd>Marca con especial énfasis las partes más importantes de un texto.</dd>
-            <dt><code><b>&lt;i&gt;</b></code>:</dt>
-                <dd>Muestra el texto marcado con un estilo en cursiva o italica.</dd>
-            <dt><code><b>&lt;em&gt;</b></code>:</dt>
-                <dd>Es el apropiado para marcar con énfasis las partes importantes de un texto.</dd>
-        </dl>
+        <h2>Referencias</h2>
+        <ul>
+            <li>Howtocodeinhtml.com. (2018). Learn How to Code in HTML5 and CSS3. [En linea] Disponible: <a href="http://howtocodeinhtml.com/">http://howtocodeinhtml.com/</a> [Accesado 11 Aug. 2018].</li>
+            <li>W3.org. (2018). Lists in HTML documents. [En linea] Disponible: <a href="https://www.w3.org/TR/html401/struct/lists.html">https://www.w3.org/TR/html401/struct/lists.html</a> [Accesado 13 Aug. 2018].</li>
+            <li>¿Cómo se diferencia el XML del HTML?, Maestros del Web, 2018. [En linea]. Disponible: <a href="http://www.maestrosdelweb.com/xmlvshtml/">http://www.maestrosdelweb.com/xmlvshtml/</a>. [Accesado: 14- Aug- 2018].</li>
+        </ul>
     </section>
 </body>
 </html>
