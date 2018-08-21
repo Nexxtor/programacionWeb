@@ -1,0 +1,72 @@
+/* Start Selector*/
+* {
+    margin: 0;
+}
+
+/* Tag Selector or Type Selector or Element Selector*/
+body {
+    background-color: #f1eeee;
+}
+
+/* Id Selector*/
+#brand {
+    color: #32323d;
+}
+
+.main {
+    background: url(login.png);
+    background-repeat: no-repeat;
+    height: 90vh;
+    background-position: 100% -50px;
+}
+
+header {
+    background-color: #fff;
+}
+
+ul{
+    color: #32323d;
+}
+
+/* Class Selector*/
+.big-text {
+    font-size: 2em;
+}
+
+.social {
+    font-size: 1.2em;
+}
+
+.social a{
+   
+    /*  Big Way
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;*/
+    border: 1px solid black;
+    /* 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px; */
+    padding: 10px;
+}
+
+/* Descendant Selector*/
+.more-option a{
+    display: block
+}
+
+/* If a , b select both elements*/
+.data select, .data input { /**/
+    display: block;
+}
+
+input[type="submit"] {
+    font-size: 1.3em;
+}
+
+/* Adjacent Selector*/
+a + a {
+    margin: 10px;
+}

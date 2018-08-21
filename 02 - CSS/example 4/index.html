@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- links with stylesheet  -->
+    <link rel="stylesheet" href="style.css">
+    <title> Iniciar Sesión - DEEZER</title>
+</head>
+<body>
+    <header>
+        <h1 id="brand">DEEZER</h1>
+        <nav>
+            <ul>
+                <li>Ofertas</li>
+                <li>Conectarse</li>
+                <li>Registrarse</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <p class="big-text">¿Qué quieres escuchar hoy?</p>
+        <form action="#">
+            <!-- Social Login Buttons-->
+            <div class="social">
+                <a href="#" role="button"> Facebook </a>
+                <a href="#" role="button"> Google </a>
+            </div>
+
+            <div class="data">
+                <select name="contry" id="contry">
+                    <option value="sv">El Salvador</option>
+                    <option value="other">Otro</option>
+                </select>
+                <input type="tel" name="tel" id="tel" placeholder="Teléfono (+503)">
+            </div>
+
+            <input type="submit" value="Conectarse">
+
+            <div class="more-option"> <!-- More action -->
+                <a href="#">Conectarse con la dirección de email</a>
+
+                <a href="#"><strong> ¿Has olvidado tu contraseña? </strong></a>
+                <a href="#">¿Todavía no tienes una cuenta Deezer? <strong>Registrarse</strong></a>
+            </div>    
+        </form>
+    </div>
+</body>
+</html>
