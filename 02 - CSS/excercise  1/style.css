@@ -1,0 +1,43 @@
+/***************************************************
+ ** Sin modificar el HTML dado, aplique todas las **
+ ** reglas solicitadas                            **
+ ***************************************************/
+
+ /* Para body defina el color de fondo como #adadad*/
+
+ /* Haga que la primera letra de cada parrafo 
+ tenga tamaño de fuente 1.2em */
+
+ /* Para todos los elementos de la clase .mw-headline */
+ 
+ /* Haga que todas las etiquetas de cabecera tenga un border
+ inferior negro de 1px ademas de un padding inferior de 10px */
+
+ /* Haga que todos los h3 tengan un margin izquierdo y derecho de 10px */
+
+ /* Ponga un border morado (user rgb) a todas
+ las etiquetas pre de 4px solido */
+
+ /* Cambie el tamaño de fuente (1.1em) de todos los parrafos
+ que esten junto a un h3, además el texto debe ser color
+ blanco*/
+
+ /* A todos la tablas aplique un color de fondo blanco
+ asigne un ancho del 100% y aplicque que la propiedad border-collapse: collapse;*/
+
+/* Haga que las celdas de titulo y celdas normales el texto
+se alinea a la izquierda y aplique un relleno de 10px*/
+
+/* Haga que solamente las filas par tenga color de fondo #f2f2f2*/
+
+/*A la cabecera de la tabla asigne un tono de morado utilizando hsl como color de fondo
+y el color blanco para el texto*/
+
+/* Haga que todos los enlaces dentro de un tabla hereden el color de texto 
+de su elemento padre y que no tengan decoracion*/
+
+/* Todos los enlaces dentro de una tabla al tener el mouse sobre
+deben de ser de color #607d8b */
+
+/*Haga que el elemnto footer tenga un alto minimo de 100px y alto de 150px
+con color de fondo negro, letra blanca y relleno de 10 px*/

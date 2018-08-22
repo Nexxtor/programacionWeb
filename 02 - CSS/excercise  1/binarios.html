@@ -1,0 +1,537 @@
+<!DOCTYPE type>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Operaciones con números binarios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h2><span class="mw-headline">Operaciones con números binarios</span> </h2>
+  <h3><span class="mw-headline">Suma de números Binarios</span> </h3>
+  <p>Las posibles combinaciones al sumar dos bits son</p>
+  <ul>
+    <li>0 + 0 = 0
+    </li>
+    <li>0 + 1 = 1
+    </li>
+    <li>1 + 0 = 1
+    </li>
+    <li>1 + 1 = 10</li>
+  </ul>
+  <pre>    
+      100110101
+    +  11010101
+    ———————————
+     1000001010
+  </pre>
+  <p>Operamos como en el sistema decimal: comenzamos a sumar desde la derecha, en nuestro ejemplo, 1 + 1 = 10, entonces escribimos
+    0 en la fila del resultado y <i>llevamos</i>
+    1 (este "1" se llama&nbsp; <i>arrastre</i>). A continuación se suma el acarreo a la siguiente columna: 1 + 0 + 0 = 1,
+    y seguimos hasta terminar todas la columnas (exactamente como en decimal).</p>
+  <p>&nbsp;</p>
+  <h3><span class="mw-headline">Resta de números binarios</span> </h3>
+  <p>El algoritmo de la resta en binario es el mismo que en el sistema decimal. Pero conviene repasar la operación de restar
+    en decimal para comprender la operación binaria, que es más sencilla. Los términos que intervienen en la resta se llaman
+    minuendo, sustraendo y diferencia.</p>
+  <p>Las restas básicas 0-0, 1-0 y 1-1 son evidentes:</p>
+  <ul>
+    <li>0 - 0 = 0
+    </li>
+    <li>1 - 0 = 1
+    </li>
+    <li>1 - 1 = 0
+    </li>
+    <li>0 - 1 = no cabe o se pide prestado al proximo.</li>
+  </ul>
+  <p>La resta 0 - 1 se resuelve, igual que en el sistema decimal, tomando una unidad prestada de la posición siguiente: 10
+    - 1 = 1 y me llevo 1, lo que equivale a decir en decimal, 2 - 1 = 1. Esa unidad prestada debe devolverse, sumándola,
+    a la posición siguiente. Veamos algunos ejemplos:</p>
+  <pre>Restamos 17 - 10 = 7 (2=345)          Restamos 217 - 171 = 46 (3=690)
+            10001                           11011001    
+           -01010                          -10101011
+           ——————                          —————————
+            01111                           00101110
+    </pre>
+  <p>A pesar de lo sencillo que es el procedimiento, es fácil confundirse. Tenemos interiorizado el sistema decimal y hemos
+    aprendido a restar mecánicamente, sin detenernos a pensar en el significado del arrastre. Para simplificar las restas
+    y reducir la posibilidad de cometer errores hay varias soluciones:</p>
+  <ul>
+    <li>Dividir los números largos en grupos. En el siguiente ejemplo, vemos cómo se divide una resta larga en tres restas
+      cortas:</li>
+  </ul>
+  <pre>        
+            100110011101             1001     1001     1101
+           -010101110010            -0101    -0111    -0010
+           —————————————      =     —————    —————    —————
+            010000101011             0100     0010     1011
+    </pre>
+  <ul>
+    <li>Utilizando el <a title="Complemento a dos" href="http://es.wikipedia.org/wiki/Complemento_a_dos">complemento a dos</a>.
+      La resta de dos números binarios puede obtenerse sumando al minuendo el complemento a dos del sustraendo. Veamos algunos
+      ejemplos. Hagamos la siguiente resta, 91 - 46 = 45, en binario:</li>
+  </ul>
+  <pre>        
+            1011011                                             1011011
+           -0101110               C2 de 46 = 1010010           +1010010
+           ————————                                            ————————
+            0101101                                            10101101
+    </pre>
+  <p>En el resultado nos sobra un bit, que se desborda por la izquierda. Pero, como el número resultante no puede ser más
+    largo que el minuendo, el bit sobrante se desprecia.</p>
+  <p>Un último ejemplo: vamos a restar 219 - 23 = 196, directamente y utilizando el complemento a dos:</p>
+  <pre>        
+            11011011                                            11011011
+           -00010111               C2 de 23 = 11101001         +11101001
+           —————————                                           —————————
+            11000100                                           111000100
+    </pre>
+  <p>Y, despreciando el bit que se desborda por la izquierda, llegamos al resultado correcto: 11000100 en binario, 196 en
+    decimal.</p>
+  <p><br>
+  </p>
+  <ul>
+    <li>Utilizando el complemento a 1. La resta de dos números binarios puede obtenerse sumando al minuendo el complemento
+      a uno del sustraendo y a su vez sumarle el bit de overflow (bit que se desborda).</li>
+  </ul>
+  <p>&nbsp;</p>
+  <h3><span class="mw-headline">Producto de números binarios</span> </h3>
+  <p>El algoritmo del <a title="Multiplicación" href="http://es.wikipedia.org/wiki/MultiplicaciÃ³n">producto</a>
+    en binario es igual que en números decimales; aunque se lleva cabo con más sencillez, ya que el 0 multiplicado por cualquier
+    número da 0, y el 1 es el <a title="Elemento neutro" href="http://es.wikipedia.org/wiki/Elemento_neutro">elemento
+      neutro
+    </a> del producto.</p>
+  <p>Por ejemplo, multipliquemos 10110 por 1001:</p>
+  <pre>        
+            10110       
+             1001                    
+        —————————          
+            10110               
+           00000                
+          00000                
+         10110                
+        —————————           
+         11000110
+    </pre>
+  <p>En sistemas electrónicos, donde se suelen utilizar números mayores, no se utiliza este método sino otro llamado <a title="Algoritmo de Booth"
+      href="http://es.wikipedia.org/wiki/Algoritmo_de_Booth">algoritmo de Booth</a>.</p>
+  <p>&nbsp;</p>
+  <h3><span class="mw-headline">División de números binarios</span> </h3>
+  <p>La <a title="División (matemática)" href="http://es.wikipedia.org/wiki/DivisiÃ³n_(matemÃ¡tica)">división</a>
+    en binario es similar a la <a title="Decimal" href="http://es.wikipedia.org/wiki/Decimal">decimal</a>, la única diferencia
+    es que a la hora de hacer las restas, dentro de la <a title="División (matemática)" href="http://es.wikipedia.org/wiki/DivisiÃ³n_(matemÃ¡tica)">división</a>,
+    estas deben ser realizadas en binario. Por ejemplo, vamos a dividir 100010010 (274) entre 1101 (13):</p>
+  <pre> 
+    100010010 |1101
+                ——————
+    - 0000      010101
+    ———————
+     10001
+    - 1101
+    ———————
+      01000
+     - 0000
+     ———————
+       10000
+      - 1101
+      ———————
+        00111
+       - 0000
+       ———————
+         01110
+        - 1101
+        ———————
+         00001
+    </pre>
+  <p>&nbsp;</p>
+  <h2><span class="mw-headline">Conversión entre binarios y decimales, binario a octal y de binario a hexadecimal</span>
+    </h2>
+  <p><span class="mw-headline">Binario a decimal</span> </p>
+  <p>Para realizar la conversión de binario a decimal, realice lo siguiente:</p>
+  <ol>
+    <li>Inicie por el lado derecho del número en binario, cada número multiplíquelo por 2 y elévelo a la potencia consecutiva
+      (comenzando por la potencia 0).
+    </li>
+    <li>Después de realizar cada una de las multiplicaciones, sume todas y el número resultante será el equivalente al sistema
+      decimal.</li>
+  </ol>
+  <p>Ejemplos:</p>
+  <ul>
+    <li>110101 (binario) = 53 (decimal). Proceso:</li>
+  </ul>
+  <pre>1*(2) elevado a (0)=1
+    0*(2) elevado a (1)=0
+    1*(2) elevado a (2)=4
+    0*(2) elevado a (3)=0
+    1*(2) elevado a (4)=16
+    1*(2) elevado a (5)=32
+    La suma es: 53
+    </pre>
+  <ul>
+    <li>10010111 (binario) = 151 (decimal). Proceso:</li>
+  </ul>
+  <pre>1*(2) elevado a (0)=1
+    1*(2) elevado a (1)=2
+    1*(2) elevado a (2)=4
+    0*(2) elevado a (3)=0
+    1*(2) elevado a (4)=16
+    0*(2) elevado a (5)=0
+    0*(2) elevado a (6)=0
+    1*(2) elevado a (7)=128
+    La suma es: 151
+    </pre>
+  <ul>
+    <li>110111 (binario) = 55 (decimal). Proceso:</li>
+  </ul>
+  <pre>1*(2) elevado a (0)=1
+    1*(2) elevado a (1)=2
+    1*(2) elevado a (2)=4
+    0*(2) elevado a (3)=0
+    1*(2) elevado a (4)=16
+    1*(2) elevado a (5)=32
+    La suma es: 55
+    </pre>
+  <p>&nbsp;</p>
+  <h3><span class="mw-headline">Decimal a binario</span> </h3>
+  <p>Se <a title="División (matemática)" href="http://es.wikipedia.org/wiki/DivisiÃ³n_(matemÃ¡tica)">divide</a>
+    el número decimal entre <b>2</b> cuyo resultado entero se vuelve a dividir entre 2 y así sucesivamente. Una vez llegados
+    al <b>1</b> indivisible se cuentan el último cociente, es decir el uno final (todo número binario excepto el 0 empieza
+    por uno), seguido de los residuos de las divisiones subsiguientes. Del más reciente hasta el primero que resultó. Este
+    número será el binario que buscamos. A continuación se puede ver un ejemplo con el número decimal 100 pasado a binario.</p>
+  <pre>100 |_2
+     0   50 |_2
+          0  25 |_2         --&gt; 100 <img class="tex" alt="\Rightarrow" src="http://upload.wikimedia.org/math/d/f/0/df09aea884019cb88a2957126faba316.png" width="18" height="12"> 1100100
+              1  12 |_2
+                  0  6 |_2
+                     0  3 |_2
+                        1  1
+    </pre>
+  <p><br> Otra forma de conversión consiste en un método parecido a la factorización en
+    <a title="Número primo" href="http://es.wikipedia.org/wiki/NÃºmero_primo">números primos
+    </a>. Es relativamente fácil dividir cualquier número entre 2. Este método consiste también en divisiones sucesivas.
+    Dependiendo de si el número es par o impar, colocaremos un cero o un uno en la columna de la derecha. Si es impar, le
+    restaremos uno y seguiremos dividiendo por dos, hasta llegar a 1. Después sólo nos queda tomar el último resultado de
+    la columna izquierda (que siempre será 1) y todos los de la columna de la derecha y ordenar los dígitos de abajo a arriba.
+    Y luego se haría un cuadro con las potencias con el resultado.</p>
+  <p>Ejemplo:</p>
+  <pre>100|0
+     50|0
+     25|1   --&gt; 1, 25-1=24 y seguimos dividiendo por 2
+     12|0
+      6|0
+      3|1
+      1|1   --&gt; 100 <img class="tex" alt="\Rightarrow" src="http://upload.wikimedia.org/math/d/f/0/df09aea884019cb88a2957126faba316.png" width="18" height="12"> 1100100
+    </pre>
+  <p>Y también tenemos otro método el método de distribución en el que distribuimos el número decimal y podemos tener el
+    resultado en binario, trabaja de la siguiente manera tenemos el número 151 lo que tenemos que hacer es distribuir este
+    número buscando el número más próximo; en este caso es 128 así que en la casilla donde hay capacidad de contener el número
+    que tenemos lo vamos marcando. y en las casillas que no empleamos las marcaremos con un 0.</p>
+  <p>Ejemplo:</p>
+  <pre>  2^0=   1|1
+      2^1=   2|1
+      2^2=   4|1
+      2^3=   8|0
+      2^4=  16|1
+      2^5=  32|0
+      2^6=  64|0
+      2^7= 128|1           128+16+4+2+1=151
+      2^8= 256|0
+    </pre>
+  <p>Y sucesivos.</p>
+  <p>&nbsp;</p>
+  <h3><span class="mw-headline">Binario a octal</span></h3>
+  <p>Para realizar la conversión de binario a octal, realice lo siguiente:</p>
+  <p>1) Agrupe la cantidad binaria en grupos de 3 en 3 iniciando por el lado derecho. Si al terminar de agrupar no completa
+    3 dígitos, entonces agregue ceros a la izquierda.</p>
+  <p>2) Posteriormente vea el valor que corresponde de acuerdo a la tabla:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Número en binario</th>
+        <th>000</th>
+        <th>001</th>
+        <th>010</th>
+        <th>011</th>
+        <th>100</th>
+        <th>101</th>
+        <th>110</th>
+        <th>111</th>
+      </tr>
+      <tr>
+        <td>Número en octal</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>3) La cantidad correspondiente en octal se agrupa de izquierda a derecha.</p>
+  <p>Ejemplos:</p>
+  <ul>
+    <li>110111 (binario) = 67 (octal). Proceso:</li>
+  </ul>
+  <pre>111 = 7
+    110 = 6
+    Agrupe de izquierda a derecha: 67
+    </pre>
+  <ul>
+    <li>11001111 (binario) = 317 (octal). Proceso:</li>
+  </ul>
+  <pre>111 = 7
+    001 = 1
+    11 entonces agregue un cero, con lo que se obtiene 011 = 3
+    Agrupe de izquierda a derecha: 317
+    </pre>
+  <ul>
+    <li>1000011 (binario) = 103 (octal). Proceso:</li>
+  </ul>
+  <pre>011 = 3
+    000 = 0
+    1 entonces agregue 001 = 1
+    Agrupe de izquierda a derecha: 103.
+    </pre>
+  <p>&nbsp;</p>
+  <h3><span class="mw-headline">Octal a binario</span> </h3>
+  <p>Cada dígito octal se lo convierte en su binario equivalente de 3 bits y se juntan en el mismo orden. Ejemplo:</p>
+  <ul>
+    <li>247 (octal) = 010100111 (binario). El 2 en binario es 10, pero en binario de 3 bits es Oc(2) = B(010); el Oc(4) =
+      B(100) y el Oc(7) = (111), luego el número en binario será 010100111.</li>
+  </ul>
+  <h3><span class="mw-headline">Binario a hexadecimal</span> </h3>
+  <p>Para realizar la conversión de binario a hexadecimal, realice lo siguiente:</p>
+  <p>1) Agrupe la cantidad binaria en grupos de 4 en 4 iniciando por el lado derecho. Si al terminar de agrupar no completa
+    4 dígitos, entonces agregue ceros a la izquierda.</p>
+  <p>2) Posteriormente vea el valor que corresponde de acuerdo a la tabla:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Número en binario</th>
+        <th>0000</th>
+        <th>0001</th>
+        <th>0010</th>
+        <th>0011</th>
+        <th>0100</th>
+        <th>0101</th>
+        <th>0110</th>
+        <th>0111</th>
+        <th>1000</th>
+        <th>1001</th>
+        <th>1010</th>
+        <th>1011</th>
+        <th>1100</th>
+        <th>1101</th>
+        <th>1110</th>
+        <th>1111</th>
+      </tr>
+      <tr>
+        <td>Número en hexadecimal</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>3) La cantidad correspondiente en hexadecimal se agrupa de izquierda a derecha.
+  </p>
+  <p>Ejemplos:</p>
+  <ul>
+    <li>110111010 (binario) = 1BA (hexadecimal). Proceso:</li>
+  </ul>
+  <pre>1010 = A
+    1011 = B
+    1 entonces agregue 0001 = 1
+    Agrupe de izquierda a derecha: 1BA
+    </pre>
+  <ul>
+    <li>11011110101 (binario) = 6F5 (hexadecimal). Proceso:</li>
+  </ul>
+  <pre>0101 = 5
+    1111 = F
+    110 entonces agregue 0110 = 6
+    Agrupe de izquierda a derercha: 6F5
+    </pre>
+  <p><span class="mw-headline">Hexadecimal a binario</span> </p>
+  <p>Ídem que para pasar de hexadecimal a binario, solo que se remplaza por el equivalente de 4 bits, como de octal a binario.</p>
+  <h2><span class="mw-headline">Tabla de conversión entre decimal, binario, hexadecimal, octal, BCD, Exceso 3 y Gray o Reflejado</span></h2>
+  <table>
+    <tbody>
+      <tr>
+        <th>Decimal</th>
+        <th>Binario</th>
+        <th><a title="Hexadecimal" href="http://es.wikipedia.org/wiki/Hexadecimal">Hexadecimal</a></th>
+        <th><a title="Octal" href="http://es.wikipedia.org/wiki/Octal">Octal</a></th>
+        <th><a title="BCD" href="http://es.wikipedia.org/wiki/BCD">BCD</a></th>
+        <th><a class="new" title="Exceso 3" href="http://es.wikipedia.org/w/index.php?title=Exceso_3&amp;action=edit">Exceso </a></th>
+        <th><a title="Código Gray" href="http://es.wikipedia.org/wiki/CÃ³digo_Gray">Gray</a> o Reflejado</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0000</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0000</td>
+        <td>0011</td>
+        <td>0000</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0001</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0001</td>
+        <td>0100</td>
+        <td>0001</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>0010</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0010</td>
+        <td>0101</td>
+        <td>0011</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>0011</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0011</td>
+        <td>0110</td>
+        <td>0010</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>0100</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0100</td>
+        <td>0111</td>
+        <td>0110</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>0101</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0101</td>
+        <td>1000</td>
+        <td>0111</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>0110</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0110</td>
+        <td>1001</td>
+        <td>0101</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>0111</td>
+        <td>7</td>
+        <td>7</td>
+        <td>0111</td>
+        <td>1010</td>
+        <td>0100</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>1000</td>
+        <td>8</td>
+        <td>10</td>
+        <td>1000</td>
+        <td>1011</td>
+        <td>1100</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>1001</td>
+        <td>9</td>
+        <td>11</td>
+        <td>1001</td>
+        <td>1100</td>
+        <td>1101</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>1010</td>
+        <td>A</td>
+        <td>12</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>1011</td>
+        <td>B</td>
+        <td>13</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>1100</td>
+        <td>C</td>
+        <td>14</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>1101</td>
+        <td>D</td>
+        <td>15</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>1110</td>
+        <td>E</td>
+        <td>16</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>1111</td>
+        <td>F</td>
+        <td>17</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  <footer>
+      Todos los derechos reservados
+  </footer>
+</body>
+
+</html>
