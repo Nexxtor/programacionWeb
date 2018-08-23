@@ -24,7 +24,74 @@
 
     <section>
         <h2>Manejo de formularios con HTML5</h2>
+        <h3>&lt;input&gt;</h3>
+        <p>Es un campo de entrada donde el usuario puede ingresar datos. 
+        Uno de los atributos que posee la etiqueta “input” es “type” que especifica el tipo de input como botón, 
+        checkbox entre otros o el tipo de datos a ingresar. 
+        </p>
+        <p>Algunos de valores que se pueden colocar en el atributo <code>type</code> son:</p>
+        <ol>
+            <li>button: es un botón que no posee acción, a menos que sea especificado en el atributo <code>onClick</code>.<br><code>&lt;input type="button" value=”Send”&gt;</code></li>
+                <input type="button" value=”Send”>
+            <li>checkbox: permite seleccionar una o más opciones.<br><code>&lt;input type="checkbox"&gt; Female&lt;input type="checkbox"&gt; Male</code></li>
+                <input type="checkbox"> Female
+                <input type="checkbox"> Male
+            <li>date: permite ingresar una fecha con el formato dd/mm/aaaa.<br><code>&lt;input type="date" &gt;</code></li>
+                <input type="date" >
+            <li>email: solo permite que el formato del contenido ingresado corresponda a un email.<br><code>&lt;input type="email" &gt;</code></li>
+                <input type="email">
+            <li>password: oculta visualmente el contenido que se ha ingresado en el input.<br><code>&lt;input type="password" &gt;</code></li>
+                <input type="password">
+            <li>radio: solo permite seleccionar una opción.<br><code>&lt;input type="radio"&gt;Yellow<br>&lt;input type="radio"&gt;Red<br>&lt;input type="radio"&gt;Blue</code></li>
+                <input type="radio">Yellow
+                <input type="radio">Red
+                <input type="radio">Blue
+            <li>submit: envía datos de un formulario al controlador que sea especificado.<br><code>&lt;input type="submit" value="Submit" &gt;</code></li>
+                <input type="submit" value="Submit">
+            <li>text: permite al usuario ingresar texto plano.<br><code>&lt;input type="text" &gt;</code></li>
+                <input type="text">
+            <li>file: es un botón que permite seleccionar un archivo local para ser cargado.<br><code>Seleccione un archivo: &lt;input type="file" &gt;</code></li>
+                <input type="file">
+        </ol>
+        
+        <h3>&lt;select &gt;</h3>
+        <p>Es una lista desplegable con distintos elementos que pueden ser seleccionados.</p>
+        <h3>&lt;option &gt;</h3>
+        <p>En esta etiqueta se coloca el elemento que se contendrá la lista.<br>
+        <code>&lt;select&gt;<br>&lt;option&gt;Toyota&lt;/option&gt;<br>&lt;option&gt;Mercedes&lt;/option&gt;<br>&lt;option&gt;Audi&lt;/option&gt;<br>&lt;/select&gt;</code></p>
+        <select>
+            <option >Toyota</option>
+            <option >Mercedes</option>
+            <option >Audi</option>
+        </select>
+        
+        <h3>&lt;textarea &gt;</h3>
+        <p>Permite al usuario ingresar múltiples líneas. Se puede especificar el ancho y el alto de las líneas visibles mediante los atributos cols y rows.
+        <br><code>&lt;textarea rows="10" cols="30"&gt;Hello world!!.&lt;/textarea &gt;</code></p>
+        <textarea rows="10" cols="30">Hello world!!.</textarea>
+        
+        <h3>&lt;label&gt;</h3>
+        <p>Define la etiqueta de un input.
+        <code><br>&lt;label &gt;Name:  &lt;/label&gt; &lt;input type="text” &gt;</code></p>
+        <label>Name: </label>
+        <input type="text”>
+                     
+        <h3>&lt;button&gt;</h3>
+        <p>Define un botón en el que se puede hacer clic sin especificar la acción a realizar.
+        <code><br>&lt;button &gt;Click Me! &lt;/button &gt;</code></p>
+                     
+        <h3>&lt;fieldset&gt;</h3>
+        <p>permite agrupar elementos que estén relacionados entre sí, de un formulario.
+        <code><br>&lt;fieldset&gt; &lt;legend&gt;Personal information:&lt;/legend&gt;Name: &lt;input type="text"&gt;<br>Email: &lt;input type="email"&gt;<br>Date of birth: &lt;input type="date"&gt;&lt;/fieldset&gt;</code></p>
+        <fieldset>
+            <legend>Personal information:</legend>
+                    Name: <input type="text"><br>
+                    Email: <input type="email"><br>
+                    Date of birth: <input type="date">
+        </fieldset>
+
     </section>
+    
 
     <section>
         <h2>Ejemplos</h2>
