@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laboratorio 2</title>
+</head>
+
+<body>
+    <header>
+        <h1>Guía de Laboratorio 2</h1>
+        <p>
+            <b>Introducción a HTML</b> |
+            <time datetime="2018-08-19">
+                Viernes 24 de Agosto de 2018
+            </time>
+        </p>
+    </header>
+
+    <section>
+        <h2>Manejo de formularios con HTML5</h2>
+        <h3>&lt;input&gt;</h3>
+        <p>Es un campo de entrada donde el usuario puede ingresar datos. Uno de los atributos que posee la etiqueta
+            <code>input</code> es
+            <code>type</code> que especifica el tipo de entrada de datos entre ellos podemos tener bot&oacute;n, checkbox entre otros.
+        </p>
+        <p>Algunos de valores que se pueden colocar en el atributo
+            <code>type</code> son:</p>
+        <ol>
+            <li>button: es un botón que no posee acción, a menos que sea especificado en el atributo
+                <code>onClick</code>.
+                <br>
+                <code>&lt;input type="button" value=”Ok”&gt;</code>
+            </li>
+            <input type="button" value=”Ok”>
+            <br>
+            <br>
+            <li>checkbox: permite seleccionar una o más opciones.
+                <br>
+                <code>&lt;input type="checkbox" name="check[]" checked&gt; Yellow<br>&lt;input type="checkbox" name="check[]"&gt; Blue<br>&lt;input type="checkbox" name="check[]&gt; Green</code>
+            </li>
+            <br>
+            <label>
+                <input type="checkbox" checked> Yellow</label>
+            <label>
+                <input type="checkbox"> Blue</label>
+            <label>
+                <input type="checkbox"> Green</label>
+            <br>
+            <br>
+            <li>date: permite ingresar una fecha con el formato dd/mm/aaaa.
+                <br>
+                <code>&lt;input type="date" &gt;</code>
+            </li>
+            <input type="date">
+            <br>
+            <br>
+            <li>email: solo permite que el formato del contenido ingresado corresponda a un email.
+                <br>
+                <code>&lt;input type="email" &gt;</code>
+            </li>
+            <input type="email">
+            <br>
+            <br>
+            <li>password: oculta visualmente el contenido que se ha ingresado en el input.
+                <br>
+                <code>&lt;input type="password" &gt;</code>
+            </li>
+            <input type="password">
+            <br>
+            <br>
+            <li>radio: solo permite seleccionar una opción.
+                <br>
+                <code>&lt;input type="radio"&gt;Yellow<br>&lt;input type="radio"&gt;Red<br>&lt;input type="radio"&gt;Blue</code>
+            </li>
+            <input type="radio" name="radio">Yellow
+            <input type="radio" name="radio">Red
+            <input type="radio" name="radio">Blue
+            <br>
+            <br>
+            <li>submit: envía datos de un formulario al controlador que sea especificado.
+                <br>
+                <code>&lt;input type="submit" value="Submit" &gt;</code>
+            </li>
+            <input type="submit" value="Submit">
+            <br>
+            <br>
+            <li>text: permite al usuario ingresar texto plano.
+                <br>
+                <code>&lt;input type="text" &gt;</code>
+            </li>
+            <input type="text">
+            <br>
+            <br>
+            <li>file: es un botón que permite seleccionar un archivo local para ser cargado.
+                <br>
+                <code>Seleccione un archivo: &lt;input type="file" &gt;</code>
+            </li>
+            <input type="file">
+        </ol>
+        <hr>
+        <h2>&lt;select &gt;</h2>
+        <p>Es una lista desplegable con distintos elementos que pueden ser seleccionados.</p>
+        <h3>&lt;option &gt;</h3>
+        <p>En esta etiqueta se coloca el elemento que se contendrá la lista.
+            <br>
+            <code>&lt;select&gt;<br>&lt;option&gt;Toyota&lt;/option&gt;<br>&lt;option&gt;Mercedes&lt;/option&gt;<br>&lt;option&gt;Audi&lt;/option&gt;<br>&lt;/select&gt;</code>
+        </p>
+        <select>
+            <option>Toyota</option>
+            <option>Mercedes</option>
+            <option>Audi</option>
+        </select>
+
+        <h3>&lt;textarea &gt;</h3>
+        <p>Permite al usuario ingresar múltiples líneas. Se puede especificar el ancho y el alto de las líneas visibles mediante
+            los atributos cols y rows.
+            <br>
+            <code>&lt;textarea rows="10" cols="30"&gt;Hello world!!.&lt;/textarea &gt;</code>
+        </p>
+        <textarea rows="10" cols="30">Hello world!!.</textarea>
+
+        <h3>&lt;label&gt;</h3>
+        <p>Define la etiqueta de un input.
+            <code><br>&lt;label &gt;Name:  &lt;/label&gt; &lt;input type="text” &gt;</code>
+        </p>
+        <label>Name: </label>
+        <input type="text">
+
+        <h3>&lt;button&gt;</h3>
+        <p>Define un botón en el que se puede hacer clic sin especificar la acción a realizar.
+            <code><br>&lt;button &gt;Click Me! &lt;/button &gt;</code>
+        </p>
+        <button>Click Me!</button>
+
+        <h3>&lt;fieldset&gt;</h3>
+        <p>permite agrupar elementos que estén relacionados entre sí, de un formulario.
+            <code><br>&lt;fieldset&gt; <br>&lt;legend&gt;Personal information:&lt;/legend&gt;<br>Name: &lt;input type="text"&gt;<br>Email: &lt;input type="email"&gt;<br>Date of birth: &lt;input type="date"&gt;<br>&lt;/fieldset&gt;</code>
+        </p>
+        <fieldset>
+            <legend>Personal information:</legend>
+            Name:
+            <input type="text">
+            <br> Email:
+            <input type="email">
+            <br> Date of birth:
+            <input type="date">
+        </fieldset>
+
+    </section>
+
+    <hr>
+    <section>
+        <h2>Ejemplos</h2>
+        <h3>Encuesta:</h3>
+        <p>Enlace en CodePen:
+            <a href="https://codepen.io/douglashdezt/pen/JaoEWg">https://codepen.io/douglashdezt/pen/JaoEWg</a>
+        </p>
+        <h3>Formulario de pre-inscripción:</h3>
+        <p>Enlace en CodePen:
+            <a href="https://codepen.io/CarlosDubon/pen/KxKZNP">https://codepen.io/CarlosDubon/pen/KxKZNP</a>
+        </p>
+        <h3>Formulario de registro de una cuenta de correo:</h3>
+        <p>Enlace en CodePen:
+            <a href="https://codepen.io/maxisun/pen/zJGpMq">https://codepen.io/maxisun/pen/zJGpMq</a>
+        </p>
+    </section>
+
+    <section>
+        <h2>Ejercicios</h2>
+        <ol>
+            <li>
+                <p>Realize el siguente Ejercicio. Haciendo uso de las etiquetas semanticas.</p>
+            </li>
+            <li>Solo haciendo uso de etiqueteas de <b>HTML5</b> 
+                <a href="ejercicio/Ejer.jpeg">Corto</a>
+            </li>
+        </ol>
+    </section>
+
+</body>
+
+</html>
