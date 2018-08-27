@@ -18,7 +18,7 @@
      color: green;
  }
 
- /* Para todos los elementos de la clase .mw-headline */
+ /* Para todos los elementos de la clase .mw-headline defina el color de texto como morado */
 .mw-headline{
    color: purple;
  }
