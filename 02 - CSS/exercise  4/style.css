@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua');
+
+:root {
+    font-size: calc( 0.5em + 1vh);
+}
+
+.panel{
+    background: whitesmoke;
+    padding: 0.25em 0.25em 0.25em 0.50em;
+    border-left: 0.5em solid teal;
+    box-shadow: 2px 2px 4px #0000005e;
+    margin: 0.3em 0;
+}
+
+.panel:hover {
+    border-left: 0.5em solid rgb(1, 151, 151);
+    background: rgb(219, 219, 219);
+}
+
+.panel > h3 {
+    font-size: 0.45em;
+    text-transform: uppercase;
+    font-family: 'Uncial Antiqua', cursive;
+}
+
+.panel > h2 {
+    font-size: 1em;
+    text-transform: capitalize;
+}
