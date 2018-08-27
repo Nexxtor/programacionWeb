@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+:root {
+    box-sizing: border-box;
+    font-size: calc(0.7em + 0.4vw);
+
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    color: #2e2e2e
+}
+
+*, ::before, ::after {
+    box-sizing: inherit; 
+}
+
+article > p {
+    min-height: 50vh;
+}
