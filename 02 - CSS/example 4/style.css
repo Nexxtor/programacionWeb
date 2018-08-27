@@ -17,7 +17,7 @@ body {
     background: url(login.png);
     background-repeat: no-repeat;
     height: 90vh;
-    /*background-position: 100% -50px;*/
+    background-position: 100% -50px;
 }
 
 header {
