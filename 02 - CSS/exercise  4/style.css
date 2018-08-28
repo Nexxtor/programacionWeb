@@ -18,12 +18,12 @@
 }
 
 .panel > h3 {
-    font-size: 0.45em;
+    font-size: 0.5em;
     text-transform: uppercase;
     font-family: 'Uncial Antiqua', cursive;
 }
 
 .panel > h2 {
-    font-size: 1em;
+    font-size: 2.0em;
     text-transform: capitalize;
 }
