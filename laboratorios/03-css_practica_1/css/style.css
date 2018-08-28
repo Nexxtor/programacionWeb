@@ -1,7 +1,22 @@
 /* Element selectors */
+:root{
+    box-sizing: border-box;
+    font-size: calc(0.7em + 0.4vw);
+
+    color: #2e2e2e;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit; 
+}
+
 body{
     margin-left: 10%;
     margin-right: 10%;
+}
+
+nav li{
+    list-style: none ;
 }
 
 section{
