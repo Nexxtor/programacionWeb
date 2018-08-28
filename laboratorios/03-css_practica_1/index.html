@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>CSS Práctica 1</title>
+</head>
+<body>
+    <header>
+        <h1>Estilos con CSS; parte 1.</h1>
+    </header>
+
+    <section>
+        <h2>Introducci&oacute;n</h2>
+
+        <p>En esta pr&aacute;ctica de laboratorio se estudiarán las diversas formas de aplicar estilos a un documento de marcado (como HTML); aunque la presente se centrará en el uso de las hojas de estilo css como principal administrador de dicho cometido.</p>
+
+        <h3>¿Qué es css?</h3>
+
+        <p>Del inglés "Cascading Style Sheets" (Hojas de estilo en cascada), es el lenguaje estándar utilizado para describir la aparariencia de documentos que derivan de XML, como lo son HTML, XHTML o SVG. CSS determina la manera en como es modelada la información en pantalla. Este está compuesto por una serie de <em>selectores</em>, y ellos de varias <em>propiedades</em>; como su nombre lo indica, CSS aplica estas propiedes de manera estructurada, una despues de otra, por lo que la última de estas escrita dentro del documento tiene mayor prioridad que las anteriores. </p>
+
+        <h3>Propiedades</h3>
+
+        <p>Una propiedad es aquella que define un aspecto especifico del estilo de un elemento; este puede ser un color de fondo, una fuente especifica, un margen interior o exterior, entre otros muchos. En CSS, estos son definidos dentro de un selector, el cual cambiará el comportanmiento gráfico de uno o varios elementos. la sintaxis básica de estos es la siguiente:</p>
+
+        <code>
+            selector{ <br>
+            &ensp;prop1: value1; <br>
+            &ensp;prop2: value2; <br>
+            &ensp;prop3: value3; <br>
+            }
+        </code>
+
+        <p>
+            Propiedades existen muchas, y nombrarlas en está guía de laboratorio sería poco prático, de tal forma que se recomienda la lectura de los siguientes enlaces:
+        </p>
+
+        <ul>
+            <li><a href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Sintaxis">Sintaxis CSS (MDN)</a></li>
+
+            <li><a href="https://www.w3schools.com/cssref/default.asp">Referencia CSS (W3Schools)</a></li>
+        </ul>
+
+        <h3>Selectores</h3>
+
+        <p>Estos consisten en patrones que determinan el estilo de uno o varios elementos de un tipo específico. Existen diversas formas de escribir un selector, incluso se puede determinar el comportamiento gráfico de un elemnto en ciertos estados específicos (cuando hacemos click, o estamos sobre él con el ratón, por ejemplo); pero los mas comunes son los selectores por elemento, clase e id.</p>
+
+        <ul>
+
+            <li>
+                <p>
+                    <strong>Por elemento:</strong> Este basa su criterio en elementos básicos de la estructura html como lo son <i>body</i> o <i>header</i> (etiquetas como tal). Este tipo de estilo dentro de la jerarquía de selección no representa mucho, pero es de gran utilidad para generalizar estilos y realizar plantillas del sitio. Por ejemplo si se quiere generalizar un margen al body de todo el sitio (como es el caso de la presente guía) se reliza de la siguiente forma:
+                </p>
+                <code>body{<br>
+                &ensp;margin-left:10%;<br>
+                &ensp;margin-right:10%;
+                <br>}</code><br>
+            </li>
+
+            <li>
+                <p>
+                    <strong>Por clase:</strong> Este basa su criterio en elementos que han sido marcado con un identificador a traves del atributo <i>class</i>. A diferencia del anterior, este define su seleccion antecediendo un punto al nombre de la clase que modificará: <code>.class{/*Definition*/}</code>. Este tipo de selector dentro de la jerarquía está por encima de los que se basan en etiquetas. Para ejemplificar este selector tomaremos como referencia la siguiente etiqueta:
+                </p>
+                
+                <code>&lt;code class="myCode"&gt;&lt;/code&gt;</code>
+                
+                <p>
+                    Donde las etiquetas <code>&lt;code&gt;&lt;/code&gt;</code> ya están definidas por el siguiente selector:
+                </p>
+                
+                <code>
+                    code{<br>
+                    &ensp;color: #2c3e50;<br>
+                    &ensp;font-size:1.2em;
+                    <br>}
+                </code>
+                
+                <p>
+                    Y se quiere establecer un estilo particular (texto rojo, centrado y de tamaño 2em) a la etiqueta con la clase "myCode". La solución al problema es un selector por clase de la siguiente forma:
+                </p>
+                
+                <code>
+                    .myCode{<br>
+                    &ensp;display: block;<br>
+                    &ensp;text-align: center;<br>
+                    &ensp;color: #e74c3c;<br>
+                    &ensp;font-size:2em;
+                    <br>}
+                </code>
+                
+                <p>
+                    Generando un resultado en el navegador como el siguiente: 
+                </p>
+                
+                <code class="myCode">Soy un código rojo</code>
+                
+                <p>
+                    Donde es importante recalcar que el estilo del selector por clase sobreescribió al de etiqueta.
+                </p>
+            </li>
+            
+            <li>
+                <p>
+                    <strong>Por id:</strong> Estos a diferencia de los dos selectores anteriores, delimitan sus reglas de estilos a los elementos (teóricamente únicos) que han sido definidos con el atributo <i>id</i>. Su sintaxis se basa en anteponer un numeral al nombre del id a modificar: <code>#id{/*Definition*/}</code>. Este, dentro de la jerarquia es el mas importante, por lo que se antepone ante cualquier otra regla o definicion de estilo. 
+                </p>
+                
+                <p>
+                    Se basará en el ejemplo del iniciso anterior, para ejemplificar este selector; donde la nueva etiqueta (<code>&lt;code class="myCode" id="CodeUnq"&gt;&lt;/code&gt;</code>) estará definida por ambos selectores, tanto de etiqueta como de clase, anteriormente mostrado. 
+                </p>
+
+                <p>
+                    En este caso se quiere conservar los valores delimitados por el selector de clase, pero se quiere cambiar el color a verde unicamente a esa etiqueta. Como es de suponer, la solución viene dada por un selector de id, definido de la siguiente forma: 
+                </p>
+
+                <code>
+                    #CodeUnq{<br>
+                    &ensp;color: #27ae60;
+                    <br>}
+                </code>
+
+                <p>
+                    Generando el siguiente resultado en el navegador:
+                </p>
+
+                <code class="myCode" id="CodeUnq">Soy un codigo único</code>
+            </li>
+
+        </ul>
+
+        <p>
+            Para ampliar el concimiento acerca de selectores y sus combinaciones, se recomienda la lectura de los siguientes enlaces:
+        </p>
+
+        <ul>
+            <li><a href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Selectores">Introducción a selecctores (MDN)</a></li>
+
+            <li><a href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Selectores_de_Atributos">Selectores de atributos (MDN)</a></li>
+
+            <li><a href="https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Combinaciones_y_selectores_multiples">Combinaciones y selectores múltiples (MDN)</a></li>
+
+            <li><a href="https://www.w3schools.com/css/css_syntax.asp">Sintaxis de CSS y selectores (W3Schools)</a></li>
+
+            <li><a href="https://www.w3schools.com/cssref/css_selectors.asp">Referencia de selectores CSS (W3Schools)</a></li>
+
+        </ul>
+    </section>
+
+    <section>
+        <h2>Ejercicios con apoyo.</h2>
+    </section>
+
+    <section>
+        <h2>Ejercicio individual.</h2>
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <a href="#" id="HomeBtn">Home</a>
+
+</body>
+</html>
