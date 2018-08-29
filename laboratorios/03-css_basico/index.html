@@ -12,7 +12,7 @@
 <body>
     <header>
         <h1>Guía de laboratorio 3.</h1>
-        <p><b>CSS Básico|</b><i>Viernes 31 de agosto de 2018</i></p>
+        <p><b>CSS Básico | </b><i>Viernes 31 de agosto de 2018</i></p>
     </header>
 
     <nav>
@@ -32,11 +32,15 @@
 
         <h3>¿Qué es css?</h3>
 
-        <p>Del inglés "Cascading Style Sheets" (Hojas de estilo en cascada), es el estándar utilizado para describir la aparariencia de documentos que derivan de XML, como lo son HTML, XHTML o SVG. CSS determina la manera en como es modelada la información en pantalla. Este está compuesto por una serie de <em>selectores</em> y <em>propiedades</em>, que al juntarlos en base al estándar, se establecen las <i>reglas</i>; como su nombre lo indica, CSS aplica estas reglas de manera estructurada, una despues de otra, por lo que la última de estas definida (si se encuentra al mismo nivel) dentro del documento tiene mayor prioridad que las anteriores. </p>
+        <p>Del inglés "Cascading Style Sheets" (Hojas de estilo en cascada), es el estándar utilizado para describir la aparariencia de documentos que derivan de XML, como lo son HTML, XHTML o SVG. CSS determina la manera en como es modelada la información en pantalla. Este está compuesto por una serie de <em>selectores</em> y <em>propiedades</em>, que al juntarlos se establecen las <i>reglas</i>. </p>
 
         <h3>Propiedades</h3>
 
-        <p>Una propiedad es aquella que define un aspecto especifico del estilo de un elemento; este puede ser un color de fondo, una fuente especifica, un margen interior o exterior, entre otros muchos. En CSS, estos son definidos dentro de un selector, lo que se conoce como regla CSS. La sintaxis básica de estas es la siguiente:</p>
+        <p>Una propiedad es aquella que define un aspecto especifico del estilo de un elemento este puede ser un color de fondo, una fuente especifica, un margen interior o exterior, entre otros muchos. Por ejemplo si se desea cambiar el color de texto con CSS, se debe declarar el nombre de la propiedad (<em>color</em>) y su valor; la siguiente <em>delcaración</em> de CSS cambiar el color de fuente a rojo</p>
+        <code>
+            color: red;
+        </code>
+        <p>Las declaraciones se puede agrupar en reglas para poder cambiar varias propiedades a un elemento del documento HTML o XHTML. La sintaxis para agrupar declaraciones es la siguiente:</p>
 
         <code>
             selector{ <br>
@@ -47,7 +51,7 @@
         </code>
 
         <p>
-            Propiedades existen muchas, y nombrarlas en está guía de laboratorio sería poco prático, de tal forma que se recomienda la lectura de los siguientes enlaces:
+            Existen muchas propiedades CSS que podrá encontrar referencia de estas en los siguientes enlaces y además explicaciones precisas de la sintaxis
         </p>
 
         <ul>
@@ -61,13 +65,13 @@
 
         <h3>Selectores</h3>
 
-        <p>Estos consisten en el conjunto de reglas que determinan la identificación y administración de uno o varios elementos dentro de un documento. Existen diversas formas de escribir un selector, incluso se puede determinar el comportamiento gráfico de un elemento en ciertos estados específicos (cuando hacemos click, o estamos sobre él con el ratón, por ejemplo); pero los mas comunes son los selectores por elemento, clase o id (ojo, no son los únicos).</p>
+        <p>Son criterios que permiten seleccionar a que elemento o elementos del documento se aplicarán los cambios de estilo que se indique. Con los selectores se puede declarar que el color de la fuente de todos los parrafos del documento sea de color verde, también se puede decir que un elemento específico que cambia su tamaño de fuente. Algunos selectores muy utilies para modificar los aspectos visuales de los elementos son:</p>
 
         <ul>
 
             <li>
                 <p>
-                    <strong>Por elemento:</strong> Este basa su criterio en elementos básicos de la estructura html como <i>body</i> o <i>header</i> (etiquetas como tal). Este tipo de estilo dentro de la jerarquía de selección no representa mucho, pero es de gran utilidad para generalizar estilos y realizar plantillas del sitio. Por ejemplo si se quiere generalizar un margen al body de todo el sitio (como es el caso de la presente guía) la estructura de la regla haciendo uso de este selector quedaría de la siguiente forma:
+                    <strong>Selector por elemento:</strong> Este basa su criterio en elementos básicos de la estructura html como <i>body</i> o <i>header</i> (etiquetas como tal). Este tipo de estilo dentro de la jerarquía de selección no representa mucho, pero es de gran utilidad para generalizar estilos y realizar plantillas del sitio. Por ejemplo si se quiere generalizar un margen al body de todo el sitio (como es el caso de la presente guía) la estructura de la regla haciendo uso de este selector quedaría de la siguiente forma:
                 </p>
                 <code>body{<br>
                 &ensp;margin-left:10%;<br>
@@ -77,7 +81,7 @@
 
             <li>
                 <p>
-                    <strong>Por clase:</strong> Este basa su criterio en elementos que han sido marcado con un identificador a traves del atributo <i>class</i>. A diferencia del anterior, este define su seleccion antecediendo un punto al nombre de la clase que modificará: <code>.class{/*Definition*/}</code>. Este tipo de selector dentro de la jerarquía está por encima de los que se basan en etiquetas. Para ejemplificar este selector tomaremos como referencia la siguiente etiqueta:
+                    <strong>Selector por clase:</strong> Este basa su criterio en elementos que han sido marcado con un identificador a traves del atributo <i>class</i>. A diferencia del anterior, este define su seleccion antecediendo un punto al nombre de la clase que modificará: <code>.class{/*Definition*/}</code>. Este tipo de selector dentro de la jerarquía está por encima de los que se basan en etiquetas. Para ejemplificar este selector tomaremos como referencia la siguiente etiqueta:
                 </p>
                 
                 <code>&lt;code class="myCode"&gt;&lt;/code&gt;</code>
@@ -119,7 +123,7 @@
             
             <li>
                 <p>
-                    <strong>Por id:</strong> Estos a diferencia de los dos selectores anteriores, delimitan sus reglas de estilos a los elementos (teóricamente únicos) que han sido definidos con el atributo <i>id</i>. Su sintaxis se basa en anteponer un numeral al nombre del id a modificar: <code>#id{/*Definition*/}</code>. Este, dentro de la jerarquia es el más importante, por lo que se antepone ante cualquier otra regla o definicion de estilo. 
+                    <strong>Selector por id:</strong> Estos a diferencia de los dos selectores anteriores, delimitan sus reglas de estilos a los elementos (teóricamente únicos) que han sido definidos con el atributo <i>id</i>. Su sintaxis se basa en anteponer un numeral al nombre del id a modificar: <code>#id{/*Definition*/}</code>. Este, dentro de la jerarquia es el más importante, por lo que se antepone ante cualquier otra regla o definicion de estilo. 
                 </p>
                 
                 <p>
