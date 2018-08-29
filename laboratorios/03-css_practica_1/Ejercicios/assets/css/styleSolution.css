@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    background: #2d3436;
+    margin-bottom: 2%;
+}
+.logo-container{
+    padding: 10px;
+    display: inline-block;
+}
+nav > ul{
+    padding: 20px;
+    margin-left: 5%;
+    display: inline-block;
+}
+nav > ul > li{
+    display: inline;
+}
+nav > ul > li > a{
+    padding: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+#main{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+article{
+    margin: 12px;
+}
+figure > img{
+    width: 100%;
+}
+figure > figcaption{
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+a{
+    color: #0984e3;
+    font-weight: bold;
+    text-decoration:none;
+}
+figure{
+    margin: 7px 0px 7px 0px;
+}
+
+footer{
+    padding: 20px;
+    background: #2d3436;
+    color: #fff;
+}
+label{
+    display: block;
+    padding: 3px 0px 3px 0px;
+}
+.section-footer{
+    display: inline-block;
+    margin: 0 15% 0 15%;
+}
+fieldset{
+    border: 0px;
+}
+.input-group{
+    padding: 7px;
+}
+input[type="email"]{
+    padding: 7px;
+    border: 0px;
+    border-radius: 4px;
+}
+
+input[type="submit"]{
+    padding: 6px 10px 6px 10px;
+    border: 0px;
+    background: #d35400;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+label>span{
+    color:#d35400;
+}
