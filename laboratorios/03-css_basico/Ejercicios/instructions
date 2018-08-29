@@ -1,0 +1,53 @@
+1. Cambiar color de fondo a la barra de navegación con el valor #2d3436 y margen inferior del 2%
+2. Aplicar a la clase "logo-container"
+    2.1. Vista en linea
+    2.2. Padding de 10px
+3. Aplicar a la etiqueta <ul> dentro de la etiqueta <nav>
+    3.1. Vista en linea
+    3.2  Padding de 20px
+    3.3 Margen izquierdo del 5%d
+4. Aplicar a la etiqueta <li> dentro de la etiqueta <ul> dentro de la etiqueta <nav>
+    4.1. Vista en linea
+5. Aplicar a todas las etiquetas<a> dentro de cada <li> dentro de la etiqueta <ul> dentro de la barra de navegación
+    5.1 Padding 20px;
+    5.2 Color de letra blanco
+    5.3 font-weight: bold;
+    5.2 text-decoration: none;
+6. Aplicar al id main
+    6.1 Margen izquierdo y derecho del 10%
+7. Aplicar a los articulos margen general de 12px
+8. Aplicar a la imagen dentro de la etiqueta <figure> un "width" del 100%
+9. Aplicar a todas las etiquetas <figcaption>
+    9.1 Margen izquierdo 10px
+    9.2 Tamaño de fuente de 0.9rem
+10. Aplicar a todos los enlaces
+    10.1 Color de texto: #0984e3
+    10.2 font-weight: bold
+    10.3 text-decoration: none
+11. Aplicar a la etiqueta <figure>
+    11.1 Margen superior e inferior de 7px
+12. Aplicar al footer:
+    12.1 Color de fondo #2d3436
+    12.2 Paddin de 20px
+    12.3 Color de texto blanco
+13. Aplicar a las etiquetas <label> vista en bloque y padding inferior y superior de 3px
+14. Aplicar a la case section-footer:
+    14.1 vista en linea
+    14.2 margen derecho e izquierdo de 15%
+15. Quitar borde de etiqueta fieldset
+16. Aplicar a la clase input-group un padding de 7px
+17. Aplicar a los input de tipo email:
+    17.1 padding 7px
+    17.2 quitar los bordes
+    17.3 agregar radio en los bordes de 4px
+18. Aplicar al boton submit:
+    18.1. un padding superior e inferior de 6px
+    18.2 quitar bordes
+    18.3 cambiar color de fondo a #d35400
+    18.4 cambiar color de texto a blanco
+    18.5 font-weight: bold
+    18.6 agregar radio de borde de 4px
+    18.7 un tamaño de 60%
+    18.8 un tamaño de 1rem
+    18.9. un padding derecho e izquierdo de 10px
+19. Aplicar a todos los span dentro de las etiquetas label color de texto #d35400
