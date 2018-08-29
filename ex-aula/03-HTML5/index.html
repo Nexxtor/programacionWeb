@@ -117,7 +117,7 @@
             <h4>Elemento HEAD</h4>
             <p>
                 El primer hijo del elemento raíz es generalmente el elemento <code><strong>&lt;head&gt;</strong></code>. El elemento <code><strong>&lt;head&gt;</strong></code> contiene los metadatos que proporcionan información extra sobre alguna página, como su título, descripción, autor, entre otros. Además, se pueden incluir referencias externas a contenidos necesarios para que el documento se comporte y se muestre de una manera correcta, como hojas de estilo (CSS) o scripts (JS). Este elemento ha obtenido pequeñas variaciones, pero que se deben de tener en cuenta.
-                <pre><code>                 &lt;head&gt;
+                <pre><code>                &lt;head&gt;
                     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
                     &lt;title&gt;My Weblog&lt;/title&gt;
                     &lt;link rel="stylesheet" type="text/css" href="style-original.css" /&gt;
@@ -126,6 +126,43 @@
                     &lt;link rel="shortcut icon" href="/favicon.ico" /&gt;
                 &lt;/head&gt;</code></pre>
             </p>
+            <section>
+                <b>Codificación del contenido</b>
+                <p>Cuando se piensa en "texto", probablemente sea una definición de "caracteres y símbolos que se ven en la pantalla del ordenador", pero realmente se tratan de bits y bytes. Cada cadena de caracteres que se muestra en la pantalla, se almacen en una codificación de caracteres en particular. Hay cientos de codificaciones de caracteres diferentes, algunos hechos u optimizados para ciertos idiomas, como el ruso, chino o inglés, y otros que se pueden usar para múltiples idiomas. En general, la codificación de caracteres provee una correspondencia entre lo que se muestra en la pantalla y lo que un equipo realmente almacena en memoria.</p>
+                <p>Se puede pensar en la codificación de caracteres como una especie de clave de descifrado de texto. Cuando se accede a una secuencia de bytes, y se decide que es "texto", lo que se necestia saber es, qué codificación de caracteres se utiliza para que pueda decodificar los bytes en caracteres y mostrarlos  de manera correcta. </p>
+                <p>
+                    Lo ideal es establecer esta codificación en el servidor, indicando el tipo en las cabeceras de respuesta:
+                    <pre><code>Content-Type: text/html; charset="utf-8"</code></pre>
+                </p>
+                <p>No siempre se puede tener control sobre la configuración de un servidor HTTP. Por ejemplo, en la plataforma Blogger, el contenido es proporcionado por personas, pero los servidores son administrados por Google, por lo que estamos supeditados a su configuración. </p>
+                <p>El encabezado HTTP es el método principal, y anula la etiqueta <code><strong>&lt;meta&gt;</strong></code> si está presente. Pero no todo el mundo puede establecer encabezados HTTP, por lo que la etiqueta <meta> todavía tiene sentido. En el caso de HTML5, es aún más sencillo definir esta etiqueta meta:</p>
+                <p>
+                    <pre><code>&lt;meta charset="utf-8"&gt;</code></pre>
+                    A comparación de HTML4:
+                    <pre><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</code></pre>
+                </p>
+            </section>
+            <section>
+                <p>
+                    Dentro del elemento <code><b>&lt;head&gt;</b></code>, las etiquetas <code><strong>&lt;link&gt;</strong></code> son una manera de acceder o declarar contenido externo al documento actual, que puede cumplir distintos objetivos: 
+                    <ul>
+                        <li>
+                            Enlaces a recursos externos que se van a utilizar para mejorar el documento actual. 
+                        </li>
+                        <li>
+                            Enlaces de hipervínculos que son enlaces a otros documentos.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    El tipo de relación más utilizado es el siguiente:
+                    <pre><code> &lt;link rel="stylesheet" href="style-original.css" type="text/css" /&gt;</code></pre>
+                </p>
+            </section>
+        </section>
+        <section>
+            <h3>Nuevas etiquetas semánticas</h3>
+            
         </section>
     </body>
 </html>
