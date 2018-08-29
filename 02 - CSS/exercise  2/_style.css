@@ -53,7 +53,7 @@
  }
 
  /* A todos la tablas aplique un color de fondo blanco
- asigne un ancho del 100% y aplicque que la propiedad border-collapse: collapse;*/
+ asigne un ancho del 100% y aplique la propiedad border-collapse: collapse;*/
  table {
      background-color: white;
      width: 100%;

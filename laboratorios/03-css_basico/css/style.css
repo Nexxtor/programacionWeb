@@ -1,7 +1,22 @@
 /* Element selectors */
+:root{
+    box-sizing: border-box;
+    font-size: calc(0.7em + 0.4vw);
+
+    color: #2e2e2e;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit; 
+}
+
 body{
     margin-left: 10%;
     margin-right: 10%;
+}
+
+nav li{
+    list-style: none ;
 }
 
 section{
@@ -11,7 +26,7 @@ section{
 h1{
     border-left: 5px solid #2980b9;
     background-color: #297fb91a;
-    padding: 5px; 
+    padding: 0.4em; 
 }
 
 h2{
@@ -66,6 +81,7 @@ footer{
     padding-bottom: 15px;
 }
 
+
 /* Class selectors */
 
 .myCode{
@@ -83,8 +99,8 @@ footer{
 
 #HomeBtn:link{
     position: fixed;
-    top: 90%;
-    right: 1%;
+    bottom: 1.2em;
+    right: 1.2em;
     z-index: 100;
     padding: 15px;
     background: #297fb91a;

@@ -1,0 +1,31 @@
+.panel > h3, .panel > h2 {
+   margin: 0; 
+}
+.panel{
+    background-color: whitesmoke;
+    padding: 0.5em;
+    border-left: 0.5em solid teal;
+    margin: 10px auto;
+    width: 80%;
+    box-shadow: 2px 2px 3px #928a926e;
+}
+
+.panel:hover{
+    border-left-color: rgb(21, 199, 199); 
+    background-color: rgb(207, 203, 203);
+}
+
+.panel > h3{
+    font-size: 0.75em;
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: 'Baloo Tammudu', cursive;
+}
+
+.panel > h2 {
+    text-transform: capitalize;
+    font-size: 1.2em;
+    font-family: 'PT Sans', sans-serif;
+}
+

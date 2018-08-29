@@ -1,0 +1,15 @@
+/* Box model*/
+h1 {
+    /* Content Height and Width*/
+    width: 500px; /* Can use % */
+    /* Border */
+    border: 1px solid green;
+    /* Padding */
+    padding: 10px; /* can be specified individually */
+    /* Margin */
+    margin: 10px; /*can be specified individually , and you can use auto option*/
+}
+
+p {
+    
+}

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,900');
+
+/*font-family*/
+h1 {
+    font-family: 'Roboto', sans-serif;  /*Cambia el tipo de fuente*/
+}
+
+h2 {
+    /* A font family name and a generic family name */
+    font-family: Consolas,monaco,monospace; 
+}
+/* Puede consultar el porcetanje de uso de las fuentes en https://www.cssfontstack.com/ */
+
+/*font-size*/
+
+    /* Con pixeles */
+h3 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 20px;
+}
+    /* Con em */
+
+span {
+    font-size: 2.0em;
+}
+
+/*font-weight*/
+
+span {
+    font-weight: 700;
+}
+
+/*line-height*/
+
+.line-h{
+    line-height: 1.5;
+}
+
+/*text-align*/
+p {
+    text-align: justify;
+}
+
+/*text-decoration*/
+.under {
+    text-decoration: wavy underline red;
+}
+
+.over {
+    text-decoration: wavy overline lime;
+}
+
+.line {
+    text-decoration: line-through;
+}
+
+.plain {    
+    text-decoration: none;
+}
+
+.underover {
+    text-decoration: dashed underline 
+    ;
+}
