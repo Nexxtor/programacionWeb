@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,900');
+
 /*font-family*/
 h1 {
-    font-family: sans-serif;  /*Cambia el tipo de fuente*/
+    font-family: 'Roboto', sans-serif;  /*Cambia el tipo de fuente*/
 }
 
 h2 {
@@ -60,5 +62,6 @@ p {
 }
 
 .underover {
-    text-decoration: dashed underline overline;
+    text-decoration: dashed underline 
+    ;
 }
