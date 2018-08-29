@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>HTML5</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <header>
@@ -68,6 +69,62 @@
                         Etiquetas que componen la web semántica, es decir, que no incluyen nuevas funcionalidades pero sirven para estructurar sitios web, y añadir un significado concreto, más allá de las etiquetas generales com <code><b>&lt;div&gt;</b></code>.
                     </li>
                 </ul>
+            </p>
+        </section>
+        <section>
+            <h3>Cabecera del documento</h3>
+            <p>
+                Además de las nuevas etiquetas introducidas por HTML5, el nuevo estándar propone pequeñas mejoras que podemos aplicar en la definición de los documentos, en concreto en la cabecera de los mismos.
+            </p>
+            <h4>DOCTYPE</h4>
+            <p>
+                El estándar XHTML deriva de XML, por lo que comparten muchas de sus normas y sintaxis. Uno de los conceptos fundamentales de XML es la utilización del DTD o <em>Document Type Definition</em>. El éstandar XHTML define el DTD que deben seguir las páginas y documentos XHTML. En este se definen las etiquetas que se pueden utilizar, atributos de cada etiqueta y el tipo de valores que puede tener cada atributo. 
+            </p>
+            <p>
+                <pre><code> &lt;!DOCTYPE html 
+                PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</code></pre>
+            </p>
+            <p>
+                Esta es una de las 15 formas de declaraciones posibles en los estándares HTML4 y XHTML. En HTML5 se reduce la definición del tipo de documento a una sola posibilidad, por lo que no hay que preocuparse de elegir el tipo de documento correcto:
+                <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+            </p>
+        </section>
+        <section>
+            <h4>Elemento raíz html</h4>
+            <p>
+                En todo documento HTML, su elemento raíz siempre es la etiqueta <code><strong>&lt;html&gt;</strong></code>. <br>
+                Hasta antes de HTML5, este elemento raíz se definía de la siguiente manera:
+            </p>
+            <p>
+                <pre><code>&lt;html xmlns=http://www.w3.org/1999/xhtml
+                lang="en"
+                xml:lang="en"&gt;</code></pre>
+            </p>
+            <p>
+                No hay ningún problema en mantener esta sintaxis. Si se desea se puede mantener, ya que esto es valido en HTML5. Sin embargo alguna de sus partes ya no son necesarias, por lo que se pueden obviar.
+            </p>
+            <p>
+                El primer elemento del que podemos prescindir es el atributo <code><b>xmlns</b></code>. Se trata de una herencia de XHTML 1.0, que dice que los elementos de esta página están en el espacio de nombre XHTML, <code><b>http://www.w3.org/1999/xhtml</b></code>. Sin embargo, los elementos de HTML5 están siempre en este espacio de nombres, por lo que ya no es necesario declararlo explícitamente. Eliminar el atributo <code><b>xmlns</b></code> nos deja el elemento de la siguiente manera:
+                <pre><code>&lt;html lang="es" xml:lang="en"&gt;</code></pre>
+            </p>
+            <p>
+                En este caso ocurre lo mismo con el atributo <code><b>xml:lang</b></code>, es una herencia de XHTML que podemos eliminar, quedando finalmente la etiqueta de la siguiente manera:
+                <pre><code>&lt;html lang="es"&gt;</code></pre>
+            </p>
+        </section>
+        <section>
+            <h4>Elemento HEAD</h4>
+            <p>
+                El primer hijo del elemento raíz es generalmente el elemento <code><strong>&lt;head&gt;</strong></code>. El elemento <code><strong>&lt;head&gt;</strong></code> contiene los metadatos que proporcionan información extra sobre alguna página, como su título, descripción, autor, entre otros. Además, se pueden incluir referencias externas a contenidos necesarios para que el documento se comporte y se muestre de una manera correcta, como hojas de estilo (CSS) o scripts (JS). Este elemento ha obtenido pequeñas variaciones, pero que se deben de tener en cuenta.
+                <pre><code>                 &lt;head&gt;
+                    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+                    &lt;title&gt;My Weblog&lt;/title&gt;
+                    &lt;link rel="stylesheet" type="text/css" href="style-original.css" /&gt;
+                    &lt;link rel="alternate" type="application/atom+xml" title="My Weblog feed" href="/feed/" /&gt;
+                    &lt;link rel="search" type="application/opensearchdescription+xml" title="My Weblog search" href="opensearch.xml"  /&gt;
+                    &lt;link rel="shortcut icon" href="/favicon.ico" /&gt;
+                &lt;/head&gt;</code></pre>
             </p>
         </section>
     </body>
