@@ -6,7 +6,7 @@
 
 4. Cuando el puntero del mouse pase sobre una casilla debera sombrearse con un color rojo rgba(255, 0, 0, 0.5).
 
-5. Además, si el puntero pasa sobre una casilla que tenga una pieza, debera mostrar el nombre de la pieza que se encuentra ahí.
+5. Además, si el puntero pasa sobre una casilla que tenga una pieza, deberá mostrar el nombre de la pieza que se encuentra en esta.
 
 6. Añadir una cabecera creativa a la página.
 

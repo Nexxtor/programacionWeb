@@ -1,7 +1,12 @@
 body{
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
+}
+
+#board table{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .white{
@@ -23,7 +28,7 @@ body{
     visibility: hidden;
     display: table-cell;
     vertical-align: middle;
-    width: 10vw;
-    height: 10vw;
+    width: 5em;
+    height: 5em;
     text-align: center;
 }
