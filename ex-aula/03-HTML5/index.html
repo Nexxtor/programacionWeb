@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>HTML5</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="public/css/style.css">
     </head>
     <body>
         <header>
@@ -162,7 +162,135 @@
         </section>
         <section>
             <h3>Nuevas etiquetas semánticas</h3>
-            
+            <p>Este tipo de etiquetas que componen la web semántica sirven para que cualquier mecanismo automático (navegador, motor de búsqueda, lector de feeds...) que lea un sitio web sepa con precisión qué partes de su contenido corresponden a cada una de las partes típicas de un sitio. Observando esas etiquetas semánticas estructurales, cualquier sistema podrá procesar la página y saber cómo está estructurada. A continuación algunas de estas etiquetas que introduce HTML5 en este apartado.</p>
+            <p>
+                <ul>
+                    <li>
+                        <code><strong>&lt;section&gt;&lt;/section&gt;</strong></code>: se utiliza para representar una sección "general" dentro de un documento, como un capítulo de un libro. Puede contener "subsecciones" y si lo acompañamos de etiquetas de encabezado ( <code><b>h1-h6</b></code> ) se puede lograr una mejor estructura de toda la página creando jerarquías del contenido, algo muy favorable para el buen posicionamiento web.
+                    </li>
+                    <li>
+                        <code><strong>&lt;article&gt;&lt;/article&gt;</strong></code>: representa un parte de una página que consiste en una composición autónoma en un documento, página o sitio web con la intención de que pueda ser reutilizado y repetido. Podría utilizarse en los artículos de los foros, una revista o el artículo de periódico, una entrada de un blog o un comentario escrito por un usuario.
+                    </li>
+                    <li>
+                        <code><strong>&lt;aside&gt;&lt;/aside&gt;</strong></code>: representa una sección de la página que abarca un contenido relacionado con el contenido que lo rodea, por lo que se le puede considerar un contenido independiente. Este elemento puede utilizarse para efectos tipográficos, barras laterales, elementos publicitarios, para grupos de elementos de la navegación, u otro contenido que se considere separado del contenido principal de la página.
+                    </li>
+                    <li>
+                        <code><strong>&lt;header&gt;&lt;/header&gt;</strong></code>: representa un grupo de artículos introductorios o de navegación. Está destinado a contener por lo general la cabecera de la sección (un elemento <code><b>h1-h6</b></code> o un elemento hgroup), pero no es necesario.
+                    </li>
+                    <li>
+                        <code><strong>&lt;nav&gt;&lt;/nav&gt;</strong></code>: representa una sección de una página que enlaza a otras páginas o a otras partes dentro de la página. No todos los grupos de enlaces en una página necesita estar en un elemento <code><strong>&lt;nav&gt;</strong></code>, sólo las secciones que constan de bloques de navegación principales son apropiados para el elemento de navegación.
+                    </li>
+                    <li>
+                        <code><strong>&lt;footer&gt;&lt;/footer&gt;</strong></code>: representa el encabezado de una sección. El elemento se utiliza para agrupar un conjunto de elementos <code><b>h1-h6</b></code> cuando el título tiene varios niveles, tales como subtítulos o títulos alternativos.
+                    </li>
+                    <li>
+                        <code><strong>&lt;time&gt;&lt;/time&gt;</strong></code>: representa o bien una hora (en formato de 24 horas), o una fecha precisa en el calendario gregoriano (en formato <a href="https://es.wikipedia.org/wiki/ISO_8601">ISO</a>), opcionalmente con un tiempo y un desplazamiento de zona horaria.
+                    </li>
+                </ul>
+            </p>
         </section>
+        <section>
+            <h3>Estructura de un documento HTML</h3>
+            <p>Como se ha mencionado anteriormente, las nuevas etiquetas semánticas introducidas en HTML5 aportan un significado concreto al documento que estamos definiendo y por lo tanto, afectan de una manera directa a la forma en la que se estructura el contenido. A continuación se mostrará cómo se puede convertir una página escrita en HTML4 con las nuevas etiquetas introducidas en HTML5</p>
+            <section>
+                <h4>Estructura tradicional de un documento en HTML4</h4>
+                <p>El siguiente código muestra una estructura "clásica" de un documento HTML, donde los diferentes contenidos de la web se encuentran agrupados por etiquetas <code><b>&lt;div&gt;</b></code>. Por ellas solas, estas no aportan ningún tipo de significado, y el atributo <code><b>id</b></code> tampoco se le proporciona. Por ejemplo, si cambiamos <code><b>&lt;div id="header"&gt;</b></code> por <code><b>&lt;div id="cualquiercosa"&gt;</b></code>, el significado sigue siendo el mismo, <em>ninguno</em>.</p>
+                <img src="public/img/html4.png" alt="HTML4 structure" class="center">
+                <pre><code>&lt;DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN"
+                        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+                    &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;div id="header"&gt;
+                            &lt;a href="/"&gt;&lt;img src=logo.png alt="home"&gt;&lt;/a&gt;
+                            &lt;h1&gt;My Weblog&lt;/h1&gt;
+                            &lt;p class="tagline"&gt;
+                                A lot of effort went into making this effortless.
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div id="nav"&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;blog&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;gallery&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;about&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                        &lt;div class="articles"&gt;
+                            &lt;div class="article"&gt;
+                                &lt;p class="post-date"&gt;October 22, 2009&lt;/p&gt;
+                                &lt;h2&gt;
+                                    &lt;a href="#" title="link to this post"&gt;Travel day&lt;/a&gt;
+                                &lt;/h2&gt;
+                                &lt;div class="content"&gt;
+                                    Content goes here...
+                                &lt;/div&gt;
+                                &lt;div class="comments"&gt;
+                                    &lt;p&gt;&lt;a href="#"&gt;3 comments&lt;/a&gt;&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="aside"&gt;
+                            &lt;div class="related"&gt;&lt;/div&gt;
+                            &lt;div class="related"&gt;&lt;/div&gt;
+                            &lt;div class="related"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div id="footer"&gt;
+                            &lt;p&gt;&#167;&lt;/p&gt;
+                            &lt;p&gt;&#169; 2013&#8211;9 &lt;a href="#"&gt;Arkaitz Garro&lt;/a&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;</code></pre>
+            </section>
+            <section>
+                <h3>Estructura tradicional de un documento HTML5</h3>
+                <p>Para añadirle significado al documento anterior, únicamente aplicando las nuevas etiquetas semánticas incluidas en HTML5.</p>
+                <img src="public/img/html5.png" alt="HTML5 structure" class="center">
+                <pre><code>&lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                        &lt;body&gt;
+                            &lt;header&gt;
+                                &lt;a href="/"&gt;&lt;img src=logo.png alt="home"&gt;&lt;/a&gt;
+                                &lt;hgroup&gt;
+                                    &lt;h1&gt;Title&lt;/h1&gt;
+                                    &lt;h2 class="tagline"&gt;
+                                        A lot of effort went into making this effortless.
+                                    &lt;/h2&gt;
+                                &lt;/hgroup&gt;
+                            &lt;/header&gt;
+                            &lt;nav&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;blog&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;gallery&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;about&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                            &lt;section class="articles"&gt;
+                                &lt;article&gt;
+                                    &lt;time datetime="2009-10-22"&gt;October 22, 2009&lt;/time&gt;
+                                    &lt;h2&gt;
+                                        &lt;a href="#" title="link to this post"&gt;Travel day&lt;/a&gt;
+                                    &lt;/h2&gt;
+                                    &lt;div class="content"&gt;
+                                        Content goes here...
+                                    &lt;/div&gt;
+                                    &lt;section class="comments"&gt;
+                                        &lt;p&gt;&lt;a href="#"&gt;3 comments&lt;/a&gt;&lt;/p&gt;
+                                    &lt;/section&gt;
+                                &lt;/article&gt;
+                            &lt;/section&gt;
+                            &lt;aside&gt;
+                                &lt;div class="related"&gt;&lt;/div&gt;
+                                &lt;div class="related"&gt;&lt;/div&gt;
+                                &lt;div class="related"&gt;&lt;/div&gt;
+                            &lt;/aside&gt;
+                            &lt;footer&gt;
+                                &lt;p&gt;&#167;&lt;/p&gt;
+                                &lt;p&gt;&#169; 2013&#8211;9 &lt;a href="#"&gt;Arkaitz Garro&lt;/a&gt;&lt;/p&gt; 
+                            &lt;/footer&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;</code></pre>
+            </section>
+        </section>  
     </body>
 </html>
