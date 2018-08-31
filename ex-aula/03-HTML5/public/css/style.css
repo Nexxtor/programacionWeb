@@ -1,0 +1,23 @@
+pre {
+    background: #faf6f6;
+    border: 1px solid #ddd;
+    border-left: 4px solid #d1250e;
+    color: rgb(68, 67, 67);
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 1.4em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.3em;
+    display: block;
+    word-wrap: break-word;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%
+}

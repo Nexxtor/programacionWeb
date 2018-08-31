@@ -12,20 +12,20 @@
 <body>
     <header>
         <h1>Configuración básica de Git</h1>
-        <p><b>Guía de apoyo</b>|<i>Miercoles 29 de agosto de 2018.</i></p>
+        <p><b>Guía de apoyo</b>| <i>Miercoles 29 de agosto de 2018.</i></p>
     </header>
 
     <section>
             <h2>Introdución.</h2>
 
-            <p>Esta guía está destinada a facilitar el uso de la herramienta de control de versiones Git, en conjunto con el servicio en línea de <a href="https://github.com/">Github.com</a>, aunque la presente, de igual forma, se considera válida para otros servicios web.</p>
+            <p>Esta guía está destinada a facilitar el uso de la herramienta de control de versiones Git, en conjunto con el servicio en línea de <a href="https://github.com/">Github.com</a>, sin embargo se considera válida para otros servicios git en la web.</p>
     </section>
 
     <section>
 
         <h2>Guía de configuración.</h2>
 
-        <p>En primer lugar debemos crear un repositorio en cualquier servicio de control de versiones. En este caso se hará uso del siguiente repositorio ficticio: https://github.com/DouglasHdezT/repositorio.git; además se deberá establecer un espacio de trabajo local (crear un directorio), con el fin de mantener un orden; en este caso será: "/home/douglashdezt/Escritorio/PW-2018"</p>
+        <p>En primer lugar debemos crear un repositorio en cualquier servicio de control de versiones. En este caso se hará uso del siguiente repositorio ficticio: <i>https://github.com/DouglasHdezT/repositorio.git</i>; además se deberá establecer un espacio de trabajo local (crear un directorio), con el fin de mantener un orden al momento de trabajar. En este caso será el directorio "<i>/home/douglashdezt/Escritorio/PW-2018</i>"</p>
 
         <p>Luego de esto, instanciamos y configuramos nuestro repositorio local, junto a su conexión remota a github. Para ello se debe iniciar la terminal en la carpeta de nuestro espacio de trabajo y se procede a ingresar los siguientes comandos:</p>
 
@@ -39,15 +39,15 @@
         
         <code class="myCode">git remote add origin https://github.com/DouglasHdezT/repositorio.git</code>
 
-        <p>En el caso que nos encontremos en las maquinas del laboratorio, las cuales no tienen configuradas las variables globales de git (Usuario y correo electrónico), habrá que configurarlas de forma local al repositorio, ingresando:</p>
+        <p>En el caso que nos encontremos en las maquinas del laboratorio, las cuales no tienen configuradas las variables globales de git (Usuario y correo electrónico), habrá que configurarlas de forma local al repositorio, ingresando en la terminal:</p>
 
         <code class="myCode">git config user.name "username"</code>
 
         <code class="myCode">git config user.email "email@service.com"</code>
 
-        <p>En caso se quieran configurar de manera global en una maquina personal, solo se debe agregar el atributo --global a las sentencias anterior. De esta forma solo se configurá una sola vez, pero las credenciales quedan registradas en la máquina</p>
+        <p>En caso se quieran configurar de manera global en una maquina personal, solo se debe agregar el atributo --global a las sentencias anterior. De esta forma solo se configurá una sola vez, pero las credenciales quedan registradas en la máquina.</p>
 
-        <p>Luego de esta configuración se podrá proseguir a crear y editar archivos, directorios, etc. Cuando se quiera registrar un cambio y guradarlo en el servicio de github, se deberan ingresar los siguientes comandos:</p>
+        <p>Luego de esta configuración se podrá proseguir a crear y editar archivos, directorios, etc. Cuando se quiera registrar un cambio y guardarlo en el servicio de github, se deberan ingresar los siguientes comandos:</p>
 
         <code>git add &lt;directorio/archivo&gt;</code>
 
@@ -55,7 +55,7 @@
 
         <code>git push &lt;remote&gt; &lt;branch&gt;</code>
 
-        En el caso particular en el que se estáa trabajando, será de la siguiente forma:
+        En el caso particular en el que se está trabajando, será de la siguiente forma:
 
         <code class="myCode">git add . <br> // Esta instrucción añade todos los archivos modificados en el directorio</code>
 

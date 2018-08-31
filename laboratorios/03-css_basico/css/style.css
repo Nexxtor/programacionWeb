@@ -91,6 +91,13 @@ footer{
     font-size: 2em;
 }
 
+.img50{
+    display: block;
+    width: 60em;
+    height: auto;
+    margin: 1.5em auto;
+}
+
 /* Id selectors */
 
 #CodeUnq{

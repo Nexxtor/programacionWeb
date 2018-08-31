@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>HTML5</title>
+        <link rel="stylesheet" href="public/css/style.css">
     </head>
     <body>
         <header>
@@ -24,7 +25,7 @@
                 Esta nueva version, no solo está designada para sustituir HTML4, si no que también XHTML 1 y <a href="https://developer.mozilla.org/es/docs/Los_niveles_del_DOM">DOM nivel 2</a>. Nos permite una mayor interacción entre las paginas web y el contenido multimedia (video, audio, entre otros), así como menos complejidad a la hora de codificar nuestro diseño básico.
             </p>
             <p>
-                Algunas de las nuevas características de HTML5 serían:
+                Algunas de las nuevas características de HTML5 son:
                 <ul>
                     <li>
                         <em>Semántica:</em> Nuevas etiquetas semánticas para estructurar los documentos HTML. Permite describir con mayor precisión cual es el contenido de la página web.
@@ -56,16 +57,16 @@
         <section>
             <h2>Semántica</h2>
             <p>
-                    Una de las novedades que se mencionó anteriormente son las etiquetas nuevas que se incorporan en HTML5, las cuales pueden ser utilizadas en nuestras páginas estáticas. Ayudan a definir la <em>estructura</em> del documento y permiten que las páginas web sean mejor <em>indexadas</em> por los buscadores.
+                    Una de las novedades que se mencionó anteriormente son las etiquetas nuevas que se incorporan en HTML5 que ayudan a definir la <em>estructura</em> del documento y permiten que las páginas web sean mejor <em>indexadas</em> por los buscadores.
             </p>
             <p>
-                Una etiqueta se califica como semántica si tiene que ver con el significado, es decir, si nos informa sobre lo que trata su contenido. Por ejemplo, la etiqueta <code><i>&lt;section&gt;</i></code> nos dice que contiene una sección o un capítulo dentro de la página. Frente a las etiquetas semánticas se tiene otros tipos de etiquetas como a las que afectan al formato, como <code><i>&lt;ul&gt;</i></code>, a multimedia, como <code><i>&lt;video&gt;</i></code>, entre otras. <br> Estas nuesvas etiquetas se pueden clasificar en dos grupos: 
+                Una etiqueta se califica como semántica si tiene que ver con el significado, es decir, si nos informa sobre lo que trata su contenido. Por ejemplo, la etiqueta <code><i>&lt;section&gt;</i></code> nos dice que contiene una sección o un capítulo dentro de la página.<br> Estas nuesvas etiquetas se pueden clasificar en dos grupos: 
                 <ul>
                     <li>
                         Etiquetas que extienden a las actuales, como <code><b>&lt;video&gt;</b></code>, <code><b>&lt;audio&gt;</b></code> o <code><b>&lt;canvas&gt;</b></code>, y que además agragan nuevas funcionalidades a los documentos HTML (que se pueden controlar desde javascript).
                     </li>
                     <li>
-                        Etiquetas que componen la web semántica, es decir, que no incluyen nuevas funcionalidades pero sirven para estructurar sitios web, y añadir un significado concreto, más allá de las etiquetas generales com <code><b>&lt;div&gt;</b></code>.
+                        Etiquetas que componen la web semántica, es decir, que no incluyen nuevas funcionalidades pero sirven para estructurar sitios web, y añadir un significado concreto, más allá de las etiquetas generales como <code><b>&lt;div&gt;</b></code>.
                     </li>
                 </ul>
             </p>
@@ -77,8 +78,225 @@
             </p>
             <h4>DOCTYPE</h4>
             <p>
-                El estándar XHTML deriva de XML, por lo que comparten muchas de sus normas y sintaxis. Uno de los conceptos fundamentales de XML es la utilización 
+                El estándar XHTML deriva de XML, por lo que comparten muchas de sus normas y sintaxis. Uno de los conceptos fundamentales de XML es la utilización del DTD o <em>Document Type Definition</em>. El éstandar XHTML define el DTD que deben seguir las páginas y documentos XHTML. En este se definen las etiquetas que se pueden utilizar, atributos de cada etiqueta y el tipo de valores que puede tener cada atributo. 
+            </p>
+            <p>
+                <pre><code> &lt;!DOCTYPE html 
+                PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</code></pre>
+            </p>
+            <p>
+                Esta es una de las 15 formas de declaraciones posibles en los estándares HTML4 y XHTML. En HTML5 se reduce la definición del tipo de documento a una sola posibilidad, por lo que no hay que preocuparse de elegir el tipo de documento correcto:
+                <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
             </p>
         </section>
+        <section>
+            <h4>Elemento raíz html</h4>
+            <p>
+                En todo documento HTML, su elemento raíz siempre es la etiqueta <code><strong>&lt;html&gt;</strong></code>. <br>
+                Hasta antes de HTML5, este elemento raíz se definía de la siguiente manera:
+            </p>
+            <p>
+                <pre><code>&lt;html xmlns=http://www.w3.org/1999/xhtml
+                lang="en"
+                xml:lang="en"&gt;</code></pre>
+            </p>
+            <p>
+                No hay ningún problema en mantener esta sintaxis. Si se desea se puede mantener, ya que esto es valido en HTML5. Sin embargo alguna de sus partes ya no son necesarias, por lo que se pueden obviar.
+            </p>
+            <p>
+                El primer elemento del que podemos prescindir es el atributo <code><b>xmlns</b></code>. Se trata de una herencia de XHTML 1.0, que dice que los elementos de esta página están en el espacio de nombre XHTML, <code><b>http://www.w3.org/1999/xhtml</b></code>. Sin embargo, los elementos de HTML5 están siempre en este espacio de nombres, por lo que ya no es necesario declararlo explícitamente. Eliminar el atributo <code><b>xmlns</b></code> nos deja el elemento de la siguiente manera:
+                <pre><code>&lt;html lang="es" xml:lang="en"&gt;</code></pre>
+            </p>
+            <p>
+                En este caso ocurre lo mismo con el atributo <code><b>xml:lang</b></code>, es una herencia de XHTML que podemos eliminar, quedando finalmente la etiqueta de la siguiente manera:
+                <pre><code>&lt;html lang="es"&gt;</code></pre>
+            </p>
+        </section>
+        <section>
+            <h4>Elemento HEAD</h4>
+            <p>
+                El primer hijo del elemento raíz es generalmente el elemento <code><strong>&lt;head&gt;</strong></code>. El elemento <code><strong>&lt;head&gt;</strong></code> contiene los metadatos que proporcionan información extra sobre alguna página, como su título, descripción, autor, entre otros. Además, se pueden incluir referencias externas a contenidos necesarios para que el documento se comporte y se muestre de una manera correcta, como hojas de estilo (CSS) o scripts (JS). Este elemento ha obtenido pequeñas variaciones, pero que se deben de tener en cuenta.
+                <pre><code>                &lt;head&gt;
+                    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+                    &lt;title&gt;My Weblog&lt;/title&gt;
+                    &lt;link rel="stylesheet" type="text/css" href="style-original.css" /&gt;
+                    &lt;link rel="alternate" type="application/atom+xml" title="My Weblog feed" href="/feed/" /&gt;
+                    &lt;link rel="search" type="application/opensearchdescription+xml" title="My Weblog search" href="opensearch.xml"  /&gt;
+                    &lt;link rel="shortcut icon" href="/favicon.ico" /&gt;
+                &lt;/head&gt;</code></pre>
+            </p>
+            <section>
+                <b>Codificación del contenido</b>
+                <p>Cuando se piensa en "texto", probablemente sea una definición de "caracteres y símbolos que se ven en la pantalla del ordenador", pero realmente se tratan de bits y bytes. Cada cadena de caracteres que se muestra en la pantalla, se almacen en una codificación de caracteres en particular. Hay cientos de codificaciones de caracteres diferentes, algunas hechas u optimizadas para ciertos idiomas, como el ruso, chino o inglés, y otros que se pueden usar para múltiples idiomas. En general, la codificación de caracteres provee una correspondencia entre lo que se muestra en la pantalla y lo que un equipo realmente almacena en memoria.</p>
+                <p>Se puede pensar en la codificación de caracteres como una especie de clave de descifrado de texto. Cuando se accede a una secuencia de bytes, y se decide que es "texto", lo que se necestia saber es, qué codificación de caracteres se utiliza para que pueda decodificar los bytes en caracteres y mostrarlos  de manera correcta. </p>
+                <p>
+                    Lo ideal es establecer esta codificación en el servidor, indicando el tipo en las cabeceras de respuesta:
+                    <pre><code>Content-Type: text/html; charset="utf-8"</code></pre>
+                </p>
+                <p>No siempre se puede tener control sobre la configuración de un servidor HTTP. Por ejemplo, en la plataforma Blogger, el contenido es proporcionado por personas, pero los servidores son administrados por Google, por lo que estamos supeditados a su configuración. </p>
+                <p>El encabezado HTTP es el método principal, y anula la etiqueta <code><strong>&lt;meta&gt;</strong></code> si está presente. Pero no todo el mundo puede establecer encabezados HTTP, por lo que la etiqueta <meta> todavía tiene sentido. En el caso de HTML5, es aún más sencillo definir esta etiqueta meta:</p>
+                <p>
+                    <pre><code>&lt;meta charset="utf-8"&gt;</code></pre>
+                    A comparación de HTML4:
+                    <pre><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</code></pre>
+                </p>
+            </section>
+            <section>
+                <p>
+                    Dentro del elemento <code><b>&lt;head&gt;</b></code>, las etiquetas <code><strong>&lt;link&gt;</strong></code> son una manera de acceder o declarar contenido externo al documento actual, que puede cumplir distintos objetivos: 
+                    <ul>
+                        <li>
+                            Enlaces a recursos externos que se van a utilizar para mejorar el documento actual. 
+                        </li>
+                        <li>
+                            Enlaces de hipervínculos que son enlaces a otros documentos.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    El tipo de relación más utilizado es el siguiente:
+                    <pre><code> &lt;link rel="stylesheet" href="style-original.css" type="text/css" /&gt;</code></pre>
+                </p>
+            </section>
+        </section>
+        <section>
+            <h3>Etiquetas semánticas</h3>
+            <p>Este tipo de etiquetas que componen la web semántica sirven para que cualquier mecanismo automático (navegador, motor de búsqueda, lector de feeds...) que lea un sitio web sepa con precisión qué partes de su contenido corresponden a cada una de las partes típicas de un sitio. Observando esas etiquetas semánticas estructurales, cualquier sistema podrá procesar la página y saber cómo está estructurada. A continuación algunas de estas etiquetas que introduce HTML5 en este apartado.</p>
+            <p>
+                <ul>
+                    <li>
+                        <code><strong>&lt;section&gt;&lt;/section&gt;</strong></code>: se utiliza para representar una sección "general" dentro de un documento, como un capítulo de un libro. Puede contener "subsecciones" y si lo acompañamos de etiquetas de encabezado ( <code><b>h1-h6</b></code> ) se puede lograr una mejor estructura de toda la página creando jerarquías del contenido, algo muy favorable para el buen posicionamiento web.
+                    </li>
+                    <li>
+                        <code><strong>&lt;article&gt;&lt;/article&gt;</strong></code>: representa un parte de una página que consiste en una composición autónoma en un documento, página o sitio web con la intención de que pueda ser reutilizado y repetido. Podría utilizarse en los artículos de los foros, una revista o el artículo de periódico, una entrada de un blog o un comentario escrito por un usuario.
+                    </li>
+                    <li>
+                        <code><strong>&lt;aside&gt;&lt;/aside&gt;</strong></code>: representa una sección de la página que abarca un contenido relacionado con el contenido que lo rodea, por lo que se le puede considerar un contenido independiente. Este elemento puede utilizarse para efectos tipográficos, barras laterales, elementos publicitarios, para grupos de elementos de la navegación, u otro contenido que se considere separado del contenido principal de la página.
+                    </li>
+                    <li>
+                        <code><strong>&lt;header&gt;&lt;/header&gt;</strong></code>: representa un grupo de artículos introductorios o de navegación. Está destinado a contener por lo general la cabecera de la sección (un elemento <code><b>h1-h6</b></code> o un elemento hgroup), pero no es necesario.
+                    </li>
+                    <li>
+                        <code><strong>&lt;nav&gt;&lt;/nav&gt;</strong></code>: representa una sección de una página que enlaza a otras páginas o a otras partes dentro de la página. No todos los grupos de enlaces en una página necesita estar en un elemento <code><strong>&lt;nav&gt;</strong></code>, sólo las secciones que constan de bloques de navegación principales son apropiados para el elemento de navegación.
+                    </li>
+                    <li>
+                        <code><strong>&lt;footer&gt;&lt;/footer&gt;</strong></code>: representa el encabezado de una sección. El elemento se utiliza para agrupar un conjunto de elementos <code><b>h1-h6</b></code> cuando el título tiene varios niveles, tales como subtítulos o títulos alternativos.
+                    </li>
+                    <li>
+                        <code><strong>&lt;time&gt;&lt;/time&gt;</strong></code>: representa o bien una hora (en formato de 24 horas), o una fecha precisa en el calendario gregoriano (en formato <a href="https://es.wikipedia.org/wiki/ISO_8601">ISO</a>), opcionalmente con un tiempo y un desplazamiento de zona horaria.
+                    </li>
+                </ul>
+            </p>
+        </section>
+        <section>
+            <h3>Estructura de un documento HTML</h3>
+            <p>Como se ha mencionado anteriormente, las nuevas etiquetas semánticas introducidas en HTML5 aportan un significado concreto al documento que estamos definiendo y por lo tanto, afectan de una manera directa a la forma en la que se estructura el contenido. A continuación se mostrará cómo se puede convertir una página escrita en HTML4 con las nuevas etiquetas introducidas en HTML5</p>
+            <section>
+                <h4>Estructura tradicional de un documento en HTML4</h4>
+                <p>El siguiente código muestra una estructura "clásica" de un documento HTML, donde los diferentes contenidos de la web se encuentran agrupados por etiquetas <code><b>&lt;div&gt;</b></code>. Por ellas solas, estas no aportan ningún tipo de significado, y el atributo <code><b>id</b></code> tampoco se le proporciona. Por ejemplo, si cambiamos <code><b>&lt;div id="header"&gt;</b></code> por <code><b>&lt;div id="cualquiercosa"&gt;</b></code>, el significado sigue siendo el mismo, <em>ninguno</em>.</p>
+                <img src="public/img/html4.png" alt="HTML4 structure" class="center">
+                <pre><code>&lt;DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN"
+                        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+                    &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;HTML5&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id="header"&gt;
+                            &lt;a href="/"&gt;&lt;img src=logo.png alt="home"&gt;&lt;/a&gt;
+                            &lt;h1&gt;HTML5 guide&lt;/h1&gt;
+                            &lt;p class="tagline"&gt;
+                                Programación Web
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div id="nav"&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;blog&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;galería&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;acerca det&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                        &lt;div class="articles"&gt;
+                            &lt;div class="article"&gt;
+                                &lt;p class="post-date"&gt;Agosto 30, 2018&lt;/p&gt;
+                                &lt;h2&gt;
+                                    &lt;a href="#" title="link to this post"&gt;Linky&lt;/a&gt;
+                                &lt;/h2&gt;
+                                &lt;div class="content"&gt;
+                                    Contenido
+                                &lt;/div&gt;
+                                &lt;div class="comments"&gt;
+                                    &lt;p&gt;&lt;a href="#"&gt;3 comentarioslt;/a&gt;&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="aside"&gt;
+                            &lt;div class="related"&gt;&lt;/div&gt;
+                            &lt;div class="related"&gt;&lt;/div&gt;
+                            &lt;div class="related"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div id="footer"&gt;
+                            &lt;p&gt;&#169; 2018&#8211;08 &lt;a href="#"&gt;Programación Web&lt;/a&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;</code></pre>
+            </section>
+            <section>
+                <h3>Estructura tradicional de un documento HTML5</h3>
+                <p>Para añadirle significado al documento anterior, únicamente aplicando las nuevas etiquetas semánticas incluidas en HTML5.</p>
+                <img src="public/img/html5.png" alt="HTML5 structure" class="center">
+                <pre><code>&lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;title&gt;HTML5&lt;/title&gt;
+                            &lt;link rel="stylesheet" href="public/css/style.css"&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;header&gt;
+                                &lt;a href="/"&gt;&lt;img src=logo.png alt="home"&gt;&lt;/a&gt;
+                                &lt;hgroup&gt;
+                                    &lt;h1&gt;Título&lt;/h1&gt;
+                                    &lt;h2 class="tagline"&gt;
+                                        Programación Web
+                                    &lt;/h2&gt;
+                                &lt;/hgroup&gt;
+                            &lt;/header&gt;
+                            &lt;nav&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;home&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;blog&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;galería&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;acerca de&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                            &lt;section class="articles"&gt;
+                                &lt;article&gt;
+                                    &lt;time datetime="2018-08-30"&gt;Agosto 30, 2018&lt;/time&gt;
+                                    &lt;h2&gt;
+                                        &lt;a href="#" title="link to this post"&gt;Link&lt;/a&gt;
+                                    &lt;/h2&gt;
+                                    &lt;div class="content"&gt;
+                                        Contenido
+                                    &lt;/div&gt;
+                                    &lt;section class="comments"&gt;
+                                        &lt;p&gt;&lt;a href="#"&gt;3 comentarios&lt;/a&gt;&lt;/p&gt;
+                                    &lt;/section&gt;
+                                &lt;/article&gt;
+                            &lt;/section&gt;
+                            &lt;aside&gt;
+                                &lt;div class="related"&gt;&lt;/div&gt;
+                                &lt;div class="related"&gt;&lt;/div&gt;
+                                &lt;div class="related"&gt;&lt;/div&gt;
+                            &lt;/aside&gt;
+                            &lt;footer&gt;
+                                &lt;p&gt;&#167;&lt;/p&gt;
+                                &lt;p&gt;&#169; 2018&#8211;08 &lt;a href="#"&gt;Programación Web&lt;/a&gt;&lt;/p&gt; 
+                            &lt;/footer&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;</code></pre>
+            </section>
+        </section>  
     </body>
 </html>
