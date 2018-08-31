@@ -96,6 +96,8 @@ footer{
     width: 60em;
     height: auto;
     margin: 1.5em auto;
+
+    border: 1px solid black;
 }
 
 /* Id selectors */
