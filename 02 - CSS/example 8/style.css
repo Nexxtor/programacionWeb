@@ -1,0 +1,284 @@
+/*For have a predictable width and height*/
+:root {
+    box-sizing: border-box;
+    font-size: calc(0.5em + 1vw);
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: inherit;
+}
+
+/*Lobotomized Owls*/
+body * + * {
+    margin-top: 1.5em;
+}
+
+body section + section {
+    margin-top: 0;
+}
+
+body {
+    background-color: rgb(48, 48, 44);
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+/* Center the page horizontal */
+.container {
+    width: 100%;
+    max-width: 2000px;
+    margin-top: 0;
+    margin: 0 auto; /*Center the container*/
+    height: 100vh;
+}
+
+header {
+    background-color: rgb(48, 48, 44);
+}
+
+header h1 {
+    margin: 0;
+    line-height: 2em;
+    padding-top: 0.1em;
+    padding-left: 1.2em;
+    font-size: 1.5em; 
+    text-transform: uppercase;
+    color: rgb(226, 221, 221);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+/*For add icon */
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.brand::before {
+    content: "\f621";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 0.2em;
+    font-size: 1.5rem; 
+    line-height: 2rem;
+    color: rgb(0, 102, 255);
+}
+
+
+.nav {
+    margin-top: 0;
+    background-color: rgb(0, 102, 255);
+    color: #fafafa;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+/*Clear Fix*/
+.nav ul::after,
+.row::after{
+    clear: both;
+    content: " ";
+    display: block;
+}
+
+/*Horizontal menu*/
+.nav ul li {
+    display: inline-block;
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1em;   
+}
+
+.nav ul li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.nav ul li:hover{
+    background-color: rgb(48, 48, 44);
+}
+
+.main {
+    margin: 0;
+}
+
+
+.paralax-background {
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.action {
+    height: 100vh;
+    /* The image used */
+    background-image: url("img/action.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    text-transform: capitalize;
+    min-height: 600px;
+}
+
+.action h2{
+    color: white;
+    font-size: 4em;
+    text-shadow: 1px 1px black; 
+    text-align: center
+}
+.action a{
+    background-color:  rgb(48, 48, 44);
+    color: #fff;
+    padding: 0.7em;
+    font-size: 2.0em;
+    text-transform: uppercase;
+}
+    
+.features {
+    text-align: center;   
+}
+
+.feature {
+    background-color: rgb(0, 102, 255);
+    overflow: hidden;
+    box-shadow: 1px 1px 0px  rgb(0, 102, 255);
+    color: #fafafa
+}
+
+.feature .feature-media, .feature .feature-body {
+    width: 50%;
+    display: inline-block;
+}
+
+.feature .feature-media, .feature .feature-body{
+    float: left;
+}
+
+.feature .feature-media img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+}
+
+.feature.right .feature-media {
+    float: right;
+}
+
+.feature .feature-body {
+    padding: 0 0.75em;
+    text-align: justify;
+}
+.feature .feature-body h3 {
+    margin: 0;
+    padding-left: 0.5em;
+}
+
+.insurance {
+    background-image: url("img/action2.jpg");
+}
+
+footer {
+    background-color: rgb(48, 48, 44);
+    margin-top: 0;
+    color: #fafafa;
+    text-align: justify;
+}
+
+footer h3  {
+    text-align: center;
+    /*background-color: rgb(0, 102, 255);*/
+    line-height: 3em;
+}
+
+footer .footer-content{
+    padding: 1em;
+    font-size: 1em;
+}
+
+
+footer .contact > *{
+    display: block;
+    width: 100%;
+}
+
+footer .contact > label + input {
+    margin-top: 0.3em; 
+}
+
+footer .contact input ,  footer .contact textarea {
+    padding: 0.5em;
+    font-size: 1em;
+    background-color: #fafafa;
+    color: rgb(48, 48, 44);
+    border: none;
+}
+
+footer .footer-social {
+    list-style: none;
+    text-align: left;
+    padding-left: 2.0em;
+}
+footer .footer-social a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.3em;
+    line-height: 2em;
+}
+
+footer .footer-social i{
+    font-size: 1.5em;
+    padding-right: 1.3em;
+}
+
+/*Layout util*/
+[class*="column-"] {
+    float: left;
+    margin-top: 0;
+}
+
+.column-1 { width: 8.3333%; }
+.column-2 { width: 16.6667%; }
+.column-3 { width: 25%; }
+.column-4 { width: 33.3333%; }
+.column-5 { width: 41.6667%; }
+.column-6 { width: 50%; }
+.column-7 { width: 58.3333%; }
+.column-8 { width: 66.6667%; }
+.column-9 { width: 75%; }
+.column-10 { width: 83.3333%; }
+.column-11 { width: 91.6667% }
+.column-12 { width: 100%; }
+
+@media only screen and (max-width: 1024px) {
+    .column-6,.column-4 {
+        width: 100%;
+    }
+    
+}
+
+
+@media only screen and (max-width: 425px) {
+    .feature .feature-media, .feature .feature-body  {
+        width: 100%;
+    }
+    
+}
