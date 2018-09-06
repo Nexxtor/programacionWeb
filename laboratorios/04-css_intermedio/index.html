@@ -11,22 +11,40 @@
 </head>
 
 <body>
-    <header class="tile-content">
+    <nav>
+        <ul>
+            <li><a href="#">Flex CSS</a></li>
+            <li><a href="#">Grid CSS</a></li>
+            <li><a href="#">Float</a></li>
+        </ul>
+    </nav>
+    <header class="title-content">
         <div id="brand">
             <h1>CSS Intermedio</h1>
         </div>
         <div id="content-brand">
-            <h6>Flex | Grid | Float</h6>
+            <h5>Flex | Grid | Float
+                </h6>
         </div>
     </header>
-    <section class="paralax-container">
-        <div class="froggy-game">
-            <h2>FlexBox</h2>
-            <p><b>Flexbox</b> es un sistema de <strong>elementos flexibles</strong></p>
-            <a href="https://flexboxfroggy.com/#es">Puedes aprender FlexBox aquí</a>
-        </div>
     </section>
-    <section>
+    <section class="content">
+        <div class="date-content">
+            <span>Viernes 7 de Septiembre 2018</span>
+            <hr>
+        </div>
+        <section>
+            <header>
+                <h2>Flexbox</h2>
+            </header>
+            <article>
+                <p>
+                    Flexbox es un sistema de elementos flexibles que llega con la idea de olvidar estos mecanismos y acostumbrarnos a una mecánica
+                    más potente, limpia y personalizable, en la que los elementos HTML se adaptan y colocan automáticamente
+                    y es más fácil personalizar los diseños.
+                </p>
+            </article>
+        </section>
         <section>
             <header>
                 <h2>Grid CSS</h2>
@@ -42,6 +60,16 @@
                     Grid CSS nace de esa necesidad, y recoge las ventajas de ese sistema, añadiendole numerosas mejoras y características que
                     permiten crear rápidamente cuadrículas sencillas y potentes.
                 </p>
+            </article>
+            <article>
+                <h3>Conceptos:</h3>
+                <dl>
+                    <dt>Content:</dt>
+                    <dd>Existe un elemento padre que es el contenedor que tendrá en su interior cada uno de los ítems flexibles
+                        y adaptables.</dd>
+                    <dt>Item:</dt>
+                    <dd>Cada uno de los hijos que tendrá el contenedor en su interior.</dd>
+                </dl>
             </article>
         </section>
         <section>
@@ -103,6 +131,27 @@
                 </figure>
             </article>
         </section>
+    </section>
+
+    <section class="interactive-section">
+        <header>
+            <h2>Aprendizaje Interactivo</h2>
+        </header>
+        <article>
+            <div class="paralax-container froggy-game">
+                <div class="filter">
+                    <h2>FlexBox</h2>
+                    <p><b>Flexbox</b> es un sistema de <strong>elementos flexibles</strong></p>
+                    <a href="https://flexboxfroggy.com/#es">Puedes aprender FlexBox aquí</a>
+                </div>
+            </div>
+            <div class="paralax-container garden-game">
+                <div class="filter">
+                    <h2>Grid CSS</h2>
+                    <a href="http://cssgridgarden.com/#es">Puedes aprender Grid aquí</a>
+                </div>
+            </div>
+        </article>
     </section>
 </body>
 
