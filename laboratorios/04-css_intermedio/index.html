@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <title>Guía laboratorio 4</title>
+    <title>CSS Intermedio.</title>
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a href="#">Flex CSS</a></li>
-            <li><a href="#">Grid CSS</a></li>
-            <li><a href="#">Float</a></li>
+            <li><a href="#float">Float</a></li>
+            <li><a href="#flexbox">Flex CSS</a></li>
+            <li><a href="#grid">Grid CSS</a></li>
         </ul>
     </nav>
     <header class="title-content">
@@ -33,6 +33,69 @@
             <span>Viernes 7 de Septiembre 2018</span>
             <hr>
         </div>
+        
+        <section id="intro">
+            <header>
+                <h2>Introducción - Posicionamiento</h2>
+            </header>
+            
+            <article>
+                <p>
+                    La presente guía contiene los temas referidos con el posicionamiento de elementos en una página web, haciendo uso del conocimiento intermedio de CSS. Se abordarán específicamente las propiedades referentes a <em>float</em>, <em>flexbox</em> y <em>grid layout</em>.
+                </p>
+
+
+            </article>
+        </section>
+
+        <section id="float">
+                <header>
+                    <h2>Float</h2>
+                </header>
+                <article>
+                    <p>
+                        Cuando un elemento se coloca bajo el modelo de posicionamiento <em>float</em>, automáticamente se convierte en una <em>caja flotante</em>, lo que significa que se desplaza al inicio o hasta el final del contenedor padre de manera horizontal.
+                    </p>
+                </article>
+                <article>
+                    <header>
+                        <h3>Valores asignables a float</h3>
+                    </header>
+                    <dl>
+                        <dt>left:</dt>
+                        <dd>Posiciona a un elemento en la zona izquierda del contenedor</dd>
+                    </dl>
+                    <section class="examples">
+                        <iframe height='265' scrolling='no' title='VGMbjP' src='//codepen.io/CarlosDubon/embed/VGMbjP/?height=265&theme-id=0&default-tab=html,result&embed-version=2'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See
+                            the Pen <a href='https://codepen.io/CarlosDubon/pen/VGMbjP/'>VGMbjP</a> by CarlosDubon (<a href='https://codepen.io/CarlosDubon'>@CarlosDubon</a>)
+                            on <a href='https://codepen.io'>CodePen</a>.
+                        </iframe>
+                    </section>
+                    <dl>
+                        <dt>right:</dt>
+                        <dd>Posiciona a un elemento en la zona derecha del contenedor</dd>
+                    </dl>
+                    <section class="examples">
+                        <iframe height='265' scrolling='no' title='VGMGBL' src='//codepen.io/CarlosDubon/embed/VGMGBL/?height=265&theme-id=0&default-tab=html,result&embed-version=2'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See
+                            the Pen <a href='https://codepen.io/CarlosDubon/pen/VGMGBL/'>VGMGBL</a> by CarlosDubon (<a href='https://codepen.io/CarlosDubon'>@CarlosDubon</a>)
+                            on <a href='https://codepen.io'>CodePen</a>.
+                        </iframe>
+                    </section>
+                </article>
+                <article>
+                    <header>
+                        <h3>Referencias externas</h3>
+                    </header>
+
+                    <ul>
+                        <li><a href="https://www.w3schools.com/css/css_float.asp">Float and Clear (W3C).</a></li>
+                        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/float">Float (MDN).</a></li>
+                    </ul>
+                </article>
+            </section>
+        
         <section id="flexbox">
             <header>
                 <h2>Flexbox</h2>
@@ -67,7 +130,21 @@
                     <figcaption>Imagen:https://lenguajecss.com</figcaption>
                 </figure>
             </article>
+
+            <article>
+                    <header>
+                        <h3>Referencias externas</h3>
+                    </header>
+
+                    <ul>
+                        <li><a href="https://www.w3schools.com/css/css_grid.asp">Grid Intro (W3C).</a></li>
+                        <li><a href="https://www.w3schools.com/css/css_grid_container.asp">Grid Container (W3C).</a></li>
+                        <li><a href="https://www.w3schools.com/css/css_grid_item.asp">Grid Item (W3C).</a></li>
+                        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout">Grid Layout (MDN).</a></li>
+                    </ul>
+                </article>
         </section>
+        
         <section id="grid">
             <header>
                 <h2>Grid CSS</h2>
@@ -144,46 +221,6 @@
                         <figcaption>Imagen: gridbyexample.com</figcaption>
                     </figure>
                 </article>
-            </section>
-            <section id="float">
-                <header>
-                    <h2>Float</h2>
-                </header>
-                <article>
-                    <p>
-                        Cuando una caja se posiciona con el modelo de posicionamiento flotante, automáticamente se convierte en una <i>caja
-                            flotante
-                        </i>, lo que significa que se desplaza al inicio o hasta el final del contenedor de manera horizontal.
-                    </p>
-                </article>
-                <article>
-                    <header>
-                        <h3>Valores asignables a float</h3>
-                    </header>
-                    <dl>
-                        <dt>left:</dt>
-                        <dd>Posiciona a un elemento en la zona izquierda del contenedor</dd>
-                    </dl>
-                    <section class="examples">
-                        <iframe height='265' scrolling='no' title='VGMbjP' src='//codepen.io/CarlosDubon/embed/VGMbjP/?height=265&theme-id=0&default-tab=html,result&embed-version=2'
-                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See
-                            the Pen <a href='https://codepen.io/CarlosDubon/pen/VGMbjP/'>VGMbjP</a> by CarlosDubon (<a href='https://codepen.io/CarlosDubon'>@CarlosDubon</a>)
-                            on <a href='https://codepen.io'>CodePen</a>.
-                        </iframe>
-                    </section>
-                    <dl>
-                        <dt>right:</dt>
-                        <dd>Posiciona a un elemento en la zona derecha del contenedor</dd>
-                    </dl>
-                    <section class="examples">
-                        <iframe height='265' scrolling='no' title='VGMGBL' src='//codepen.io/CarlosDubon/embed/VGMGBL/?height=265&theme-id=0&default-tab=html,result&embed-version=2'
-                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See
-                            the Pen <a href='https://codepen.io/CarlosDubon/pen/VGMGBL/'>VGMGBL</a> by CarlosDubon (<a href='https://codepen.io/CarlosDubon'>@CarlosDubon</a>)
-                            on <a href='https://codepen.io'>CodePen</a>.
-                        </iframe>
-                    </section>
-                </article>
-
             </section>
         </section>
     </section>
