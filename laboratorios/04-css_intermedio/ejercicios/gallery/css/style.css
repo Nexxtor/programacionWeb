@@ -1,0 +1,75 @@
+:root {
+	box-sizing: border-box;
+}
+
+*, ::after,::before {
+    box-sizing: inherit;
+}
+
+.box {
+	display:grid;
+	grid-template-columns: repeat(8, 6vw);
+	grid-auto-rows: 6vw;
+
+	grid-auto-flow: dense;
+
+	justify-content: center;
+	grid-gap: 1px;
+}
+
+.box img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	
+}
+
+.box > .normal {
+	grid-area: span 2 / span 2;
+}
+.box > .small {
+	grid-area: span 1 / span 1;
+}
+.box > .large {
+	grid-area: span 4 / span 4;
+}
+.box > .wide {
+	grid-area: span 2 / span 4;
+}
+.box > .tall {
+	grid-area: span 4 / span 2;
+}
+.box > .wide.small {
+	grid-area: span 1 / span 2;
+}
+.box > .tall.small {
+	grid-area: span 2 / span 1;
+}
+.box > .wide.large {
+	grid-area: span 4 / span 8;
+}
+.box > .tall.large {
+	grid-area: span 8 / span 4;
+}
+
+/* 
+.box img{
+	width: 300px;
+	height:300px;
+	margin:20px;
+	flex-basis:300px;
+} */
+h1{
+	text-align:center;
+	font-family: 'Pacifico', cursive;
+}
+hr { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+} 
+
