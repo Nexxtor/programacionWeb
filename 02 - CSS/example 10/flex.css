@@ -1,0 +1,96 @@
+:root {
+    box-sizing: border-box;
+}
+
+* , ::before, ::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+.menu ul li {
+    background-color: pink;
+    padding: 1em;
+    flex:0 0 10px;
+    width: 200px;
+}
+
+.menu ul li:nth-of-type(even) {
+    background-color: red;
+}
+
+
+
+/*********************************/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+}
+footer {
+    height: 100px;
+    background: pink;
+}
+
+.main {
+    flex: 1;
+    background: red;
+    display: flex;
+}
+
+.main aside{
+    width: 40px;
+    background: blue;
+
+}
+
+.main section {
+    background-color: greenyellow;
+    flex: 1;
+}
+.main aside ul li a{
+    color: white;
+}
+.main aside ul{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between
+}
+.main aside ul li{
+    flex: 1;
+}
+
+.main aside ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+       flex-direction: column;
+    }
+    
+    .main aside {
+        width: 100%;
+    }
+    .main aside ul{
+        width: 100%;
+        flex-direction: row;
+        flex: 1;
+    }
+}

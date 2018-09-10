@@ -29,7 +29,6 @@ body {
 .container {
     width: 100%;
     max-width: 2000px;
-    margin-top: 0;
     margin: 0 auto; /*Center the container*/
     height: 100vh;
 }
