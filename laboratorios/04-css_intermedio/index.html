@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>CSS Intermedio.</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#float">Float</a></li>
+            <li><a href="#flexbox">Flex CSS</a></li>
+            <li><a href="#grid">Grid CSS</a></li>
+        </ul>
+    </nav>
+    <header class="title-content">
+        <div id="brand">
+            <h1>CSS Intermedio</h1>
+        </div>
+        <div id="content-brand">
+            <h5>Flex | Grid | Float
+                </h6>
+        </div>
+    </header>
+    </section>
+    <section class="content">
+        <div class="date-content">
+            <span>Viernes 7 de Septiembre 2018</span>
+            <hr>
+        </div>
+        
+        <section id="intro">
+            <header>
+                <h2>Introducción - Posicionamiento</h2>
+            </header>
+            
+            <article>
+                <p>
+                    La presente guía contiene los temas referidos con el posicionamiento de elementos en una página web, haciendo uso del conocimiento intermedio de CSS. Se abordarán específicamente las propiedades referentes a <em>float</em>, <em>flexbox</em> y <em>grid layout</em>. 
+                </p>
+
+
+            </article>
+        </section>
+
+        <section id="float">
+                <header>
+                    <h2>Float</h2>
+                </header>
+                <article>
+                    <p>
+                        Cuando un elemento se coloca bajo el modelo de posicionamiento <em>float</em>, automáticamente se convierte en una <em>caja flotante</em>, lo que significa que se desplaza al inicio o hasta el final del contenedor padre de manera horizontal. Esta disposición de elementos de forma horizontal es la mas básica dentro de CSS.
+                    </p>
+                </article>
+                <article>
+                    <header>
+                        <h3>Valores asignables a float</h3>
+                    </header>
+                    <dl>
+                        <dt>left:</dt>
+                        <dd>Posiciona a un elemento en la zona izquierda del contenedor</dd>
+                    </dl>
+                    <section class="examples">
+                        <iframe height='265' scrolling='no' title='VGMbjP' src='//codepen.io/CarlosDubon/embed/VGMbjP/?height=265&theme-id=0&default-tab=html,result&embed-version=2'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See
+                            the Pen <a href='https://codepen.io/CarlosDubon/pen/VGMbjP/'>VGMbjP</a> by CarlosDubon (<a href='https://codepen.io/CarlosDubon'>@CarlosDubon</a>)
+                            on <a href='https://codepen.io'>CodePen</a>.
+                        </iframe>
+                    </section>
+                    <dl>
+                        <dt>right:</dt>
+                        <dd>Posiciona a un elemento en la zona derecha del contenedor</dd>
+                    </dl>
+                    <section class="examples">
+                        <iframe height='265' scrolling='no' title='VGMGBL' src='//codepen.io/CarlosDubon/embed/VGMGBL/?height=265&theme-id=0&default-tab=html,result&embed-version=2'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See
+                            the Pen <a href='https://codepen.io/CarlosDubon/pen/VGMGBL/'>VGMGBL</a> by CarlosDubon (<a href='https://codepen.io/CarlosDubon'>@CarlosDubon</a>)
+                            on <a href='https://codepen.io'>CodePen</a>.
+                        </iframe>
+                    </section>
+                </article>
+                <article>
+                    <header>
+                        <h3>Referencias externas</h3>
+                    </header>
+
+                    <ul>
+                        <li><a href="https://www.w3schools.com/css/css_float.asp">Float and Clear (W3C).</a></li>
+                        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/float">Float (MDN).</a></li>
+                    </ul>
+                </article>
+            </section>
+        
+        <section id="flexbox">
+            <header>
+                <h2>Flexbox</h2>
+            </header>
+            <article>
+                <p>
+                    Flexbox es un sistema de posicionamineto de elementos en una sola dirección o disposición (vertical u horizontal), cuyo fin es mejorar el sistema <em>float</em> que se ocupaba anteriormente, otorgando dinamismo y flexibilidad, lo que es traducido a una meyor facilidad para la personalización y generalización de estilos.
+                </p>
+            </article>
+            <article>
+                <h3>Conceptos:</h3>
+                <dl>
+                    <dt>Content:</dt>
+                    <dd>Existe un elemento padre que es el contenedor que tendrá en su interior cada uno de los ítems flexibles
+                        y adaptables.</dd>
+                    <dt>Item:</dt>
+                    <dd>Cada uno de los hijos que tendrá el contenedor en su interior.</dd>
+                    <dt>Eje principal:</dt>
+                    <dd>Los contenedores flexibles tendrán una orientación principal específica. Por defecto, es en horizontal
+                        (fila).
+                    </dd>
+                    <dt>Eje secundario: </dt>
+                    <dd> De la misma forma, los contenedores flexibles tendrán una orientación secundaria, perpendicular
+                        a la principal. Si la principal es en horizontal, la secundaria será en vertical, y viceversa.</dd>
+                </dl>
+            </article>
+            <article>
+                <figure>
+                    <img style="width:100%" src="assets/img/flex-concepts.png" alt="Conceptos FlexBox">
+                    <figcaption>Imagen:https://lenguajecss.com</figcaption>
+                </figure>
+            </article>
+
+            <article>
+                    <header>
+                        <h3>Referencias externas</h3>
+                    </header>
+
+                    <ul>
+                        <li><a href="https://www.w3schools.com/css/css3_flexbox.asp">CSS Flexbox (W3C).</a></li>
+                        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Guide to Flexbox (CSS-Tricks).</a></li>
+                        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceptos_Basicos_de_Flexbox">Conceptos Básicos de flexbox (MDN).</a></li>
+                    </ul>
+                </article>
+        </section>
+        
+        <section id="grid">
+            <header>
+                <h2>Grid CSS</h2>
+            </header>
+            <article>
+                <p>
+                    Uno de los procesos más problematicos de CSS, sobre todo para novatos o principiantes, es el referido con colocar
+                    y distribuir los elementos de manera no lineal a lo largo de una página. Mecanismos como posicionamiento, floats o elementos
+                    en bloque o en línea, suelen ser insuficientes (o muy simples) para crear un layout o estructuras mas demandantes para páginas web actuales.
+                </p>
+                <p>
+                    Grid CSS nace de esa necesidad, y recoge las ventajas de ese sistema, añadiendole numerosas mejoras y características que
+                    permiten crear rápidamente cuadrículas sencillas y potentes.
+                </p>
+            </article>
+            <section>
+                <header>
+                    <h3>Conceptos</h3>
+                </header>
+                <article>
+                    <dl>
+                        <dt>Grid:</dt>
+                        <dd>Un grid es un conjunto de líneas horizontales y verticales que crean filas y columnas.</dd>
+                        <dt>Grid Container:</dt>
+                        <dd> Se refiere al área que es declarada como un grid. Es decir, cuando declaras un elemento como
+                            <code>display:grid</code> o
+                            <code>display:inline-grid</code>.</dd>
+                        <dt>Grid Lines:</dt>
+                        <dd>Son las líneas horizontales y verticales que dividen el Grid. Éstas se encuentran a cada lado
+                            de una fila o columna.</dd>
+                    </dl>
+                </article>
+                <article>
+                    <figure>
+                        <img src="assets/img/grid-1.jpg" alt="Imagen: gridbyexample.com">
+                        <figcaption>Imagen: gridbyexample.com</figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <dl>
+                        <dt>Grid Tracks:</dt>
+                        <dd>Es el espacio que hay entre dos Grid Lines, ya sean horizontales o verticales.</dd>
+                    </dl>
+                </article>
+                <article>
+                    <figure>
+                        <img src="assets/img/grid-2.jpg" alt="Imagen: gridbyexample.com">
+                        <figcaption>Imagen: gridbyexample.com</figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <dl>
+                        <dt>Grid Cell:</dt>
+                        <dd>Es el espacio que se encuentra entre cuatro Grid Lines. La típica celda de una tabla.</dd>
+                    </dl>
+                </article>
+                <article>
+                    <figure>
+                        <img src="assets/img/grid-3.jpg" alt="Imagen: gridbyexample.com">
+                        <figcaption>Imagen: gridbyexample.com</figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <dl>
+                        <dt>Grid Area:</dt>
+                        <dd>Se trata del espacio que hay entre cuatro Grid Lines que a su vez contiene varios Grid Cells.
+                        </dd>
+                    </dl>
+                </article>
+                <article>
+                    <figure>
+                        <img src="assets/img/grid-4.jpg" alt="Imagen: gridbyexample.com">
+                        <figcaption>Imagen: gridbyexample.com</figcaption>
+                    </figure>
+                </article>
+                <article>
+                        <header>
+                            <h3>Referencias externas</h3>
+                        </header>
+    
+                        <ul>
+                            <li><a href="https://www.w3schools.com/css/css_grid.asp">Grid Intro (W3C).</a></li>
+                            <li><a href="https://www.w3schools.com/css/css_grid_container.asp">Grid Container (W3C).</a></li>
+                            <li><a href="https://www.w3schools.com/css/css_grid_item.asp">Grid Item (W3C).</a></li>
+                            <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout">Grid Layout (MDN).</a></li>
+                        </ul>
+                    </article>
+            </section>
+            
+        </section>
+    </section>
+
+    <section id="ejercicio" class="content">
+        <h2>Ejercicio</h2>
+        <p> Link al ejercicio 1 <a href="./ejercicios/Tienda/index.html" target="_blank">aquí</a></p>
+        <p> Link al ejercicio 2 <a href="./ejercicios/gallery/index.html" target="_blank">aquí</a></p>
+
+    </section>
+
+    <section class="interactive-section">
+        <header>
+            <h2>Aprendizaje Interactivo</h2>
+        </header>
+        <article>
+            <div class="paralax-container froggy-game">
+                <div class="filter">
+                    <h2>FlexBox</h2>
+                    <a href="https://flexboxfroggy.com/#es">Puedes aprender FlexBox aquí</a>
+                </div>
+            </div>
+            <div class="paralax-container garden-game">
+                <div class="filter">
+                    <h2>Grid CSS</h2>
+                    <a href="http://cssgridgarden.com/#es">Puedes aprender Grid aquí</a>
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+
+</html>
