@@ -1,0 +1,23 @@
+body {
+    background-color: peachpuff; 
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(100px,1fr));
+    /*grid-template-rows: 100px 100px;*/
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+}
+
+.container div {
+    background-color: azure;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container div:nth-last-of-type(even){
+    background-color: gray;
+    color: white;
+}

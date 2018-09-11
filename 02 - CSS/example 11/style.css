@@ -1,0 +1,36 @@
+body {
+    background-color: peachpuff; 
+}
+
+.container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 150px 1fr; 
+    grid-template-rows: repeat(2,70px) minmax(150px, auto) 70px;
+}
+
+.header {
+    background-color: aliceblue;
+    grid-column: 1 / span 2;
+}
+
+.nav {
+    background-color: beige;
+    grid-column: 1 / -1;
+}
+
+.content {
+    background-color: cadetblue;
+    grid-row: 3 / 4;
+}
+
+.aside {
+    background-color: darkblue;
+    grid-column: -1 / 2;
+}
+
+.footer {
+    background-color: firebrick;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
