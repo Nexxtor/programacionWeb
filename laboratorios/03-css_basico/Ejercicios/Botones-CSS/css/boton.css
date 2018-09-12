@@ -1,0 +1,101 @@
+/* "green": "#2ecc71",
+	"blue": "#3498db",
+	"purple": "#9b59b6",
+	"navy": "#34495e",
+	"orange": "#e67e22",
+	"red": "#e74c3c" */
+
+.btn {
+    border: 1px transparent solid;
+    border-radius: 0.3em;
+    box-shadow: none;
+
+    padding: 0.5em 1em;
+    margin: 0.5em;
+
+    opacity: 0.8;
+
+    font-size: 1.05em;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn.large {
+    font-size: 1.5em;
+}
+
+.btn.small {
+    font-size: 0.7em;
+}
+
+
+.btn.green {
+    background: #2ecc71;
+    color: #fff;
+}
+
+.btn.blue {
+    background: #3498db;
+    color: #fff;
+}
+
+.btn.purple {
+    background: #9b59b6;
+    color: #fff;
+}
+
+.btn.navy {
+    background: #34495e;
+    color: #fff;
+}
+
+.btn.orange {
+    background: #e67e22;
+    color: #fff;
+}
+
+.btn.red {
+    background: #e74c3c;
+    color: #fff;
+}
+
+
+.btn.border {
+    border: 0.1em solid;
+    background: transparent;
+}
+
+.btn.border.green {
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+.btn.border.blue {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.btn.border.purple {
+    border-color: #9b59b6;
+    color: #9b59b6;
+}
+
+.btn.border.navy {
+    border-color: #34495e;
+    color: #34495e;
+}
+
+.btn.border.orange {
+    border-color: #e67e22;
+    color: #e67e22;
+}
+
+.btn.border.red {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
