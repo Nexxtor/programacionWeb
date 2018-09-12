@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currriculum vitae</title>
+</head>
+
+<body>
+    <header>
+        <center>
+            <h1>
+                Curriculum Vitae
+            </h1>
+        </center>
+    </header>
+    <section>
+        <article>
+            <form action="#">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <label for="dui">DUI</label>
+                    <input type="text" name="dui" id="dui" placeholder="048134128" maxlength="10" pattern="[0][0-9]{7}-{0-9}">
+                    <label for="name">Nombres:</label>
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                    <!--last name-->
+                    <label for="lastName">Apellidos:</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Apellidos" required>
+                    <!--gender-->
+                    <label for="gender">G&eacute;nero</label>
+                    <label>
+                        <input type="radio" name="gender" id="">M</label>
+                    <label>
+                        <input type="radio" name="gender" id="">F</label>
+                    <br>
+                    <br>
+                    <!--last name-->
+                    <label for="tel">N&uacute;mero de Contacto:</label>
+                    <input type="tel" name="tel" id="tel" pattern="[0-9]{4}-[0-9]{4}" maxlength="9" placeholder="2222-2222">
+                    <!--last name-->
+                    <label for="birthdate">Fecha de Nacimiento:</label>
+                    <input type="date" id="birthdate" required>
+                    <!--last name-->
+                    <label for="cs">Estado Civil</label>
+                    <select name="" id="cs">
+                        <option value="1">Soltero</option>
+                        <option value="2">Casado</option>
+                    </select>
+                    <!--last name-->
+                    <label for="image">Fotograf&iacute;a</label>
+                    <input type="file" name="" id="image" accept="image/png, image/tiff, image/jpg" required>
+                </fieldset>
+                <br>
+                <br>
+                <fieldset>
+                    <legend>Experiencia Laboral</legend>
+                    <textarea name="" id="" cols="150" rows="10" placeholder="Experiencia" required></textarea>
+                </fieldset>
+                <br>
+                <br>
+                <fieldset>
+                    <legend>Formaci&oacute;n Acad&eacute;mica</legend>
+                    <textarea name="" id="" cols="150" rows="10" placeholder="Estudios" required></textarea>
+                </fieldset>
+                <br>
+                <br>
+                <fieldset>
+                    <legend>FOrmaci&oacute;n Continua</legend>
+                    <fieldset>
+                        <legend>Lenguajes de Programaci&oacute;n</legend>
+                        <label>
+                            <input type="checkbox" name="languages" value="Java">Java</label>
+                        <label>
+                            <input type="checkbox" name="languages" value="C#">C#</label>
+                        <label>
+                            <input type="checkbox" name="languages" value="Phyton">Phyton</label>
+                        <label>
+                            <input type="checkbox" name="languages" value="C++">C++</label>
+                        <label>
+                            <input type="checkbox" name="languages" value="Ruby">Ruby</label>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Tecnolog&iacute;as Web</legend>
+                        <label>
+                            <input type="checkbox" name="web" value="html5">HTML5</label>
+                        <label>
+                            <input type="checkbox" name="web" value="css">CSS/CSS3</label>
+                        <label>
+                            <input type="checkbox" name="wed" value="materializecss">materialize Css</label>
+                        <label>
+                            <input type="checkbox" name="web" value="javascript">Javascript</label>
+                        <label>
+                            <input type="checkbox" name="web" value="node">Node.js</label>
+                        <label>
+                            <input type="checkbox" name="web" value="spring">Spring MVC</label>
+                    </fieldset>
+                </fieldset>
+                <br>
+                <input type="submit" value="Enviar">
+                <input type="button" value="Cancelar">
+            </form>
+        </article>
+    </section>
+</body>
+
+</html>
