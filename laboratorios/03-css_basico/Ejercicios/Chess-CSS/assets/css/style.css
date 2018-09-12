@@ -1,0 +1,34 @@
+body{
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+#board table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.white{
+    background: white;
+    color: black;
+}
+
+.black{
+    background: black;
+    color: white;
+}
+
+.chess-cell:hover .piece-container{
+    background: rgba(255, 0, 0, 0.5);
+    visibility: visible;
+}
+
+.piece-container{
+    visibility: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    width: 5em;
+    height: 5em;
+    text-align: center;
+}
