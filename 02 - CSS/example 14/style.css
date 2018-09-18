@@ -1,0 +1,34 @@
+body {
+    background-color: #fafafa;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    /*grid-template-rows: repeat(3, 100px);  */
+    grid-auto-rows: 100px;
+}
+
+.header {
+    background-color: aliceblue;
+    grid-column-start: 1;
+    grid-column-end: -1; 
+}
+
+.nav {
+    background-color: beige;
+    grid-column: 1 / span 2;
+}
+
+.aside {
+    background-color: cadetblue;
+}
+
+.content {
+    background-color: darkblue;
+}
+
+.footer {
+    background-color: firebrick;
+    grid-column: span 2;
+}
