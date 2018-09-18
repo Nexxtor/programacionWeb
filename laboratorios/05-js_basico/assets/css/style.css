@@ -1,0 +1,128 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.title-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title-content div h1{
+    margin-bottom:
+     0;
+}
+.title-content div h5{
+    margin-top: 0;
+}
+.paralax-container{
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.froggy-game{
+    width: 100%;
+    background-image: url("../img/flex-froggy.png");
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.filter h2{
+    font-size: 1.5rem;
+}
+.filter a{
+    color:#fff;
+    text-decoration:underline;
+    font-weight: bold;
+}
+.content{
+    margin-left:20%;
+    margin-right: 20%; 
+}
+
+dl dt{
+    font-weight: bold;
+    margin-top: 7px;
+}
+dl dd{
+    margin-bottom: 7px;
+}
+figure img{
+    width: 30%;
+}
+figcaption{
+    font-style: italic;
+}
+nav{
+    padding: 0;
+    margin: 0;
+    position: fixed;
+}
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+nav ul li{ 
+    margin-left: -100%;
+    width: 100%;
+    color:#fff;
+    padding: 20px;
+    transition: 500ms ease all;
+}
+nav ul li:hover{ 
+    margin-left:0%;
+}
+nav ul li a{
+    color:#fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+nav ul li:first-child{
+    background: #192a56;
+}
+nav ul li:nth-child(2){
+    background: #c23616;
+}
+nav ul li:nth-child(3){
+    background: #0097e6;
+}
+.garden-game{
+    background-image: url("../img/Garden-Game.png");
+}
+.interactive-section article{
+    display: grid;
+    grid-template: 100% / 50% 50%;
+}
+.interactive-section header h2{
+    margin-left: 5%;
+}
+.date-content::after{
+    content: "";
+    clear: both;
+    width: 100%;
+    display: block;
+
+}
+.date-content span{
+    float: right;
+}
+.date-content hr{
+    display: block;
+    width: 100%;
+    float: left;;
+}
+/*
+00004817
+rvilleda
+*/
