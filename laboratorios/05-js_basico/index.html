@@ -246,7 +246,7 @@
             </header>
             <article>
                 <p>
-                    Como se mecionó previamente, la sintaxis de JavaScript es muy parecida a la de lenguajes de programación mas comunes, por lo que es natural pensar que la mayoría de sus sentencias son iguales. A continuación se presenta la sintaxis de las mas utilizadas:
+                    Como se mecionó previamente, la sintaxis de JavaScript es muy parecida a la de lenguajes de programación comunes, por lo que es natural pensar que la mayoría de sus sentencias son iguales. A continuación se presenta la sintaxis de las mas utilizadas:
                 </p>
 
                 <div class="sentences-container">
@@ -301,6 +301,80 @@
                         </p>
                     </div>
                 </div>
+            </article>
+        </section>
+
+        <section id="functions-section">
+            <header>
+                <h2>Funciones</h2>
+            </header>
+            <article>
+                <p>
+                    En términos generales, una función es un "subprograma" que puede ser llamado por código externo (o interno en caso de recursión) a la función. Al igual que el programa en sí mismo, una función se compone de una secuencia de declaraciones, que conforman el llamado cuerpo de la función. Se pueden pasar valores a una función, y la función puede devolver un valor. [MDN]
+                </p>
+                <p>
+                    En JavaScript existen diversas formas de declarar una función, entre las que figuran:
+                </p>
+            </article>
+            
+            <article>
+                <h3>La instrucción function</h3>
+                <p>
+                    Esta instrucción declara una función con un identificador y parámetros específicos. Posee la siguiente sintaxis:
+                </p>
+                <code>
+                    funtion &lt;name&gt; ([Param1,[Param2,[Param3[,...]]]]){ <br><br>
+                    &ensp;&ensp;//instructions <br><br>
+                    }
+                </code>
+            </article>
+            
+            <article>
+                <h3>El operador funtion</h3>
+                <p>
+                    Este operador es parecido a la instrucción anterior, con la diferencia que este es utilizado para declarar funciones dentro de expresiones, es decir ser almacendas en variables o procesos mayores. Su sintaxis es la siguiente:
+                </p>
+                <code>
+                    funtion [name] ([Param1,[Param2,[Param3[,...]]]]){ <br><br>
+                    &ensp;&ensp;//instructions <br><br>
+                    }
+                </code>
+                <p>Ejemplos:</p>
+                <code>
+                    var procesoA =  funtion (i,j){ <br>
+                    &ensp;&ensp;return i*j; <br>
+                    }
+                </code>
+                <br>
+                <code>
+                    elementX.onclick(funtion (i,j){ <br>
+                    &ensp;&ensp;return (i*j)/(i); <br>
+                    });
+                </code>
+            </article>
+
+            <article>
+                <h3>La notación flecha.</h3>
+                <p>
+                    Esta notación es la simplificación de la definición y sintaxis de una función; en general tiene las misma propiedades que el operador funtion, por lo que su utilidad reside en ser asignada a expresiones y procesos mayores. Fue impmentada a partir de ECMAScript 6. 
+                </p>
+                <code>
+                        ([Param1,[Param2[,...]]]) => {<br><br>
+                        &ensp;&ensp;//instructions <br><br>
+                        }
+                </code>
+                <p>Aplicando esta notación a los ejemplos anteriores:</p>
+                <code>
+                        var procesoA = (i,j) => { <br>
+                        &ensp;&ensp;return i*j; <br>
+                        }
+                    </code>
+                    <br>
+                    <code>
+                        elementX.onclick((i,j) => { <br>
+                        &ensp;&ensp;return (i*j)/(i); <br>
+                        });
+                    </code>
             </article>
         </section>
 

@@ -24,6 +24,10 @@ article{
     margin: 2em 0;
 }
 
+section{
+    margin-bottom: 5em;
+}
+
 /* Estilo del titulo */
 
 .title-content{
@@ -126,7 +130,7 @@ nav{
     margin: 0;
     position: fixed;
     z-index: 100;
-    top: 1.5em;
+    top: 0;
 }
 
 nav ul{
