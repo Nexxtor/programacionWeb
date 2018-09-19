@@ -133,7 +133,8 @@
                                     <li class="arch">imagen_2.jpg</li>
                                     <li class="arch">imagen_3.jpg</li>
                                 </ul>
-                                <li class="dir">css</li>
+                            </ul>
+                            <li class="dir">css</li>
                                 <ul>
                                     <li class="arch">styles.css</li>
                                     <li class="arch">extras.css</li>
@@ -144,7 +145,6 @@
                                     <li class="arch">nav_extra.js</li>
                                     <li class="arch">player.js</li>
                                 </ul>
-                            </ul>
                         </ul>
                     </ul>
                 </article>
@@ -166,30 +166,32 @@
                 </p>
 
                 <p>
-                    Otra característica importante acerca de las variables, es que ellas no solo alacenan datos primitivos, sino que pueden llegar a contener estructuras de datos complejas, objetos, e incluso definiciones de funciones. Dicho lo anterior, se debe de realizar una diferencia, entre el valor y la variable, donde esta última simplemente sirve de contenedor, y no es el valor en sí.
+                    Otra característica importante acerca de las variables, es que ellas no solo almacenan datos primitivos, sino que pueden llegar a contener estructuras de datos complejas, objetos, e incluso definiciones de funciones. Dicho lo anterior, se debe de realizar una diferencia, entre el valor y la variable, donde esta última simplemente sirve de contenedor, y no es el valor en sí.
                 </p>
             </article>
 
             <article>
                 <h3>Declarar una variable.</h3>
                 <p>
-                    Para poder hacer uso de una variable, primero debe de declarar dentro del script. Esto se logra con la palabra reservada <em>var</em> seguido de un identificador o nombre para la misma.
+                    Para poder hacer uso de una variable, primero debe de declarar dentro del script. Esto se logra con la palabras reservadas <em>var</em> o <em>let</em> seguido de un identificador o nombre para la misma.
                 </p>
                 <code>
                     var birthDate;<br>
+                    let viewHolder;<br>
                     var contAux;<br>
-                    var progWeb;
+                    let progWeb;
                 </code>
             </article>
 
             <article>
                 <h3>Inicializar una variable.</h3>
                 <p>
-                    Al igual que en la mayoría de lenguajes de programación, el operador de asignación dentro de JavaScript es el igual (=). Su uso es trivial, donde se iguala una variable a un valor específico;
+                    Al igual que en la mayoría de lenguajes de programación, el operador de asignación dentro de JavaScript es el igual (=). Su uso es trivial, donde se iguala una variable a un valor específico; Si una variable es inicializada sin haber sido definida, se comportará de manera global.
                 </p>
                 <code>
                     birthDate = '2018-09-21';<br>
                     contAux = 0;<br>
+                    comp2 = true //Global <br>
                     progWeb = "Este es el labo 05";
                 </code>
                 <p>
@@ -205,7 +207,7 @@
             <article>
                 <h3>Operar variables.</h3>
                 <p>
-                    De igual forma que muchos lenguajes de programación, JavaScript cuenta con las operaciones matemáticas básicas (+ - * / %) y comparativas (&lt; &gt; == !), para la manipulación primitiva de variables. Ademas, conceptos como contadores y acumuladores, expresiones regulares, etc, también son aplicables en este ámbito. 
+                    De igual forma que muchos lenguajes de programación, JavaScript cuenta con las operaciones matemáticas básicas (+ - * / %) y comparativas (&lt; &gt; == !=), para la manipulación primitiva de variables. Ademas, conceptos como contadores y acumuladores, expresiones regulares, etc, también son aplicables en este ámbito. 
                 </p>
                 <code>
                     offsetX = 54 + posX;<br>
@@ -216,16 +218,52 @@
                 </code>
             </article>
 
+            <article>
+                <h3>Difrencia entre <em>let</em> y <em>var</em></h3>
+                <p>
+                    La diferencia fundamental entre ambas instruciones, es el alcance que otorgan a las variables. La instrucción <em>let</em> limita el contexto de la variable al bloque, declaración, sentencia o expresión en que se este utilizando. Por ejemplo:
+                </p>
+                <code>
+                    let total = 0; <br>
+                    for(i=0; i&lt;5; i++){ <br><br>
+                    &ensp;&ensp;let sqrtValue = i*i;<br>
+                    &ensp;&ensp;total = total + sqrtValue;<br><br>
+                    }
+                </code>
+                <p>
+                    La variable sqrtValue solamente puede ser accesible desde el contexto encerrado en el bucle <em>for</em>. Si tratamos de acceder a esta fuera de su contexto, será disparado un error. 
+                </p>
+
+                <img src="assets/img/let_error.png" alt="Let error">
+
+                <p>
+                    Por su parte la instrucción <em>var</em> limita la variable a un contexto local dentro de una función sin importar el contexto particular del bloque o sentencia en la que se esté utilizando. Aplicando el mismo ejemplo anterior con <em>var</em>:
+                </p>
+                <code>
+                    let total = 0; <br>
+                    for(i=0; i&lt;5; i++){ <br><br>
+                    &ensp;&ensp;var sqrtValue = i*i;<br>
+                    &ensp;&ensp;total = total + sqrtValue;<br><br>
+                    }
+                </code>
+
+                <p>
+                    Ahora la variable sqrtValue pertence al contexto de la función y no al bloque <em>for</em>, por lo que facilmente se puede acceder a ella desde otro contexto dentro de la misma función.
+                </p>
+
+                <img src="assets/img/var_ex.png" alt="var_example">
+            </article>
+
             <article class="tip">
                 <h3>Tip, Nombres de variables.</h3>
                 <p>
                     A la hora de elegir un identificador para las variables se debe de garantizar que este cumpla su función de la mejor manera. Para ello se recomeinda seguir los siguientes estándares: 
                 </p>
                 <ul class="list">
-                    <li>Ultilizar solamente carateres latinos (A-Z a-z 0-9) y el guión bajo.</li>
-                    <li>No utilizar guión bajo al inicio del identificador. Está reservado en JS.</li>
+                    <li>Ultilizar solamente carateres alfanuméricos (A-Z a-z 0-9) y el guión bajo.</li>
+                    <li>Evitar guión bajo al inicio del identificador. Está reservado en JS.</li>
                     <li>No inciar el identificador con un número. Causará error.</li>
-                    <li>Usar nombres intuitivos para las variables, que identifiquen que es.</li>
+                    <li>Usar nombres representativos para las variables, según el contenido que almacenan.</li>
                     <li>Usar minuscula en la primera letra. Si es una composición de varias palabras, escribirlas juntas y aplicar mayúsculas a las primeras letras de cada una (Ej: contAux).</li>
                     <li>Tener preacución ya que los identificadores son "key-sensitive".</li>
                     <li>No utilizar palabras reservadas como identificadores.</li>
@@ -369,7 +407,7 @@
             <article>
                 <h3>La notación flecha.</h3>
                 <p>
-                    Esta notación es la simplificación de la definición y sintaxis de una función; en general tiene las misma propiedades que el operador funtion, por lo que su utilidad reside en ser asignada a expresiones y procesos mayores. Fue impmentada a partir de ECMAScript 6. 
+                    Esta notación es la simplificación de la definición y sintaxis de una función; en general tiene las misma propiedades que el operador funtion, por lo que su utilidad reside en ser asignada a expresiones y procesos mayores. Fue implementada a partir de ECMAScript 6. 
                 </p>
                 <code>
                         ([Param1,[Param2[,...]]]) => {<br><br>
@@ -411,21 +449,28 @@
                     Realizar los siguientes ejercicios haciendo uso de las herramientas dadas en el laboratorio. La forma de entrega será vía git, cuyo repositorio tendrá un archivo .js por cada uno de los ejercicios. Cada archivo tendrá como nombre Ejercicio_n.js donde n es el numeral del ejercicio.
                 </p>
                 <p>
-                    El repositorio debera tener por nombre Laboratorio_05_&lt;carné&gt;. La hora final de entrega será el limite de cada laboratorio.
+                    El repositorio debera tener por nombre Laboratorio_05_&lt;carné&gt;. La hora de entrega será antes de finalizar cada laboratorio.
                 </p>
             </article>
             <article>
-                <h3>Lista</h3>
-                <ol>
-                    <li><strong>Fibonacci</strong>: La serie Fibonacci es una serie matemática muy reconocida, la cual tiene como primeros 10 términos: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34. Realice una función en JavaScript que reciba un número n como argumento y muestre la serie hasta el enésimo término.</li>
-
-                    <li><strong>Ordenamiento de array</strong>: Crear una función en JavaScript que ordene los elementos de un Array en orden ascedente.</li>
-
-                    <li><strong>Conversor decimal-binario</strong>: Crear una función en JavaScript, que reciba como parámetro un entero positivo. La función debe devolver el valor en binario.</li>
-
-                    <li><strong>Palíndromo</strong>: Se dice que una palabra es palíndroma cuando se puede leer de la misma manera tanto de derecha a izquierda y viceversa. Crear una función en JavaScript que reciba como parámetro una palabra. La función debe devolver si la palabra es palíndroma o no.</li>
-                </ol>
-            </article>
+                    <h3>Lista</h3>
+                    <ol>
+                        <li><strong>Palíndromo</strong>: Se dice que una palabra es palíndroma cuando se puede leer de la misma manera tanto de derecha a izquierda y viceversa. Crear una función en JavaScript que reciba como parámetro una palabra. La función debe devolver si la palabra es palíndroma o no.</li>
+    
+                        <li><strong>Ordenamiento de array</strong>: Crear una función en JavaScript que ordene los elementos de un Array en orden ascedente.</li>
+    
+                        <li><strong>Fibonacci</strong>: La serie Fibonacci es una serie matemática muy reconocida, la cual tiene como primeros 10 términos: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34. Realice una función en JavaScript que reciba un número n como argumento y muestre la serie hasta el enésimo término.</li>
+    
+                        <li><strong>Conversor decimal-binario</strong>: Crear una función en JavaScript, que reciba como parámetro un entero positivo. La función debe devolver el valor en binario.</li>
+    
+                        <li><strong>Análisis de una circunferencia</strong>: Crear una función en JavaScript que pida por el teclado el radio de un circunferencia, y  calcule el área de esta y lo retorne, si el radio ingresado es negativo o cero, mostrará el mensaje: "ERROR:El radio debe ser mayor que cero."</li>
+    
+                        <li><strong>Valor absoluto</strong>: Escribir una funcion en JavaScript que, dado un número real cualquiera, encuentre su valor absoluto y lo retorne. El valor absoluto de un número x es igual a x si x > 0, y a -x si x es menor o igual a 0.</li>
+    
+                        <li><strong>Bisiesto</strong>: Crear una función en javaScript que dado un año en específico retorne si este es bisiesto o no.</li>
+    
+                    </ol>
+                </article>
         </section>
 
     </section>
