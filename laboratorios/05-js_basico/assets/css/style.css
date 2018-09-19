@@ -15,7 +15,7 @@ code{
     font-size: 1.5em;
     
     display: block;
-    margin: 0.5em 0;
+    margin: 0.5em 2em;
 
     color: #2c2c54;
 }
@@ -181,6 +181,15 @@ nav ul li:nth-child(3), nav li:nth-child(6){
     list-style: none;
 }
 
+.tip .list{
+    list-style: circle;
+    font-size: 1em;
+}
+
+.tip .list>li{
+    font-size: 1em;
+}
+
 .tip li{
     margin: 0.5em 0;
     font-size: 1.2em;
@@ -196,4 +205,16 @@ nav ul li:nth-child(3), nav li:nth-child(6){
 
 .tip .dir{
     color: #303952;
+}
+
+.tip .good{
+    padding: 0.5em 2em;
+    border-left: 2em solid #3ae374;
+    background: #3ae37550; 
+}
+
+.tip .wrong{
+    padding: 0.5em 2em;
+    border-left: 2em solid #ff3838;
+    background: #ff383850; 
 }

@@ -51,7 +51,7 @@
             </header>
             <article>
                 <p>
-                    <strong>JavaScript</strong> es un lenguaje de programación interpretado, de alto nivel y multi-paradigma, que tiene por objetivo brindar dinamismo a los sitios web; no obstante este también es utilizado en entornos y tecnologías como base de su funcionamiento (ej: Node.js). Este lenguaje está basado en el estandar normativo ECMAScript.
+                    <strong>JavaScript</strong> es un lenguaje de programación interpretado, de alto nivel y multi-paradigma, que tiene por objetivo brindar dinamismo a los sitios web; no obstante este también es utilizado en entornos y tecnologías como base de su funcionamiento (ej: Node.js). Este lenguaje está basado en el estándar normativo ECMAScript.
                 </p>
 
                 <p>
@@ -70,7 +70,7 @@
             </header>
             <article>
                 <p>
-                    Para empezar se debe de importar o definir nuestro script dentro del documento HTML. Para ello existen diversas formas, entre las cuales se pueden listar:
+                    Para empezar a hacer uso de esta herramienta, se debe importar o definir el script dentro del documento HTML. Para ello existen diversas formas, entre las cuales se pueden listar:
                 </p>
                 
                 <article>
@@ -112,7 +112,7 @@
                 </article>
 
                 <article class="tip">
-                    <h3>Tip.</h3>
+                    <h3>Tip, Árbol de directorios.</h3>
                     <p>
                         A este punto ya se han abarcado varias temáticas que requieren el uso de archivos externos (CSS y JS), por lo que es recomendable hacer uso de una organización de directorios y archivos para mantener el orden dentro de nuestro sitio web. Por ejemplo:
                     </p>
@@ -151,7 +151,92 @@
                 <h2>Variables.</h2>
             </header>
             <article>
-                <p>En primer lugar, hay que comprender que una variable es un contenedor para algún valor. Este podría ser </p>
+                <p>
+                    En primer lugar, hay que comprender que una variable es un contenedor para algún valor cualquiera a utilizar, como podría ser un número, una cadena de texto, etc. Donde su característica pricipal es que este valor contenido puede cambiar durante el tiempo de ejecución.
+
+                </p>
+
+                <p>
+                    Otra característica importante acerca de las variables, es que ellas no solo alacenan datos primitivos, sino que pueden llegar a contener estructuras de datos complejas, objetos, e incluso definiciones de funciones. Dicho lo anterior, se debe de realizar una diferencia, entre el valor y la variable, donde esta última simplemente sirve de contenedor, y no es el valor en sí.
+                </p>
+            </article>
+
+            <article>
+                <h3>Declarar una variable.</h3>
+                <p>
+                    Para poder hacer uso de una variable, primero debe de declarar dentro del script. Esto se logra con la palabra reservada <em>var</em> seguido de un identificador o nombre para la misma.
+                </p>
+                <code>
+                    var birthDate;<br>
+                    var contAux;<br>
+                    var progWeb;
+                </code>
+            </article>
+
+            <article>
+                <h3>Inicializar una variable.</h3>
+                <p>
+                    Al igual que en la mayoría de lenguajes de programación, el operador de asignación dentro de JavaScript es el igual (=). Su uso es trivial, donde se iguala una variable a un valor específico;
+                </p>
+                <code>
+                    birthDate = '2018-09-21';<br>
+                    contAux = 0;<br>
+                    progWeb = "Este es el labo 05";
+                </code>
+                <p>
+                    Cabe resaltar que se puede Inicializar una variable mientras la declaramos.
+                </p>
+                <code>
+                    var offsetX= 45;<br>
+                    var offsetY= 12;<br>
+                    var volInit = 2;
+                </code>
+            </article>
+            
+            <article>
+                <h3>Operar variables.</h3>
+                <p>
+                    De igual forma que muchos lenguajes de programación, JavaScript cuenta con las operaciones matemáticas básicas (+ - * / %) y comparativas (&lt; &gt; == !), para la manipulación primitiva de variables. Ademas, conceptos como contadores y acumuladores, expresiones regulares, etc, también son aplicables en este ámbito. 
+                </p>
+                <code>
+                    offsetX = 54 + posX;<br>
+                    impuestos = valor * 1.13;<br>
+                    total = total + impuestos;<br>
+                    contAux = contAux + 1;<br>
+                    comp2 = aux1 &lt;= aux2;
+                </code>
+            </article>
+
+            <article class="tip">
+                <h3>Tip, Nombres de variables.</h3>
+                <p>
+                    A la hora de elegir un identificador para las variables se debe de garantizar que este cumpla su función de la mejor manera. Para ello se recomeinda seguir los siguientes estándares: 
+                </p>
+                <ul class="list">
+                    <li>Ultilizar solamente carateres latinos (A-Z a-z 0-9) y el guión bajo.</li>
+                    <li>No utilizar guión bajo al inicio del identificador. Está reservado en JS.</li>
+                    <li>No inciar el identificador con un número. Causará error.</li>
+                    <li>Usar nombres intuitivos para las variables, que identifiquen que es.</li>
+                    <li>Usar minuscula en la primera letra. Si es una composición de varias palabras, escribirlas juntas y aplicar mayúsculas a las primeras letras de cada una (Ej: contAux).</li>
+                    <li>Tener preacución ya que los identificadores son "key-sensitive".</li>
+                    <li>No utilizar palabras reservadas como identificadores.</li>
+                </ul>
+
+                <ul class="good">
+                    <li>myVariable</li>
+                    <li>age</li>
+                    <li>init</li>
+                    <li>gameInit4</li>
+                    <li>cont_aux</li>
+                </ul>
+
+                <ul class="wrong">
+                    <li>MyAge</li>
+                    <li>myage</li>
+                    <li>99var</li>
+                    <li>_initvar</li>
+                    <li>let</li>
+                </ul>
             </article>
         </section>
 
