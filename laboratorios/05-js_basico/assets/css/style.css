@@ -28,6 +28,11 @@ section{
     margin-bottom: 5em;
 }
 
+li{
+    text-align: justify;
+    margin: 1.5em 0;
+}
+
 /* Estilo del titulo */
 
 .title-content{
@@ -140,6 +145,8 @@ nav ul{
 }
 
 nav ul li{ 
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: -100%;
     width: 100%;
     color:#fff;
@@ -234,7 +241,7 @@ div.sentences-container{
 
 div.sentences-container div{
     display: flex;
-    height: 15em;
+    height: 10em;
     align-items: center;
     justify-content: center;
 }
