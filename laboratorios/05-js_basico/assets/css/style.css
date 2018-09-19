@@ -1,78 +1,123 @@
-*{
+:root{
     font-family: 'Raleway', sans-serif;
 }
+
 body{
     margin: 0;
     padding: 0;
 }
+
+/* Estilo del titulo */
+
 .title-content{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 1.5em;
 }
+
 .title-content div h1{
-    margin-bottom:
-     0;
+    margin-bottom:0;
 }
+
 .title-content div h5{
     margin-top: 0;
 }
+
 .paralax-container{
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
 }
-.froggy-game{
-    width: 100%;
-    background-image: url("../img/flex-froggy.png");
-}
-.filter{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-.filter h2{
-    font-size: 1.5rem;
-}
-.filter a{
-    color:#fff;
-    text-decoration:underline;
-    font-weight: bold;
-}
+
 .content{
     margin-left:20%;
     margin-right: 20%; 
 }
 
-dl dt{
-    font-weight: bold;
-    margin-top: 7px;
-}
-dl dd{
-    margin-bottom: 7px;
-}
 figure img{
     width: 30%;
 }
+
 figcaption{
     font-style: italic;
 }
+
+/* Front image */
+
+header#front-img{
+    width: 100%;
+    height: 100vh;
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-image: url("../img/intro.jpg");
+}
+
+#front-img .main-front{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 95vh;
+
+    color: #fff;
+    text-align: center;
+
+    background: rgba(0,0,0,0.5);
+}
+
+.main-front h1{
+    font-size: 5em;
+    margin: 0.2em 0;
+}
+
+#front-img .down-button{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 5vh;
+    
+    background: rgba(0,0,0,0.85);
+    cursor: pointer;
+
+    color: #fff;
+    font-size: 1.5em;
+
+    transition: 500ms ease all;
+}
+
+#front-img .down-button:hover{
+    color: black;
+    background: rgba(255, 237, 79, 0.85);
+}
+
+/* Nav en la esquina */
+
 nav{
     padding: 0;
     margin: 0;
     position: fixed;
+    z-index: 100;
+    top: 1.5em;
 }
+
 nav ul{
     padding: 0;
     margin: 0;
     list-style: none;
 }
+
 nav ul li{ 
     margin-left: -100%;
     width: 100%;
@@ -80,49 +125,28 @@ nav ul li{
     padding: 20px;
     transition: 500ms ease all;
 }
+
 nav ul li:hover{ 
     margin-left:0%;
 }
+
 nav ul li a{
     color:#fff;
     font-weight: bold;
     text-decoration: none;
 }
+
 nav ul li:first-child{
     background: #192a56;
 }
+
 nav ul li:nth-child(2){
     background: #c23616;
 }
+
 nav ul li:nth-child(3){
     background: #0097e6;
 }
-.garden-game{
-    background-image: url("../img/Garden-Game.png");
-}
-.interactive-section article{
-    display: grid;
-    grid-template: 100% / 50% 50%;
-}
-.interactive-section header h2{
-    margin-left: 5%;
-}
-.date-content::after{
-    content: "";
-    clear: both;
-    width: 100%;
-    display: block;
 
-}
-.date-content span{
-    float: right;
-}
-.date-content hr{
-    display: block;
-    width: 100%;
-    float: left;;
-}
-/*
-00004817
-rvilleda
-*/
+/* Estilos particulares de maquetacion */
+
