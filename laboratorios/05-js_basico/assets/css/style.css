@@ -7,6 +7,10 @@ body{
     padding: 0;
 }
 
+p{
+    text-align: justify;
+}
+
 /* Estilo del titulo */
 
 .title-content{
@@ -149,4 +153,3 @@ nav ul li:nth-child(3){
 }
 
 /* Estilos particulares de maquetacion */
-
