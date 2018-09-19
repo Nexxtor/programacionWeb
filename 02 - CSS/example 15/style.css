@@ -1,0 +1,25 @@
+body {
+    background-color: #fafafa;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 100px;
+    grid-gap: 10px;
+}
+
+.container > div {
+    background-color: darksalmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > div:nth-last-of-type(even) {
+    background-color: lightcyan;
+}
+
+.order1 {
+    order: 1;
+}

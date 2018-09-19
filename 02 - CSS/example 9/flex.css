@@ -1,0 +1,65 @@
+/*For have a predictable width and height*/
+:root {
+    box-sizing: border-box;
+}
+
+*, 
+::before, 
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main > section {
+    flex: 1;
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+}
+.main > section > aside{
+    flex: 0 0 75px;
+}
+
+.main > section  ul {
+    background-color: azure;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main > section  ul li{
+    flex: 1;
+}
+.main > section .album {
+    flex: 1;
+    background-color: aqua;
+    display: flex;
+    flex-direction:column; 
+}
+.main > section .album {
+    background-color: red;
+}
+
+.main > section .album {
+    background-color: yellow;
+}
+
+
+.main > footer {
+    height: 100px;
+    background-color: green;    
+}
