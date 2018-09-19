@@ -11,6 +11,19 @@ p{
     text-align: justify;
 }
 
+code{
+    font-size: 1.5em;
+    
+    display: block;
+    margin: 0.5em 0;
+
+    color: #2c2c54;
+}
+
+article{
+    margin: 2em 0;
+}
+
 /* Estilo del titulo */
 
 .title-content{
@@ -140,16 +153,47 @@ nav ul li a{
     text-decoration: none;
 }
 
-nav ul li:first-child{
+nav ul li:first-child, nav li:nth-child(4){
     background: #192a56;
 }
 
-nav ul li:nth-child(2){
+nav ul li:nth-child(2), nav li:nth-child(5){
     background: #c23616;
 }
 
-nav ul li:nth-child(3){
+nav ul li:nth-child(3), nav li:nth-child(6){
     background: #0097e6;
 }
 
 /* Estilos particulares de maquetacion */
+
+.tip{
+    margin: 0 2em;
+    padding: 0.5em 2em;
+    border: 0.2em solid #c23616;
+}
+
+.tip h3{
+    color: #c23616;
+}
+
+.tip ul{
+    list-style: none;
+}
+
+.tip li{
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}
+
+.tip .rt{
+    color: #c44569;
+}
+
+.tip .arch{
+    color: #227093;
+}
+
+.tip .dir{
+    color: #303952;
+}

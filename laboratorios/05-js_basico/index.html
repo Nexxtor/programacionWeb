@@ -27,9 +27,11 @@
     
     <nav>
         <ul>
-            <li><a href="#float">Float</a></li>
-            <li><a href="#flexbox">Flex CSS</a></li>
-            <li><a href="#grid">Grid CSS</a></li>
+            <li><a href="#introduction-section">Introducción.</a></li>
+            <li><a href="#variables-section">Variables.</a></li>
+            <li><a href="#sentences-section">Sentencias.</a></li>
+            <li><a href="#functions-section">Funciones.</a></li>
+            <li><a href="#exercices">Ejercicios.</a></li>
         </ul>
     </nav>
     
@@ -48,20 +50,108 @@
                 <h2>¿Qué es JavaScript?</h2>
             </header>
             <article>
-                <p><strong>JavaScript</strong> es un lenguaje de programación interpretado, multi-paradigma, que tiene por objetivo brindar dinamismo a los sitios web; no obstante este también es utilizado en entornos y tecnologías como base de su funcionamiento (ej: Node.js). Este lenguaje está basado en el estandar normativo ECMAScript.</p>
+                <p>
+                    <strong>JavaScript</strong> es un lenguaje de programación interpretado, de alto nivel y multi-paradigma, que tiene por objetivo brindar dinamismo a los sitios web; no obstante este también es utilizado en entornos y tecnologías como base de su funcionamiento (ej: Node.js). Este lenguaje está basado en el estandar normativo ECMAScript.
+                </p>
 
-                <p>JavaScript, como ya se mencionó, es multi-paradigma, siendo sus pricipales vertientes la programación funcional, programación imperativa y el paradigma orientado a objetos. La sintaxis básica del mismo es similar a Java y C++, con el fin de minimizar su curva de aprendizaje; sentencias como <em>if</em>, <em>try...catch</em>, <em>for</em>, <em>while</em> y <em>switch</em>, funcionan de forma similar como lo hacen en dichos lenguajes.</p>
+                <p>
+                    JavaScript, como ya se mencionó, es multi-paradigma, siendo sus pricipales vertientes la programación funcional, programación imperativa y el paradigma orientado a objetos. La sintaxis básica del mismo es similar a Java y C++, con el fin de minimizar su curva de aprendizaje; sentencias como <em>if</em>, <em>try...catch</em>, <em>for</em>, <em>while</em> y <em>switch</em>, funcionan de forma similar como lo hacen en dichos lenguajes.
+                </p>
 
-                <p>Las capacidades dinámicas de JavaScript incluyen construcción de objetos en tiempo de ejecución, listas variables de parámetros, variables que pueden contener funciones, creación de scripts dinámicos, introspección de objetos, y recuperación de código fuente [MDN].</p>
+                <p>
+                    Las capacidades dinámicas de JavaScript incluyen construcción de objetos en tiempo de ejecución, listas variables de parámetros, variables que pueden contener funciones, creación de scripts dinámicos, introspección de objetos, y recuperación de código fuente [MDN].
+                </p>
             </article>
         </section>
 
-        <section>
+        <section id="introduction-section-pt2">
             <header>
                 <h2>Primeros pasos.</h2>
             </header>
             <article>
-                <h3>Importar el script a nuestro documento.</h3>
+                <p>
+                    Para empezar se debe de importar o definir nuestro script dentro del documento HTML. Para ello existen diversas formas, entre las cuales se pueden listar:
+                </p>
+                
+                <article>
+                    <h3>Script embebido en las etiquetas.</h3>
+                    
+                    <p>
+                        Como su nombre indica, este método consiste en definir el script dentro de los atributos controladores de eventos de una etiqueta. Cabe mencionar que esto se debe de evitar, a menos que se quiera invocar una función externa en cierto evento específico.
+                    </p>
+
+                    <code>
+                    &lt;span onclick = "alert('Hice click');"&gt; Haz click aqui! &lt;/span&gt;
+                    </code>
+                </article>
+
+                <article>
+                    <h3>Uso de la etiqueta Script.</h3>
+                    
+                    <p>
+                        Dentro de HTML existe una etiqueta específica para la definición de scripts, la cual puede ser embebida en cualquier punto del documento. Esta se ejecutará en el momento en que es definida.
+                    </p>
+
+                    <code>
+                    &lt;script&gt;<br><br>
+                    &ensp;&ensp;//Código JS aquí.<br><br>
+                    &lt;/script&gt; 
+                    </code>
+                </article>
+
+                <article>
+                    <h3>Importar script externo.</h3>
+                    
+                    <p>
+                        Generalmente los scripts son definidos en archivos externos (con extención .js). Para aplicarlos, se debe de hacer uso del atributo src de la etiquta script, donde se delimitará la dirección relativa del archivo.
+                    </p>
+
+                    <code>
+                    &lt;script src="assets/js/javaScript.js"&gt;&lt;/script&gt;
+                    </code>
+                </article>
+
+                <article class="tip">
+                    <h3>Tip.</h3>
+                    <p>
+                        A este punto ya se han abarcado varias temáticas que requieren el uso de archivos externos (CSS y JS), por lo que es recomendable hacer uso de una organización de directorios y archivos para mantener el orden dentro de nuestro sitio web. Por ejemplo:
+                    </p>
+                    <ul>
+                        <li id="rt">root</li>
+                        <ul>
+                            <li class="arch">index.html</li>
+                            <li class="dir">assets</li>
+                            <ul>
+                                <li class="dir">img</li>
+                                <ul>
+                                    <li class="arch">imagen_1.jpg</li>
+                                    <li class="arch">imagen_2.jpg</li>
+                                    <li class="arch">imagen_3.jpg</li>
+                                </ul>
+                                <li class="dir">css</li>
+                                <ul>
+                                    <li class="arch">styles.css</li>
+                                    <li class="arch">extras.css</li>
+                                </ul>
+                                <li class="dir">js</li>
+                                <ul>
+                                    <li class="arch">JavaScript.js</li>
+                                    <li class="arch">nav_extra.js</li>
+                                    <li class="arch">player.js</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </ul>
+                </article>
+            </article>
+        </section>
+
+        <section id="variables-section">
+            <header>
+                <h2>Variables.</h2>
+            </header>
+            <article>
+                <p>En primer lugar, hay que comprender que una variable es un contenedor para algún valor. Este podría ser </p>
             </article>
         </section>
 
