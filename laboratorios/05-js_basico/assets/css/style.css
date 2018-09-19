@@ -218,3 +218,27 @@ nav ul li:nth-child(3), nav li:nth-child(6){
     border-left: 2em solid #ff3838;
     background: #ff383850; 
 }
+
+/* Bloque de sentencias */
+
+div.sentences-container{
+    display: grid;
+    margin: 2em 5em;
+    grid-template-columns: 1fr 1fr;
+    border: 0.2em solid #c23616;
+}
+
+div.sentences-container div{
+    display: flex;
+    height: 15em;
+    align-items: center;
+    justify-content: center;
+}
+
+div.sentences-container div>p{
+    width: 50%;
+    margin: auto 0;
+    color: #192a56;
+    font-size: 1.3em;
+    font-family: monospace; 
+}
