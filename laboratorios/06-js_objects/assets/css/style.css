@@ -7,6 +7,8 @@
     --nav-color-1: #2c2c54;
     --nav-color-2: #c23616;
     --nav-color-3: #0097e6;
+    --code-back:#00b894;
+    --code-back-tr:#00b8931c;
     --tip-color: #d63031;
 }
 
@@ -24,8 +26,12 @@ code{
     
     display: block;
     margin: 0.5em 2em;
+    padding: 1em;
 
     color: var(--code-color);
+    background: var(--code-back-tr);
+
+    border-left: var(--code-back) solid .5em;
 }
 
 article{
@@ -39,6 +45,19 @@ section{
 li{
     text-align: justify;
     margin: 1.5em 0;
+}
+
+a:link{
+    text-decoration: none;
+    color: var(--nav-color-1);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:visited{
+    color: var(--nav-color-1);
 }
 
 /* Estilo del titulo */
@@ -131,7 +150,7 @@ header#front-img{
 
 /* Nav en la esquina */
 
-nav{
+.menu-side{
     padding: 0;
     margin: 0;
     position: fixed;
@@ -139,13 +158,13 @@ nav{
     top: 0;
 }
 
-nav ul{
+.menu-side ul{
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-nav ul li{
+.menu-side ul li{
     display: flex;
     justify-content: space-between; 
     margin-top: 0;
@@ -157,33 +176,33 @@ nav ul li{
     transition: 500ms ease all;
 }
 
-nav ul li:hover{ 
+.menu-side ul li:hover{ 
     margin-left:0%;
 }
 
-nav ul li>i{ 
+.menu-side ul li>i{ 
     transition: 1000ms ease all;
 }
 
-nav ul li:hover>i{ 
+.menu-side ul li:hover>i{ 
     opacity: 0;
 }
 
-nav ul li a{
+.menu-side ul li a{
     color:white;
     font-weight: bold;
     text-decoration: none;
 }
 
-nav ul li:first-child, nav li:nth-child(4){
+.menu-side ul li:first-child, .menu-side li:nth-child(4){
     background: var(--nav-color-1);
 }
 
-nav ul li:nth-child(2), nav li:nth-child(5){
+.menu-side ul li:nth-child(2), .menu-side li:nth-child(5){
     background: var(--nav-color-2);
 }
 
-nav ul li:nth-child(3), nav li:nth-child(6){
+.menu-side ul li:nth-child(3), .menu-side li:nth-child(6){
     background: var(--nav-color-3);
 }
 
