@@ -7,7 +7,7 @@
     --nav-color-1: #2c2c54;
     --nav-color-2: #c23616;
     --nav-color-3: #0097e6;
-    --tip-color: #c23616;
+    --tip-color: #d63031;
 }
 
 body{
@@ -20,7 +20,7 @@ p{
 }
 
 code{
-    font-size: 1.5em;
+    font-size: 1.3em;
     
     display: block;
     margin: 0.5em 2em;
@@ -274,4 +274,20 @@ footer{
     text-decoration: none;
     color: white;
     border: 0.15em solid #2c3e50;
+}
+
+/* Box controlers */
+
+#array-ctrls{
+    margin: 0 2.5em;
+}
+
+#array-ctrls>article{
+    padding-bottom: 1em; 
+    border-bottom: var(--psudo-black) solid 0.02em;
+}
+
+#array-ctrls>article:last-child{
+    padding-bottom: 1em; 
+    border-bottom: none;
 }

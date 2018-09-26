@@ -16,7 +16,7 @@ function scrollToStart(){
 function homeBtnControl(){
     var posY = window.pageYOffset;
 
-    if(posY < startPosition){
+    if(posY <= startPosition){
         home_btn.style.visibility = "hidden";
     }else{
         home_btn.style.visibility = "visible";

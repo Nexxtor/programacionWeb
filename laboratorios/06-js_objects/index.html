@@ -38,7 +38,7 @@
             <h1>JavaScript Intermedio</h1>
         </div>
         <div id="content-brand">
-            <h5>Arreglos y objetos.</h5>
+            <h5>Estructuras de datos.</h5>
         </div>
     </header>
 
@@ -49,11 +49,11 @@
             </header>
             <article>
                 <p>
-                    Con el fin de dar solución a la problematica de almacentar conjuntos de datos, JavaScript implemento el objeto <strong>Array</strong>, el cual simplifica la manera de instanciar arreglos, los cuales además de proporcionar un control de datos sencillo y de alto nivel, se comportan como listas dinámicas.
+                    Con el fin de dar solución a la problematica de almacentar conjuntos de datos, JavaScript implemento la clase <strong>Array</strong>. Esto dió apertura a la creación, control y uso de arreglos en los sitios web. 
                 </p>
 
                 <p>
-                    Una característica particular de este tipo de arreglos es que no se encuentran limitados a un solo tipo de dato, particularidad heredada del tipeo bajo que maneja JavaScript.
+                    Las características principales de los arreglos son: Proporcionar un control de datos sencillo y de alto nivel; comportarse de igual forma que las listas dinámicas; tener la capacidad de almacenar elementos de distintos tipos dentro del mismo arreglo; entre otras mas. 
                 </p>
             </article>
 
@@ -61,11 +61,11 @@
                 <h3>Declaración.</h3>
 
                 <p>
-                    Existen diversas formas para inicializar un arreglo en JavaScript. Por su utilidad se estudirán dos: Hacer uso de la notación de arreglo estándar de JS y hacer uso del contructor del objeto <strong>Array</strong>.
+                    Existen diversas formas para inicializar un arreglo en JavaScript. Por su utilidad se estudirán dos: Haciendo uso de la notación de arreglos estándar de JS, y haciendo uso del contructor de la clase <strong>Array</strong>.
                 </p>
 
                 <p>
-                    El primer método consiste en, literalmente, asignarle un arreglo a una variable. La sintaxis consiste en encerrar a los datos (separados por comas) entre corchetes ([]). A continuación se ejemplifica este tipo de declaración:
+                    El primer método consiste, literalmente, en asignarle un arreglo a una variable. La sintaxis deriva de encerrar los datos (separados por comas) entre corchetes simples. Algunos ejemplos de este método son:
                 </p>
                 
                 <code>
@@ -75,7 +75,7 @@
                 </code>
 
                 <p>
-                    El segundo método se basa el hecho que un arreglo es una instacia de la clase <strong>Array</strong>, por lo que puede hacerse uso del constructor de la misma. A partir de ello se puede declarar arreglos de la siguiente forma:
+                    El segundo método se basa en el hecho que un arreglo es una instancia de la clase <strong>Array</strong>, por lo que puede hacerse uso del constructor de la misma. A partir de ello se puede declarar arreglos de la siguiente forma:
                 </p>
                 
                 <code>
@@ -88,6 +88,201 @@
                     <p>Lectura complementaria: <a href="https://www.w3schools.com/js/js_arrays.asp"> JavaScript Arrays [W3S]</a></p>
                 </article>
             </article>
+            <article>
+                <h3>Control de datos.</h3>
+
+                <p>
+                    Una de las utilidades mas grandes para el manejo y control de arreglos es que dentro de la clase <strong>Array</strong> se encuentran definidas una serie de propiedades y métodos, que facilitan la manipulación del contenido interno de cada una de sus instancias. A continuación se enumerarán, los atributos, propiedades y métodos mas representativos y útiles para el manejo de arreglos. Para facilitar la enseñanza, todos los ejemplos estarán basados en el siguiente arreglo.
+                </p>
+
+                <section id="array-ctrls">
+                    <code>
+                        let listLetters = ['A','h','e','v','F'];
+                    </code>
+                    <article>
+                        <h4>Acceso por índice a un elemento del arreglo.</h4>
+    
+                        <p>
+                            Se hace uso de la sintaxis básica de acceso a un elemento dentro un arreglo. Ejemplo:
+                        </p>
+    
+                        <code>
+                            var firstLetter = listLetters[0]; <br>
+                            // Almacena 'A' <br><br>
+                            var lastLetter = listLetters[listLetters.lenght - 1]; <br>
+                            // Almacena 'F'
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.lenght;</h4>
+    
+                        <p>Este atributo corresponde a la cantidad de datos que tiene actualmente un arreglo. Ejemplo:</p>
+    
+                        <code>
+                            let cantLetters = listLetters.lenght; <br>
+                            console.log(cantLetters); //Imprimirá 5.
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.forEach(function);</h4>
+    
+                        <p>
+                            Método que recorre todos los elementos un arreglo y realiza una función específica por cada uno de ellos. Ejemplo: 
+                        </p>
+    
+                        <code>
+                            listLetters.forEach((letter, index)=>{ <br><br>
+                            &ensp;&ensp;console.log("Letra "+index+": "+letter);<br>
+                            &ensp;&ensp;//Imprimirá cada valor en la consola <br><br>
+                            });
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.push(value);</h4>
+    
+                        <p>
+                            Método que añade un elemento al final del arreglo. Ejemplo:
+                        </p>
+    
+                        <code>
+                            listLetters.push('z');<br>
+                            //['A','h','e','v','F','z']
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.pop();</h4>
+    
+                        <p>
+                            Método que elimina el elemento final del arreglo. Este valor es retornado. Ejemplo:
+                        </p>
+    
+                        <code>
+                            var lastItem = listLetters.pop(); //Almacena 'z' <br>
+                            //['A','h','e','v','F']
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.shift();</h4>
+    
+                        <p>
+                            Método que elimina el elemento inicial de un arreglo. De igual forma el valor es retornado. Ejemplo:
+                        </p>
+    
+                        <code>
+                            var firstItem = listLetters.shift(); //Almacena 'A'<br>
+                            //['h','e','v','F']
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.unshift();</h4>
+    
+                        <p>
+                            Método que inserta un nuevo elemento en la primera posición del arreglo. Ejemplo:
+                        </p>
+    
+                        <code>
+                            listLetters.unshift('x'); <br>
+                            //['x','h','e','v','F']
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.splice(index, n)</h4>
+    
+                        <p>
+                            Método que elimina una cantidad específica de elementos en un arreglo. Recibe por parametros el índice donde se iniciará a eliminar, y la cantidad de datos a eliminar. Ejemplo:
+                        </p>
+    
+                        <code>
+                            listLetters.splice(2,1);<br>
+                            //['x','h','v','F'] <br><br>
+                            listLetters.splice(1,2);<br>
+                            //['x','F']
+                        </code>
+                    </article>
+                </section>
+                <article class="tip">
+                    <p>Lectura complementaria: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array"> Métodos de Array [MDN]</a></p>
+                </article>
+            </article>
+        </section>
+
+        <section id="objects-section">
+            <header>
+                <h2>Objetos.</h2>
+            </header>
+
+            <p>
+                En JavaScript un dato con tipo <em>object</em>, representa una colección de atributos y propiedades arbitrarias que tienen un valor específico. Normalmente, los objetos se almacenan dentro de variables, desde las cuales posteriormente se puede acceder al valor de cada uno de sus atributos.
+            </p>
+
+            <p>
+                La sintaxis básica para definir un objeto es la siguiente:
+            </p>
+
+            <code>
+                &lt;var|let&gt; &lt;identificador&gt; = { <br><br>
+                &ensp;&ensp;&lt;identificador1&gt;: &lt;valor&gt;[,<br>
+                &ensp;&ensp;&lt;identificador2&gt;: &lt;valor&gt;[,<br>
+                &ensp;&ensp;&lt;identificador3&gt;: &lt;valor&gt;[,<br>
+                &ensp;&ensp;...]]] <br><br>                  
+                };
+            </code>
+
+            <p>
+                Algunos ejemplos de definiciones de objetos:
+            </p>
+
+            <code>
+                var carro1 = { <br><br>
+                &ensp;&ensp;marca: "Toyota",<br>
+                &ensp;&ensp;modelo: "Corolla",<br>
+                &ensp;&ensp;annio: 2003<br><br>              
+                };
+            </code>
+
+            <code>
+                var player = { <br><br>
+                &ensp;&ensp;name: "Antar'kl",<br>
+                &ensp;&ensp;HP: 200,<br>
+                &ensp;&ensp;Exp: 200015<br><br>              
+                };
+            </code>
+
+            <p>
+                Esto implica que las llaves tienen dos significados en JavaScript. Al comienzo de una sentencia (como <em>for</em>, <em>while</em>, <em>function</em>, etc), representan un bloque de declaraciones. En cualquier otra posición, describen un objeto.
+            </p>
+
+            <p>
+                Una vez definido un objeto, se puede acceder al valor de sus atributos mediante el operador punto (.); cabe resaltar que en caso de no estar declarado algún atributo al que se trate de acceder, este retornará indefinido.
+            </p>
+
+            <img src="assets/img/object_example.png" alt="Object Example">
+
+            <p>
+                Además los atributos de los objetos no solo pueden almacenar datos primitivos, sino que también son capaces de guardar estructuras de datos mas complejas como arreglos o inclusos otros objetos.
+            </p>
+
+            <code>
+                var player = { <br><br>
+                &ensp;&ensp;name: "Antar'kl",<br>
+                &ensp;&ensp;HP: 200,<br>
+                &ensp;&ensp;exp: 200015,<br>
+                &ensp;&ensp;Hab: ["Inifugo", "Robustez", "Levitacion"], <br>
+                &ensp;&ensp;Attack: { <br>
+                &ensp;&ensp;&ensp;&ensp;primary:"Llamarada Intensa",<br>
+                &ensp;&ensp;&ensp;&ensp;aux:"Golpe rapido" <br>
+                &ensp;&ensp;} <br><br>
+                };
+            </code>
+            <br>
+            <img src="assets/img/Object_comp.png" alt="Object Example">
         </section>
     </section>
 
