@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <title>JS Intermedio.</title>
+</head>
+
+<body id="id_body">
+
+    <header id="front-img">
+        <div class="main-front">
+            <h1>Laboratorio 06.</h1>
+            <h3>Viernes, 28 de septiembre de 2018.</h3>
+            <i class="fas fa-chevron-down" id="down-button"></i>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#introduction-section">Introducción.</a><i class="fas fa-info-circle"></i></li>
+            <li><a href="#variables-section">Variables.</a><i class="fas fa-box-open"></i></li>
+            <li><a href="#sentences-section">Sentencias.</a><i class="fas fa-terminal"></i></li>
+            <li><a href="#functions-section">Funciones.</a><i class="fas fa-superscript"></i></li>
+            <li><a href="#exercices">Ejercicios.</a><i class="fas fa-dumbbell"></i></li>
+        </ul>
+    </nav>
+    
+    <header class="title-content" id="title-content">
+        <div id="brand">
+            <h1>JavaScript Intermedio</h1>
+        </div>
+        <div id="content-brand">
+            <h5>Arreglos y objetos.</h5>
+        </div>
+    </header>
+
+    <section class="content">
+        <section id="arrays-section">
+            <header>
+                <h2>Colecciones de datos.</h2>
+            </header>
+            <article>
+                <p>
+                    Con el fin de dar solución a la problematica de almacentar conjuntos de datos, JavaScript implemento el objeto <strong>Array</strong>, el cual simplifica la manera de instanciar arreglos, los cuales además de proporcionar un control de datos sencillo y de alto nivel, se comportan como listas dinámicas.
+                </p>
+
+                <p>
+                    Una característica particular de este tipo de arreglos es que no se encuentran limitados a un solo tipo de dato, particularidad heredada del tipeo bajo que maneja JavaScript.
+                </p>
+            </article>
+
+            <article>
+                <h3>Declaración.</h3>
+
+                <p>
+                    Existen diversas formas para inicializar un arreglo en JavaScript. Por su utilidad se estudirán dos: Hacer uso de la notación de arreglo estándar de JS y hacer uso del contructor del objeto <strong>Array</strong>.
+                </p>
+
+                <p>
+                    El primer método consiste en, literalmente, asignarle un arreglo a una variable. La sintaxis consiste en encerrar a los datos (separados por comas) entre corchetes ([]). A continuación se ejemplifica este tipo de declaración:
+                </p>
+                
+                <code>
+                    let listNumbers = [1,23,4,5,45,87]; <br>
+                    let listLetters = ['A','h','e','v','F']; <br>
+                    let listColors = ["red","yellow","white","green"];
+                </code>
+
+                <p>
+                    El segundo método se basa el hecho que un arreglo es una instacia de la clase <strong>Array</strong>, por lo que puede hacerse uso del constructor de la misma. A partir de ello se puede declarar arreglos de la siguiente forma:
+                </p>
+                
+                <code>
+                    let listNumbers = new Array(1,23,4,5,45,87); <br>
+                    let listLetters = new Array('A','h','e','v','F'); <br>
+                    let listMixed = new Array(1,'c',"red",34);
+                </code>
+                <br>
+                <article class="tip">
+                    <p>Lectura complementaria: <a href="https://www.w3schools.com/js/js_arrays.asp"> JavaScript Arrays [W3S]</a></p>
+                </article>
+            </article>
+        </section>
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+<script src="assets/js/javaScript.js"></script>
+</html>
