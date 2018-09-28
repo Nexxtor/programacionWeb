@@ -264,8 +264,18 @@ header#front-img{
 /* Footer */
 
 footer{
-    padding: 3em 0;
-    background: #bdc3c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0.5em 10em;
+    background: #2f3640;
+    color: #dcdde1;
+}
+
+footer #author{
+    text-align: right;
 }
 
 /* Home button */
@@ -309,4 +319,19 @@ footer{
 #array-ctrls>article:last-child{
     padding-bottom: 1em; 
     border-bottom: none;
+}
+
+/* Imagenes dentro de listas */
+
+ol img{
+    display: block;
+    margin: 1.5em auto 0;
+}
+
+#exercices .tip li{
+    font-size: 1em;
+}
+
+#exercices .tip ul{
+    list-style: disc;
 }
