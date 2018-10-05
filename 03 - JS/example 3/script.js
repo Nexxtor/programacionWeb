@@ -1,4 +1,4 @@
-// Basic syntax
+// Object Literal
 var person = {
     /* property: value*/
     name: "Néstor",
@@ -49,3 +49,16 @@ console.log("Average age %i", list.reduce((sum, {
     var ageDate = new Date(ageDifMs); // miliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970) + sum;
 }, 0) / list.length);
+
+
+// More readable
+
+function getAge(birthday) {
+    var ageDifMs = Date.now() - birthday;
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+console.log("Average age %i", list.reduce((sum, {
+    birthday
+}) => getAge(birthday) + sum, 0) / list.length);
