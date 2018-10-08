@@ -1,0 +1,337 @@
+:root{
+    font-family: 'Raleway', sans-serif;
+    
+    --code-color : #2c2c54;
+    --psudo-black: rgba(0,0,0,0.5);
+    --down-btn: #c03a2b91;
+    --nav-color-1: #2c2c54;
+    --nav-color-2: #c23616;
+    --nav-color-3: #0097e6;
+    --code-back:#00b894;
+    --code-back-tr:#00b8931c;
+    --tip-color: #d63031;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    text-align: justify;
+}
+
+code{
+    font-size: 1.3em;
+    
+    display: block;
+    margin: 0.5em 2em;
+    padding: 1em;
+
+    color: var(--code-color);
+    background: var(--code-back-tr);
+
+    border-left: var(--code-back) solid .5em;
+}
+
+article{
+    margin: 2em 0;
+}
+
+section{
+    margin-bottom: 5em;
+}
+
+li{
+    text-align: justify;
+    margin: 1.5em 0;
+}
+
+a:link{
+    text-decoration: none;
+    color: var(--nav-color-1);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:visited{
+    color: var(--nav-color-1);
+}
+
+/* Estilo del titulo */
+
+.title-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1.5em;
+}
+
+.title-content div h1{
+    margin-bottom:0;
+}
+
+.title-content div h5{
+    margin-top: 0;
+}
+
+.paralax-container{
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.content{
+    margin-left:20%;
+    margin-right: 20%; 
+}
+
+figure img{
+    width: 30%;
+}
+
+figcaption{
+    font-style: italic;
+}
+
+/* Front image */
+
+header#front-img{
+    width: 100%;
+    height: 100vh;
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-image: url("../img/intro.jpg");
+}
+
+#front-img .main-front{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+
+    color: white;
+    text-align: center;
+
+    background: var(--psudo-black);
+}
+
+.main-front h1{
+    font-size: 5em;
+    margin: 0.2em 0;
+}
+
+#down-button{
+    padding: 1em;
+
+    border-radius: 100%;
+    cursor: pointer;
+
+    color: white;
+    font-size: 1.5em;
+
+    transition: 500ms ease all;
+}
+
+#down-button:hover{
+    background: var(--down-btn);
+}
+
+/* Nav en la esquina */
+
+.menu-side{
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+.menu-side ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-side ul li{
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -100%;
+    width: 100%;
+    color:white;
+    padding: 1.2em 1.2em 1.2em 2.5em;
+    transition: 500ms ease all;
+}
+
+.menu-side ul li:hover{ 
+    margin-left:0%;
+}
+
+.menu-side ul li>i{ 
+    transition: 1000ms ease all;
+}
+
+.menu-side ul li:hover>i{ 
+    opacity: 0;
+}
+
+.menu-side ul li a{
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-side ul li:first-child, .menu-side li:nth-child(4){
+    background: var(--nav-color-1);
+}
+
+.menu-side ul li:nth-child(2), .menu-side li:nth-child(5){
+    background: var(--nav-color-2);
+}
+
+.menu-side ul li:nth-child(3), .menu-side li:nth-child(6){
+    background: var(--nav-color-3);
+}
+
+/* Estilos particulares de maquetacion */
+
+.tip{
+    margin: 0 2em;
+    padding: 0.5em 2em;
+    border: 0.2em solid var(--tip-color);
+}
+
+.tip h3{
+    color: var(--tip-color);
+}
+
+.tip ul{
+    list-style: none;
+}
+
+.tip .list{
+    list-style: circle;
+    font-size: 1em;
+}
+
+.tip .list>li{
+    font-size: 1em;
+}
+
+.tip li{
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}
+
+.tip .rt{
+    color: #c44569;
+}
+
+.tip .arch{
+    color: #227093;
+}
+
+.tip .dir{
+    color: #303952;
+}
+
+.tip .good{
+    padding: 0.5em 2em;
+    border-left: 2em solid #3ae374;
+    background: #3ae37550; 
+}
+
+.tip .wrong{
+    padding: 0.5em 2em;
+    border-left: 2em solid #ff3838;
+    background: #ff383850; 
+}
+
+
+/* Footer */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0.5em 10em;
+    background: #2f3640;
+    color: #dcdde1;
+}
+
+footer #author{
+    text-align: right;
+}
+
+/* Home button */
+
+#HomeBtn{
+    visibility: hidden;
+    position: fixed;
+    bottom: 1.2em;
+    right: 1.2em;
+    z-index: 100;
+    padding: 1em 1.15em;
+
+    background: rgba(255, 255, 255, 0.6);
+    color: #2c3e50;
+    border: 0.15em solid #2c3e50;
+    border-radius: 100%;
+    
+    cursor: pointer;
+
+    transition: 500ms ease all;
+}
+
+#HomeBtn:hover{
+    background: #2c3e50;
+    text-decoration: none;
+    color: white;
+    border: 0.15em solid #2c3e50;
+}
+
+/* Box controlers */
+
+#array-ctrls{
+    margin: 0 2.5em;
+}
+
+#array-ctrls>article{
+    padding-bottom: 1em; 
+    border-bottom: var(--psudo-black) solid 0.02em;
+}
+
+#array-ctrls>article:last-child{
+    padding-bottom: 1em; 
+    border-bottom: none;
+}
+
+/* Imagenes dentro de listas */
+
+ol img{
+    display: block;
+    margin: 1.5em auto 0;
+}
+
+#exercices .tip li{
+    font-size: 1em;
+}
+
+#exercices .tip ul{
+    list-style: disc;
+}

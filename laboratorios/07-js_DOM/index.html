@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <title>JS Intermedio.</title>
+</head>
+
+<body id="id_body">
+
+    <header id="front-img">
+        <div class="main-front">
+            <h1>Laboratorio 06.</h1>
+            <h3>Viernes, 28 de septiembre de 2018.</h3>
+            <i class="fas fa-chevron-down" id="down-button"></i>
+        </div>
+    </header>
+    
+    <nav class="menu-side">
+        <ul>
+            <li><a href="#arrays-section">Arreglos.</a><i class="fas fa-box-open"></i></li>
+            <li><a href="#objects-section">Objetos.</a><i class="far fa-object-group"></i></li>
+            <li><a href="#class-section">Clases.</a><i class="fas fa-copy"></i></li>
+            <li><a href="#exercices">Ejercicios.</a><i class="fas fa-dumbbell"></i></li>
+        </ul>
+    </nav>
+    
+    <header class="title-content" id="title-content">
+        <div id="brand">
+            <h1>JavaScript Intermedio</h1>
+        </div>
+        <div id="content-brand">
+            <h5>Estructuras de datos.</h5>
+        </div>
+    </header>
+
+    <section class="content">
+        <section id="arrays-section">
+            <header>
+                <h2>Colecciones de datos.</h2>
+            </header>
+            <article>
+                <p>
+                    El manejo y almacenamiento de conjuntos de datos es una herramenita indispensable en la lógica de todo programa. Con el fin de dar solución a esta necesidad, JavaScript implemento la clase <strong>Array</strong>. Esto dió apertura a la creación, control y uso de arreglos en los sitios web. 
+                </p>
+
+                <p>
+                    Las características principales de los arreglos son: Proporcionar un control de datos sencillo y de alto nivel; comportarse de igual forma que las listas dinámicas; tener la capacidad de almacenar elementos de distintos tipos dentro del mismo arreglo; entre otras mas. 
+                </p>
+            </article>
+
+            <article>
+                <h3>Declaración.</h3>
+
+                <p>
+                    Existen diversas formas para inicializar un arreglo en JavaScript. Por su utilidad se estudirán dos: Haciendo uso de la notación de arreglos estándar de JS, y haciendo uso del contructor de la clase <strong>Array</strong>.
+                </p>
+
+                <p>
+                    El primer método consiste, literalmente, en asignarle un arreglo a una variable. La sintaxis deriva de encerrar los datos (separados por comas) entre corchetes simples. Algunos ejemplos de este método son:
+                </p>
+                
+                <code>
+                    let listNumbers = [1,23,4,5,45,87]; <br>
+                    let listLetters = ['A','h','e','v','F']; <br>
+                    let listColors = ["red","yellow","white","green"];
+                </code>
+
+                <p>
+                    El segundo método se basa en el hecho que un arreglo es una instancia de la clase <strong>Array</strong>, por lo que puede hacerse uso del constructor de la misma. A partir de ello se puede declarar arreglos de la siguiente forma:
+                </p>
+                
+                <code>
+                    let listNumbers = new Array(1,23,4,5,45,87); <br>
+                    let listLetters = new Array('A','h','e','v','F'); <br>
+                    let listMixed = new Array(1,'c',"red",34);
+                </code>
+                <br>
+                <article class="tip">
+                    <p>Lectura complementaria: <a href="https://www.w3schools.com/js/js_arrays.asp"> JavaScript Arrays [W3S]</a></p>
+                </article>
+            </article>
+            <article>
+                <h3>Control de datos.</h3>
+
+                <p>
+                    Una de las utilidades mas grandes para el manejo y control de arreglos es que dentro de la clase <strong>Array</strong> se encuentran definidas una serie de propiedades y métodos, que facilitan la manipulación del contenido interno de cada una de sus instancias. A continuación se enumerarán, los atributos, propiedades y métodos mas representativos y útiles para el manejo de arreglos. Para facilitar la enseñanza, todos los ejemplos estarán basados en el siguiente arreglo.
+                </p>
+
+                <section id="array-ctrls">
+                    <code>
+                        let listLetters = ['A','h','e','v','F'];
+                    </code>
+                    <article>
+                        <h4>Acceso por índice a un elemento del arreglo.</h4>
+    
+                        <p>
+                            Se hace uso de la sintaxis básica de acceso a un elemento dentro un arreglo. Ejemplo:
+                        </p>
+    
+                        <code>
+                            var firstLetter = listLetters[0]; <br>
+                            // Almacena 'A' <br><br>
+                            var lastLetter = listLetters[listLetters.lenght - 1]; <br>
+                            // Almacena 'F'
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.lenght;</h4>
+    
+                        <p>Este atributo corresponde a la cantidad de datos que tiene actualmente un arreglo. Ejemplo:</p>
+    
+                        <code>
+                            let cantLetters = listLetters.lenght; <br>
+                            console.log(cantLetters); //Imprimirá 5.
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.forEach(function);</h4>
+    
+                        <p>
+                            Método que recorre todos los elementos un arreglo y realiza una función específica por cada uno de ellos. Ejemplo: 
+                        </p>
+    
+                        <code>
+                            listLetters.forEach((letter, index)=>{ <br><br>
+                            &ensp;&ensp;console.log("Letra "+index+": "+letter);<br>
+                            &ensp;&ensp;//Imprimirá cada valor en la consola <br><br>
+                            });
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.push(value);</h4>
+    
+                        <p>
+                            Método que añade un elemento al final del arreglo. Ejemplo:
+                        </p>
+    
+                        <code>
+                            listLetters.push('z');<br>
+                            //['A','h','e','v','F','z']
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.pop();</h4>
+    
+                        <p>
+                            Método que elimina el elemento final del arreglo. Este valor es retornado. Ejemplo:
+                        </p>
+    
+                        <code>
+                            var lastItem = listLetters.pop(); //Almacena 'z' <br>
+                            //['A','h','e','v','F']
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.shift();</h4>
+    
+                        <p>
+                            Método que elimina el elemento inicial de un arreglo. De igual forma el valor es retornado. Ejemplo:
+                        </p>
+    
+                        <code>
+                            var firstItem = listLetters.shift(); //Almacena 'A'<br>
+                            //['h','e','v','F']
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.unshift();</h4>
+    
+                        <p>
+                            Método que inserta un nuevo elemento en la primera posición del arreglo. Ejemplo:
+                        </p>
+    
+                        <code>
+                            listLetters.unshift('x'); <br>
+                            //['x','h','e','v','F']
+                        </code>
+                    </article>
+    
+                    <article>
+                        <h4>.splice(index, n)</h4>
+    
+                        <p>
+                            Método que elimina una cantidad específica de elementos en un arreglo. Recibe por parametros el índice donde se iniciará a eliminar, y la cantidad de datos a eliminar. Ejemplo:
+                        </p>
+    
+                        <code>
+                            listLetters.splice(2,1);<br>
+                            //['x','h','v','F'] <br><br>
+                            listLetters.splice(1,2);<br>
+                            //['x','F']
+                        </code>
+                    </article>
+                </section>
+                <article class="tip">
+                    <p>Lectura complementaria: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array"> Métodos de Array [MDN]</a></p>
+                </article>
+            </article>
+        </section>
+
+        <section id="objects-section">
+            <header>
+                <h2>Objetos.</h2>
+            </header>
+
+            <p>
+                Como se había mencionado con anterioridad JavaScript es un lenguaje Orientado a Objetos, por lo el manejo de instancias y objetos no es ajeno a él. Un dato de tipo <em>object</em>, representa una colección de atributos y propiedades arbitrarias que tienen un valor específico. Normalmente, los objetos se almacenan dentro de variables, desde las cuales se puede acceder al valor de cada uno de sus atributos.
+            </p>
+
+            <p>
+                La sintaxis básica para definir un objeto es la siguiente:
+            </p>
+
+            <code>
+                &lt;var|let&gt; &lt;identificador&gt; = { <br><br>
+                &ensp;&ensp;&lt;identificador1&gt;: &lt;valor&gt;[,<br>
+                &ensp;&ensp;&lt;identificador2&gt;: &lt;valor&gt;[,<br>
+                &ensp;&ensp;&lt;identificador3&gt;: &lt;valor&gt;[,<br>
+                &ensp;&ensp;...]]] <br><br>                  
+                };
+            </code>
+
+            <p>
+                Algunos ejemplos de definiciones de objetos:
+            </p>
+
+            <code>
+                var carro1 = { <br><br>
+                &ensp;&ensp;marca: "Toyota",<br>
+                &ensp;&ensp;modelo: "Corolla",<br>
+                &ensp;&ensp;annio: 2003<br><br>              
+                };
+            </code>
+
+            <code>
+                var player = { <br><br>
+                &ensp;&ensp;name: "Antar'kl",<br>
+                &ensp;&ensp;HP: 200,<br>
+                &ensp;&ensp;Exp: 200015<br><br>              
+                };
+            </code>
+
+            <p>
+                Esto implica que las llaves tienen dos significados en JavaScript. Al comienzo de una sentencia (como <em>for</em>, <em>while</em>, <em>function</em>, etc), representan un bloque de declaraciones. En cualquier otra posición, describen un objeto.
+            </p>
+
+            <p>
+                Una vez definido un objeto, se puede acceder al valor de sus atributos mediante el operador punto (.); cabe resaltar que en caso de no estar declarado algún atributo al que se trate de acceder, este retornará indefinido.
+            </p>
+
+            <img src="assets/img/object_example.png" alt="Object Example">
+
+            <p>
+                Además los atributos de los objetos no solo pueden almacenar datos primitivos, sino que también son capaces de guardar estructuras de datos mas complejas como arreglos, funciones, o inclusos otros objetos.
+            </p>
+
+            <code>
+                var player = { <br><br>
+                &ensp;&ensp;name: "Antar'kl",<br>
+                &ensp;&ensp;HP: 200,<br>
+                &ensp;&ensp;exp: 200015,<br>
+                &ensp;&ensp;Hab: ["Inifugo", "Robustez", "Levitacion"], <br>
+                &ensp;&ensp;Attack: { <br>
+                &ensp;&ensp;&ensp;&ensp;primary:"Llamarada Intensa",<br>
+                &ensp;&ensp;&ensp;&ensp;aux:"Golpe rapido" <br>
+                &ensp;&ensp;}, <br>
+                &ensp;&ensp;ejecutar: (attk)=>{ <br>
+                &ensp;&ensp;&ensp;&ensp;console.log("Ataque: "+attk); <br>
+                &ensp;&ensp;} <br>
+                <br>
+                };
+            </code>
+            <br>
+
+            <img src="assets/img/Object_comp.png" alt="Object Example">
+
+            <p>
+                A partir de esto, se pueden realizar caulquier tipo de operación o sentencia con los objetos con sus respectivos atributos y funciones.
+            </p>
+            <br>
+            <article class="tip">
+                <p>Lectura complementaria: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Trabajando_con_objectos"> Trabajando con objetos [MDN]</a></p>
+            </article>
+        </section>
+
+        <section id="class-section">
+            <header>
+                <h2>Clases.</h2>
+            </header>
+
+            <p>
+                Recordando algunos conceptos, sabemos que una clase es un modelo que define un conjunto de variables, estados, y métodos apropiados para definir el comportamiento de cierta estructura de datos. Cada objeto creado a partir de la clase se denomina instancia de la clase.
+            </p>
+
+            <p>
+                En JavaScript las clases son "funciones especiales", tal y como el caso de las expresiones de funciones y declaraciones de funciones. Existen dos formas de definir una clase, las cuales se ampliarán a continuación:
+            </p>
+
+            <article>
+                <h3>Declaración de clase.</h3>
+
+                <p>
+                    Este método de definición de clase implica el uso de la palabra reservada <em>class</em> seguido de un identificador para la clase. Esta definición será efectiva dentro del mismo contexto en el que esté inmerso. La sintaxis es la siguiente:
+                </p>
+
+                <code>
+                    class &lt;identificador&gt;{<br>
+                    &ensp;&ensp;//definición <br>
+                    }
+                </code>
+
+                <p>
+                    A forma de ejemplo tenemos la siguiente declaración de clase, con una instancia de ella:
+                </p>
+
+                <code>
+                    class Player{<br><br>
+                    &ensp;&ensp;constructor(name, HP){ <br>
+                    &ensp;&ensp;&ensp;&ensp;this.name = name; <br>
+                    &ensp;&ensp;&ensp;&ensp;this.HP = HP; <br>
+                    &ensp;&ensp;&ensp;&ensp;this.exp = 0; <br>
+                    &ensp;&ensp;&ensp;&ensp;this.Hab = []; <br>
+                    &ensp;&ensp;} <br><br>
+                    &ensp;&ensp;insertHab(newHab){<br>
+                    &ensp;&ensp;&ensp;&ensp;this.Hab.push(newHab);<br>
+                    &ensp;&ensp;} <br><br>
+                    } <br>
+                    <br>
+                    <br>
+                    var player1 = new Player("Antal", 300); <br>
+                    player1.insertHab("Mutacion");
+                </code>
+            </article>
+            <article>
+                <h3>Expresiones de clases.</h3>
+
+                <p>
+                    Este método implica la introducción de clases anonimas, requiriendo el uso solo de la palabra reservada <em>class</em> y opcionalmente el uso de un identificador. Esta expresión debe ser almacenada en alguna variable que será la encargada de instanciar objetos de dicha clase. A continuación se presenta la sintaxis, con el ejemplo anterior reescrito:
+                </p>
+
+                <code>
+                    &lt;identificador&gt; &lt;n_variable&gt; = class [identificador]{<br>
+                    &ensp;&ensp;//definición <br>
+                    }
+                </code>
+                <code>
+                    var Player = class{<br><br>
+                    &ensp;&ensp;constructor(name, HP){ <br>
+                    &ensp;&ensp;&ensp;&ensp;this.name = name; <br>
+                    &ensp;&ensp;&ensp;&ensp;this.HP = HP; <br>
+                    &ensp;&ensp;&ensp;&ensp;this.exp = 0; <br>
+                    &ensp;&ensp;&ensp;&ensp;this.Hab = []; <br>
+                    &ensp;&ensp;} <br><br>
+                    &ensp;&ensp;insertHab(newHab){<br>
+                    &ensp;&ensp;&ensp;&ensp;this.Hab.push(newHab);<br>
+                    &ensp;&ensp;} <br><br>
+                    } <br><br>
+                    <br>
+                    var player1 = new Player("Antal", 300); <br>
+                    player1.insertHab("Mutacion");
+                </code>
+            </article>
+            <article class="tip">
+                <p>Para ampliar el conocimiento acerca de aspectos como declaración de métodos y atributos, herencia, entre otros, se recomienda la lectura de: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes"> Clases [MDN]</a></p>
+            </article>
+        </section>
+
+        <section id="exercices">
+            <header>
+                <h2>Ejercicios.</h2>
+            </header>
+            <p>
+                Realice los siguientes ejercicios, teniendo en cuenta lo básico de este Laboratorio. La primera parte es presencial, por lo que su límite de entrega será en los horarios estipulados de cada grupo de laboratorio. La segunda parte es tarea la cual será entregada el mismo día como límite a las 23:55. 
+            </p>
+
+            <p>
+                La forma de entrega será de la misma forma que el laboratorio anterior; un archivo por ejercicio con el nombre Ejercicio_&lt;Numero&gt;.js, subidos a través de un repositorio de git. Los ejercicios de la tarea serán entregados en un repositorio a parte, con la misma dinámica.
+            </p>
+
+            <p>
+                Realizar todas las validaciones que crea necesarias.
+            </p>
+
+            <h3>Listado</h3>
+
+            <ol>
+                <li>
+                    Realice una función en JS, que dados un número y un arreglo como parámetros, retorne cuantas ocurrencias existen de ese número dentro del arreglo.
+                </li>
+
+                <li>
+                    Realice una función que reciba un arreglo de datos numéricos, y muestre la suma de todos los elementos del arreglo y su promedio.
+                </li>
+
+                <li>
+                    Realice una función que reciba un arreglo como parámetro y liste los tipos de datos de sus elementos y cuantos de cada tipo.
+                </li>
+
+                <li>
+                    Dado un arreglo de números enteros despliegue la suma del primero y último elemento, la suma del segundo y penúltimo, la suma del tercer y antepenúltimo, y así sucesivamente hasta llegar al centro del arreglo. Si la cantidad de elementos es impar, el elemento central será sumado consigo mismo.
+                </li>
+
+                <li>
+                    Dado un arreglo cuyos elementos son de diversos tipos, cree una función que retorna un arreglo con los elementos de un solo tipo en específico. El tipo de dato debe ser pasado como parametro.
+                </li>
+
+                <li>
+                    Cree una función que dada una cadena, retorne la cadena encriptada utilizando la clave murciélago. 
+                    <img src="assets/img/table1.png" alt="Table 1"> 
+                </li>
+
+                <li>
+                    En las prácticas de laboratorio de física, se pide entregar un reporte con todas las mediciones que se han realizado junto con su promedio e incerteza. Para el cálculo de dichos indicadores se hará uso de las siguientes fórmulas:
+
+                    <img src="assets/img/Table2.png" alt="Table 2">
+                    <img src="assets/img/Table3.png" alt="Table 3">
+                    <p>
+                        Para el ejemplo anterior el promedio junto a su incerteza de las mediciones es: <strong>X=14.4 ± 0.1</strong>
+                    </p>
+                    <p>
+                        Realice un función que reciba las mediciones realizadas, y en base a esto calcular el promedio y la incerteza de las medidas dadas.
+                    </p>
+                </li>
+
+                <li>
+                    Escriba una función que realice la suma de dos matrices A y B. Deposite el resultado en la matriz C.  Deberá validar que la operación se pueda realizar.
+                </li>
+
+                <li>
+                    Elabore una función que llene un arreglo con 20 números de forma aleatoria (random), y que pida al usuario adivinar un número, si lo adivina mostrará un mensaje indicando que ganó, si no mostrará que perdió.
+                </li>
+
+                <li>
+                    Realice una función que reciba por parametro los siguientes datos al usuario: Nombre, Apellido, Fecha de nacimiento, Número de teléfono, Correo electrónico. Estos deberán ser almacenado en un objeto y mostrados en la consola del navegador.
+                </li>
+
+                <li>
+                    Realice una función que cree un objeto usuario (Idem al anterior), y lo almacene en un arreglo de usuarios. El arreglo debe de ser global. 
+                </li>
+
+                <li>
+                    Realice un programa que permita:
+                    <ul>
+                        <li>
+                            Ingresar una persona.
+                        </li>
+
+                        <li>
+                            Buscar una persona.
+                        </li>
+
+                        <li>
+                            Modificar una persona.
+                        </li>
+
+                        <li>
+                            Eliminar una persona.
+                        </li>
+
+                        <li>
+                            Mostrar todas las personas.
+                        </li>
+
+                        <li>
+                            Salir del programa.
+                        </li>
+                    </ul>
+                    El menú debe repertirse después de realizar cualquiera de estas acciones.
+                </li>
+            </ol>
+            <article class="tip">
+                <h3>Tarea.</h3>
+                <ol>
+                    <li>
+                        <p>
+                            Michelle es una chica emprendedora, la cual ha decidido poner su venta de dulces llamada “La jefecita”. Ella distribuye sus dulces en laboratorios de la universidad donde estudia. En los últimos días, ella ha percibido que no posee control de sus ventas, por lo tanto, ella ha pedido a los alumnos de la materia PW le creen un prototipo de sistema, utilizando JavaScript.
+                        </p>
+                        <p>
+                            ¿Qué debe realizar el sistema?
+                        </p>
+                        <p>
+                            Crear un menú que tenga la posibilidad de realizar:
+                        </p>
+                        <ul>
+                            <li>
+                                Agregar producto.
+                            </li>
+                            <li>
+                                Modificar Stock.
+                            </li>
+                            <li>
+                                Registrar venta y reducir stock.
+                            </li>
+                            <li>
+                                Mostrar promedio de ventas realizadas
+                            </li>
+                            <li>
+                                Mostrar productos con stock 0.
+                            </li>
+                            <li>
+                                Salir del sistema.
+                            </li>
+                        </ul>
+                        <p>
+                            Cada producto deberá representarse a través de un objeto en JS con los siguientes atributos:
+                        </p>
+                        <ul>
+                            <li>
+                                Código.
+                            </li>
+                            <li>
+                                Descripción del producto.
+                            </li>
+                            <li>
+                                Tipo de producto.
+                            </li>
+                            <li>
+                                Precio de compra (Michelle).
+                            </li>
+                            <li>
+                                Precio de venta (Clientes).
+                            </li>
+                            <li>
+                                Stock.
+                            </li>
+                        </ul>
+
+                        <p>
+                            Los productos se deberán almacenar a través de un arreglo. Para poder ingresar los datos deberá hacer uso de la función “prompt”. 
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Crear un objeto en JavaScript, el cual servirá para realizar conversiones de medidas, tanto de longitud como de temperatura. Deberá tener un método, el cual recibirá 4 parámetros: La medida, la unidad en la que está la medida, la unidad a la que se desea convertir y el tipo de medida (L por longitud, T de temperatura).
+                        </p>
+                        <p>
+                            Las conversiones que podrá realizar son las siguientes:
+                        </p>                            
+                        <ul>
+                            <li>
+                                Metros <=> Centímetros.                                
+                            </li>
+                            <li>
+                                Kilómetros <=> Metros.
+                            </li>
+                            <li>
+                                Pies <=> Metros.
+                            </li>
+                            <li>
+                                Celsius <=> Fahrenheit.
+                            </li>
+                            <li>
+                                Kelvin <=> Fahrenheit.
+                            </li>
+                            <li>
+                                Kelvin <=> Celsius.
+                            </li>
+                        </ul>
+                        <p>
+                            Ejemplo de llamada del método: convertor.convertir(100, m, cm, L);
+                        </p>
+                        <p>
+                            Ejemplo de salida: 10000cm.
+                        </p>
+                    </li>
+                </ol>
+            </article>
+        </section>
+    </section>
+
+    <footer>
+        <article>
+            <p><em>
+                “Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber.”
+            </em></p>
+            <p id="author">
+                Albert Einstein.
+            </p>
+        </article>
+    </footer>
+
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+<script src="assets/js/javaScript.js"></script>
+</html>
