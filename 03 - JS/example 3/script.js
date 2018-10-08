@@ -3,7 +3,7 @@ var person = {
     /* property: value*/
     name: "Néstor",
     lastname: "Aldana",
-    birthday: new Date()
+    birthday: Date.now()
 }; // JSON (JavaScript Object Notation)
 
 // Access to propertys
@@ -14,7 +14,7 @@ console.log(person.birthday);
 
 console.log(person.dui) // undefined
 person.dui = "000000000" // Assign 
-console.log(person.dui) // undefined
+console.log(person.dui) // 000000000
 
 // Example
 function createPerson(name, lastname, birthday, dui) {
@@ -30,7 +30,7 @@ let list = [] // To save persons
 
 // To Add 10 fake persons
 for (let i = 0; i < 10; i++) {
-    list.push(createPerson(`Name ${i}`, `Lastname ${i}`, new Date().setFullYear(1990 + i + Math.floor(Math.random() * 5), `000000${i}`)));
+    list.push(createPerson(`Name ${i}`, `Lastname ${i}`, new Date().setFullYear(1990 + i + Math.floor(Math.random() * 5)), `000000${i}`));
 }
 
 console.table(list);
