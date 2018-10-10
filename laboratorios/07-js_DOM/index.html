@@ -44,11 +44,12 @@
 
     <section class="content">
         <article id="tree-nodes">
-            <h2>Arbol DOM</h2>
+            <h2>Árbol DOM</h2>
             <p>
                 Al momento que un navegador carga una página web, este crea un modelo entero de la página.
-                Este modelo es comunmente conocido como <strong>Arbol DOM</strong> el cual se almacena en la memoria del navegador.
-                <br>
+                Este modelo es comunmente conocido como <strong>Arbol DOM</strong> el cual se almacena en la memoria
+                del navegador.
+                <br>access-elements
                 El Arbol DOM conciste en cuatro principales nodos:
             </p>
             <figure>
@@ -102,6 +103,154 @@
                         Es el texto que se encuentra dentro de un elemento HTML. (Por ejemlplo: &lt;em&gt;, &lt;p&gt;,
                         &lt;li&gt;, entre otros elementos que tienen como <i>hijo</i> un texto);
                     </p>
+                </div>
+            </div>
+        </article>
+        <article id="access-elements">
+            <h2>
+                Acceder a elementos HTML.
+            </h2>
+            <p>
+                Al momento de acceder a un elemento del árbol DOM, se puede realizar de las siguientes maneras:
+            </p>
+            <div class="grid-div tree-colums-one-rows">
+                <div class="article-body">
+                    <h3>
+                        Seleccionar multiples elementos (NODELIST).
+                    </h3>
+                    <p>
+                        Todas los siguientes metodos devuelven listas de elementos que se acceden como si de un arreglo se tratasen.
+                    </p>
+                    <div class="article-body">
+                        <h4>
+                            getElementsByClassName().
+                        </h4>
+                        <p>
+                            Recibe como parámetro el nombre de la case css de los elementos que se desean capturar. <br>
+                            Ejemplo:
+                        </p>
+                        <div class="block-code">
+                            <code><span style="color:#feca57">document</span>.getElementsByClass-Name("success")</code>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <h4>
+                            getElementsByTagName().
+                        </h4>
+                        <p>
+                            Recibe como parámetro el nombre de la etiqueta HTML y retorna todos los elementos que
+                            cumplan la condición.
+                            <br>
+                            Ejemplo:
+                        </p>
+                        <div class="block-code">
+                            <code><span style="color:#feca57">document</span>.getElementsByTag-Name("li")</code>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <h4>
+                            querySelectorAll().
+                        </h4>
+                        <p>
+                            Recibe como parámetro el selector CSS, retorna todos los elementos que cumplan con la
+                            condición.
+                            <br>
+                            Ejemplo:
+                        </p>
+                        <div class="block-code">
+                            <code><span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <h3>
+                        Seleccionar un elemento individualmente.
+                    </h3>
+                    <div class="article-body">
+                        <h4>
+                            getElementById()
+                        </h4>
+                        <p>
+                            Recibe como parámetro el nombre que se le ha asignado al atributo id del elemento. <br>
+                            Ejemplo:
+                        </p>
+                        <div class="block-code">
+                            <code class="simple-code"><span style="color:#feca57">document</span>.getElementById("nav-brand")</code>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <h4>
+                            querySelector()
+                        </h4>
+                        <p>
+                            Recibe como parámetro un selector css y retorna el primer elemento que cumpla con la
+                            condición.
+                            <br>
+                            Ejemplo:
+                        </p>
+                        <div class="block-code">
+                            <code class="simple-code"><span style="color:#feca57">document</span>.querySelector<br>("li.nav-item")</code>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <p>
+                            También se puede seleccionar elementos de manera individual navegando a entre un elemento y
+                            otro.(Tercer metodo para acceder a un elemento)
+                        </p>
+                    </div>
+
+                </div>
+                <div class="article-body">
+                    <h3>
+                        Navegar a través del árbol DOM.
+                    </h3>
+                    <div class="article-body">
+                        <h4>
+                            parentNode.
+                        </h4>
+                        <p>
+                            Retorna el padre del elemento actual.
+                            <br>
+                            Ejemplo:
+                        </p>
+                        <div class="block-code">
+                            <code>
+                                var<span style="color:rgb(102, 165, 207)"> item-nav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")
+                            </code>
+                            <br>
+                            <code><span style="color:rgb(102, 165, 207)"> item-nav</span>.parentNode</code>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <h4>
+                            previousSibling / nextSibling.
+                        </h4>
+                        <p>
+                            Retorna el siguiente o anterior hermano del elemento actual.
+                            <br>
+                            Ejemplo:
+                        </p>
+                        <div class="block-code">
+                            <code>var<span style="color:rgb(102, 165, 207)"> item-nav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")</code>
+                            <br>
+                            <code><span style="color:rgb(102, 165, 207)"> item-nav</span>.nextSilbling</code>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <h4>
+                            firstChild / lastChild.
+                        </h4>
+                        <p>
+                            Retorna el primer o ultimo hijo del elemento actual.
+                            <br>
+                            Ejemplo:
+                        </p>
+                        <div class="block-code">
+                            <code>var<span style="color:rgb(102, 165, 207)"> item-nav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")</code>
+                            <br>
+                            <code><span style="color:rgb(102, 165, 207)"> item-nav</span>.firstChild</code>
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>

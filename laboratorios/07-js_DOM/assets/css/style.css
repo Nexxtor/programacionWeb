@@ -21,7 +21,7 @@ p{
     text-align: justify;
 }
 
-code{
+/*code{
     font-size: 1.3em;
     
     display: block;
@@ -32,7 +32,7 @@ code{
     background: var(--code-back-tr);
 
     border-left: var(--code-back) solid .5em;
-}
+}*/
 
 article{
     margin: 2em 0;
@@ -343,7 +343,9 @@ ol img{
 .two-colums-two-rows{
     grid-template: 50% 50% / 50% 50%;
 }
-
+.tree-colums-one-rows{
+    grid-template: 100% / 33% 33% 33%;
+}
 .dot-figure{
     border-radius: 100%;
     width: 20px;
@@ -355,6 +357,7 @@ ol img{
 }
 .yellow-dot{
     background: #feca57;
+    color: #feca57;
 }
 .bluesky-dot{
     background: #0abde3;
@@ -371,4 +374,15 @@ ol img{
 
 .warning-content p{
     padding: 4px;
+}
+.block-code{
+    background: #2f3640;
+    color: #fff;
+    width: 100%;
+    padding: 4px;
+    box-sizing: content-box;
+}
+code{
+    font-family: monospace, monospace;
+    font-size: 0.85em;
 }
