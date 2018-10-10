@@ -24,14 +24,20 @@
         </div>
     </header>
 
-    <nav class="menu-side">
-        <ul>
-            <li><a href="#tree-nodes">Árbol DOM.</a><i class="fas fa-code-branch"></i></li>
-            <li><a href="#access-elements">Accesores.</a><i class="fas fa-external-link-alt"></i></li>
-            <li><a href="#modifiers">Interación con UI.</a><i class="fas fa-chalkboard-teacher"></i></li>
-            <li><a href="#events">Eventos.</a><i class="fas fa-calendar"></i></li>
-        </ul>
-    </nav>
+    <div class="float-menu">
+        <div class="menu-content">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="menu-side">
+            <div></div>
+            <ul>
+                <li><a href="#tree-nodes">Árbol DOM.</a><i class="fas fa-code-branch"></i></li>
+                <li><a href="#access-elements">Accesores.</a><i class="fas fa-external-link-alt"></i></li>
+                <li><a href="#modifiers">Interación con UI.</a><i class="fas fa-chalkboard-teacher"></i></li>
+                <li><a href="#events">Eventos.</a><i class="fas fa-calendar"></i></li>
+            </ul>
+        </nav>
+    </div>
 
     <header class="title-content" id="title-content">
         <div id="brand">
@@ -216,10 +222,10 @@
                         </p>
                         <div class="block-code">
                             <code>
-                                var<span style="color:rgb(102, 165, 207)"> item-nav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")
+                                var<span style="color:rgb(102, 165, 207)"> itemNav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")
                             </code>
                             <br>
-                            <code><span style="color:rgb(102, 165, 207)"> item-nav</span>.parentNode</code>
+                            <code><span style="color:rgb(102, 165, 207)"> itemNav</span>.parentNode</code>
                         </div>
                     </div>
                     <div class="article-body">
@@ -232,9 +238,9 @@
                             Ejemplo:
                         </p>
                         <div class="block-code">
-                            <code>var<span style="color:rgb(102, 165, 207)"> item-nav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")</code>
+                            <code>var<span style="color:rgb(102, 165, 207)">itemNav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")</code>
                             <br>
-                            <code><span style="color:rgb(102, 165, 207)"> item-nav</span>.nextSilbling</code>
+                            <code><span style="color:rgb(102, 165, 207)"> itemNav</span>.nextSilbling</code>
                         </div>
                     </div>
                     <div class="article-body">
@@ -247,9 +253,9 @@
                             Ejemplo:
                         </p>
                         <div class="block-code">
-                            <code>var<span style="color:rgb(102, 165, 207)"> item-nav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")</code>
+                            <code>var<span style="color:rgb(102, 165, 207)"> itemNav</span> = <span style="color:#feca57">document</span>.querySelectorAll <br> ("li.item-nav")</code>
                             <br>
-                            <code><span style="color:rgb(102, 165, 207)"> item-nav</span>.firstChild</code>
+                            <code><span style="color:rgb(102, 165, 207)"> itemNav</span>.firstChild</code>
                         </div>
                     </div>
                 </div>
@@ -295,7 +301,7 @@
                         Sintaxis:
                     </p>
                     <div class="block-code">
-                        <code>var<span style="color:rgb(102, 165, 207)"> list-item</span> = <span style="color:#feca57">document</span>.createElement("li")<span style="color:grey">// Crea el siguiente elemento &lt;li &gt;&lt;/li &gt;</code>
+                        <code>var<span style="color:rgb(102, 165, 207)"> listItem</span> = <span style="color:#feca57">document</span>.createElement("li")<span style="color:grey">// Crea el siguiente elemento &lt;li &gt;&lt;/li &gt;</code>
                     </div>
                 </div>
                 <div class="article-body">
@@ -556,6 +562,7 @@
 
     <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
 </body>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
 <script src="assets/js/javaScript.js"></script>
 
 </html>
