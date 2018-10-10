@@ -26,10 +26,10 @@
 
     <nav class="menu-side">
         <ul>
-            <li><a href="#arrays-section">Arreglos.</a><i class="fas fa-box-open"></i></li>
-            <li><a href="#objects-section">Objetos.</a><i class="far fa-object-group"></i></li>
-            <li><a href="#class-section">Clases.</a><i class="fas fa-copy"></i></li>
-            <li><a href="#exercices">Ejercicios.</a><i class="fas fa-dumbbell"></i></li>
+            <li><a href="#tree-nodes">Árbol DOM.</a><i class="fas fa-code-branch"></i></li>
+            <li><a href="#access-elements">Accesores.</a><i class="fas fa-external-link-alt"></i></li>
+            <li><a href="#modifiers">Interación con UI.</a><i class="fas fa-chalkboard-teacher"></i></li>
+            <li><a href="#events">Eventos.</a><i class="fas fa-calendar"></i></li>
         </ul>
     </nav>
 
@@ -410,6 +410,135 @@
                     <code>var<span style="color:rgb(102, 165, 207)"> idName</span> = div.id <span style="color:grey">// Guarda el valor del atributo id</code>
                 </div>
             </div>
+            <aside>
+                <p>
+                    Consultar: <a href="https://developer.mozilla.org/es/docs/Web/API/Element">MDN web docs</a>
+                    para mayor información.
+                </p>
+            </aside>
+        </article>
+        <article id="events">
+            <h2>Eventos</h2>
+            <p>
+                Cuando el navegador carga una página web y el usuario interactua con ella, el navegador registra
+                diferentes tipos de eventos, y al ocurrir ciertos eventos un script puede reaccionar ante ellos. <br>
+                Puedes consular <a href="https://developer.mozilla.org/en-US/docs/Web/Events">MDN web docs</a> para ver
+                la lista completa de eventos que pueden utilizarse.
+            </p>
+            <p>
+                Se pueden utilizar de muchas maneras; añadiendo un atributo al elemento directamento en el HTML o sea
+                dentro de un script,
+                capturando el elemnto y asignandole un evento o añadiendo un <em>listener</em> a los elementos
+            </p>
+            <div class="article-body">
+                <h3>Añadir evento a elemento dentro del HTML</h3>
+                <p>
+                    Se recomienda no utilizar este método ya que se concidera una <span style="color:firebrick">mala
+                        practica</span>, sin embargo, es necesario conocerla en caso se encuentren en algunos sitios.
+                    Ejemplo:
+                </p>
+                <span class="indentify-code danger-content"><i>Código HTML</i></span>
+                <div class="block-code">
+                    <code>&lt;<span style="color:rgb(70, 128, 253)">input <span style="color:skyblue">id</span> = <span style="color:lightcoral"> "input-pass"</span> <span style="color:skyblue">type</span> = <span style="color:lightcoral"> "text"</span> <span style="color:skyblue"> onkeyup</span>=<span style="color:lightcoral"> "verifyLength()"</span> </span>/&gt;</code>
+                    <br>
+                    <code>&lt;<span style="color:rgb(70, 128, 253)">label <span style="color:skyblue">id</span> = <span style="color:lightcoral"> "alert-content"</span>/&gt;</code>...
+                </div>
+
+                <span class="indentify-code info-content"><i>Script</i></span>
+                <div class="block-code">
+                    <code>
+                    function verifyLength( ) { <br>
+                        <div class="one">
+                            var <span style="color:skyblue">input</span> = <span style="color:yellow">document</span>.getElementById("input-pass");
+                            <br>
+                            var <span style="color:skyblue">msg</span> = <span style="color:yellow">document</span>.getElementById("alert-content");
+                            <br>
+                            if(input.value.length < 5){
+                            <br>
+                            <div class="two">
+                                msg.textContent = "La contraseña debe ser mayor a 5 caracteres";
+                            </div>
+                            <div class="one">
+                                }
+                            </div>    
+
+                        </div>
+                    <br> }
+                    </code>
+                </div>
+            </div>
+            <p>
+                Cuando el elemento <i>input-pass</i> detecte que pcurre un evento <i>onkeyup</i>, es decir, que una
+                tecla se suelta luego de ser pulsada, se ejecutará la función <code>verifyLength()</code>.
+            </p>
+            </div>
+            <div class="article-body">
+                <h3>Manejar eventos por medio de DOM.</h3>
+                <p>
+                    Es una de las maneras modernas y mas habituales de ejecutar una función al ocurrir un evento, este
+                    metodo, todo el funcionamiento se codifica dentro de las etiquetas <code>&lt;script&gt;&lt;/script&gt;</code>
+                    o dentro de un archivo <code>.js</code>
+                </p>
+                <p>
+                    Sintaxis:
+                </p>
+                <div class="block-code">
+                    <code><i><span style="color:lightcoral">element</span></i>.on<i><span style="color:lightgreen">event</span></i> = <i>functionName</i>;</code>
+                </div>
+                <p>Ejemplo:</p>
+                <div class="article-body">
+                    <span class="indentify-code info-content"><i>Script</i></span>
+                    <div class="block-code">
+                        <code>
+                            function verifyLength( ) { <br>
+                                <div class="one">
+                                    <span style="color:grey">// Se define y se crea la función</span>
+                                </div>
+                            <br> } <br>
+                            var <span style="color:skyblue">element</span> = <span style="color:yellow">document</span>.getElementById("input-first"); <span style="color:grey">// Se obtiene el elemento</span> <br>
+                            element.<span style="color:lightgreen">onkeyup</span> = verifyLength;
+                        </code>
+                    </div>
+                </div>
+            </div>
+            <div class="article-body">
+                <h3>Usar <i>event listeners</i></h3>
+                <p>
+                    Usar <i>listeners</i> es la manera mas reciente de manejar eventos, con este método se puede
+                    manejar mas de una función a la vez.
+                </p>
+                <p>
+                    Sintaxis:
+                </p>
+                <div class="block-code">
+                    <code><i><span style="color:lightcoral">element</span></i>.addEventListener('event',functionName [,Boolean])</code>
+                </div>
+                <small>El primer parametro del método <i>addEventListener()</i>, es el evento que se desea escuchar</small>
+                <br>
+                <small>El segundo parametro el la función que se ejecuta al ocurrir el evento</small>
+                <br>
+                <small>El último es llamado <b>fase de captura</b> usualmente colocado como <code>false</code></small>
+                <br>
+                <small>Mas información sobre el tercer párametro en: <a href="http://joseramos.info/javascript-document-addeventlistener-tercer-parametro/">El
+                        tercer parámetro de addEventListener
+                    </a></small>
+                <p>
+                    Ejemplo:
+                </p>
+                <div class="block-code">
+                    <code>
+                            function verifyLength( ) { <br>
+                                <div class="one">
+                                    <span style="color:grey">// Se define y se crea la función</span>
+                                </div>
+                            <br> } <br>
+                            var <span style="color:skyblue">element</span> = <span style="color:yellow">document</span>.getElementById("input-first"); <span style="color:grey">// Se obtiene el elemento</span> <br>
+                            element.addEventListener('keyup',verifyLength,false)
+                        </code>
+                </div>
+                <small>En el párametro de la función a ejecutar, puede definirse como anonima.</small>
+            </div>
+
         </article>
     </section>
 

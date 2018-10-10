@@ -371,7 +371,16 @@ ol img{
 .warning-content{
     background: #ffc95659;
 }
+.success-content{
+    background: #44bd32;
+}
 
+.info-content{
+    background: #40739e;
+}
+.danger-content{
+    background: #c23616;
+}
 .warning-content p{
     padding: 4px;
 }
@@ -385,4 +394,26 @@ ol img{
 code{
     font-family: monospace, monospace;
     font-size: 0.85em;
+}
+.indentify-code + .block-code{
+    padding-top: 20px;
+    margin-left: 4px; 
+}
+.block-code + span.indentify-code{
+    padding: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-left: -3px;
+
+}
+.indentify-code{
+    padding:10px;
+    color: #fff;
+}
+.one{
+    margin-left:10px;
+}
+.two{
+    margin-left:10px;
 }
