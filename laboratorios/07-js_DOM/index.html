@@ -119,7 +119,8 @@
                         Seleccionar multiples elementos (NODELIST).
                     </h3>
                     <p>
-                        Todas los siguientes metodos devuelven listas de elementos que se acceden como si de un arreglo se tratasen.
+                        Todas los siguientes metodos devuelven listas de elementos que se acceden como si de un arreglo
+                        se tratasen.
                     </p>
                     <div class="article-body">
                         <h4>
@@ -251,6 +252,162 @@
                             <code><span style="color:rgb(102, 165, 207)"> item-nav</span>.firstChild</code>
                         </div>
                     </div>
+                </div>
+            </div>
+        </article>
+        <article id="modifiers">
+            <h2>Modificar HTML con JavaScript</h2>
+            <div class="article-body">
+                <h3>Obtener / Editar texto de un elemento</h3>
+                <p>
+                    Existen muchas maneras diferentes de obtener / editar el valor de un elemento en especifico, se
+                    mostrarán los métodos
+                    más comunes:
+                </p>
+                <div class="article-body">
+                    <h4>innerHTML</h4>
+                    <p>
+                        Devuelve el contenido con formato HTML de un elemento: <br>
+                        Sintaxis:
+                    </p>
+                    <div class="block-code">
+                        <code>var<span style="color:rgb(102, 165, 207)"> text</span> = <span style="color:#feca57">document</span>.getElementById("brand")</code>
+                        <br>
+                        <code>text.innerHTML <span style="color:grey">// Obtiene contenido en formato HTML</span></code>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <h4>textContent</h4>
+                    <p>
+                        Devuelve el texto sin formato de un elemento y todos sus decendientes. <br>
+                        Sintaxis:
+                    </p>
+                    <div class="block-code">
+                        <code>var<span style="color:rgb(102, 165, 207)"> text</span> = <span style="color:#feca57">document</span>.getElementById("brand")</code>
+                        <br>
+                        <code>text.textContent <span style="color:grey">// Obtiene texto</span></code>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <h4>createElement()</h4>
+                    <p>
+                        Crea un nodo o elemento HTML.<br>
+                        Sintaxis:
+                    </p>
+                    <div class="block-code">
+                        <code>var<span style="color:rgb(102, 165, 207)"> list-item</span> = <span style="color:#feca57">document</span>.createElement("li")<span style="color:grey">// Crea el siguiente elemento &lt;li &gt;&lt;/li &gt;</code>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <h4>createTextNode()</h4>
+                    <p>
+                        Crea un nodo un nodo de texto<br>
+                        Sintaxis:
+                    </p>
+                    <div class="block-code">
+                        <code>var<span style="color:rgb(102, 165, 207)"> text</span> = <span style="color:#feca57">document</span>.createTextNode("texto cualquiera")<span style="color:grey">// Crea un nodo de texto</code>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <h4>appendChild()</h4>
+                    <p>
+                        Recibe un nodo y le añade ese nodo como hijo al elemento actúal<br>
+                        Ejemplo:
+                    </p>
+                    <div class="block-code">
+                        <code>var<span style="color:rgb(102, 165, 207)"> title</span> = <span style="color:#feca57">document</span>.createElement("h2")<span style="color:grey"></code>
+                        <br>
+                        <code>var<span style="color:rgb(102, 165, 207)"> text</span> = <span style="color:#feca57">document</span>.createTextNode("texto cualquiera")<span style="color:grey">// Crea un nodo de texto</code>
+                        <br>
+                        <code>title.appendChild(text)</code>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                <p>
+                    Consultar: <a href="https://developer.mozilla.org/es/docs/Web/API/Node/textContent">MDN web docs</a>
+                    para mayor información.
+                </p>
+            </aside>
+        </article>
+        <article id="attributes">
+            <h3>Obtener / Añadir atributos a elementos HTML</h3>
+            <div class="article-body">
+                <h4>getAttribute()</h4>
+                <p>
+                    Recibe como párametro un atributo y retorna el valor del atributo ingresado, si el elemento no
+                    tiene el atributo deseado, retornará nulo.
+                    Ejemplo:
+                </p>
+                <div class="block-code">
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <br>
+                    <code>div.getAttribute("style")<span style="color:grey">// Retorna una cadena de texto con el valor del atributo style en el HTML</code>
+                </div>
+            </div>
+            <div class="article-body">
+                <h4>hasAttribute()</h4>
+                <p>
+                    Recibe como párametro un atributo y retorna verdadero o falso.
+                    Ejemplo:
+                </p>
+                <div class="block-code">
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <br>
+                    <code>div.hasAttibute("style")<span style="color:grey">// true or false</code>
+                </div>
+            </div>
+            <div class="article-body">
+                <h4>setAttribute()</h4>
+                <p>
+                    Recibe como párametro un atributo y su valor; al elemento que se le aplica este método, le añade
+                    los valores enviados.
+                    Ejemplo:
+                </p>
+                <div class="block-code">
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <br>
+                    <code>div.setAttribute("style","display:none")<span style="color:grey">// Ocultara el elemento HTML con el id "main-content"</code>
+                </div>
+            </div>
+            <div class="article-body">
+                <h4>removeAttribute()</h4>
+                <p>
+                    Recibe un atributo y lo eliminara del elemento al que se le aplique.
+                    Ejemplo:
+                </p>
+                <div class="block-code">
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <br>
+                    <code>div.removeAttribute("style")<span style="color:grey">// Elimina el atributo style</code>
+                </div>
+            </div>
+            <div class="article-body">
+                <h4>cassName</h4>
+                <p>
+                    Propiedad de un elemento, obtiene o edita el atributo <em>class</em>.
+                    Ejemplo:
+                </p>
+                <div class="block-code">
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <br>
+                    <code>div.className = "success-class"<span style="color:grey">// Añade la clase "success-class" al elemnto con id "main-content"</code>
+                    <br>
+                    <code>var<span style="color:rgb(102, 165, 207)"> class</span> = div.className <span style="color:grey">// Guarda el valor del atributo class</code>
+                </div>
+            </div>
+            <div class="article-body">
+                <h4>id</h4>
+                <p>
+                    Propiedad de un elemento, obtiene o edita el atributo <em>id</em>.
+                    Ejemplo:
+                </p>
+                <div class="block-code">
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <br>
+                    <code>div.id = "main section"<span style="color:grey">// Agrega el atributo id con el valor "main-section"</code>
+                    <br>
+                    <code>var<span style="color:rgb(102, 165, 207)"> idName</span> = div.id <span style="color:grey">// Guarda el valor del atributo id</code>
                 </div>
             </div>
         </article>
