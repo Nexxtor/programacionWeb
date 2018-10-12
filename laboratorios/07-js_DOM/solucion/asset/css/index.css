@@ -1,0 +1,29 @@
+.container
+{
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+
+#c1 input
+{
+    width: 100px;
+    height: 50px;
+}
+
+.row
+{
+    margin: 2em;
+    display: grid;
+    grid-template-columns: repeat(12,auto);
+    grid-gap: 1em;
+}
+
+#showMsj
+{
+    width: auto;
+    height: auto;
+    background-color: aqua;
+}

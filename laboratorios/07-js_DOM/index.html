@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <title>JS Intermedio.</title>
 </head>
 
@@ -35,10 +36,10 @@
                 <li><a href="#access-elements">Accesores.</a><i class="fas fa-external-link-alt"></i></li>
                 <li><a href="#modifiers">Interación con UI.</a><i class="fas fa-chalkboard-teacher"></i></li>
                 <li><a href="#events">Eventos.</a><i class="fas fa-calendar"></i></li>
+                <li><a href="#exercices">Ejercicios.</a><i class="fas fa-dumbbell"></i></li>
             </ul>
         </nav>
     </div>
-
     <header class="title-content" id="title-content">
         <div id="brand">
             <h1>JavaScript Intermedio</h1>
@@ -243,7 +244,7 @@
                             <code><span style="color:rgb(102, 165, 207)"> itemNav</span>.nextSilbling</code>
                         </div>
                     </div>
-                    <div class="article-body">
+                    <div class="article-body">function(element)
                         <h4>
                             firstChild / lastChild.
                         </h4>
@@ -311,7 +312,8 @@
                         Sintaxis:
                     </p>
                     <div class="block-code">
-                        <code>var<span style="color:rgb(102, 165, 207)"> text</span> = <span style="color:#feca57">document</span>.createTextNode("texto cualquiera")<span style="color:grey">// Crea un nodo de texto</code>
+                        <code>var<span style="color:rgb(102, 165, 207)"> text</span> = <span style="color:#feca57">document</span>.createTextNode("texto
+                            cualquiera")<span style="color:grey">// Crea un nodo de texto</code>
                     </div>
                 </div>
                 <div class="article-body">
@@ -321,9 +323,11 @@
                         Ejemplo:
                     </p>
                     <div class="block-code">
-                        <code>var<span style="color:rgb(102, 165, 207)"> title</span> = <span style="color:#feca57">document</span>.createElement("h2")<span style="color:grey"></code>
+                        <code>var<span style="color:rgb(102, 165, 207)"> title</span> = <span style="color:#feca57">document</span>.createElement("h2")<span
+                                style="color:grey"></code>
                         <br>
-                        <code>var<span style="color:rgb(102, 165, 207)"> text</span> = <span style="color:#feca57">document</span>.createTextNode("texto cualquiera")<span style="color:grey">// Crea un nodo de texto</code>
+                        <code>var<span style="color:rgb(102, 165, 207)"> text</span> = <span style="color:#feca57">document</span>.createTextNode("texto
+                            cualquiera")<span style="color:grey">// Crea un nodo de texto</code>
                         <br>
                         <code>title.appendChild(text)</code>
                     </div>
@@ -346,9 +350,11 @@
                     Ejemplo:
                 </p>
                 <div class="block-code">
-                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span
+                            style="color:grey"></code>
                     <br>
-                    <code>div.getAttribute("style")<span style="color:grey">// Retorna una cadena de texto con el valor del atributo style en el HTML</code>
+                    <code>div.getAttribute("style")<span style="color:grey">// Retorna una cadena de texto con el valor
+                            del atributo style en el HTML</code>
                 </div>
             </div>
             <div class="article-body">
@@ -358,7 +364,8 @@
                     Ejemplo:
                 </p>
                 <div class="block-code">
-                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span
+                            style="color:grey"></code>
                     <br>
                     <code>div.hasAttibute("style")<span style="color:grey">// true or false</code>
                 </div>
@@ -371,9 +378,11 @@
                     Ejemplo:
                 </p>
                 <div class="block-code">
-                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span
+                            style="color:grey"></code>
                     <br>
-                    <code>div.setAttribute("style","display:none")<span style="color:grey">// Ocultara el elemento HTML con el id "main-content"</code>
+                    <code>div.setAttribute("style","display:none")<span style="color:grey">// Ocultara el elemento HTML
+                            con el id "main-content"</code>
                 </div>
             </div>
             <div class="article-body">
@@ -383,7 +392,8 @@
                     Ejemplo:
                 </p>
                 <div class="block-code">
-                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span
+                            style="color:grey"></code>
                     <br>
                     <code>div.removeAttribute("style")<span style="color:grey">// Elimina el atributo style</code>
                 </div>
@@ -395,11 +405,14 @@
                     Ejemplo:
                 </p>
                 <div class="block-code">
-                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span
+                            style="color:grey"></code>
                     <br>
-                    <code>div.className = "success-class"<span style="color:grey">// Añade la clase "success-class" al elemnto con id "main-content"</code>
+                    <code>div.className = "success-class"<span style="color:grey">// Añade la clase "success-class" al
+                            elemnto con id "main-content"</code>
                     <br>
-                    <code>var<span style="color:rgb(102, 165, 207)"> class</span> = div.className <span style="color:grey">// Guarda el valor del atributo class</code>
+                    <code>var<span style="color:rgb(102, 165, 207)"> class</span> = div.className <span style="color:grey">//
+                            Guarda el valor del atributo class</code>
                 </div>
             </div>
             <div class="article-body">
@@ -409,11 +422,14 @@
                     Ejemplo:
                 </p>
                 <div class="block-code">
-                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span style="color:grey"></code>
+                    <code>var<span style="color:rgb(102, 165, 207)"> div</span> = <span style="color:#feca57">document</span>.getElementById("main-content")<span
+                            style="color:grey"></code>
                     <br>
-                    <code>div.id = "main section"<span style="color:grey">// Agrega el atributo id con el valor "main-section"</code>
+                    <code>div.id = "main section"<span style="color:grey">// Agrega el atributo id con el valor
+                            "main-section"</code>
                     <br>
-                    <code>var<span style="color:rgb(102, 165, 207)"> idName</span> = div.id <span style="color:grey">// Guarda el valor del atributo id</code>
+                    <code>var<span style="color:rgb(102, 165, 207)"> idName</span> = div.id <span style="color:grey">//
+                            Guarda el valor del atributo id</code>
                 </div>
             </div>
             <aside>
@@ -447,31 +463,34 @@
                 </p>
                 <span class="indentify-code danger-content"><i>Código HTML</i></span>
                 <div class="block-code">
-                    <code>&lt;<span style="color:rgb(70, 128, 253)">input <span style="color:skyblue">id</span> = <span style="color:lightcoral"> "input-pass"</span> <span style="color:skyblue">type</span> = <span style="color:lightcoral"> "text"</span> <span style="color:skyblue"> onkeyup</span>=<span style="color:lightcoral"> "verifyLength()"</span> </span>/&gt;</code>
+                    <code>&lt;<span style="color:rgb(70, 128, 253)">input <span style="color:skyblue">id</span> = <span
+                                style="color:lightcoral"> "input-pass"</span> <span style="color:skyblue">type</span> =
+                            <span style="color:lightcoral"> "text"</span> <span style="color:skyblue"> onkeyup</span>=<span
+                                style="color:lightcoral"> "verifyLength()"</span> </span>/&gt;</code>
                     <br>
-                    <code>&lt;<span style="color:rgb(70, 128, 253)">label <span style="color:skyblue">id</span> = <span style="color:lightcoral"> "alert-content"</span>/&gt;</code>...
+                    <code>&lt;<span style="color:rgb(70, 128, 253)">label <span style="color:skyblue">id</span> = <span
+                                style="color:lightcoral"> "alert-content"</span>/&gt;</code>...
                 </div>
 
                 <span class="indentify-code info-content"><i>Script</i></span>
                 <div class="block-code">
                     <code>
-                    function verifyLength( ) { <br>
+                        function verifyLength( ) { <br>
                         <div class="one">
                             var <span style="color:skyblue">input</span> = <span style="color:yellow">document</span>.getElementById("input-pass");
                             <br>
                             var <span style="color:skyblue">msg</span> = <span style="color:yellow">document</span>.getElementById("alert-content");
                             <br>
-                            if(input.value.length < 5){
-                            <br>
-                            <div class="two">
-                                msg.textContent = "La contraseña debe ser mayor a 5 caracteres";
-                            </div>
-                            <div class="one">
-                                }
-                            </div>    
+                            if(input.value.length < 5){ <br>
+                                <div class="two">
+                                    msg.textContent = "La contraseña debe ser mayor a 5 caracteres";
+                                </div>
+                                <div class="one">
+                                    }
+                                </div>
 
                         </div>
-                    <br> }
+                        <br> }
                     </code>
                 </div>
             </div>
@@ -491,7 +510,8 @@
                     Sintaxis:
                 </p>
                 <div class="block-code">
-                    <code><i><span style="color:lightcoral">element</span></i>.on<i><span style="color:lightgreen">event</span></i> = <i>functionName</i>;</code>
+                    <code><i><span style="color:lightcoral">element</span></i>.on<i><span style="color:lightgreen">event</span></i>
+                        = <i>functionName</i>;</code>
                 </div>
                 <p>Ejemplo:</p>
                 <div class="article-body">
@@ -499,11 +519,12 @@
                     <div class="block-code">
                         <code>
                             function verifyLength( ) { <br>
-                                <div class="one">
-                                    <span style="color:grey">// Se define y se crea la función</span>
-                                </div>
+                            <div class="one">
+                                <span style="color:grey">// Se define y se crea la función</span>
+                            </div>
                             <br> } <br>
-                            var <span style="color:skyblue">element</span> = <span style="color:yellow">document</span>.getElementById("input-first"); <span style="color:grey">// Se obtiene el elemento</span> <br>
+                            var <span style="color:skyblue">element</span> = <span style="color:yellow">document</span>.getElementById("input-first");
+                            <span style="color:grey">// Se obtiene el elemento</span> <br>
                             element.<span style="color:lightgreen">onkeyup</span> = verifyLength;
                         </code>
                     </div>
@@ -519,7 +540,8 @@
                     Sintaxis:
                 </p>
                 <div class="block-code">
-                    <code><i><span style="color:lightcoral">element</span></i>.addEventListener('event',functionName [,Boolean])</code>
+                    <code><i><span style="color:lightcoral">element</span></i>.addEventListener('event',functionName
+                        [,Boolean])</code>
                 </div>
                 <small>El primer parametro del método <i>addEventListener()</i>, es el evento que se desea escuchar</small>
                 <br>
@@ -535,19 +557,137 @@
                 </p>
                 <div class="block-code">
                     <code>
-                            function verifyLength( ) { <br>
-                                <div class="one">
-                                    <span style="color:grey">// Se define y se crea la función</span>
-                                </div>
-                            <br> } <br>
-                            var <span style="color:skyblue">element</span> = <span style="color:yellow">document</span>.getElementById("input-first"); <span style="color:grey">// Se obtiene el elemento</span> <br>
-                            element.addEventListener('keyup',verifyLength,false)
-                        </code>
+                        function verifyLength( ) { <br>
+                        <div class="one">
+                            <span style="color:grey">// Se define y se crea la función</span>
+                        </div>
+                        <br> } <br>
+                        var <span style="color:skyblue">element</span> = <span style="color:yellow">document</span>.getElementById("input-first");
+                        <span style="color:grey">// Se obtiene el elemento</span> <br>
+                        element.addEventListener('keyup',verifyLength,false)
+                    </code>
                 </div>
                 <small>En el párametro de la función a ejecutar, puede definirse como anonima.</small>
             </div>
 
         </article>
+
+        <article id="exercices">
+            <header>
+                <h2>Ejercicios.</h2>
+            </header>
+            <p>
+                Haciendo uso del <a href="#">archivo</a> HTML dado. Cree un archivo llamado <i> scirpt.js </i> y en
+                realice lo siguiente
+            </p>
+            <h4>Usando "document.getElementById"</h4>
+            <ol>
+                <li>Defina la variable <code>container</code></li>
+                <li>
+                    Obtenga el elemento HTML con <code>id = c1</code> utilizando la propiedad <code>getElementById</code>
+                    y almacenelo en la variable <code>container</code>
+                    <p>
+                        <i class="fas fa-check"></i> ¿Qu&eacute; es lo que contiene la variable <b>container</b>?
+                    </p>
+                </li>
+                <li>
+                    Modifique el valor de propiedad <code>innerText</code> y guarder la cadena de texto <code>"¡Hola
+                        Mundo!"</code>
+                    <p>
+                        <i class="fas fa-check"></i> ¿Qu&eacute visualiza en el navegador?
+                    </p>
+                </li>
+                <li>
+                    Utilizando la variable <code>container</code> y su propiedad <code>style.backgroundColor</code>
+                    modifique el
+                    color del elemnto
+                    por el siguiente <code>#000000</code>.
+                </li>
+                <li>
+                    Modifique el color del texto del elemento por el siguiente: <code>#1cb723</code>
+                </li>
+                <li>
+                    Cambie el ancho y alto del elemento a <strong>200px</strong>, modificando las propiedades <code>style.width</code>
+                    y <code>style.height</code>
+                </li>
+                <li>
+                    Haciendo uso de la propiedad <code>innerHTML</code> agregue lo siguiente: <b>&lt;input type=”text”
+                        placeholder=’escriba su texto’&gt;</b>
+                    <p><i class="fas fa-check"></i> ¿Qu&eacute es lo que se muestra en pantalla?</p>
+                    <p><i class="fas fa-check"></i> ¿Cu&aacute;l es la diferencia entre las propiedades <code>innerHtml</code>
+                        e <code>innerText</code>?</p>
+                </li>
+            </ol>
+            <h4>Usando "document.getElementsByClassName"</h4>
+            <ol>
+                <li>
+                    Obtenga todos los elementos que tengan el atributo <code>class="c2"</code> y alamcenelos en la
+                    variable
+                    <code>containers</code>.
+                    <p>
+                        <p><i class="fas fa-check"></i> ¿Qu&eacute; almacena <b>containers</b>?</p>
+                    </p>
+                </li>
+                <li>
+                    Modifique el color fondo a todos los elementos que contiene <code>container</code> por el siguiente
+                    <code>#009999</code>, haga uso de <code>forEach</code>.
+                    <p>
+                        <i class="fas fa-check"></i> ¿Qu&eacute se mostrar&aacute; en pantalla?
+                    </p>
+                </li>
+                <li>
+                    Haciendo uso de la propiedad <code>innerHTML</code> agregue lo siguiente <code>&lt;input type='text'
+                        placeholder='Escriba su texto'&gt;</code>
+                    <p>
+                        <i class="fas fa-check"></i> ¿Qu&eacute; se mostrar&aacute; en pantalla?
+                    </p>
+                    <p>
+                        <i class="fas fa-check"></i> ¿Cu&aacute;l es la diferencia entre las propiedas <code>innerText</code>
+                        e <code>innerHTML</code>?
+                    </p>
+                </li>
+            </ol>
+            <h4>Eventos</h4>
+            <ol>
+                <li>
+                    Obtenga el elemento que tenga el atributo <code>id="btn-click"</code> y alamcenelo en la variable <code>boton</code>
+                </li>
+                <li>
+                    Haciendo uso de la propiedad <code>onclick</code> agregue el evento <code>click</code> de la siguiente forma:
+                    <br>
+                    <br>
+                    <code>
+                        boton.onclick = function(evt) <br>
+                        { <br>
+                        alert("Hola mundo"); <br>
+                        }<br>
+                    </code>
+                </li>
+                <li>
+                    Obtenga el elemento que tenga el atributo <code>id="btnCopy"</code> y alamcenelo en la variable <code>btnCopy</code>
+                </li>
+                <li>
+                    Haciendo uso de la propiedad <code>onclick</code> agregue lo siguiente
+                    <br>
+                    <br>
+                    <code>
+                        btnCopy.onclick = function(evt) <br>
+                        { <br>
+                        let msj = document.getElementById('textMsj').value;<br>
+                        document.getElementById('showMsj').innerText = msj;<br>
+                        }
+                    </code>
+                    <p>
+                        <i class="fas fa-check"></i>¿Qu&eacute es lo que sucedera después de darle click al
+                        bot&oacuten?
+                    </p>
+                    <p>
+                        <i class="fas fa-check"></i>¿Cu&aacutel es la difernecia entre <code>value</b> e <b>innerText</code>?
+                    </p>
+                </li>
+            </ol>
+        </article>
+
     </section>
 
     <footer>
