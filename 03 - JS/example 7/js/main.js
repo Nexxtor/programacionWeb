@@ -3,8 +3,8 @@ window.onload = () => {
     app.init();
 }
 
-// import
-/// Pasar a modules
+// Import
+// Pasar a modules
 class LoginForm {
     constructor(element, errors) {
         this.element = element;
@@ -23,7 +23,8 @@ class LoginForm {
             validate = this.validate("The Password need ...", strongPassword, this.element.password) && validate;
 
             if (validate)
-                this.element.submit();
+                this.element.subm
+                it();
         });
     }
     validate(message, regex, elm) {

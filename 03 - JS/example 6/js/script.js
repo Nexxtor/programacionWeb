@@ -1,5 +1,5 @@
  window.onload = init;
-
+   
  function init() {
      let todoList = {
          listHTML: document.getElementById("todoList"),
@@ -13,13 +13,13 @@
                     parent.removeChild(element);
                 }
              });*/
-             /*element.addEventListener("click", function(){
+             element.addEventListener("click", function(){
                 console.log(this);
                 let parent = this.parentNode;
                 if(parent){
                     parent.removeChild(this);
                 }
-             });*/
+             });
             // Añadir un boton para marcar de finalizado
             // Elmine de la lista
 
@@ -50,7 +50,7 @@
              return false;
          }
 
-         todoList.add(form.task.value, form.important.checked);
+         todoList.add(task, form.important.checked);
 
      });
  }
