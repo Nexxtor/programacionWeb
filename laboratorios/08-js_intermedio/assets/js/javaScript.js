@@ -1,6 +1,7 @@
 var startPosition = document.getElementById("title-content").offsetTop;
 var front_image = document.getElementById("down-button");
 var home_btn = document.getElementById("HomeBtn");
+var first_field = document.getElementById("first-field");
 
 home_btn.addEventListener("click", scrollToStart);
 front_image.addEventListener("click", scrollToStart);
@@ -33,5 +34,18 @@ menuTrigger.addEventListener('click', () => {
     }
 
 }, false);
+
+
+first_field.oninput = ()=>{
+    let valor = first_field.value;
+    
+    first_field.style.borderRadius=".2em"
+
+    if(valor == "" || valor == null){
+        first_field.style.borderColor ="red";
+    }else{
+        first_field.style.borderColor ="green";
+    }
+}
 
 

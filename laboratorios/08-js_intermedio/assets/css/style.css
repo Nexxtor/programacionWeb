@@ -405,7 +405,7 @@ ol img{
     background: #2f3640;
     color: #fff;
     width: 100%;
-    padding: 4px;
+    padding: 1.3em 2em ;
     box-sizing: content-box;
 }
 code{
@@ -435,3 +435,38 @@ code{
     margin-left:10px;
 }
 
+/* Code Text Color */
+
+.blue{
+    color:#0097e6;
+}
+
+.darkBlue{
+    color: #0984e3;
+}
+
+.sky{
+    color:#0abde3;
+}
+
+.green{
+    color:#00b894;
+}
+
+.gray{
+    color:#b2bec3;
+}
+
+.red{
+    color:#bd5e49;
+}
+
+.yellow{
+    color:#feca57;
+}
+
+/* form examples */
+
+.form-exa{
+    margin: 1.5em 2em;
+}

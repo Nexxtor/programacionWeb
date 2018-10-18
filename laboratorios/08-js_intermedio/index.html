@@ -41,25 +41,102 @@
     <section class="content">
         <header class="title-content" id="title-content">
             <div id="brand">
-                <h1>JavaScript Intermedio</h1>
+                <h1>Aplicaciones varias de JavaScript.</h1>
             </div>
             <div id="content-brand">
-                <h5>JS & CSS</h5>
+                <h5>JS & CSS.</h5>
             </div>
         </header>
-        <article>
 
+        <!-- Parte de Douglas -->
+
+        <article id="forms-area">
+            <h2>Validar formularios.</h2>
+
+            <p>
+                Para esta sección se mostrarán varios métodos de validación para formularios, haciendo uso de las herramientas proporcionadas por JavaScript.
+            </p>
+
+            <section>
+                <h3>
+                    Validación de entradas de texto en cada actualización.
+                </h3>
+
+                <p>
+                    La siguiente etiqueta HTML pertenciente a algún formulario servirá de ejemplo para esta sección.
+                </p>
+                
+                <div class="block-code">
+                    <code>
+                        &lt;<span class="blue">input</span> <span class="sky">id</span>=<span class="red">"first-field"</span> <span class="sky">type</span>=<span class="red">"text"</span> <span class="sky">name</span>=<span class="red">"fstFld"</span> <span class="sky">placeholder</span>=<span class="red">"Texto de relleno"</span>&gt;
+                    </code>
+                </div>
+
+                <p>
+                    En primer lugar se debe de asignar una función controladora al evento "onInput" del objeto que representa a la etiqueta.
+                </p>
+
+                <div class="block-code">
+                    <code>
+                        <span class="blue">var</span> <span class="darkBlue">first-field</span> = <span class="yellow">document</span>.<span class="sky">getElementById</span>(<span class="red">"first-field"</span>); <br><br>
+                        <span class="yellow">first-field</span>.<span class="green">oninput</span> = () <span class="sky">=></span> { <br><br>
+                            &ensp; <span class="gray">//Code Here</span> <br><br> 
+                        }
+                    </code>
+                </div>
+
+                <p>
+                    A partir de esto se pueden controlar y monitorear los cambios que existan en cualquier etiqueta input. En este ejemplo se verificará si el campo se encuentra vacío, y se alterará el estilo a partir de ello.
+                </p>
+
+                <div class="block-code">
+                        <code>
+                            <span class="blue">var</span> <span class="darkBlue">first-field</span> = <span class="yellow">document</span>.<span class="sky">getElementById</span>(<span class="red">"first-field"</span>); <br><br>
+                            <span class="yellow">first-field</span>.<span class="green">oninput</span> = () <span class="sky">=></span> { <br><br>
+                                &ensp;&ensp; <span class="blue">var</span> <span class="darkBlue">valor</span> =  <span class="yellow">first-field</span>.<span class="green">value</span>; <br><br>
+                                &ensp;&ensp; <span class="blue">if</span>(<span class="yellow">valor</span> == <span class="red">""</span> || <span class="yellow">valor</span> == <span class="blue">null</span>){ <br><br>
+                                &ensp;&ensp;&ensp;&ensp; <span class="yellow">first-field</span>.<span class="green">style</span>.<span class="green">borderColor</span> = <span class="red">"red"</span>;<br><br>
+                                &ensp;&ensp; }<span class="blue">else</span>{<br><br>
+                                &ensp;&ensp;&ensp;&ensp; <span class="yellow">first-field</span>.<span class="green">style</span>.<span class="green">borderColor</span> = <span class="red">"green"</span>;<br><br>
+                                &ensp;&ensp; } <br>
+                            }
+                        </code>
+                    </div>
+
+                    <div class="form-exa">
+                        <form action="index.html" method="GET">
+
+                            <fieldset>
+                                <legend>Ejemplo 1</legend>
+                                <label for="first-field">Campo 1: </label>
+                                <input type="text" name="first-field" id="first-field">
+                            </fieldset>
+
+                        </form>
+                    </div>
+
+                    <p>
+                        Este solo es un ejemplo, pero las entradas de texto pueden ser controladas por diversas condiciones, desde una frase o palabra específica hasta el uso de expresiones regulares; además no se limita a modificar solo la parte estética, sino que se pueden llegar a alterar los distitos atributos de las etiquetas y con ellos su funcionamiento. 
+                    </p>
+            </section>
+            <article class="tip">
+
+                <p>
+                    Otros ejemplos de validaciones varias de formularios se pueden encontrar en el siuiente enlace: <a href="https://librosweb.es/libro/javascript/capitulo-7/validacion.html">Validación (Libros Web)</a>
+                </p>
+
+            </article>
         </article>
+        <!-- Parte de Douglas -->
     </section>
 
     <footer>
         <article>
             <p><em>
-                    “Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el
-                    bello y maravilloso mundo del saber.”
+                    “Siempre parece imposible hasta que se hace”
                 </em></p>
             <p id="author">
-                Albert Einstein.
+                Nelson Mandela.
             </p>
         </article>
     </footer>
