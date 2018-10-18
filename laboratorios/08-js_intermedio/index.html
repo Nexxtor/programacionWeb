@@ -47,14 +47,62 @@
                 <h5>JS & CSS.</h5>
             </div>
         </header>
-
         <!-- Parte de Douglas -->
 
         <article id="forms-area">
+            <section id="css-js">
+                <h2>JavaScript & CSS</h2>
+                <p>
+                    JavaScript cuenta con una gran cantidad de métodos y propiedades útiles para manipular el estilo
+                    CSS de una página web. Esto es de gran utilidad ya que permite realizar lo que se conocen como
+                    estilos dinámicos, que consisten en mostrar un estilo diferente dependiendo de lo que se necesita
+                    mostrar.
+                </p>
+                <div class="article-body">
+                    <h3>Element.style</h3>
+                    <p>
+                        Devuelve un objeto que representa el atributo <code>style</code> del elemento.
+                    </p>
+                </div>
+                <div class="article-body">
+                    <h3>Element.setAttribute()</h3>
+                    <p>
+                        Método que recive un nombre de un atributo y el valor que se quiere establecer y se lo
+                        añade al elemento al que se aplica
+                    </p>
+                    <div class="codepen">
+                    </div>
+                </div>
+                <div class="article-body">
+                    <h3>Element.className</h3>
+                    <p>
+                        Obtiene y / o establece el valor del atributo <code>class</code> del elemento especificado
+                    </p>
+                </div>
+                <div class="article-body">
+                    <h3>Element.id</h3>
+                    <p>
+                        Obtiene y / o establece el valor del atributo <code>id</code> del elemento especificado
+                    </p>
+                </div>
+            </section>
+            <section>
+                <p>
+                    Ejemplo:
+                </p>
+                <div class="codepen">
+                    <p data-height="265" data-theme-id="0" data-slug-hash="VGMGBL" data-default-tab="html,result"
+                        data-user="CarlosDubon" data-pen-title="JS && CSS" class="codepen">See the Pen <a href="https://codepen.io/CarlosDubon/pen/VGMGBL/">JS
+                            && CSS</a> by CarlosDubon (<a href="https://codepen.io/CarlosDubon">@CarlosDubon</a>) on <a
+                            href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                </div>
+            </section>
             <h2>Validar formularios.</h2>
 
             <p>
-                Para esta sección se mostrarán varios métodos de validación para formularios, haciendo uso de las herramientas proporcionadas por JavaScript.
+                Para esta sección se mostrarán varios métodos de validación para formularios, haciendo uso de las
+                herramientas proporcionadas por JavaScript.
             </p>
 
             <section>
@@ -65,7 +113,7 @@
                 <p>
                     La siguiente etiqueta HTML pertenciente a algún formulario servirá de ejemplo para esta sección.
                 </p>
-                
+
                 <div class="block-code">
                     <code>
                         &lt;<span class="blue">input</span> <span class="sky">id</span>=<span class="red">"first-field"</span> <span class="sky">type</span>=<span class="red">"text"</span> <span class="sky">name</span>=<span class="red">"fstFld"</span> <span class="sky">placeholder</span>=<span class="red">"Texto de relleno"</span>&gt;
@@ -73,7 +121,8 @@
                 </div>
 
                 <p>
-                    En primer lugar se debe de asignar una función controladora al evento "onInput" del objeto que representa a la etiqueta.
+                    En primer lugar se debe de asignar una función controladora al evento "onInput" del objeto que
+                    representa a la etiqueta.
                 </p>
 
                 <div class="block-code">
@@ -86,11 +135,13 @@
                 </div>
 
                 <p>
-                    A partir de esto se pueden controlar y monitorear los cambios que existan en cualquier etiqueta input. En este ejemplo se verificará si el campo se encuentra vacío, y se alterará el estilo a partir de ello.
+                    A partir de esto se pueden controlar y monitorear los cambios que existan en cualquier etiqueta
+                    input. En este ejemplo se verificará si el campo se encuentra vacío, y se alterará el estilo a
+                    partir de ello.
                 </p>
 
                 <div class="block-code">
-                        <code>
+                    <code>
                             <span class="blue">var</span> <span class="darkBlue">first-field</span> = <span class="yellow">document</span>.<span class="sky">getElementById</span>(<span class="red">"first-field"</span>); <br><br>
                             <span class="yellow">first-field</span>.<span class="green">oninput</span> = () <span class="sky">=></span> { <br><br>
                                 &ensp;&ensp; <span class="blue">var</span> <span class="darkBlue">valor</span> =  <span class="yellow">first-field</span>.<span class="green">value</span>; <br><br>
@@ -101,33 +152,37 @@
                                 &ensp;&ensp; } <br>
                             }
                         </code>
-                    </div>
+                </div>
 
-                    <div class="form-exa">
-                        <form action="index.html" method="GET">
+                <div class="form-exa">
+                    <form action="index.html" method="GET">
 
-                            <fieldset>
-                                <legend>Ejemplo 1</legend>
-                                <label for="first-field">Campo 1: </label>
-                                <input type="text" name="first-field" id="first-field">
-                            </fieldset>
+                        <fieldset>
+                            <legend>Ejemplo 1</legend>
+                            <label for="first-field">Campo 1: </label>
+                            <input type="text" name="first-field" id="first-field">
+                        </fieldset>
 
-                        </form>
-                    </div>
+                    </form>
+                </div>
 
-                    <p>
-                        Este solo es un ejemplo, pero las entradas de texto pueden ser controladas por diversas condiciones, desde una frase o palabra específica hasta el uso de expresiones regulares; además no se limita a modificar solo la parte estética, sino que se pueden llegar a alterar los distitos atributos de las etiquetas y con ellos su funcionamiento. 
-                    </p>
+                <p>
+                    Este solo es un ejemplo, pero las entradas de texto pueden ser controladas por diversas
+                    condiciones, desde una frase o palabra específica hasta el uso de expresiones regulares; además no
+                    se limita a modificar solo la parte estética, sino que se pueden llegar a alterar los distitos
+                    atributos de las etiquetas y con ellos su funcionamiento.
+                </p>
             </section>
             <article class="tip">
 
                 <p>
-                    Otros ejemplos de validaciones varias de formularios se pueden encontrar en el siuiente enlace: <a href="https://librosweb.es/libro/javascript/capitulo-7/validacion.html">Validación (Libros Web)</a>
+                    Otros ejemplos de validaciones varias de formularios se pueden encontrar en el siuiente enlace: <a
+                        href="https://librosweb.es/libro/javascript/capitulo-7/validacion.html">Validación (Libros Web)</a>
                 </p>
 
             </article>
-        </article>
-        <!-- Parte de Douglas -->
+
+            <!-- Parte de Douglas -->
     </section>
 
     <footer>
