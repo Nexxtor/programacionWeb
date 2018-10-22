@@ -1,14 +1,17 @@
 const http = require('http'),
     fs = require('fs'),
     url = require('url'),
-    mimeTypes = {
-        "html": "text/html",
-        "jpeg": "image/jpeg",
-        "jpg": "image/jpeg",
-        "png": "image/png",
-        "js": "text/javascript",
-        "css": "text/css"
-    };;
+    {
+        parse
+    } = require('querystring');
+mimeTypes = {
+    "html": "text/html",
+    "jpeg": "image/jpeg",
+    "jpg": "image/jpeg",
+    "png": "image/png",
+    "js": "text/javascript",
+    "css": "text/css"
+};;
 
 // Create a server
 http.createServer(function (req, res) {
@@ -25,9 +28,15 @@ http.createServer(function (req, res) {
 
     if (req.method === 'POST') {
         // Is need validate a URL
-        collectRequestData(req, result => {
+        collectRequestData(req, (err, result) => {
+            if (err) {
+                res.writeHead(400, {
+                    'content-type': 'text/html'
+                });
+                return res.end('Bad Request');
+            }
             console.log(result);
-            res.end(`Hi! ${result.username}`);
+            return res.end(`Hi! ${result.username}`);
         });
     }
 
@@ -42,7 +51,7 @@ http.createServer(function (req, res) {
             });
             return res.end("404 Not Found")
         }
-        //Page found	  
+        // Page found	  
         // HTTP Status: 200 : OK
         // Content Type: text/plain
         res.writeHead(200, {
@@ -80,9 +89,11 @@ function collectRequestData(request, callback) {
         });
         // Whe the data is complete recived
         request.on('end', () => {
-            callback(parse(body));
+            callback(null, parse(body));
         });
     } else {
-        callback(null);
+        callback({
+            msg: `The content-type don't is equals to ${FORM_URLENCODED}`
+        });
     }
 }
