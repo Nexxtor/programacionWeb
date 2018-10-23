@@ -3,15 +3,15 @@ const http = require('http'),
     url = require('url'),
     {
         parse
-    } = require('querystring');
-mimeTypes = {
-    "html": "text/html",
-    "jpeg": "image/jpeg",
-    "jpg": "image/jpeg",
-    "png": "image/png",
-    "js": "text/javascript",
-    "css": "text/css"
-};;
+    } = require('querystring'),
+    mimeTypes = {
+        "html": "text/html",
+        "jpeg": "image/jpeg",
+        "jpg": "image/jpeg",
+        "png": "image/png",
+        "js": "text/javascript",
+        "css": "text/css"
+    };;
 
 // Create a server
 http.createServer(function (req, res) {

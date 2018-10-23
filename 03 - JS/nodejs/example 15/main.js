@@ -8,7 +8,7 @@ const http = require('http'),
         "png": "image/png",
         "js": "text/javascript",
         "css": "text/css"
-    };;
+    };
 
 // Create a server
 http.createServer(function (req, res) {
