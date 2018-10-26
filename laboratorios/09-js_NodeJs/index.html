@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <title>Node Js.</title>
+</head>
+
+<body id="id_body">
+
+    <div class="float-menu">
+        <div class="menu-content">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="menu-side">
+            <div></div>
+            <ul>
+                <li><a href="#what-is-node">Node.js</a><i class="fab fa-node-js"></i></li>
+            <li><a href="#what-is-http">HTTP.</a><i class="fas fa-external-link-alt"></i></li>
+                <li><a href="#peticiones-http">Peticiones HTTP</a><i class="fas fa-exchange-alt"></i></li>
+                <li><a href="#excersises">Ejercicios.</a><i class="fas fa-dumbbell"></i></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header id="front-img">
+        <div class="main-front">
+            <h1>Laboratorio 09.</h1>
+            <h3>Viernes, 25 de Octubre de 2018.</h3>
+            <i class="fas fa-chevron-down" id="down-button"></i>
+        </div>
+    </header>
+    <article class="content">
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Introducción Node.js</h1>
+            </div>
+            <div id="content-brand">
+                <h5>GET | POST </h5>
+            </div>
+        </header>
+        <section id="what-is-node">
+            <h2>¿Que es Node.js?</h2>
+            <p>
+                Node.js es una plataforma basada en el tiempo de ejecución de JavaScript de Chrome
+                para crear fácilmente aplicaciones de red rápidas y escalables. Node.js utiliza un
+                modelo de E / S sin bloqueo controlado por eventos que lo hace liviano y eficiente,
+                perfecto para aplicaciones de tiempo real con uso intensivo de datos que se ejecutan
+                en dispositivos distribuidos.
+            </p>
+            <p>
+                Node.js también proporciona una extensa biblioteca de varios módulos de JavaScript
+                que simplifica el desarrollo de aplicaciones web utilizando Node.js en gran medida.
+            </p>
+            <div class="article-body">
+                <h3>
+                    Características:
+                </h3>
+                <div class="grid-div two-colums-two-rows">
+                    <div class="article-body">
+                        <h4>Asíncrono y controlado por eventos:</h4>
+                        <p>
+                            Todas las API de la biblioteca Node.js
+                            son asíncronas, es decir, no bloqueantes. Básicamente, significa que un servidor
+                            basado en Node.js nunca espera que una API devuelva datos. El servidor pasa
+                            a la siguiente API después de llamarlo y un mecanismo de notificación de
+                            Eventos de Node.js ayuda al servidor a obtener una respuesta de la llamada a la
+                            API anterior.
+                        </p>
+                    </div>
+                    <div class="article-body">
+                        <h4>Usa un solo hilo, pero con escalabilidad alta:</h4>
+                        <p>
+                            Node.js utiliza un solo modelo
+                            de hilo con bucle de eventos. El mecanismo de eventos ayuda al servidor a
+                            responder de manera no bloqueante y hace que el servidor sea altamente
+                            escalable en comparación con los servidores tradicionales que crean
+                            subprocesos limitados para manejar las solicitudes. Node.js utiliza un programa
+                            de un solo subproceso y el mismo programa puede brindar servicio a un número
+                            mucho mayor de solicitudes que los servidores tradicionales como el servidor
+                            HTTP Apache.
+                        </p>
+                    </div>
+                    <div class="article-body">
+                        <h4>Muy rápido:</h4>
+                        <p>
+                            Al estar construido en el motor de JavaScript V8 de Google
+                            Chrome, la biblioteca Node.js es muy rápida en la ejecución de código.
+                        </p>
+                    </div>
+                    <div class="article-body">
+                        <h4>Sin almacenamiento en búfer:</h4>
+                        <p>
+                            Las aplicaciones de Node.js nunca almacenan
+                            en búfer ningún dato. Estas aplicaciones simplemente emiten los datos en
+                            trozos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="what-is-http">
+            <h2>
+                ¿Qué es HTTP?
+            </h2>
+            <p>
+                HTTP, de sus siglas en inglés: <em>"Hypertext Transfer Protocol"</em>, es el nombre de un protocolo el
+                cual nos permite realizar una petición de datos y recursos, como pueden ser documentos
+                HTML. Es la base de cualquier intercambio de datos en la Web, y un protocolo de estructura
+                cliente-servidor, dando a entender que una petición de datos es iniciada, por el elemento que
+                recibirá los datos (el cliente), normalmente un navegador Web.
+            </p>
+            <p>
+                Así una página web completa, resulta de la unión de distintos sub-documentos recibidos, como
+                por ejemplo: un documento que especifique el estilo de maquetación de la página web (CSS),
+                el texto, las imágenes, vídeos, scripts, entre otros.
+            </p>
+            <figure>
+                <img src="assets/img/HTTP.PNG" alt="Funcionamiento HTTP">
+            </figure>
+        </section>
+        <section id="peticiones-http">
+            <h2>Peticiones HTTP</h2>
+            <p>
+                Peticiones HTTP:
+                HTTP define un conjunto de métodos de petición para indicar la acción que se desea
+                realizar para un recurso determinado. Aunque estos también pueden ser sustantivos,
+                estos métodos de solicitud a veces son llamados HTTP verbs. Cada uno de ellos
+                implementan una semántica diferente, pero algunas características similares son
+                compartidas por un grupo de ellos: ej. <strong>
+                    un request method puede ser safe, idempotent, o
+                    cacheable.
+                </strong>
+            </p>
+            <div class="article-body">
+                <h3>Peticiones Básicas</h3>
+                <div class="grid-div two-colums-two-rows">
+                    <div class="article-body">
+                        <h4>GET</h4>
+                        <p>
+                            El método GET solicita una representación de un recurso específico. Las
+                            peticiones que usan el método GET sólo deben recuperar datos.
+                        </p>
+                    </div>
+                    <div class="article-body">
+                        <h4>POST</h4>
+                        <p>
+                            El método POST se utiliza para enviar una entidad a un recurso en específico,
+                            causando a menudo un cambio en el estado o efectos secundarios en el
+                            servidor.
+                        </p>
+                    </div>
+                    <div class="article-body">
+                        <h4>PATCH</h4>
+                        <p>
+                            El método PATCH es utilizado para aplicar modificaciones parciales a un
+                            recurso.
+                        </p>
+                    </div>
+                    <div class="article-body">
+                        <h4>DELETE</h4>
+                        <p>
+                            El método DELETE borra un recurso en específico.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="article-body">
+                <h3>Codigos de estado de HTTP:</h3>
+                <p>
+                    Los códigos de estado de respuesta HTTP indican si se ha completado
+                    satisfactoriamente una solicitud HTTP específica. Las respuestas se agrupan en cinco
+                    clases: respuestas informativas, respuestas satisfactorias, redirecciones, errores de los
+                    clientes y errores de los servidores.
+                </p>
+                <ul>
+                    <li>1XX (Respuestas Informativas)</li>
+                    <li>2XX (Respuestas Satisfactorias)</li>
+                    <li>3XX (Redirecciones)</li>
+                    <li>4XX (Errores de Cliente)</li>
+                    <li>5XX (Errores de Servidor)</li>
+                </ul>
+                <aside>
+                    Mas informacion en: <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">https://developer.mozilla.org/es/docs/Web/HTTP/Status</a>
+                </aside>
+            </div>
+            <div class="grid-div two-colums-one-rows">
+                <div class="article-body">
+                    <h4>GET</h4>
+                    <p>
+                        El método de petición más común cuando se trabaja con el protocolo HTTP es el método GET,
+                        que como su nombre indica, obtiene información de parte del servidor. Algunas características
+                        de este método son las siguientes:
+                    </p>
+                    <ul>
+                        <li>Pueden ser almacenadas en caché.</li>
+                        <li>Permanecen en el historial del navegador.</li>
+                        <li>Nunca deben usarse con información sensible.</li>
+                        <li>Tiene restricción de tamaño.</li>
+                        <li>Solo es utilizado para obtener información, no para modificarla.</li>
+                    </ul>
+                </div>
+                <div class="article-body">
+                    <h4>POST</h4>
+                    <p>
+                        Cuando se desea enviar información para crear recursos en servidores, el método HTTP más
+                        común es el método POST. Algunas de sus características son:
+                    </p>
+                    <ul>
+                        <li>Nunca se guardan en caché.</li>
+                        <li>No permanecen en el historial del navegador.</li>
+                        <li>No tienen restricción en el tamaño.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <footer>
+        <article>
+            <p><em>
+                    “Siempre parece imposible hasta que se hace”
+                </em></p>
+            <p id="author">
+                Nelson Mandela.
+            </p>
+        </article>
+    </footer>
+
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/javaScript.js"></script>
+<script src="assets/js/highlight.pack.js"></script>
+
+</html>
