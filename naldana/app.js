@@ -1,3 +1,4 @@
+'use strict';
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -46,7 +47,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Manejando sessiones
 app.use(session({
   secret: 'keyboard cat dog pig you', // Change for security
-  store:new MongoStore({ mongooseConnection: mongoose.connection }),
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection
+  }),
   name: 'sessionid',
   resave: false,
   saveUninitialized: false
@@ -65,7 +68,7 @@ app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  next(createError(404,'The resourse not found'));
+  next(createError(404, 'The resourse not found'));
 });
 
 // error handler
