@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  div(class='alerts')
+    while message = flash.shift()
+      a.alert(class='alert-' + message.type) #{message.message}
+  form(action="/login" method="post")
+    label(for="username") Username
+    input#username(type="text", name="username")
+    label(for="password") Password
+    input#password(type="password", name="password")
+    input(type="submit", value="Login")
