@@ -3,11 +3,10 @@ var mongoose = require("mongoose");
 var passport = require("passport");
 var User = require("../models/User");
 
-var userController = {};
+var authController = {};
 
 // Restrict access to root page
-userController.home = function (req, res) {
-  console.log(req.user);
+authController.home = function (req, res) {
   res.render('index', {
     user: req.user,
     title: 'Express'
@@ -15,12 +14,12 @@ userController.home = function (req, res) {
 };
 
 // Go to registration page
-userController.register = function (req, res) {
+authController.register = function (req, res) {
   res.render('auth/register');
 };
 
 // Post registration
-userController.doRegister = function (req, res) {
+authController.doRegister = function (req, res) {
   User.register(new User({
     username: req.body.username,
     name: req.body.name
@@ -38,12 +37,12 @@ userController.doRegister = function (req, res) {
 };
 
 // Go to login page
-userController.login = function (req, res) {
+authController.login = function (req, res) {
   res.render('auth/login');
 };
 
 // Post login
-userController.doLogin = function (req, res) {
+authController.doLogin = function (req, res) {
   passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: true
@@ -53,9 +52,10 @@ userController.doLogin = function (req, res) {
 };
 
 // logout
-userController.logout = function (req, res) {
+authController.logout = function (req, res) {
   req.logout();
+  res.clearCookie('sessionid', {path: '/'});
   res.redirect('/');
 };
 
-module.exports = userController;
+module.exports = authController;
