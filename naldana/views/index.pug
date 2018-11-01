@@ -1,6 +1,9 @@
 extends layout
-include nav
 
-block content
-  h1= title
-  p Welcome to #{title}
+include basic/sidebar/sidebar
+
+block main 
+  include basic/header
+  include basic/banner
+  include basic/feature
+  include basic/posts
