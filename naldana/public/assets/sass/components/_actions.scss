@@ -16,6 +16,10 @@
 		li {
 			padding: 0 0 0 (_size(element-margin) * 0.5);
 			vertical-align: middle;
+			
+			&.baseline {
+				padding: 1em; 
+			}
 		}
 
 		&.special {
