@@ -37,7 +37,7 @@ authController.doRegister = function (req, res) {
 };
 
 // Go to login page
-userController.login = function (req, res) {
+authController.login = function (req, res) {
   res.render('auth/login', {title: 'Sing in'});
 };
 
