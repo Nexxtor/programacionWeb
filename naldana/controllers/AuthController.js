@@ -26,7 +26,7 @@ authController.doRegister = function (req, res) {
   }), req.body.password, function (err, user) {
     if (err) {
       return res.render('auth/register', {
-        user: user
+        user: req.body.username
       });
     }
 
@@ -37,8 +37,8 @@ authController.doRegister = function (req, res) {
 };
 
 // Go to login page
-authController.login = function (req, res) {
-  res.render('auth/login');
+userController.login = function (req, res) {
+  res.render('auth/login', {title: 'Sing in'});
 };
 
 // Post login

@@ -1,6 +1,6 @@
 extends ../layout
 
-block content
+block main
   form(action="/register" method="post")
     label(for="username") Username
     input#username(type="text", name="username" value=user?user.username:'')

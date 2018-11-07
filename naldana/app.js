@@ -11,11 +11,16 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var localStrategy = require('passport-local').Strategy;
 var user = require('./models/user');
+var menu = require('./models/Menu');
 var flash = require('flash');
+
+// Personal
+var menuMiddleware =  require('./helper/MenuMiddleware');
 
 // Import routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var dashboardRouter = require('./routes/dashboard');
 
 // Conecct to database
 mongoose.Promise = global.Promise;
@@ -63,8 +68,11 @@ passport.use(user.createStrategy());
 passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 
+
+app.use(menuMiddleware);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/dashboard', dashboardRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
