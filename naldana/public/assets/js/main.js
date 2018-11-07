@@ -258,5 +258,40 @@
 				});
 
 			});
+			
+	// Admin Events
+		
+		// Load Content 
+
+		$loadMenuTable = function(){
+			fetch('http://localhost:3000/dashboard/menu/' + this.value)
+			.then( res => res.json())
+			.then( data => {
+				var options = data.options;
+				var tbody = "";
+				options.forEach(element => {
+					if(element.options.length == 0){
+						tbody += 
+						`<tr>
+							<td> ${element.name} </td>
+							<td> ${element.href} </td>
+							<td colspan=2> no submenu </td>
+						</tr>`;
+					}
+				});
+				$('#menu-content-body').html(tbody);
+			})
+			.catch( (err) => {
+				console.error(err);
+			});
+		};
+
+		$('#menuConfig').change(function(){
+			if(this.value == ''){
+				$('#menu-content-body').html('');
+			}else{
+				$loadMenuTable.call({value: this.value});
+			}
+		});
 
 })(jQuery);

@@ -2,33 +2,14 @@ nav#menu
     header.major
         h2 Menu
     ul
-        li
-            a(href="#") Lorem, ipsum.
-        li
-            a(href="#") Voluptatibus, magni!
-        li
-            span.opener Submenu
-            ul
+        each val in main
+            if (val.options.length == 0)
                 li
-                    a(href="#") opiton1
+                    a(href=val.href)=val.name
+            if (val.options.length > 0 )
                 li
-                    a(href="#") opiton2
-                li
-                    a(href="#") opiton3
-                li
-                    a(href="#") opiton4
-        li
-            a(href="#") At, facere!
-        li
-            a(href="#") Aut, consequatur?
-        li
-            span.opener Submenu
-            ul
-                li
-                    a(href="#") opiton1
-                li
-                    a(href="#") opiton2
-                li
-                    a(href="#") opiton3
-                li
-                    a(href="#") opiton4
+                    span.opener= val.name
+                    ul
+                        each subVal in val.options
+                            li
+                                a(href=subVal.href)= subVal.name
