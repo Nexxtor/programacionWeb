@@ -8,14 +8,14 @@
 
     <!-- Stylesheets references -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/highlight_styles/androidstudio.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/atelier-cave-dark.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <link rel="icon" href="../../assets/images/icons/web.png">
 
-    <title>Titulo</title>
+    <title>Git: Guía básica</title>
 </head>
 
 <body id="id_body">
@@ -28,7 +28,7 @@
     </p>
 
     <!-- Front image -->
-    <header id="front-img" style="background-image: url('../../assets/images/main/template.png');">
+    <header id="front-img" style="background-image: url('../../assets/images/main/git.jpeg');">
         <div class="blackManta">
             <!-- Float menu implementation -->
             <div class="float-menu">
@@ -43,45 +43,8 @@
                 </nav>
             </div>
             <div class="main-front">
-                <h1>Laboratorio XX.</h1>
-                <h3>Lunes, 11 de Febrero de 2019.</h3>
-                <div class="grid-div two-columns frontList">
-                    <!-- Two-columns item -->
-                    <div class="article-body">
-                        <h4>Temario:</h4>
-                        <ul>
-                            <li>
-                                Tema 1
-                            </li>
-                            <li>
-                                Tema 2
-                            </li>
-                            <li>
-                                Tema 3
-                            </li>
-                            <li>
-                                Tema 4
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="article-body">
-                        <h4>Objetivos:</h4>
-                        <ul>
-                            <li>
-                                Objetivo 1
-                            </li>
-                            <li>
-                                Objetivo 2
-                            </li>
-                            <li>
-                                Objetivo 3
-                            </li>
-                            <li>
-                                Objetivo 4
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <h1>VCS: Git</h1>
+                <h3>Guía de apoyo</h3>
                 <i class="fas fa-chevron-down" id="down-button"></i>
             </div>
         </div>
@@ -92,14 +55,153 @@
         <!-- Main title -->
         <header class="title-content" id="title-content">
             <div id="brand">
-                <h1>Titulo principal.</h1>
+                <h1>Git.</h1>
             </div>
             <div id="content-brand">
-                <h5>Subtitulo.</h5>
+                <h5>Sistema de control de versiones.</h5>
             </div>
         </header>
 
+        <section id="intro">
+            <h3>Introducción</h3>
 
+            <p>
+                Git es un sistema de control de versiones que facilita la gestión de los diversos cambios que se realizan sobre los elementos de algún producto o una configuración del mismo. Una versión, revisión o edición de un producto, es el estado en el que se encuentra el mismo en un momento dado de su desarrollo o modificación. 
+            </p>
+
+            <p>
+                La presente guía está destinada a facilitar el uso de la herramienta de control de versiones Git, en conjunto con el servicio en línea de <a href="https://github.com/">Github.com</a>; sin embargo se considera válido el contenido de la misma para otros servicios en la web del mismo estilo.
+            </p>
+
+            <div class="tip">
+
+                <h3>Libro de referencia de Git.</h3>
+
+                <p>
+                    Para dominar lo temas mas avanzados que involucran a git, como el uso de ramas, se recomienda la lectura del libro de referencia, alojado en la mainPaga de git.
+                </p>
+
+                <p style='padding-left:1.5em;'>
+                    Referencia a Libro de referencia de Git: <a href='https://git-scm.com/docs'>Reference Manual.</a>
+                </p>
+
+            </div>
+
+            <h4>
+                Contextualizacón
+            </h4>
+
+            <p>
+                En primer lugar se debe crear un repositorio en cualquier servicio de control de versiones en línea. En este caso se hará uso del siguiente repositorio ficticio: <em>https://github.com/DouglasHdezT/repositorio.git</em>. 
+            </p>
+
+            <p>
+                Además se deberá establecer un espacio de trabajo local (directorio), con el fin de el proyecto en si. En este caso será el directorio <em>/home/douglashdezt/PW-2018</em>.
+            </p>
+
+        </section>
+
+        <section id="init_remote">
+            <h3>Inicialización local y conexión remota</h3>
+
+            <h4>
+                Inicialización local
+            </h4>
+
+            <p>
+                Este paso marca la creación y configuración de un repositorio de manera local; en este punto ya existen los recursos necesario para llevar el control de un proyecto, con el único detalle que no se encuentra en línea. 
+            </p>
+
+            <p>
+                Cabe resaltar que la dirección de la consola debe de estar en el directorio en el que se encuentre el proyecto;para el ejemplo, <em>/home/douglashdezt/PW-2018</em>. El comando a ingresar es el siguiente:
+            </p>
+            
+            <pre>
+                <code class="shell">
+    git init
+                </code>
+            </pre>
+
+            <p>
+                Este genera los ficheros de configuración necesarios para que el sistema de control de versiones reconosca el proyecto, y pueda llavar la referencia de cada uno de los archivos dentro del mismo.
+            </p>
+
+            <h4>
+                Conexión remota
+            </h4>
+
+            <p>
+                Este paso hace referencia a conectar el repositorio creado con anterioridad con un servicio VCS en línea. Para ello se hará uso del repositorio ficticio mencionado con anterioridad. 
+            </p>
+
+            <p>
+                Se debe verificar que la dirección de la consola se encuentre en la raiz del proyecto (donde se realizó git init), ya que caso contrario fallará. La sintaxis del comando para realizar la conexión es la siguiente:
+            </p>
+
+            <pre>
+                <code class="shell">
+    git remote add &lt;remote_name&gt; &lt;repository_url&gt;
+                </code>
+            </pre>
+
+            <p>
+                Para el caso del repositorio ficticio:
+            </p>
+
+            <pre>
+                <code class="shell">
+    git remote add origin https://github.com/DouglasHdezT/repositorio.git
+                </code>
+            </pre>
+        </section>
+
+        <section id="user_config">
+            <h3>
+                Configuración de variables de usuario.
+            </h3>
+
+            <p>
+                Para poder llevar el control de versiones de cualquier proyecto con Git, se requiere especificar un usuario y un correo electrónico. Para ello se modifican los valores de las variables <em>user.name</em> y <em>user.email</em> dentro de la configuración del repositorio local; se debe hacer uso tanto del usuario como del correo configurados en la cuenta de GitHub.
+            </p>
+
+            <p>
+                La sintaxis de los comandos, que sirven para realizar los cambios en la configuración de variables de usuario, es la siguiente:
+            </p>
+
+            <pre>
+                <code class="shell">
+    git config user.name "&lt;username&gt;"
+
+    git config user.email "&lt;email@service.ext&gt;"
+                </code>
+            </pre>
+
+            <div class="tip">
+                <h3>
+                    Variables Globales
+                </h3>
+
+                <p>
+                    EL paso anterior debe de repetirse por cada repositorio local que se cree dentro de una computadora. En el caso que la computadora en la que se trabaje posea un solo dueño o solo una persona la utilice, puede agregarse el modificador <em>--global</em> a los comandos anteriores. 
+                </p>
+
+                <p>
+                    Este modificará las variables de usuario dentro de la configuración global de Git, evitando la repetición de dicha sentencia en cada proyecto del cual se lleve un control de versiones. 
+                </p>
+
+                <pre>
+                        <code class="shell">
+            git config --global user.name "&lt;username&gt;"
+        
+            git config --global user.email "&lt;email@service.ext&gt;"
+                        </code>
+                    </pre>
+            </div>
+        </section>
+        
+        <section id="commit">
+            
+        </section>
     </article>
 
     <!-- Footer Implementation -->
@@ -107,7 +209,7 @@
         <article>
             <p><em>
                     “Siempre parece imposible hasta que se hace”
-                </em></p>
+            </em></p>
 
             <p id="author">
                 Nelson Mandela.
@@ -129,5 +231,11 @@
     sideMenuControl();
     homeBtnControl();
 </script>
+
+<style>
+        pre>code{
+            font-size: 1.2em;
+        }
+    </style>
 
 </html>

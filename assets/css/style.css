@@ -5,14 +5,14 @@
 
     --code-color : #2c2c54;
     --psudo-black: rgba(0,0,0,0.7);
-    --down-btn: #6ab04c;
-    --nav-color-1: #689F38;
-    --nav-color-2: #388E3C;
-    --nav-color-3: #00796B;
+    --down-btn: #3F51B5;
+    --nav-color-1: #512DA8;
+    --nav-color-2: #1976D2;
+    --nav-color-3: #0288D1;
     --code-back:#00b894;
     --code-back-tr:#00b8931c;
     --tip-color: #D32F2F;
-    --sec-color: #33691E;
+    --sec-color: #3F51B5;
 }
 
 body{
@@ -147,7 +147,6 @@ header#front-img{
 
     width: 100%;
     height: 100vh;
-    padding: 0 7.5em;
 
     color: white;
     text-align: center;
@@ -193,6 +192,12 @@ header#front-img{
     color: white;
     font-weight: bold;
     font-size: 0.9em;
+}
+
+@media screen and (max-width: 600px){
+    .subject{
+        display: none;
+    }
 }
 
 /* Nav en la esquina */
@@ -297,7 +302,7 @@ header#front-img{
 /* Estilos particulares de maquetacion */
 
 .tip{
-    margin: 0 2em;
+    margin: 2em 2em 0 2em;
     padding: 0.5em 2em;
     border: 0.2em solid var(--tip-color);
 }
@@ -345,7 +350,7 @@ footer{
     align-items: center;
     justify-content: center;
     
-    padding: 0.5em 10em;
+    padding: 0.5em 5em;
     background:var(--sec-color);
     color: #dcdde1;
 }
