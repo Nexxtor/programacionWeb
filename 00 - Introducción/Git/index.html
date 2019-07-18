@@ -44,7 +44,7 @@
             </div>
             <div class="main-front">
                 <h1>VCS: Git</h1>
-                <h3>Guía de apoyo</h3>
+                <h3>Guía rápida</h3>
                 <i class="fas fa-chevron-down" id="down-button"></i>
             </div>
         </div>
@@ -131,11 +131,11 @@
             </h4>
 
             <p>
-                Este paso hace referencia a conectar el repositorio creado con anterioridad con un servicio VCS en línea. Para ello se hará uso del repositorio ficticio mencionado con anterioridad. 
+                Este paso consiste en indicar a Git la conexión del repositorio local con uno alojado en un sevicio en línea. Para este caso se hará uso del repositorio ficticio mencionado con anterioridad, el cual actuará como remoto del repositorio local. 
             </p>
 
             <p>
-                Se debe verificar que la dirección de la consola se encuentre en la raiz del proyecto (donde se realizó git init), ya que caso contrario fallará. La sintaxis del comando para realizar la conexión es la siguiente:
+                Antes de ingresar el comando se debe verificar que la dirección de la consola se encuentre en la raiz del proyecto (donde se realizó git init), ya que caso contrario fallará. La sintaxis del comando para realizar la conexión es la siguiente:
             </p>
 
             <pre>
@@ -161,11 +161,11 @@
             </h3>
 
             <p>
-                Para poder llevar el control de versiones de cualquier proyecto con Git, se requiere especificar un usuario y un correo electrónico. Para ello se modifican los valores de las variables <em>user.name</em> y <em>user.email</em> dentro de la configuración del repositorio local; se debe hacer uso tanto del usuario como del correo configurados en la cuenta de GitHub.
+                Para llevar el control de versiones de cualquier proyecto con Git, se requiere especificar el usuario y correo electrónico que realiza los cambios. Por ello se debe modificar los valores de las variables <em>user.name</em> y <em>user.email</em> dentro de la configuración del repositorio local. Se recomienda hacer uso tanto del usuario como del correo configurados en la cuenta de GitHub.
             </p>
 
             <p>
-                La sintaxis de los comandos, que sirven para realizar los cambios en la configuración de variables de usuario, es la siguiente:
+                La sintaxis de los comandos, que sirven para realizar dichos cambios, es la siguiente:
             </p>
 
             <pre>
@@ -182,37 +182,134 @@
                 </h3>
 
                 <p>
-                    EL paso anterior debe de repetirse por cada repositorio local que se cree dentro de una computadora. En el caso que la computadora en la que se trabaje posea un solo dueño o solo una persona la utilice, puede agregarse el modificador <em>--global</em> a los comandos anteriores. 
+                    El paso anterior debe de repetirse por cada repositorio local que se inicialice dentro de una computadora. En caso que la computadora en la que se trabaje posea un solo dueño o solo una persona la utilice, puede agregarse el modificador <em>--global</em> a los comandos anteriores. 
                 </p>
 
                 <p>
-                    Este modificará las variables de usuario dentro de la configuración global de Git, evitando la repetición de dicha sentencia en cada proyecto del cual se lleve un control de versiones. 
+                    Este modificará las variables de usuario dentro de la configuración global de Git, por lo que se evita la repetición de dichos comandos en cada proyecto. 
                 </p>
 
                 <pre>
-                        <code class="shell">
-            git config --global user.name "&lt;username&gt;"
-        
-            git config --global user.email "&lt;email@service.ext&gt;"
-                        </code>
-                    </pre>
+                    <code class="shell">
+    git config --global user.name "&lt;username&gt;"
+
+    git config --global user.email "&lt;email@service.ext&gt;"
+                    </code>
+                </pre>
             </div>
         </section>
         
         <section id="commit">
+            <h3>
+                Resgistro de versión.
+            </h3>
+
+            <p>
+                Como se mencionó con anterioridad, registrar una versión consiste guardar el estado de un producto o proyecto en cierto momento de su desarrollo. Dentro de Git existen una paleta de comandos que facilitan esta tarea.
+            </p>
+
+            <h4>
+                Preparar commit.
+            </h4>
+
+            <p>
+                Preparar el commit consiste en indicarle a Git que archivos o directorios comprenden la nueva versión. El comando específico para indicar este estado es <em>add</em>, seguido del fichero a agregar.
+            </p>
+
+            <pre>
+                <code class="shell">
+    git add &lt;file|directory&gt;
+                </code>
+            </pre>
+
+            <p>
+                Para fines prácticos, se recomienda sgregar todos los archivos posibles dentro de la versión. Para ello, en vez de agregar cada archivo uno por uno, se utiliza el <em>"."</em> (punto) para indicar que todos los archivos con cambios serán agregados en el commit.
+            </p>
+
+            <pre>
+                <code class="shell">
+    git add .
+                </code>
+            </pre>
+
+            <h4>
+                Realizar el commit
+            </h4>
+
+            <p>
+                Una vez se tengan tengan todos archivos preparados, se realiza la publicación local de una versión; esta va de la mano con un mensaje que explique de forma breve en que consiste la actualización. Esto significa que, por el momento, el versionamiento del código solo se encuentra dentro de la computadora donde se ha trabajado. 
+            </p>
+
+            <pre>
+                <code class="shell">
+    git commit -m "&lt;message&gt;"
+                </code>
+            </pre>
+
+            <p>
+                Para el ejemplo particular:
+            </p>
+
+            <pre>
+                <code class="shell">
+    git commit -m "Arreglando la estructura del proyecto"
+                </code>
+            </pre>
+
+            <p>
+                A partir de este punto se pueden realizar todo tipo de acciones con las versiones publicadas, desde regresar a una en específico, hasta borrar un serie de commits poco útiles, etc.
+            </p>
+        </section>
+        
+        <section id="push">
+            <h3>
+                Publicar las versiones.
+            </h3>
+
+            <p>
+                El último paso consiste en "subir" las versiones publicadas localmente a un repositorio alojado en un servicio en línea, como GitHub. Para ello simplemente debe realizarce el siguiente comando, donde se especifica el remoto (Asignado previamente) y la rama que se quiere publicar (por el momento solo se ha hecho uso de la rama master).
+            </p>
+
+            <pre>
+                <code class="shell">
+    git push &lt;remote_name&gt; &lt;branch_name&gt;
+                </code>
+            </pre>
+
+            <p>
+                Para ejemplificar:
+            </p>
+
+            <pre>
+                <code class="shell">
+    git push origin master
+                </code>
+            </pre>
+
+            <p>
+                Si toda la configuración, preparación y publicación de versiones se ha realizado de forma correcta, en este punto la consola pedirá al usuario sus credenciales de GitHub. Al ingresarlas de manera conrrecta se realizará automaticamente la publicación de la versión en línea.
+            </p>
+        </section>
+
+        <section id="exercice">
+            <h3>
+                Ejercicio práctico.
+            </h3>
+
             
         </section>
+
     </article>
 
     <!-- Footer Implementation -->
     <footer>
         <article>
             <p><em>
-                    “Siempre parece imposible hasta que se hace”
+                    “I will make him an offer that he can't refuse”
             </em></p>
 
             <p id="author">
-                Nelson Mandela.
+                Vito Corleone.
             </p>
         </article>
     </footer>
