@@ -8,7 +8,7 @@
 
     <!-- Stylesheets references -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/highlight_styles/atelier-cave-dark.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/tomorrow-night-bright.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -38,7 +38,12 @@
                 <nav class="menu-side">
                     <div></div>
                     <ul>
-                        <li><a href="#Simple">Parrafos simples</a><i class="fab fa-node-js"></i></li>
+                        <li><a href="#intro">       Introducción</a><i class="fab fa-git"></i></li>
+                        <li><a href="#init_remote"> Iniciar repositorio</a><i class="fas fa-baby"></i></li>
+                        <li><a href="#user_config"> Configurar usuario</a><i class="fas fa-users-cog"></i></li>
+                        <li><a href="#commit">      Crear versión</a><i class="fas fa-plus-circle"></i></li>
+                        <li><a href="#push">        Publicar versión</a><i class="fab fa-github"></i></li>
+                        <li><a href="#exercice">    Ejercicio</a><i class="fas fa-dumbbell"></i></li>
                     </ul>
                 </nav>
             </div>
@@ -70,7 +75,7 @@
             </p>
 
             <p>
-                La presente guía está destinada a facilitar el uso de la herramienta de control de versiones Git, en conjunto con el servicio en línea de <a href="https://github.com/">Github.com</a>; sin embargo se considera válido el contenido de la misma para otros servicios en la web del mismo estilo.
+                La presente guía está destinada a facilitar el uso de la herramienta de control de versiones Git, en conjunto con el servicio en línea de <a href="https://github.com/" target="_blank">GitHub.com</a>; sin embargo se considera válido el contenido de la misma para otros servicios en la web del mismo estilo.
             </p>
 
             <div class="tip">
@@ -82,7 +87,7 @@
                 </p>
 
                 <p style='padding-left:1.5em;'>
-                    Referencia a Libro de referencia de Git: <a href='https://git-scm.com/docs'>Reference Manual.</a>
+                    Referencia a Libro de referencia de Git: <a href='https://git-scm.com/docs' target="_blank">Reference Manual.</a>
                 </p>
 
             </div>
@@ -96,7 +101,7 @@
             </p>
 
             <p>
-                Además se deberá establecer un espacio de trabajo local (directorio), con el fin de el proyecto en si. En este caso será el directorio <em>/home/douglashdezt/PW-2018</em>.
+                Además se deberá establecer un espacio de trabajo local (directorio), con el fin de alojar el proyecto en si. En este caso será el directorio <em>/home/douglashdezt/PW-2018</em>.
             </p>
 
         </section>
@@ -296,7 +301,55 @@
                 Ejercicio práctico.
             </h3>
 
-            
+            <p>
+                Realice los siguientes incisos de forma ordenada y en secuencia. Se necesita que se haga uso del correo institucional para la realización de la práctica.
+            </p>
+
+            <ol>
+                <h4>
+                    Primera parte
+                </h4>
+
+                <li>
+                    Ingrese a la página principal de <a href="https://github.com/" target="_blank">GitHub</a>, y cree un usuario con su correo institucional (personalice el username a uno que sea de agrado)
+                </li>
+
+                <li>
+                    Cree un repositorio en línea llamado "Portafolio_PW0219_&lt;user_carnet&gt;" (ojo: reemplazar &lt;user_carnet&gt; por el carnet).
+                </li>
+
+                <li>
+                    De manera local cree un directorio con el mismo nombre que el repositorio en línea creado con anterioridad. Además inicialice un repositorio local en este mismo directorio.
+                </li>
+
+                <h4>
+                    Segunda parte
+                </h4>
+
+                <li>
+                    Cree un archivo llamado "Acerca_de.md"
+                </li>
+
+                <li>
+                    Añada una versión con el mensaje "Añadiendo acerca de"
+                </li>
+
+                <li>
+                    Dentro del archivo recién creado coloque el nombre del estudiante, el carnet, y el enlace a su usuario general en GitHub.
+                </li>
+
+                <li>
+                    Añada una versión con el mensaje "Añadiendo información al archivo Acerca_de.md"
+                </li>
+
+                <h4>
+                    Tercera parte
+                </h4>
+
+                <li>
+                    Publique las versiones realizadas en el repositorio en línea que se creó anteriormente
+                </li>
+            </ol>
         </section>
 
     </article>
