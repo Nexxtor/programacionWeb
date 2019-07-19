@@ -8,14 +8,14 @@
 
     <!-- Stylesheets references -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/highlight_styles/androidstudio.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/tomorrow-night-bright.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <link rel="icon" href="../../assets/images/icons/web.png">
 
-    <title>Titulo</title>
+    <title>Archivos: Guía básica</title>
 </head>
 
 <body id="id_body">
@@ -28,7 +28,7 @@
     </p>
 
     <!-- Front image -->
-    <header id="front-img" style="background-image: url('../../assets/images/main/template.png');">
+    <header id="front-img" style="background-image: url('../../assets/images/main/files.jpg');">
         <div class="blackManta">
             <!-- Float menu implementation -->
             <div class="float-menu">
@@ -43,45 +43,8 @@
                 </nav>
             </div>
             <div class="main-front">
-                <h1>Laboratorio XX.</h1>
-                <h3>Lunes, 11 de Febrero de 2019.</h3>
-                <div class="grid-div two-columns frontList">
-                    <!-- Two-columns item -->
-                    <div class="article-body">
-                        <h4>Temario:</h4>
-                        <ul>
-                            <li>
-                                Tema 1
-                            </li>
-                            <li>
-                                Tema 2
-                            </li>
-                            <li>
-                                Tema 3
-                            </li>
-                            <li>
-                                Tema 4
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="article-body">
-                        <h4>Objetivos:</h4>
-                        <ul>
-                            <li>
-                                Objetivo 1
-                            </li>
-                            <li>
-                                Objetivo 2
-                            </li>
-                            <li>
-                                Objetivo 3
-                            </li>
-                            <li>
-                                Objetivo 4
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <h1>Manejo de archivos</h1>
+                <h3>Guía rápida</h3>
                 <i class="fas fa-chevron-down" id="down-button"></i>
             </div>
         </div>
@@ -92,25 +55,165 @@
         <!-- Main title -->
         <header class="title-content" id="title-content">
             <div id="brand">
-                <h1>Titulo principal.</h1>
+                <h1>Manejo de archivos.</h1>
             </div>
             <div id="content-brand">
-                <h5>Subtitulo.</h5>
+                <h5>GNU/Linux.</h5>
             </div>
         </header>
 
+        <section id="intro">
+            <h3>
+                Introducción
+            </h3>
 
+            <p>
+                La presente guía pretende introducir los conceptos genererales acerca del uso de archivos, especificamente en una distribución del sistema operativo GNU/Linux.
+            </p>
+
+            <p>
+                Un archivo es, en escencia, un conjunto de información, agrupada en determinada estructura. Sin importar el dispositivo que se utilize, toda la información en una computadora es almacenada como archivos. De acuerdo a su estructura, los archivos se clasifican en diversos tipos: audio, video, imagen, texto y muchos otros.
+            </p>
+
+            <h4>
+                Características de los archivos
+            </h4>
+
+            <p>
+                Todo archivo posee las siguientes características:
+            </p>
+
+            <dl>
+                <dt>
+                    <em><u>Nombre:</u></em>
+                </dt>
+                <dd>
+                    Su principal propósito es identificarlo de otros archivos y ayudar al usuario a conocer su contenido.
+                </dd>
+
+                <dt>
+                    <em><u>Extensión:</u></em>
+                </dt>
+                <dd>
+                    Es parte del nombre del archivo. Al final del nombre se coloca un punto seguido de unas pocas letras o números que definen la extensión. El uso de una extensiones es opcional en sistemas operativos basados en Unix.
+                </dd>
+
+                <dt>
+                    <em><u>Tamaño:</u></em>
+                </dt>
+                <dd>
+                    Es el espacio que el archivo necesita para ser almacenado en el dispositivo.
+                </dd>
+
+                <dt>
+                    <em><u>Tipo:</u></em>
+                </dt>
+                <dd>
+                    Indica el programa utilizado para acceder al contenido del archivo.
+                </dd>
+
+                <dt>
+                    <em><u>Fecha de modificación:</u></em>
+                </dt>
+                <dd>
+                    Es la última fecha en que el archivo fue modificado o creado.
+                </dd>
+            </dl>
+        </section>
+
+        <section id="ext">
+            <h3>
+                Extensiones de archivos.
+            </h3>
+
+            <p>
+                Las extensiones son únicamente un grupo de caracteres que, precedidos de un punto, son agregados al final del nombre del archivo.
+            </p>
+
+            <p>
+                En sistemas operativos Linux se agrega el <strong>tipo de archivo</strong> <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> al inicio de este, de manera que la extensión no es necesaria, sin embargo, la extensión es utilizada como ayuda al usuario para identificar el tipo de archivo. Si este no está claro la extensión es utilizada para determinarlo.Esto púede ocurrir cuando se transfieren archivos desde un sistema operativo Windows a Linux.
+            </p>
+
+            <p>
+                Los sistemas operativos Windows se basan únicamente en la extensión para saber el tipo de archivo; para evitar que usuarios modifiquen esta extensión, Windows oculta las extensiones de archivos de manera predeterminada. Esta opción puede ser cambiada en la configuración de usuario. Si se utiliza un sistema Windows se debe tener especial cuidado al crear o renombrar un archivo. Es común que no se pueda acceder a alguno debido a que este posee una extensión incorrecta o no posea ninguna.
+            </p>
+        </section>
+
+        <section id="route">
+            <h3>
+                Rutas
+            </h3>
+
+            <p>
+                Cuando se trabaja con comandos, es habitual pasar como parámetros archivos o directorios. Para indicar alguno de estos se utiliza la ruta o path del mismo, la cual que puede ser absoluta o relativa.
+            </p>
+
+            <p>
+                A diferencia de Windows, Linux no tiene unidades, por lo que no es necesario utilizar identificadores como A:\, C:\, D:\ ,etc. El sistema de archivos en Linux funciona con nodos, y cada nodo representa un archivo. El nodo principal puede ser accedido a través del caracter "/"; y el resto de particiones, discos duros, unidades de cd, unidades de dvd, o cualquier otro sistema de archivos, se deben acceder desde directorio principal como si fuese un directorio normal.
+            </p>
+
+            <p>
+                Las rutas absolutas se caracterizan por empezar <strong>siempre</strong> desde la raíz (es decir la "/"), y contener todos los directorios que hay desde este punto hasta el archivo o directorio que queremos indicar; sólo es posible escribir de una forma una ruta absoluta.
+            </p>
+
+            <p>
+                Todas las siguientes rutas son absolutas:
+            </p>
+
+            <ul>
+                <li>
+                    /home/DouglasHdezT/Desktop
+                </li>
+                <li>
+                    /home/DouglasHdezT/Documents/Web/Archivos/index.html
+                </li>
+                <li>
+                    /home/DouglasHdezT/Images/imagen_generica.jpg
+                </li>
+            </ul>
+
+            <p>
+                En cambio las rutas relativas nunca empiezan por el caracter / y puede haber varias rutas relativas para el mismo archivo o directorio al que se quiere acceder. Esto es así porque la ruta relativa depende del directorio en el que se está trabajando.
+            </p>
+
+            <p>
+                Por ejemplo,si el directorio Imagenes contiene el archivo imagen_generica.jpg, se puede acceder a este archivo con diferentes rutas relativas de acuerdo con las siguientes situaciones: 
+            </p>
+
+            <dl>
+                <dt>
+                    Desde el directorio "Imagenes"
+                </dt>
+                <dd>
+                    <em>imagen_generica.jpg</em>
+                </dd>
+
+                <dt>
+                    Desde el directorio "DouglasHdezT"
+                </dt>
+                <dd>
+                    <em>Imagenes/imagen_generica.jpg</em>
+                </dd>
+
+                <dt>
+                    Desde el directorio "/"
+                </dt>
+                <dd>
+                    <em>home/DouglasHdezT/imagen_generica.jpg</em>
+                </dd>
+            </dl>
+        </section>
     </article>
 
     <!-- Footer Implementation -->
     <footer>
         <article>
             <p><em>
-                    “Siempre parece imposible hasta que se hace”
+                    “Why did you say that name?”
                 </em></p>
 
             <p id="author">
-                Nelson Mandela.
+                Batman.
             </p>
         </article>
     </footer>

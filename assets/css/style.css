@@ -1,5 +1,5 @@
 :root{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif !important;
     
     overflow: auto;
 
@@ -52,6 +52,18 @@ a:hover{
 
 a:visited{
     color: var(--nav-color-1);
+}
+
+dl{
+    margin: 0 2em;
+}
+
+dl>dt{
+    margin-top: 1.5em;
+}
+
+dl>dd{
+    margin-bottom: 1.5em;
 }
 
 /* Estilo del titulo */
