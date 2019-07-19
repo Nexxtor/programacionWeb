@@ -64,7 +64,7 @@
 
         <section id="intro">
             <h3>
-                Introducción
+                Introducción.
             </h3>
 
             <p>
@@ -157,7 +157,7 @@
 
         <section id="route">
             <h3>
-                Rutas
+                Rutas.
             </h3>
 
             <p>
@@ -299,7 +299,7 @@
 
         <section id="change">
             <h3>
-                Manipulación de archivos
+                Manipulación de archivos.
             </h3>
 
             <p>
@@ -426,7 +426,7 @@
                             <b>-p</b>: permite la creación de directorios padres, si estos no existen.
                             <br>
                             <br>
-                            <b>-m</b>: permite agregar permisos en la creacion del directorio.
+                            <b>-m</b>: permite agregar permisos en la creación del directorio.
                             <br>
                             <br>
                             <b>-v</b>: muestra detalles completos de la operación que está realizando.
@@ -452,8 +452,267 @@
 
         <section id="users">
             <h3>
-                Usuarios y grupos
+                Usuarios y grupos.
             </h3>
+
+            <p>
+                El objetivo principal de el uso de usuarios y grupos en un sistema Linux, es permitir que múltiples usuarios hagan uso del sistema, pero de una manera ordenada y segura. Asegurando que ninguna de las tareas realizadas por cualquier usuario pueda poner en riesgo todo el sistema. A través de la gestión de usuarios y grupos, se establecen los mecanismos y políticas de seguridad para la protección de los datos de cada usuario, así como para asegurar y proteger el funcionamiento de todo el sistema.
+            </p>
+
+            <h4>
+                Usuarios.
+            </h4>
+
+            <p>
+                Para poder usar el sistema operativo Linux, se es necesario tener una cuenta de usuario. Esta cuenta se compone por un nombre de usuario y de una contraseña. Las cuentas de usuarios son manejadas y creadas solo por el administrador del sistema, que se le conoce como el usuario root.
+            </p>
+
+            <p>
+                Cada usuario debe de pertenecer obligatoriamente a un grupo de usuario. Al momento de ingresar al sistema, el usuario debe de identificarse con su cuenta, y en caso de equivocarse el sistema le denegara el acceso. Luego de identificarse, el usuario podrá hacer uso del sistema y ejecutar todas las aplicaciones que tenga permitido, así como realizar acciones(leer, modificar o borrar) sobre los archivos en los que tenga permisos.
+            </p>
+
+            <p>
+                Por otra parte, una cuenta de usuario no solo provee un simple nombre, también es el punto de partida para poder establecer la ruta en donde se almacenan los documentos y el perfil del usuario. En Linux, generalmente es dentro de la carpeta de /home/<strong>nombre-usuario</strong>
+            </p>
+
+            <h4>
+                Creación de usuarios.
+            </h4>
+
+            <p>
+                    Para poder añadir un usuario, se utiliza la consola (terminal), con el comando useradd. Su sintaxis es:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    useradd [opciones] &lt;nombre_usuario&gt;  
+                </code>
+            </pre>
+
+            <p>
+                Donde, [opciones] puede ser remplazado por las siguientes:
+            </p>
+
+            <ul>
+                <li>
+                    -g: Grupo principal que sera asignado al usuario.
+                </li>
+
+                <li>
+                    -d: Para asignar la carpeta home del usuario. Generalmente es /home/nombre-usuario
+                </li>
+
+                <li>
+                    -m: Crear la carpeta home en caso de que esta no exista.
+                </li>
+
+                <li>
+                    -s: Intérprete de comandos (shell) del usuario. Este suele ser /bin/bash
+                </li>
+            </ul>
+
+            <p>
+                Por ejemplo, se quiere crear un usuario llamado "pedro" y que: su grupo inicial sea "instructores", tenga asignada como carpeta home "<code>/home/pedro</code>" y sus comandos sean interpretados en <code>"/bin/bash"</code>(lugar por defecto). El comando correcto que se debe ejecutar es el siguiente:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo useradd -g instructores -d /home/pedro -m Pedro
+                </code>
+            </pre>
+
+            <p>
+                Ahora solo queda asignarle su contraseña, mediante el uso del comando <strong>passwd</strong>:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo passwd pedro  
+                </code>
+            </pre>
+
+            <p>
+                El sistema solicitará la contraseña dos veces y esta será asignada.
+            </p>
+
+            <p>
+                Dos cosas a tomar en cuenta:
+            </p>
+
+            <ol>
+                <li>
+                    Todos estos comandos se ejecutan junto el comando sudo, ya que este permite al usuario actual, poder ejecutar programas con privilegios de seguridad del usuario root (solo si se le ha otorgado tales privilegios), y como se mencionó anteriormente, el único capaz de gestionar los usuarios es el administrador del sistema (usuario root)
+                </li>
+                
+                <li>
+                    Varificar al momento de crear los nombres de usuario en minúsculas, porque para el sistema operativo Linux, "Pedro" es distinto que "pedro", ya que distingue entre mayúsculas y minúsculas. También se puede incluir el uso de números y algún signo como guión o guión bajo.
+                </li>
+            </ol>
+
+            <h4>
+                Modificación de usuarios.
+            </h4>
+
+            <p>
+                Para poder realizar modificaciones sobre los usuarios, se utiliza el comando <strong>usermod</strong>. Este permite hacer cambios al nombre, a la carpeta home asignada, a su interpretador de comandos asignado, sus grupos, entre otros.
+            </p>
+
+            <p>
+                Por ejemplos, si se quisiera cambiar el nombre del usuario "pedro" a "obdulio" se realiza de la siguiente manera:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo usermod -l obdulio pedro
+                </code>
+            </pre>
+
+            <h4>
+                Eliminación de usuarios.
+            </h4>
+
+            <p>
+                La eliminación de un usuario se realiza por medio de el uso del comando <strong>userdel</strong> seguido del nombre de usuario. Si se le añade la opción <code>-r</code>, su carpeta home respectiva también sera eliminada.
+            </p>
+
+            <p>
+                Por ejemplo, si se quisiera eliminar el usuario obdulio, se realiza de la siguiente manera:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo userdel obdulio
+                </code>
+            </pre>
+
+            <h4>
+                Grupos.
+            </h4>
+
+            <p>
+                Para que exista una administración flexible de los permisos de los usuarios, el sistema operativo Linux permite catalogar a los usuarios a través de grupos y los permisos pueden ser asignados a un grupo. Por ejemplo, se cuenta con un grupo de instructores para una materia en específico, este grupo tiene acceso a ciertos archivos; al momento de incorporar a un nuevo instructor, solo se le asigna a la cuenta del instructor el grupo "instructores".
+            </p>
+
+            <p>
+                Como se mencionó anteriormente, todos los usuarios deben pertenecer a un grupo principal o primario obligatoriamente, pero puede pertenecer a otros grupos, a los cuales se les considera secundarios. Todos los grupos pueden contener varios usuarios, pero no pueden contener a otros grupos.
+            </p>
+
+            <p>
+                Cada grupo de usuario en el sistema Linux es identificado con un número diferente. A esto se le conoce como <strong>identificador de grupo o gid (Group IDentifier)</strong>. El sistema, internamente realiza los trabajos bajo el gid y no bajo el nombre del grupo. Por lo general, cuando se crean los grupos, el sistema asigna un gid de "1000" en adelante, ya que los gid menores a "1000" están reservados para uso del sistema y sus grupos especiales.
+            </p>
+
+            <p>
+                Por defecto, la información de los grupos se guarda en el archivo <code>/etc/group</code>, el cual puede ser visualizado por cualquier editor de texto.
+            </p>
+
+            <h4>
+                Creación de grupos.
+            </h4>
+
+            <p>
+                Para poder realizar la creación, se hace mediante el comando <strong>groupadd</strong>, tan solo se debe indicar el nombre del grupo como parámetro. Su sintaxis es:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo groupadd &lt;nombre_grupo&gt;
+                </code>
+            </pre>
+
+            <p>
+                Por ejemplo, si se quisiera crear un grupo llamado "alumnos", se realiza de la siguiente manera:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo groupadd alumnos
+                </code>
+            </pre>
+
+            <h4>
+                Modificación de grupos.
+            </h4>
+
+            <p>
+                Los grupos también pueden ser modificados al igual que los usuarios. Para ellos, se hace uso del comando <strong>groupmod.</strong> Su sintaxis es:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo groupmod [opciones] &lt;nombre-grupo&gt;
+                </code>
+            </pre>
+
+            <p>
+                En donde <em>[opciones]</em> puede ser remplazado por las siguientes:
+            </p>
+            
+            <ul>
+                <li>-g: Sirve para poder cambiar el identificador de grupo.</li>
+                <li>-n: Sirve para renombrar el grupo.</li>
+            </ul>
+
+            <p>
+                Por ejemplo, si se quiere cambiar el nombre del grupo "alumnos" a "estudiantes", se realiza de la siguiente manera:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo groupmod -n estudiantes alumnos
+                </code>
+            </pre>
+
+            <h4>
+                Eliminación de grupos.
+            </h4>
+
+            <p>
+                Para poder eliminar un grupo se hace por medio del comando <strong>groupdel</strong> seguido del nombre del grupo. El grupo se eliminará sólo en el caso de que no tenga usuarios con el grupo asignado como principal, si existe algun usuario con esta condición, el grupo no se eliminará.
+            </p>
+            <p>
+                Por ejemplo, si se quiere eliminar el grupo estudiantes, se realiza de la siguiente manera:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo groupdel estudiantes
+                </code>
+            </pre>
+
+            <h4>
+                Añadir usuarios a un grupo.
+            </h4>
+
+            <p>
+                Para poder añadir usuarios a un grupo se hace por medio del comando <strong>adduser</strong> seguido del nombre del usuario y el nombre del grupo.
+            </p>
+            <p>
+                Por ejemplo, si se quiere agregar el usuario "roberto" al grupo de "estudiantes", se realiza de la siguiente manera:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo adduser roberto estudiantes
+                </code>
+            </pre>
+
+            <h4>
+                Quitar usuarios de un grupo.
+            </h4>
+
+            <p>
+                Si se quiere eliminar un usuario de un grupo, utilizamos el comando <strong>deluser</strong> seguido del nombre del usuario y el nombre del grupo.
+            </p>
+            
+            <p>
+                Por ejemplo, si queremos quitar al usuario "obdulio" del grupo de "instructores", se realiza de la siguiente manera:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo deluser obdulio instructores
+                </code>
+            </pre>
         </section>
     </article>
 

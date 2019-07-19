@@ -28,11 +28,11 @@
 
 	"Code kotlin": {
 		"scope": "html",
-		"prefix": "kotlinCode",
+		"prefix": "customCode",
 		"body": [
 			"<pre>",
-			"\t<code class = 'kotlin'>",
-			"\t\t",
+			"\t<code class = '${1:shell}'>",
+			"\t\t$2",
 			"\t</code>",
 			"</pre>"
 		]
