@@ -68,11 +68,15 @@
             </h3>
 
             <p>
-                La presente guía pretende introducir los conceptos genererales acerca del uso de archivos, especificamente en una distribución del sistema operativo GNU/Linux.
+                La presente guía pretende introducir los conceptos genererales acerca del uso de archivos,
+                especificamente en una distribución del sistema operativo GNU/Linux.
             </p>
 
             <p>
-                Un archivo es, en escencia, un conjunto de información, agrupada en determinada estructura. Sin importar el dispositivo que se utilize, toda la información en una computadora es almacenada como archivos. De acuerdo a su estructura, los archivos se clasifican en diversos tipos: audio, video, imagen, texto y muchos otros.
+                Un archivo es, en escencia, un conjunto de información, agrupada en determinada estructura. Sin importar
+                el dispositivo que se utilize, toda la información en una computadora es almacenada como archivos. De
+                acuerdo a su estructura, los archivos se clasifican en diversos tipos: audio, video, imagen, texto y
+                muchos otros.
             </p>
 
             <h4>
@@ -88,14 +92,17 @@
                     <em><u>Nombre:</u></em>
                 </dt>
                 <dd>
-                    Su principal propósito es identificarlo de otros archivos y ayudar al usuario a conocer su contenido.
+                    Su principal propósito es identificarlo de otros archivos y ayudar al usuario a conocer su
+                    contenido.
                 </dd>
 
                 <dt>
                     <em><u>Extensión:</u></em>
                 </dt>
                 <dd>
-                    Es parte del nombre del archivo. Al final del nombre se coloca un punto seguido de unas pocas letras o números que definen la extensión. El uso de una extensiones es opcional en sistemas operativos basados en Unix.
+                    Es parte del nombre del archivo. Al final del nombre se coloca un punto seguido de unas pocas letras
+                    o números que definen la extensión. El uso de una extensiones es opcional en sistemas operativos
+                    basados en Unix.
                 </dd>
 
                 <dt>
@@ -127,15 +134,24 @@
             </h3>
 
             <p>
-                Las extensiones son únicamente un grupo de caracteres que, precedidos de un punto, son agregados al final del nombre del archivo.
+                Las extensiones son únicamente un grupo de caracteres que, precedidos de un punto, son agregados al
+                final del nombre del archivo.
             </p>
 
             <p>
-                En sistemas operativos Linux se agrega el <strong>tipo de archivo</strong> <abbr title="Multipurpose Internet Mail Extensions">MIME</abbr> al inicio de este, de manera que la extensión no es necesaria, sin embargo, la extensión es utilizada como ayuda al usuario para identificar el tipo de archivo. Si este no está claro la extensión es utilizada para determinarlo.Esto púede ocurrir cuando se transfieren archivos desde un sistema operativo Windows a Linux.
+                En sistemas operativos Linux se agrega el <strong>tipo de archivo</strong> <abbr
+                    title="Multipurpose Internet Mail Extensions">MIME</abbr> al inicio de este, de manera que la
+                extensión no es necesaria, sin embargo, la extensión es utilizada como ayuda al usuario para identificar
+                el tipo de archivo. Si este no está claro la extensión es utilizada para determinarlo.Esto púede ocurrir
+                cuando se transfieren archivos desde un sistema operativo Windows a Linux.
             </p>
 
             <p>
-                Los sistemas operativos Windows se basan únicamente en la extensión para saber el tipo de archivo; para evitar que usuarios modifiquen esta extensión, Windows oculta las extensiones de archivos de manera predeterminada. Esta opción puede ser cambiada en la configuración de usuario. Si se utiliza un sistema Windows se debe tener especial cuidado al crear o renombrar un archivo. Es común que no se pueda acceder a alguno debido a que este posee una extensión incorrecta o no posea ninguna.
+                Los sistemas operativos Windows se basan únicamente en la extensión para saber el tipo de archivo; para
+                evitar que usuarios modifiquen esta extensión, Windows oculta las extensiones de archivos de manera
+                predeterminada. Esta opción puede ser cambiada en la configuración de usuario. Si se utiliza un sistema
+                Windows se debe tener especial cuidado al crear o renombrar un archivo. Es común que no se pueda acceder
+                a alguno debido a que este posee una extensión incorrecta o no posea ninguna.
             </p>
         </section>
 
@@ -145,15 +161,22 @@
             </h3>
 
             <p>
-                Cuando se trabaja con comandos, es habitual pasar como parámetros archivos o directorios. Para indicar alguno de estos se utiliza la ruta o path del mismo, la cual que puede ser absoluta o relativa.
+                Cuando se trabaja con comandos, es habitual pasar como parámetros archivos o directorios. Para indicar
+                alguno de estos se utiliza la ruta o path del mismo, la cual que puede ser absoluta o relativa.
             </p>
 
             <p>
-                A diferencia de Windows, Linux no tiene unidades, por lo que no es necesario utilizar identificadores como A:\, C:\, D:\ ,etc. El sistema de archivos en Linux funciona con nodos, y cada nodo representa un archivo. El nodo principal puede ser accedido a través del caracter "/"; y el resto de particiones, discos duros, unidades de cd, unidades de dvd, o cualquier otro sistema de archivos, se deben acceder desde directorio principal como si fuese un directorio normal.
+                A diferencia de Windows, Linux no tiene unidades, por lo que no es necesario utilizar identificadores
+                como A:\, C:\, D:\ ,etc. El sistema de archivos en Linux funciona con nodos, y cada nodo representa un
+                archivo. El nodo principal puede ser accedido a través del caracter "/"; y el resto de particiones,
+                discos duros, unidades de cd, unidades de dvd, o cualquier otro sistema de archivos, se deben acceder
+                desde directorio principal como si fuese un directorio normal.
             </p>
 
             <p>
-                Las rutas absolutas se caracterizan por empezar <strong>siempre</strong> desde la raíz (es decir la "/"), y contener todos los directorios que hay desde este punto hasta el archivo o directorio que queremos indicar; sólo es posible escribir de una forma una ruta absoluta.
+                Las rutas absolutas se caracterizan por empezar <strong>siempre</strong> desde la raíz (es decir la
+                "/"), y contener todos los directorios que hay desde este punto hasta el archivo o directorio que
+                queremos indicar; sólo es posible escribir de una forma una ruta absoluta.
             </p>
 
             <p>
@@ -173,11 +196,14 @@
             </ul>
 
             <p>
-                En cambio las rutas relativas nunca empiezan por el caracter / y puede haber varias rutas relativas para el mismo archivo o directorio al que se quiere acceder. Esto es así porque la ruta relativa depende del directorio en el que se está trabajando.
+                En cambio las rutas relativas nunca empiezan por el caracter / y puede haber varias rutas relativas para
+                el mismo archivo o directorio al que se quiere acceder. Esto es así porque la ruta relativa depende del
+                directorio en el que se está trabajando.
             </p>
 
             <p>
-                Por ejemplo,si el directorio Imagenes contiene el archivo imagen_generica.jpg, se puede acceder a este archivo con diferentes rutas relativas de acuerdo con las siguientes situaciones: 
+                Por ejemplo,si el directorio Imagenes contiene el archivo imagen_generica.jpg, se puede acceder a este
+                archivo con diferentes rutas relativas de acuerdo con las siguientes situaciones:
             </p>
 
             <dl>
@@ -202,6 +228,232 @@
                     <em>home/DouglasHdezT/imagen_generica.jpg</em>
                 </dd>
             </dl>
+        </section>
+
+        <section id="types">
+            <h3>
+                Tipos de archivos.
+            </h3>
+
+            <p>
+                En Linux existen, básicamente, 5 tipos de archivos:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Archivos ordinarios:</strong> Contienen la información con la que trabaja cada usuario.
+                </li>
+
+                <li>
+                    <strong>Enlaces físicos o duros (hard links):</strong> Para lograr entender que es un enlace fisico,
+                    primero se debe comprender qué es un inodo. Un inodo es una estructura de datos, propia de los
+                    sistemas de archivos tradicionalmente empleados en los sistemas operativos tipo UNIX, como es el
+                    caso de Linux. Un inodo contiene las características de un archivo regular, directorio, o cualquier
+                    otro objeto que pueda contener el sistema de ficheros.
+                </li>
+
+                <figure>
+                    <img style='width: 25em' src='../../assets/images/introduccion/archivos/inodo.gif'
+                        alt='Inserte RIPIO aqui'>
+                </figure>
+
+                <p>
+                    Una vez comprendido esto, un enlace duro es un archivo que apunta al mismo contenido almacenado en
+                    disco al que apunta el archivo original. Por lo tanto los archivos originales y los enlaces duros
+                    dispondrán del mismo inodo, y consecuentemente ambos estarán apuntando hacia el mismo contenido
+                    almacenado en el disco duro.
+                </p>
+
+                <figure>
+                    <img style='width: 25em' src='../../assets/images/introduccion/archivos/hard-links.gif'
+                        alt='Inserte RIPIO aqui'>
+                </figure>
+
+                <p>
+                    En la imagen se puede observar el funcionamiento de los enlaces duros, donde dentro del disco duro
+                    se encuentran los datos y los dos enlaces duros apuntan hacia una sola fuente.
+                </p>
+
+                <li>
+                    <strong>Enlaces simbólicos:</strong> Los enlaces simbólicos apuntan al nombre de un archivo y
+                    posteriormente el archivo apunta a un contenido almacenado dentro del disco duro.
+                </li>
+
+                <figure>
+                    <img style='width: 25em' src='../../assets/images/introduccion/archivos/soft-link.jpg'
+                        alt='Inserte RIPIO aqui'>
+                </figure>
+
+                <li>
+                    <strong>Directorios:</strong> Son archivos especiales que contienen referencias a otros archivos o
+                    directorios.
+                </li>
+
+                <li>
+                    <strong>Archivos especiales:</strong> Suelen representar dispositivos físicos, como unidades de
+                    almacenamiento, impresoras, terminales, entre otros. En Linux, todo dispositivo físico que se
+                    conecte al ordenador está asociado a un archivo, el cual es tratado como un archivo ordinario.
+                </li>
+            </ul>
+        </section>
+
+        <section id="change">
+            <h3>
+                Manipulación de archivos
+            </h3>
+
+            <p>
+                Linux dispone de una serie de comandos para el manejo de archivos por medio de consola. Esto nos permite
+                terner un mayor control, puesto que podemos realizar operaciones básicas sobre ellos como crear, copiar,
+                mover, entre otros.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Comando
+                        </th>
+                        <th>
+                            Descripción
+                        </th>
+                        <th>
+                            Sintaxis
+                        </th>
+                        <th>
+                            Argumentos
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            touch
+                        </td>
+                        <td>
+                            Crea un archivo vac&iacute;o, si este exite actualiza la hora de modificaci&oacute;n
+                        </td>
+                        <td>
+                            touch &lt;nombre_archivo&gt;
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            cp
+                        </td>
+                        <td>
+                            Permite copiar un archivo a otro directorio
+                        </td>
+                        <td>
+                            cp &lt;archivo_origen&gt; &lt;directorio_destino&gt;
+                        </td>
+                        <td>
+                            <b>-d</b>: copia enlaces simbolicos.
+                            <br>
+                            <br>
+                            <b>-f</b>: Fuerza a sobreescribir los archivos de destino si existe.
+                            <br>
+                            <br>
+                            <b>-i</b>: Muestra un mensaje antes de sobreescribir los cambios.
+                            <br>
+                            <br>
+                            <b>-r</b>: Copia directorios y sus archivos de forma recursiva.
+                            <br>
+                            <br>
+                            <b>-t</b>: Se utiliza cuando se deseean copiar multiples archivos a un solo destino.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            rm  
+                        </td>
+                        <td>
+                            Elimina un archivo
+                        </td>
+                        <td>
+                            rm &lt;ruta_archivo&gt;
+                        </td>
+                        <td>
+                            <b>-f</b>: Forzar a la eliminaci&oacute;n del archivo.
+                            <br>
+                            <br>
+                            <b>-i</b>: Pregunta antes de eliminar el archivo.
+                            <br>
+                            <br>
+                            <b>-r</b>: Elimina directorios y sus contenido.
+                            <br>
+                            <br>
+                            <b>-d</b>: Elimina directorios vac&iacute;os.
+                            <br>
+                            <br>
+                            <b>-v</b>: Muestra el proceso que se esta realizando.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mv
+                        </td>
+                        <td>
+                            Permite mover un archivo a otro directorio. Tip: Este comando sirve para renombrar archivos;
+                            simplemente moverlo a la misma carpeta con otro nombre
+                        </td>
+                        <td>
+                            mv &lt;archivo_origen&gt; &lt;archivo_destino&gt;
+                        </td>
+                        <td>
+                            <b>-f</b>: No pide permiso para mover el archivo.
+                            <br>
+                            <br>
+                            <b>-i</b>: Pregunta si quiero mover el archivo.
+                            <br>
+                            <br>
+                            <b>-n</b>: No sobreescribe si hay un archivo existente.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mkdir
+                        </td>
+                        <td>
+                            Permite la creación de directorios, si estos no existen
+                        </td>
+                        <td>
+                            mkdir &lt;directorios&gt;
+                        </td>
+                        <td>
+                            <b>-p</b>: permite la creación de directorios padres, si estos no existen.
+                            <br>
+                            <br>
+                            <b>-m</b>: permite agregar permisos en la creacion del directorio.
+                            <br>
+                            <br>
+                            <b>-v</b>: muestra detalles completos de la operación que está realizando.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>cd</td>
+                        <td>Permite la navegacion entre directorios</td>
+                        <td>cd &lt;ruta_a_navegar&gt;</td>
+                        <td>
+                            <b>/ </b>: ruta al directorio raiz.
+                            <br>
+                            <br>
+                            <b>~ </b>: ruta al directorio de inicio.
+                            <br>
+                            <br>
+                            <b>.. </b>: navegacion un directorio atras.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="users">
+            <h3>
+                Usuarios y grupos
+            </h3>
         </section>
     </article>
 

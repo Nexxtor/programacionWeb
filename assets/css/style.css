@@ -6,6 +6,9 @@
     --code-color : #2c2c54;
     --psudo-black: rgba(0,0,0,0.7);
     --down-btn: #3F51B5;
+    --table-head:#5C6BC0;
+    --table-bg-1:#FAFAFA;
+    --table-bg-2:#EEEEEE;
     --nav-color-1: #512DA8;
     --nav-color-2: #1976D2;
     --nav-color-3: #00BCD4;
@@ -64,6 +67,41 @@ dl>dt{
 
 dl>dd{
     margin-bottom: 1.5em;
+}
+
+figure{
+    margin: 1.5em 0;
+}
+
+/* Estilo de tablas */
+
+table{
+    text-align: justify;
+    border-spacing: 0px;
+}
+
+thead{
+    background: var(--table-head);
+
+    text-align: center;
+    color: white;
+}
+
+td{
+    font-size: 0.8em
+}
+
+tbody>tr:nth-child(odd){
+    background: var(--table-bg-1);   
+}
+
+tbody>tr:nth-child(even){
+    background: var(--table-bg-2);   
+}
+
+td, th{
+    padding: 1em;
+    margin: 0;
 }
 
 /* Estilo del titulo */
@@ -299,15 +337,15 @@ header#front-img{
     text-decoration: none;
 }
 
-.menu-side ul li:first-child, .menu-side li:nth-child(4), .menu-side li:nth-child(7){
+.menu-side ul li:nth-child(3n+1){
     background: var(--nav-color-1);
 }
 
-.menu-side ul li:nth-child(2), .menu-side li:nth-child(5), .menu-side li:nth-child(8){
+.menu-side ul li:nth-child(3n+2){
     background: var(--nav-color-2);
 }
 
-.menu-side ul li:nth-child(3), .menu-side li:nth-child(6), .menu-side li:nth-child(9){
+.menu-side ul li:nth-child(3n){
     background: var(--nav-color-3);
 }
 
