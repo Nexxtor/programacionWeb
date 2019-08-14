@@ -15,7 +15,7 @@
 
     <link rel="icon" href="../../assets/images/icons/web.png">
 
-    <title>Titulo</title>
+    <title>Personalización de consola</title>
 </head>
 
 <body id="id_body">
@@ -28,7 +28,7 @@
     </p>
 
     <!-- Front image -->
-    <header id="front-img" style="background-image: url('../../assets/images/main/template.png');">
+    <header id="front-img" style="background-image: url('../../assets/images/main/console.png');">
         <div class="blackManta">
             <!-- Float menu implementation -->
             <div class="float-menu">
@@ -38,50 +38,15 @@
                 <nav class="menu-side">
                     <div></div>
                     <ul>
-                        <li><a href="#Simple">Parrafos simples</a><i class="fab fa-node-js"></i></li>
+                        <li><a href="#intro">Introducción</a><i class="fas fa-terminal"></i></li>
+                        <li><a href="#reason">¿Por qué Zsh sobre Bash?</a><i class="far fa-lightbulb"></i></li>
+                        <li><a href="#instalation">Instalación</a><i class="fas fa-download"></i></li>
                     </ul>
                 </nav>
             </div>
             <div class="main-front">
-                <h1>Laboratorio XX.</h1>
-                <h3>Lunes, 11 de Febrero de 2019.</h3>
-                <div class="grid-div two-columns frontList">
-                    <!-- Two-columns item -->
-                    <div class="article-body">
-                        <h4>Temario:</h4>
-                        <ul>
-                            <li>
-                                Tema 1
-                            </li>
-                            <li>
-                                Tema 2
-                            </li>
-                            <li>
-                                Tema 3
-                            </li>
-                            <li>
-                                Tema 4
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="article-body">
-                        <h4>Objetivos:</h4>
-                        <ul>
-                            <li>
-                                Objetivo 1
-                            </li>
-                            <li>
-                                Objetivo 2
-                            </li>
-                            <li>
-                                Objetivo 3
-                            </li>
-                            <li>
-                                Objetivo 4
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <h1>Personalización de terminal</h1>
+                <h3>Guia rápida</h3>
                 <i class="fas fa-chevron-down" id="down-button"></i>
             </div>
         </div>
@@ -92,25 +57,306 @@
         <!-- Main title -->
         <header class="title-content" id="title-content">
             <div id="brand">
-                <h1>Titulo principal.</h1>
+                <h1>Temrinal en GNU/Linux.</h1>
             </div>
             <div id="content-brand">
-                <h5>Subtitulo.</h5>
+                <h5>De Bash a Zsh.</h5>
             </div>
         </header>
 
+        <section id="intro">
+            <h3>
+                Introducción.
+            </h3>
 
+            <p>
+                Los sistemas operativos basados en Unix disponen de un intérprete de comandos u órdenes (conocido como terminal, consola o shell) que hace de interfaz entre el usuario y el propio sistema operativo. Es decir, mediante la terminal o consola se puede acceder al sistema operativo sin utilizar la interfaz gráfica y realizar todo tipo de tareas en modo texto.
+            </p>
+
+            <p>
+                Por defecto, en Ubuntu cuenta con Bash (Bourne-again shell) como intérprete de comandos, el cual cumple muy bien su función de facilitar la interación entre el usuario y el SO, proporcionando un lenguaje de programación intuitivo y sencillo. Sin embargo en términos de personalización y mejora de herramientas se encuentra limitado
+            </p>
+            <p>
+                Z shell (o simplemente zsh) es un potente intérprete de comandos para sistemas operativos de tipo Unix; a diferencia de Bash, Zsh se diseñó para poder usarse interactivamente. Se le han incorporado muchas de las características principales tanto de otras shells como propias.
+            </p>
+        </section>
+
+        <section id="reason">
+            <h3>
+                ¿Por qué Zsh sobre Bash?
+            </h3>
+
+            <p>
+                Zsh nos ofrece muchas ventajas, como:
+                <ul>
+                    <li>
+                        Eficiencia
+                    </li>
+                    <li>
+                        Completado de tabulador mejorado
+                    </li>
+                    <li>
+                        Expansión de nombres de fichero mejorada
+                    </li>
+                    <li>
+                        Manejo de arrays intuitivo
+                    </li>
+                    <li>
+                        Totalmente personalizable
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                ¿Otra ventaja de Zsh?, cuenta con el framework Oh My Zsh!, el cual gestiona de manera intuitiva, los temas de personalización de la consola, permitiendo una mejor experiencia los usuarios y el sistema operativo.
+            </p>
+        </section>
+        <section id="instalation">
+            <h3>
+                instalación.
+            </h3>
+
+            <p>
+                Para la instalación de la terminal Zsh se hará uso de:
+            </p>
+
+            <ul>
+                <li>
+                    Sistema operativo GNU/Linux, distribución Ubuntu.
+                </li>
+                <li>
+                    Sistema de control de versiones Git
+                    <pre>
+                        <code class = 'shell'>
+    sudo apt-get install git
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    Intérprete de comandos basado en la trasferencia de archivos CURL
+                    <pre>
+                        <code class = 'shell'>
+    sudo apt-get install curl
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+
+            <p>
+                En dado caso no se cuente con la distribución Ubuntu, el desarrollo de la instalación puede basarse en el <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH" target="_blank">repositorio</a> de <a href="https://github.com/robbyrussell/" target="_blank">RobbyRussell</a>.
+            </p>
+
+            <h4>
+                Instalación de Zsh.
+            </h4>
+
+            <pre>
+                <code class = 'shell'>
+    sudo apt-get install zsh
+                </code>
+            </pre>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/zshIns.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <h4>
+                Instalación de Oh My Zsh!
+            </h4>
+
+            <pre>
+                <code class = 'shell'>
+    sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+                </code>
+            </pre>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/ohmyzsh.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                Se debe aceptar (opción "y") la instalación de zsh como shell por defecto.
+            </p>
+
+            <h4>
+                Zsh por defecto.
+            </h4>
+
+            <p>
+                En este punto ya se puede apreciar como la terminal cambia estéticamente. Aunque si se cierra y vuelve a abrir volverá al aspecto que se tenía previamente. 
+            </p>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/examplezsh.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                Para evitar esto, dentro de las preferencias de la terminal, se debe asignar zsh como intérprete por defecto.
+            </p>
+
+            <p>
+                Dentro de la barra de menús, se selecciona la opción <strong>Editar -> Preferencias</strong>.
+            </p>
+
+            <p>
+                En <strong>Perfiles</strong>, se selecciona el perfil que utiliza la terminal, en este caso el por defecto.
+            </p>
+
+            <p>
+                Se ingresa a la pestaña <strong>Comando</strong>, y se selecciona la opción <em>Ejecutar una orden personalizada en vez de mi intérprete</em>. Se habilitará un campo de texto, donde se debe ingresar el comando <strong>zsh</strong>
+            </p>
+
+            <p>
+                Esto hará que al iniciar la terminal se ejecute el comando zsh, iniciando dentro del sistema el intérprete zsh.
+            </p>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/defaultzsh.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <h4>
+                Temas.
+            </h4>
+
+            <p>
+                Luego de asignar zsh como shell predeterminada, se procede a la gestión de los recursos y herramientas que se harán uso en la misma.
+            </p>
+
+            <p>
+                Uno de estos rubros es la personalización del aspecto o tema de la terminal, lo cual se logra a través del archivo <em>.zshrc</em>. Debido que el tema de estilos se trata de algo muy personal, en el repositorio <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank">Themes</a> de RobbyRussell, se detalla la lista de temas y sus wikis, con el fin de ampliar las posibilidades de personalización en este ámbito.
+            </p>
+
+            <p>
+                Para este caso se hará uso del tema <em>agnoster</em>; para ello se debe ingresar desde cualquier editor de texto al archivo ./zshrc, y se realizan las siguientes modificaciones.
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    sudo nano ~/.zshrc
+                </code>
+            </pre>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/zshrc.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                Una vez realizados los cambios en el archivo, se deben aplicar los cambios en el intérprete. Esto se logra a través del siguiente comando:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    source ~/.zshrc
+                </code>
+            </pre>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/rawzsh.png' alt='Inserte RIPIO aqui'>
+            </figure> 
+
+            <p>
+                Como es de notar la apariencia ha cambiado pero no se adapta completamente. Esto se debe a que falla la tipografía que el tema usa por defecto, por lo que esta se debe agregar.
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | bash
+                </code>
+            </pre>
+
+            <p>
+                Al instalar la familia fuentes, se debe cambiar la fuente predeterminada de la terminal; esta debe ser de la familia Menlo.
+            </p>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/menlofonts.png' alt='Inserte RIPIO aqui'>
+            </figure> 
+
+            <p>
+                A recargar la terminal, se debe haber modificado el aspecto, mostrando un resultado similar al siguiente:
+            </p>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/newzsh.png' alt='Inserte RIPIO aqui'>
+            </figure> 
+
+            <p>
+                Para completar el tema Agnoster, opcionalmente se puede cambiar los colores de la terminal, esto se hace con la siguiente configuración:
+            </p>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/colors.png' alt='Inserte RIPIO aqui'>
+            </figure> 
+
+            <h4>
+                Instalación de Fuzzy Finder.
+            </h4>
+
+            <p>
+                Otra herramienta primordial a la hora de trabajar con la terminal es un historial, nativamente se puede usar el comando <em>ctrl + r</em> para realizar una reverse-search, pero existe una alternativa potente llamada fzf (fuzzy finder). Para su instalación se ingresan los siguientes comandos:
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+
+    ~/.fzf/install
+                </code>
+            </pre>
+
+            <p>
+                Se aceptan todas las condiciones y se reinicia el intérprete. A partir de este punto al realizar <em>ctrl + r</em>, se accederá a un historial interactivo desde el cual se prodrá navegar dentro haciendo uso de las flechas direccionales del teclado.
+            </p>
+
+            <pre>
+                <code class = 'shell'>
+    source ~/.zshrc
+                </code>
+            </pre>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/history.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <h4>
+                Ejemplos de terminales.
+            </h4>
+
+            <p>
+                A continuación se mostrarán ejemplos de terminales personalizadas por los instructores <a href="https://github.com/petrlr14" target="_blank">petrlr14</a> y <a href="https://github.com/DouglasHdezT" target="_blank">DouglasHdezT</a>. En ambos se hace uso del tema <a href="https://github.com/Powerlevel9k/powerlevel9k" target="_blank">Powerlevel9k</a>.
+            </p>
+
+            <p>
+                <u>
+                    petrlr14:
+                </u>
+            </p>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/pedro.jpeg' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                <u>
+                    DouglasHdezT:
+                </u>
+            </p>
+
+            <figure>
+                <img style='width: 40em' src='../../assets/images/introduccion/customConsole/deus.jpeg' alt='Inserte RIPIO aqui'>
+            </figure>
+        </section>
     </article>
 
     <!-- Footer Implementation -->
     <footer>
         <article>
             <p><em>
-                    “Siempre parece imposible hasta que se hace”
+                    “You couldn't live with your own failure. Where did that bring you? Back to me.”
                 </em></p>
 
             <p id="author">
-                Nelson Mandela.
+                Thanos.
             </p>
         </article>
     </footer>
