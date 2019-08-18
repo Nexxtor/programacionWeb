@@ -1313,6 +1313,105 @@
                     Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input' target = '_blank'>Elemento input</a>.
                 </p>
             </div>
+
+            <h4>
+                &lt;select&gt;
+            </h4>
+
+            <p>
+                Es una lista desplegable con distintos elementos que pueden ser seleccionados. Es comparable con el input de tipo <em>radio</em>.
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;select name=&quot;select1&quot;&gt;
+        &lt;option value=&quot;Toyota&quot;&gt;Toyota&lt;/option&gt;
+        &lt;option value=&quot;Nissan&quot;&gt;Nissan&lt;/option&gt;
+        &lt;option value=&quot;Honda&quot;&gt;Honda&lt;/option&gt;
+    &lt;/select&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <select name="select1">
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Honda">Honda</option>
+                </select>
+            </div>
+
+            <h4>
+                &lt;textarea&gt;
+            </h4>
+
+            <p>
+                Permite al usuario ingresar múltiples líneas. Se puede especificar el ancho y el alto de las líneas visibles mediante los atributos cols y rows. 
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;textarea name=&quot;textArea&quot; cols=&quot;50&quot; rows=&quot;15&quot;&gt;&lt;/textarea&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <textarea name="textArea" cols="50" rows="15"></textarea>
+            </div>
+
+            <h4>
+                &lt;label&gt;
+            </h4>
+
+            <p>
+                Define la etiqueta de un input. 
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;label for=&quot;name&quot;&gt;Name: &lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <label for="name">Name: </label>
+                <input type="text" name="name">
+            </div>
+
+            <h4>
+                &lt;fieldset&gt;
+            </h4>
+
+            <p>
+                Permite agrupar elementos que estén relacionados entre sí, tanto gráficamente como semánticamente. 
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;fieldset&gt; 
+        &lt;legend&gt;
+            Personal information:
+        &lt;/legend&gt;
+
+        Name: &lt;input type=&quot;text&quot;&gt;
+        Email: &lt;input type=&quot;email&quot;&gt;
+        Date of birth: &lt;input type=&quot;date&quot;&gt;
+    &lt;/fieldset&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <fieldset> 
+                    <legend>
+                        Personal information:
+                    </legend>
+
+                    Name: <input type="text">
+                    Email: <input type="email">
+                    Date of birth: <input type="date">
+                </fieldset>
+            </div>
+
         </section>
 
     </article>
