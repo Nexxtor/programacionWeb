@@ -167,9 +167,11 @@
                         </code>
                     </pre>
 
-                    <p>
-                        Este es un parrafo.
-                    </p>
+                    <div class="preview">
+                        <p>
+                            Este es un parrafo.
+                        </p>
+                    </div>
                 </li>
                 <li>
                     <em>Los elementos desde <b>&lt;h1&gt;</b> hasta <b>&lt;h6&gt;</b></em>: Son utilizados para representar encabezados, desde el que tiene más importancia hasta el que tiene menos, respectivamente.
@@ -185,12 +187,14 @@
                         </code>
                     </pre>
 
-                    <h1 style="font-size: 2em">Encabezado 1</h1>
-                    <h2>Encabezado 2</h2>
-                    <h3>Encabezado 3</h3>
-                    <h4>Encabezado 4</h4>
-                    <h5>Encabezado 5</h5>
-                    <h6>Encabezado 6</h6>
+                    <div class="preview">
+                        <h1 style="font-size: 2em">Encabezado 1</h1>
+                        <h2>Encabezado 2</h2>
+                        <h3>Encabezado 3</h3>
+                        <h4>Encabezado 4</h4>
+                        <h5>Encabezado 5</h5>
+                        <h6>Encabezado 6</h6>
+                    </div>
 
                     <p>
                         Cabe mencionar que tanto los elementos &lt;p&gt; como los elementos  &lt;h1&gt; hasta los &lt;h6&gt; poseen un valor semántico, por consiguiente el uso que se les dé cumplir con las reglas de semántica establecidas.
@@ -208,32 +212,37 @@
                         </code>
                     </pre>
 
-                    <p>
-                        Este link redirige a otra <a href="http://google.com" target="_blank">página</a>.
-                    </p>
+                    <div class="preview">
+                        <p>
+                            Este link redirige a otra <a href="http://google.com" target="_blank">página</a>.
+                        </p>
+                    </div>
                 </li>
 
                 <li>
-                    <em>El elemento <b>&lt;q&gt;</b></em>: Sirve para indicar que el texto contenido en él, representa una cita corta en línea
-                </li>
+                    <em>El elemento <b>&lt;q&gt;</b></em>: Sirve para indicar que el texto contenido en él, representa una cita corta en línea.
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Como lo dijo un antiguo filósofo griego:
         &lt;q cite="https://www.imdb.com/title/tt0062622/quotes/qt0396921"&gt;
             Dime con quién andas y te diré quién eres
         &lt;/q&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Como lo dijo un antiguo filósofo griego:
+                            <q cite= "https://www.imdb.com/title/tt0062622/quotes/qt0396921">
+                                Dime con quién andas y te diré quién eres
+                            </q>
+                        </p>
+                    </div>
+                </li>
 
-                <p>
-                    Como lo dijo un antiguo filósofo griego:
-                    <q cite= "https://www.imdb.com/title/tt0062622/quotes/qt0396921">
-                        Dime con quién andas y te diré quién eres
-                    </q>
-                </p>
             </ol>
 
         </section>
@@ -254,163 +263,183 @@
             <ol>
                 <li>
                     <em>El elemento <b>&lt;b&gt;</b></em>: Aplica el formato de negrita al texto que esté dentro de esta etiqueta.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto está en &lt;b&gt;negrita.&lt;/b&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto está en <b>negrita</b>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está en <b>negrita</b>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;strong&gt;</b></em>: Al igual que &lt;b&gt;, aplica el formato de negrita al texto que se encuentre encerrado; la diferencia radica en que &lt;strong&gt; tiene significado semántico, cuando &lt;b&gt;, únicamente aplica un efecto visual.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto está &lt;strong&gt;resaltado.&lt;/strong&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto está <strong>resaltado</strong>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está <strong>resaltado</strong>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;i&gt;</b></em>: Aplica el formato de cursiva al texto que esté dentro de esta etiqueta.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto está en &lt;i&gt;cursiva.&lt;/i&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto está en <i>cursiva</i>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está en <i>cursiva</i>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;em&gt;</b></em>: Al igual que &lt;i&gt;, aplica el formato de cursiva al texto que se encuentre encerrado; la diferencia radica en que &lt;em&gt; tiene significado semántico, cuando &lt;i&gt;, únicamente aplica un efecto visual.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto está &lt;em&gt;resaltado.&lt;/em&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto está <em>resaltado</em>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está <em>resaltado</em>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;u&gt;</b></em>: Aplica el formato de subrrayado al texto que esté dentro de esta etiqueta.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto está &lt;u&gt;subrrayado.&lt;/u&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto está <u>subrrayado</u>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está <u>subrrayado</u>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;small&gt;</b></em>: Reduce el tamaño del texto que esté dentro de esta etiqueta.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto es más &lt;small&gt;pequeño.&lt;/small&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto es más <small>pequeño</small>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto es más <small>pequeño</small>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;big&gt;</b></em>: Aumenta el tamaño del texto que esté dentro de esta etiqueta.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto es más &lt;big&gt;grande.&lt;/big&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto es más <big>grande</big>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto es más <big>grande</big>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;sub&gt;</b></em>: Aplica el formato de subíndice al texto que esté dentro de esta etiqueta.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto es un &lt;sub&gt;subíndice.&lt;/sub&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto es un <sub>subíndice</sub>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto es un <sub>subíndice</sub>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;sup&gt;</b></em>: Aplica el formato de superíndice al texto que esté dentro de esta etiqueta.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto es un &lt;sup&gt;superíndice.&lt;/sub&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto es un <sup>superíndice</sup>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto es un <sup>superíndice</sup>.
+                        </p>
+                    </div>
+                </li>
 
                 <li>
                     <em>El elemento <b>&lt;del&gt;</b></em>: Aplica el formato de tachado al texto que esté dentro de esta etiqueta.
-                </li>
 
-                <pre>
-                    <code class = 'html'>
+                    <pre>
+                        <code class = 'html'>
     &lt;p&gt;
         Este texto está &lt;del&gt;tachado.&lt;/del&gt;
     &lt;/p&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Este texto está <del>tachado</del>.
-                </p>
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está <del>tachado</del>.
+                        </p>
+                    </div>
+                </li>
             </ol>
         </section>
 
@@ -450,24 +479,22 @@
     &lt;/ol&gt;
                         </code>
                     </pre>
-
-                    <p>
-                        Preview:
-                    </p>
                     
-                    <ol>
-                        <li>
-                            Galletas
-                        </li>
-
-                        <li>
-                            Lechuga
-                        </li>
-
-                        <li>
-                            Chocolate
-                        </li>
-                    </ol>
+                    <div class="preview">
+                        <ol>
+                            <li>
+                                Galletas
+                            </li>
+    
+                            <li>
+                                Lechuga
+                            </li>
+    
+                            <li>
+                                Chocolate
+                            </li>
+                        </ol>
+                    </div>
                 </li>
 
                 <li>
@@ -497,23 +524,21 @@
                         </code>
                     </pre>
 
-                    <p>
-                        Preview:
-                    </p>
-
-                    <ul>
-                        <li>
-                            Mercurio
-                        </li>
-
-                        <li>
-                            Venus
-                        </li>
-
-                        <li>
-                            La Tierra
-                        </li>
-                    </ul>
+                    <div class="preview">
+                        <ul>
+                            <li>
+                                Mercurio
+                            </li>
+    
+                            <li>
+                                Venus
+                            </li>
+    
+                            <li>
+                                La Tierra
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
                 <li>
@@ -557,25 +582,23 @@
                         </code>
                     </pre>
 
-                    <p>
-                        Preview:
-                    </p>
-
-                    <dl>
-                        <dt>
-                            Protón
-                        </dt>
-                        <dd>
-                            Partícula elemental del núcleo del átomo, provisto de carga eléctrica positiva.
-                        </dd>
-
-                        <dt>
-                            Electrón
-                        </dt>
-                        <dd>
-                            Partícula elemental del núcleo del átomo, provisto de carga eléctrica negativa.
-                        </dd>
-                    </dl>
+                    <div class="preview">
+                        <dl>
+                            <dt>
+                                Protón
+                            </dt>
+                            <dd>
+                                Partícula elemental del núcleo del átomo, provisto de carga eléctrica positiva.
+                            </dd>
+    
+                            <dt>
+                                Electrón
+                            </dt>
+                            <dd>
+                                Partícula elemental del núcleo del átomo, provisto de carga eléctrica negativa.
+                            </dd>
+                        </dl>
+                    </div>
                 </li>
             </ol>
 
@@ -666,53 +689,51 @@
                 </code>
             </pre>
 
-            <p>
-                Preview:
-            </p>
-
-            <table>
-                <tr>
-                    <td>
-                        1 1
-                    </td>
-
-                    <td>
-                        1 2
-                    </td>
-
-                    <td>
-                        1 3
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        2 1
-                    </td>
-
-                    <td>
-                        2 2
-                    </td>
-
-                    <td>
-                        2 3
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        3 1
-                    </td>
-
-                    <td>
-                        3 2
-                    </td>
-
-                    <td>
-                        3 3
-                    </td>
-                </tr>
-            </table>
+            <div class="preview">
+                <table>
+                    <tr>
+                        <td>
+                            1 1
+                        </td>
+    
+                        <td>
+                            1 2
+                        </td>
+    
+                        <td>
+                            1 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            2 1
+                        </td>
+    
+                        <td>
+                            2 2
+                        </td>
+    
+                        <td>
+                            2 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            3 1
+                        </td>
+    
+                        <td>
+                            3 2
+                        </td>
+    
+                        <td>
+                            3 3
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
             <p>
                 Para escribir los encabezados de la tabla, como “Nombre”, “Edad” y “País”, se hace uso de la etiqueta &lt;th&gt; &lt;/th&gt;
@@ -761,70 +782,68 @@
                 </code>
             </pre>
 
-            <p>
-                Preview:
-            </p>
-
-            <table>
-                <caption>
-                    Tabla ejemplo.
-                </caption>
-
-                <tr>
-                    <th>
-                        Columna 1
-                    </th>
-
-                    <th>
-                        Columna 2
-                    </th>
-
-                    <th>
-                        Columna 3
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        1 1
-                    </td>
-
-                    <td>
-                        1 2
-                    </td>
-
-                    <td>
-                        1 3
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        2 1
-                    </td>
-
-                    <td>
-                        2 2
-                    </td>
-
-                    <td>
-                        2 3
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        3 1
-                    </td>
-
-                    <td>
-                        3 2
-                    </td>
-
-                    <td>
-                        3 3
-                    </td>
-                </tr>
-            </table>
+            <div class="preview">
+                <table>
+                    <caption>
+                        Tabla ejemplo.
+                    </caption>
+    
+                    <tr>
+                        <th>
+                            Columna 1
+                        </th>
+    
+                        <th>
+                            Columna 2
+                        </th>
+    
+                        <th>
+                            Columna 3
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            1 1
+                        </td>
+    
+                        <td>
+                            1 2
+                        </td>
+    
+                        <td>
+                            1 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            2 1
+                        </td>
+    
+                        <td>
+                            2 2
+                        </td>
+    
+                        <td>
+                            2 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            3 1
+                        </td>
+    
+                        <td>
+                            3 2
+                        </td>
+    
+                        <td>
+                            3 3
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
             <p>
                 Si la tabla es bastante grande, lo mejor es dividirla en varias partes. Para esto, las siguientes etiquetas HTML se utilizan para definir los tres «campos» de la tabla; cabe resaltar que estas añade valor semántico a la tabla:
@@ -890,74 +909,72 @@
                 </code>
             </pre>
 
-            <p>
-                Preview:
-            </p>
-
-            <table>
-                <caption>
-                    Tabla ejemplo.
-                </caption>
-
-                <thead>
-                    <tr>
-                        <th>
-                            Columna 1
-                        </th>
+            <div class="preview">
+                <table>
+                    <caption>
+                        Tabla ejemplo.
+                    </caption>
     
-                        <th>
-                            Columna 2
-                        </th>
-    
-                        <th>
-                            Columna 3
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            1 1
-                        </td>
-    
-                        <td>
-                            1 2
-                        </td>
-    
-                        <td>
-                            1 3
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td>
-                            2 1
-                        </td>
-    
-                        <td>
-                            2 2
-                        </td>
-    
-                        <td>
-                            2 3
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td>
-                            3 1
-                        </td>
-    
-                        <td>
-                            3 2
-                        </td>
-    
-                        <td>
-                            3 3
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Columna 1
+                            </th>
+        
+                            <th>
+                                Columna 2
+                            </th>
+        
+                            <th>
+                                Columna 3
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1 1
+                            </td>
+        
+                            <td>
+                                1 2
+                            </td>
+        
+                            <td>
+                                1 3
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td>
+                                2 1
+                            </td>
+        
+                            <td>
+                                2 2
+                            </td>
+        
+                            <td>
+                                2 3
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td>
+                                3 1
+                            </td>
+        
+                            <td>
+                                3 2
+                            </td>
+        
+                            <td>
+                                3 3
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section id="formTags">
@@ -1017,11 +1034,9 @@
                         </code>
                     </pre>
 
-                    <p>
-                        Preview:
-                    </p>
-
-                    <input type="text" name="plainText" placeholder="ej. Hola que tal">
+                    <div class="preview">
+                        <input type="text" name="plainText" placeholder="ej. Hola que tal">
+                    </div>
                 </li>
 
                 <li>
@@ -1033,10 +1048,9 @@
                         </code>
                     </pre>
 
-                    <p>
-                        Preview:
-                    </p>
-                    <input type="password" name="passwordText" placeholder="Ingrese contraseña" required>
+                    <div class="preview">
+                        <input type="password" name="passwordText" placeholder="Ingrese contraseña" required>
+                    </div>
                 </li>
 
                 <li>
@@ -1048,11 +1062,9 @@
                         </code>
                     </pre>
 
-                    <p>
-                        Preview:
-                    </p>
-
-                    <input type="email" name="emailText" placeholder="00000000@uca.edu.sv">
+                    <div class="preview">
+                        <input type="email" name="emailText" placeholder="00000000@uca.edu.sv">
+                    </div>
                 </li>
 
                 <li>
@@ -1064,11 +1076,9 @@
                         </code>
                     </pre>
     
-                    <p>
-                        Preview:
-                    </p>
-    
-                    <input type="search" name="searchText">
+                    <div class="preview">
+                        <input type="search" name="searchText">
+                    </div>
                 </li>
             </ul>
 
@@ -1100,23 +1110,21 @@
                         </code>
                     </pre>
 
-                    <p>
-                        Preview:
-                    </p>
-
-                    <input type="radio" name="radio1" value="Mercurio"> Mercurio
-                    <br>
-                    <input type="radio" name="radio1" value="Venus"> Venus
-                    <br>
-                    <input type="radio" name="radio1" value="La Tierra"> La Tierra
-                    
-                    <hr>
-
-                    <input type="radio" name="radio2" value="Kit Kat"> KitKat
-                    <br>
-                    <input type="radio" name="radio2" value="Lollipop"> Lollipop
-                    <br>
-                    <input type="radio" name="radio2" value="Marshmellow"> Marshmellow
+                    <div class="preview">
+                        <input type="radio" name="radio1" value="Mercurio"> Mercurio
+                        <br>
+                        <input type="radio" name="radio1" value="Venus"> Venus
+                        <br>
+                        <input type="radio" name="radio1" value="La Tierra"> La Tierra
+                        
+                        <hr>
+    
+                        <input type="radio" name="radio2" value="Kit Kat"> KitKat
+                        <br>
+                        <input type="radio" name="radio2" value="Lollipop"> Lollipop
+                        <br>
+                        <input type="radio" name="radio2" value="Marshmellow"> Marshmellow
+                    </div>
                 </li>
 
                 <li>
