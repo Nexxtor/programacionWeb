@@ -1057,24 +1057,110 @@
 
                 <li>
                     <b>search</b>: permite al usuario ingresar términos de búsqueda;  La diferencia con un campo de texto normal, es únicamente estética, aunque puede ofrecer alguna funcionalidad semántica extra como un histórico de últimos términos introducidos o ayuda para el borrado.
-                </li>
 
-                <pre>
-                    <code class = 'html '>
+                    <pre>
+                        <code class = 'html '>
     &lt;input type=&quot;search&quot; name=&quot;searchText&quot;&gt;
-                    </code>
-                </pre>
-
-                <p>
-                    Preview:
-                </p>
-
-                <input type="search" name="searchText">
+                        </code>
+                    </pre>
+    
+                    <p>
+                        Preview:
+                    </p>
+    
+                    <input type="search" name="searchText">
+                </li>
             </ul>
 
             <p>
-                <u><i>Entrada de texto:</i></u>
+                <u><i>Selección múltiple:</i></u>
             </p>
+
+            <ul>
+                <li>
+                    <p>
+                        <b>radio</b>: Permite desplegar varias opciones al usuario, pero solo seleccionar una. Para delimitar el conjunto de opciones se hace uso del atributo <em>name</em>, donde todos los elementos con el mismo valor pertenecen al mismo conjunto.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;radio&quot; name=&quot;radio1&quot; value=&quot;Mercurio&quot;&gt; Mercurio
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio1&quot; value=&quot;Venus&quot;&gt; Venus
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio1&quot; value=&quot;La Tierra&quot;&gt; La Tierra
+    
+    &lt;hr&gt;
+
+    &lt;input type=&quot;radio&quot; name=&quot;radio2&quot; value=&quot;Kit Kat&quot;&gt; KitKat
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio2&quot; value=&quot;Lollipop&quot;&gt; Lollipop
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio2&quot; value=&quot;Marshmellow&quot;&gt; Marshmellow
+                        </code>
+                    </pre>
+
+                    <p>
+                        Preview:
+                    </p>
+
+                    <input type="radio" name="radio1" value="Mercurio"> Mercurio
+                    <br>
+                    <input type="radio" name="radio1" value="Venus"> Venus
+                    <br>
+                    <input type="radio" name="radio1" value="La Tierra"> La Tierra
+                    
+                    <hr>
+
+                    <input type="radio" name="radio2" value="Kit Kat"> KitKat
+                    <br>
+                    <input type="radio" name="radio2" value="Lollipop"> Lollipop
+                    <br>
+                    <input type="radio" name="radio2" value="Marshmellow"> Marshmellow
+                </li>
+
+                <li>
+                    <p>
+                        <b>checkbox</b>: Permite desplegar varias opciones al usuario, y seleccionar varias de estas. Para delimitar el conjunto de opciones se hace uso del atributo <em>name</em>, donde todos los elementos con el mismo valor pertenecen al mismo conjunto.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox1&quot; value=&quot;Mercurio&quot;&gt; Mercurio
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox1&quot; value=&quot;Venus&quot;&gt; Venus
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox1&quot; value=&quot;La Tierra&quot;&gt; La Tierra
+    
+    &lt;hr&gt;
+
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot; value=&quot;Kit Kat&quot;&gt; KitKat
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot; value=&quot;Lollipop&quot;&gt; Lollipop
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot; value=&quot;Marshmellow&quot;&gt; Marshmellow
+                        </code>
+                    </pre>
+
+                    <p>
+                        Preview:
+                    </p>
+
+                    <input type="checkbox" name="checkbox1" value="Mercurio"> Mercurio
+                    <br>
+                    <input type="checkbox" name="checkbox1" value="Venus"> Venus
+                    <br>
+                    <input type="checkbox" name="checkbox1" value="La Tierra"> La Tierra
+                    
+                    <hr>
+
+                    <input type="checkbox" name="checkbox2" value="Kit Kat"> KitKat
+                    <br>
+                    <input type="checkbox" name="checkbox2" value="Lollipop"> Lollipop
+                    <br>
+                    <input type="checkbox" name="checkbox2" value="Marshmellow"> Marshmellow
+                </li>
+            </ul>
 
         </section>
 
