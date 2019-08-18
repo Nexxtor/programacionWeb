@@ -9,6 +9,7 @@
     --table-head:#5C6BC0;
     --table-bg-1:#FAFAFA;
     --table-bg-2:#EEEEEE;
+    --table-bg-3:rgb(212, 211, 211);
     --nav-color-1: #512DA8;
     --nav-color-2: #1976D2;
     --nav-color-3: #00BCD4;
@@ -90,6 +91,10 @@ thead{
 
 td{
     font-size: 0.8em
+}
+
+td:hover{
+    background: var(--table-bg-3);
 }
 
 tbody>tr:nth-child(odd){

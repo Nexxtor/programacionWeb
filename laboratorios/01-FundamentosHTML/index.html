@@ -614,6 +614,10 @@
                 </li>
             </ul>
 
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio1/example1.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
             <pre>
                 <code class = 'html'>
     &lt;table&gt;
@@ -710,12 +714,367 @@
                 </tr>
             </table>
 
+            <p>
+                Para escribir los encabezados de la tabla, como “Nombre”, “Edad” y “País”, se hace uso de la etiqueta &lt;th&gt; &lt;/th&gt;
+            </p>
+
+            <p>
+                Para asignarle nombre a una tabla e informar rápidamente al visitante sobre el contenido de la misma, se hace uso de la etiqueta &lt;caption&gt; &lt;/caption&gt;
+            </p>
+            <pre>
+                <code class="html">
+    &lt;table&gt;
+        &lt;caption&gt;
+            Tabla Ejemplo.
+        &lt;/caption&gt;
+
+        &lt;tr&gt;
+            &lt;th&gt;
+                Columna 1
+            &lt;/th&gt;
+
+            &lt;th&gt;
+                Columna 2
+            &lt;/th&gt;
+
+            &lt;th&gt;
+                Columna 3
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                1 1
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                1 2
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                1 3
+            &lt;/td&gt;
+        &lt;/tr&gt;
+
+        ...
+
+    &lt;/table&gt;
+                </code>
+            </pre>
+
+            <p>
+                Preview:
+            </p>
+
+            <table>
+                <caption>
+                    Tabla ejemplo.
+                </caption>
+
+                <tr>
+                    <th>
+                        Columna 1
+                    </th>
+
+                    <th>
+                        Columna 2
+                    </th>
+
+                    <th>
+                        Columna 3
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        1 1
+                    </td>
+
+                    <td>
+                        1 2
+                    </td>
+
+                    <td>
+                        1 3
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        2 1
+                    </td>
+
+                    <td>
+                        2 2
+                    </td>
+
+                    <td>
+                        2 3
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        3 1
+                    </td>
+
+                    <td>
+                        3 2
+                    </td>
+
+                    <td>
+                        3 3
+                    </td>
+                </tr>
+            </table>
+
+            <p>
+                Si la tabla es bastante grande, lo mejor es dividirla en varias partes. Para esto, las siguientes etiquetas HTML se utilizan para definir los tres «campos» de la tabla; cabe resaltar que estas añade valor semántico a la tabla:
+            </p>
+
+            <ol>
+                <li>
+                    <b>&lt;thead&gt;&lt;/thead&gt;</b>: Define el encabezado de la tabla
+                </li>
+                <li>
+                    <b>&lt;tbody&gt;&lt;/tbody&gt;</b>: Define el cuerpo de la tabla
+                </li>
+                <li>
+                    <b>&lt;tfooter&gt;&lt;/tfooter&gt;</b>: Define el pie de página de la tabla
+                </li>
+            </ol>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio1/example2.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <pre>
+                <code class="html">
+    &lt;table&gt;
+        &lt;caption&gt;
+            Tabla Ejemplo.
+        &lt;/caption&gt;
+        
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;
+                    Columna 1
+                &lt;/th&gt;
+
+                &lt;th&gt;
+                    Columna 2
+                &lt;/th&gt;
+
+                &lt;th&gt;
+                    Columna 3
+                &lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    1 1
+                &lt;/td&gt;
+
+                &lt;td&gt;
+                    1 2
+                &lt;/td&gt;
+
+                &lt;td&gt;
+                    1 3
+                &lt;/td&gt;
+            &lt;/tr&gt;
+
+            ...
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+                </code>
+            </pre>
+
+            <p>
+                Preview:
+            </p>
+
+            <table>
+                <caption>
+                    Tabla ejemplo.
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th>
+                            Columna 1
+                        </th>
+    
+                        <th>
+                            Columna 2
+                        </th>
+    
+                        <th>
+                            Columna 3
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            1 1
+                        </td>
+    
+                        <td>
+                            1 2
+                        </td>
+    
+                        <td>
+                            1 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            2 1
+                        </td>
+    
+                        <td>
+                            2 2
+                        </td>
+    
+                        <td>
+                            2 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            3 1
+                        </td>
+    
+                        <td>
+                            3 2
+                        </td>
+    
+                        <td>
+                            3 3
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section id="formTags">
             <h3>
                 Manejo de formularios.
             </h3>
+
+            <p>
+                Un formulario es un conjunto de controles (botones, cajas de texto, casillas de verificación, botones radio, etc) que permiten al usuario introducir datos, para su posterior procesamiento.
+            </p>
+
+            <p>
+                La etiqueta encargada de delimitar un formulario en HTML es &lt;form&gt; &lt;/form&gt;. Dentro de esta se colocan todos los elementos con los que el usuario puede interactuar.
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;form action=&quot;index.html&quot; method=&quot;GET&quot;&gt;
+        
+        &lt;!-- Contenido del formulario --&gt;
+
+    &lt;/form&gt;
+                </code>
+            </pre>
+
+            <p>
+                Se puede observar que junto a la etiqueta se encuentran dos atributos. El primero, <em>action</em>, indica la página o agente que se encargará del procesamiento de datos.
+            </p>
+
+            <p>
+                El segundo, <em>method</em>, indica el método HTTP por el cual se realizará la petición al servidor, en este caso GET. Esto se detallará en la guía dedicada a peticiones HTTP y servicios en la Web.
+            </p>
+
+            <p>
+                Algunos de los elementos más utilizados en el manejo de formularios son los siguientes:
+            </p>
+
+            <h4>
+                &lt;input&gt;
+            </h4>
+
+            <p>
+                Es un campo de entrada donde el usuario puede ingresar datos. Uno de los atributos que posee la etiqueta <em>input</em> es <b><em>type</em></b>, que especifica el tipo de entrada de datos; entre ellos se pueden encontrar los botones, checkbox, entre otros. A continuación se detallarán los tipos de <em>input</em> más utilizados:
+            </p>
+
+            <p>
+                <u><i>Entrada de texto:</i></u>
+            </p>
+
+            <ul>
+                <li>
+                    <b>text</b>: permite al usuario ingresar texto plano.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;text&quot; name=&quot;plainText&quot; placeholder=&quot;ej. Hola que tal&quot;&gt;
+                        </code>
+                    </pre>
+
+                    <p>
+                        Preview:
+                    </p>
+
+                    <input type="text" name="plainText" placeholder="ej. Hola que tal">
+                </li>
+
+                <li>
+                    <b>password</b>: permite al usuario ingresar contraseñas; visualmente aplica un filtro de privacidad.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Ingrese contraseña&quot; required&gt;
+                        </code>
+                    </pre>
+
+                    <p>
+                        Preview:
+                    </p>
+                    <input type="password" name="passwordText" placeholder="Ingrese contraseña" required>
+                </li>
+
+                <li>
+                    <b>email</b>: permite al usuario ingresar direcciones de email; añade valor semántico por lo que permite a los buscadores sugerir correos ya utilizados.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Ingrese contraseña&quot; required&gt;
+                        </code>
+                    </pre>
+
+                    <p>
+                        Preview:
+                    </p>
+
+                    <input type="email" name="emailText" placeholder="00000000@uca.edu.sv">
+                </li>
+
+                <li>
+                    <b>search</b>: permite al usuario ingresar términos de búsqueda;  La diferencia con un campo de texto normal, es únicamente estética, aunque puede ofrecer alguna funcionalidad semántica extra como un histórico de últimos términos introducidos o ayuda para el borrado.
+                </li>
+
+                <pre>
+                    <code class = 'html '>
+    &lt;input type=&quot;search&quot; name=&quot;searchText&quot;&gt;
+                    </code>
+                </pre>
+
+                <p>
+                    Preview:
+                </p>
+
+                <input type="search" name="searchText">
+            </ul>
+
+            <p>
+                <u><i>Entrada de texto:</i></u>
+            </p>
 
         </section>
 
