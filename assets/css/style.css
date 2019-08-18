@@ -529,3 +529,7 @@ ol img{
 .warning-content p{
     padding: 4px;
 }
+
+div.preview{
+    width: 100%;
+}

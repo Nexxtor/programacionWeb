@@ -1009,7 +1009,7 @@
 
             <ul>
                 <li>
-                    <b>text</b>: permite al usuario ingresar texto plano.
+                    <b>text</b>: Permite al usuario ingresar texto plano.
 
                     <pre>
                         <code class = 'html'>
@@ -1025,7 +1025,7 @@
                 </li>
 
                 <li>
-                    <b>password</b>: permite al usuario ingresar contraseñas; visualmente aplica un filtro de privacidad.
+                    <b>password</b>: Permite al usuario ingresar contraseñas; visualmente aplica un filtro de privacidad.
 
                     <pre>
                         <code class = 'html'>
@@ -1040,7 +1040,7 @@
                 </li>
 
                 <li>
-                    <b>email</b>: permite al usuario ingresar direcciones de email; añade valor semántico por lo que permite a los buscadores sugerir correos ya utilizados.
+                    <b>email</b>: Permite al usuario ingresar direcciones de email; añade valor semántico por lo que permite a los buscadores sugerir correos ya utilizados.
 
                     <pre>
                         <code class = 'html'>
@@ -1056,7 +1056,7 @@
                 </li>
 
                 <li>
-                    <b>search</b>: permite al usuario ingresar términos de búsqueda;  La diferencia con un campo de texto normal, es únicamente estética, aunque puede ofrecer alguna funcionalidad semántica extra como un histórico de últimos términos introducidos o ayuda para el borrado.
+                    <b>search</b>: Permite al usuario ingresar términos de búsqueda;  La diferencia con un campo de texto normal, es únicamente estética, aunque puede ofrecer alguna funcionalidad semántica extra como un histórico de últimos términos introducidos o ayuda para el borrado.
 
                     <pre>
                         <code class = 'html '>
@@ -1142,23 +1142,97 @@
                         </code>
                     </pre>
 
+                    <div class="preview">
+                        <input type="checkbox" name="checkbox1" value="Mercurio"> Mercurio
+                        <br>
+                        <input type="checkbox" name="checkbox1" value="Venus"> Venus
+                        <br>
+                        <input type="checkbox" name="checkbox1" value="La Tierra"> La Tierra
+                        
+                        <hr>
+    
+                        <input type="checkbox" name="checkbox2" value="Kit Kat"> KitKat
+                        <br>
+                        <input type="checkbox" name="checkbox2" value="Lollipop"> Lollipop
+                        <br>
+                        <input type="checkbox" name="checkbox2" value="Marshmellow"> Marshmellow
+                    </div>
+                </li>
+            </ul>
+
+            <p>
+                <u><i>Botones:</i></u>
+            </p>
+
+            <ul>
+                <li>
                     <p>
-                        Preview:
+                        <b>button</b>: es un botón que no posee acción, a menos que sea especificado en el atributo onClick.
                     </p>
 
-                    <input type="checkbox" name="checkbox1" value="Mercurio"> Mercurio
-                    <br>
-                    <input type="checkbox" name="checkbox1" value="Venus"> Venus
-                    <br>
-                    <input type="checkbox" name="checkbox1" value="La Tierra"> La Tierra
-                    
-                    <hr>
+                    <pre>
+                        <code class = 'html'>
+                            less
+                        </code>
+                    </pre>
 
-                    <input type="checkbox" name="checkbox2" value="Kit Kat"> KitKat
-                    <br>
-                    <input type="checkbox" name="checkbox2" value="Lollipop"> Lollipop
-                    <br>
-                    <input type="checkbox" name="checkbox2" value="Marshmellow"> Marshmellow
+                    <div class="preview">
+                        <input type="button" name="plainButton" value="Botón simple">
+                    </div>
+                </li>
+            </ul>
+
+            <p>
+                <u><i>Varios:</i></u>
+            </p>
+
+            <ul>
+                <li>
+                    <p>
+                        <b>date</b>: Permite ingresar una fecha con el formato dd/mm/aaaa. 
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;date&quot; name=&quot;satePicker&quot;&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="date" name="satePicker">
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>file</b>: Es un botón que permite seleccionar un archivo local para ser cargado. 
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type="file" name="filePicker"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="file" name="filePicker">
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>color</b>: Permite selecionar un color de una paleta. 
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    Color: &lt;input type="color" name="colorPicker"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        Color: <input type="color" name="colorPicker">
+                    </div>
                 </li>
             </ul>
 
