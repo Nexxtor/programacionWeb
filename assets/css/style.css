@@ -531,7 +531,7 @@ ol img{
 }
 
 div.preview{
-    width: 70%;
+    width: 80%;
     border: var(--down-btn) 2px solid;
     padding: 1em;
     margin: 0 auto 0 auto;
