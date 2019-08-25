@@ -24,6 +24,14 @@ body{
     padding: 0;
 }
 
+h1{
+    font-size: 2em;
+}
+
+#brand h1{
+    font-size: 1.5em;
+}
+
 #brand *{
     text-align: center;
 }
@@ -539,6 +547,8 @@ div.preview{
 }
 
 p.previewText{
-    color:var(--down-btn);
-    margin: 0 0 1em 0;
+    color:var(--down-btn) !important; 
+    margin: 0 0 1em 0 !important;
+    text-align: right !important;
+    border: none!important;
 }

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/solarized-dark.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="icon" href="../../assets/images/icons/web.png">
+
+    <title>Fundamentos de CSS</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "Jos&eacute; Sime&oacute;n Ca&ntilde;as".<br>
+        Programaci&oacute;n Web.<br>
+        Ciclo 02/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('../../assets/images/main/laboratorio1.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#intro">   Introducci&oacute;n</a><i class="fas fa-star-of-life"></i></li>
+                        <li><a href="#textTags">   Etiq. Texto</a><i class="fas fa-text-height"></i></li>
+                        <li><a href="#listTags">   Etiq. Listas</a><i class="fas fa-list"></i></li>
+                        <li><a href="#tableTags">   Etiq. Tablas</a><i class="fas fa-table"></i></li>
+                        <li><a href="#formTags">   Etiq. Formularios</a><i class="fas fa-keyboard"></i></li>
+                        <li><a href="#exercices">   Ejercicios</a><i class="fas fa-dumbbell"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Laboratorio 2</h1>
+                <h3>26-30 de agosto de 2019</h3>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Fundamentos de CSS.</h1>
+            </div>
+            <div id="content-brand">
+                <h5>Selectores, Reglas, Especificidad, Pseudo-clases, Herencia y Cascada.</h5>
+            </div>
+        </header>
+
+        <section id="intro">
+            <h3>
+                Introducci&oacute;n
+            </h3>
+            
+            <h4>
+                &iquest;Qu&eacute; es CSS?
+            </h4>
+
+            <p>
+                CSS son las siglas para <em>Cascading Style Sheets</em> (Hojas de estilo en cascada en espa&ntilde;ol). Es un lenguaje que se utiliza para dar estilo a los elementos de los documentos escritos en lenguaje de marcado (HTML, XML, SVG, etc.). CSS determina la manera en como es modelada la <em>informaci&oacute;n en pantalla</em>. 
+            </p>
+
+            <h4>
+                &iquest;C&oacute;mo funciona?
+            </h4>
+
+            <p>
+                Se da estilo a los diferentes elementos por medio de una serie de reglas. Estas reglas al aplicarse a un documento, modifican la apariencia visual de los elementos de dicho archivo. Mientras CSS se encarga de la parte del dise&ntilde;o de una p&aacute;gina, el HTML define el contenido de esta.
+            </p>
+
+            <p>
+                Para vincular un documento CSS con el HTML, es necesario a&ntilde;adir la direcci&oacute;n relativa del CSS por medio de la etiqueta &lt;link&gt;  y asignando de valor en el atributo href dicha rut del archivo .css de la siguiente forma:
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+
+        &lt;!-- Relaci&oacute;n del archivo CSS con el HTML --&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+
+        &lt;title&gt;Ejemplo prueba&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;
+            As&iacute; se vincula un archivo CSS
+        &lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <h4>
+                Sintaxis b&aacute;sica
+            </h4>
+
+            <p>
+                Un conjunto de reglas CSS est&aacute; compuesto por las siguientes partes:
+            </p>
+
+            <ul>
+                <li>
+                    <i>Selectores</i>: Es un m&oacute;dulo que identificar&aacute; a ciertos elementos de nuestra p&aacute;gina. Las declaraciones asociadas se aplicar&aacute;n solo a estos elementos. Tambi&eacute;n se conoce como filtro.
+                </li>
+                <li>
+                    <i>Propiedad</i>: Es un aspecto o caracter&iacute;stica de una etiqueta HTML que se desea modificar. Entre los m&aacute;s comunes se tiene el color de fondo, color de la letra, color de hiperv&iacute;nculos, etc.
+                </li>
+                <li>
+                    <i>Valor</i>: Son todas aquellas unidades, colores, identificadores que modifican el comportamento de una propiedad. Por ejemplo la propiedad <i>color</i>, podr&iacute;a tener los valores de <i>red</i> o <i>green</i>.
+                </li>
+            </ul>
+
+            <pre>
+                <code class = 'css'>
+    selector{
+        prop1: valor1;
+        prop2: valor2;
+        prop3: valor3;
+        ...
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Ejemplo.
+            </h4>
+
+            <p>
+                Se quiere aplicar un fondo <i>#C5E1A5</i> a los h1 del sitio web. La regla CSS ser&iacute;a la siguiente
+            </p>
+
+            <p><i>
+                CSS
+            </i></p>
+
+            <pre>
+                <code class = 'css'>
+    h1{
+        background : #C5E1A5;
+    }
+                </code>
+            </pre>
+
+            <p><i>
+                HTML
+            </i></p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;h1&gt;
+        T&iacute;tulo llamativo
+    &lt;/h1&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <h1 style="background:#C5E1A5">
+                    T&iacute;tulo llamativo
+                </h1>
+            </div>
+        </section>
+
+        <section id="selector">
+            <h3>
+                Selectores
+            </h3>
+
+            <h4>
+                Selectores simples.
+            </h4>
+
+            <p>
+                Estos son las estrcturas o m&oacute;dulos de selecci&oacute;n m&aacute;s simples que existen en CSS, de los cuales derivan selectores m&aacute;s complejos a partir de la combinaci&oacute;n y uni&oacute;n de los mismos.  
+            </p>
+
+            <h4>
+                Tipos de selectores.
+            </h4>
+
+            <ul>
+                <li>
+                    <p>
+                        <em>Selector de tipo</em>: Selecciona elementos b&aacute;sicos de la estructura html como body o header, es dicir etiquetas HTML. Este tipo de regla es de gran utilidad para generalizar estilos y realizar plantillas del sitio.
+                    </p>
+
+                    <p>
+                        Ejemplo: Si se quiere generalizar un margen al <i>body</i> de todo el sitio (como es el caso de la presente gu&iacute;a), la regla CSS haciendo uso de este selector ser&iacute;a de la siguiente forma:
+                    </p>
+
+                    <pre>
+                        <code class = 'css'>
+    body{
+        margin-left : 20%;
+        margin-right : 20%;
+    }
+                        </code>
+                    </pre>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Selector de clase</em>:  Este selecciona elementos que han sido marcado con un identificador a traves del atributo <em>class</em>. La sintaxis de este selector es anteceder un punto al nombre de la clase que modificar&aacute;:
+                    </p>
+
+                    <pre>
+                        <code class = 'css'>
+    .class {
+        /*Rules*/
+    }
+                        </code>
+                    </pre>
+
+                    <p>
+                        Este tipo de selectores conviene cuando se desea seleccionar un conjunto espec&iacute;fico de elementos que cumplen la misma funci&oacute;n. Por ejemplo:
+                    </p>
+
+                    <p><i>
+                        HTML
+                    </i></p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este p&aacute;rrafo no es importante.
+    &lt;/p&gt;
+
+    &lt;p class=&quot;important&quot;&gt;
+        Este p&aacute;rrafo es importante.
+    &lt;/p&gt;
+
+    &lt;p&gt;
+        Este p&aacute;rrafo no es importante.
+    &lt;/p&gt;
+    
+    &lt;p class=&quot;important&quot;&gt;
+        Este p&aacute;rrafo es importante.
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+
+                    <p><i>
+                        CSS
+                    </i></p>
+
+                    <pre>
+                        <code class = 'css'>
+    .important{
+        color: red;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <p>
+                            Este p&aacute;rrafo no es importante.
+                        </p>
+
+                        <p class="important">
+                            Este p&aacute;rrafo es importante.
+                        </p>
+
+                        <p>
+                            Este p&aacute;rrafo no es importante.
+                        </p>
+                        
+                        <p class="important">
+                            Este p&aacute;rrafo es importante.
+                        </p>
+
+                        <style>
+                            .important{
+                                color: red;
+                            }
+                        </style>
+                    </div>                    
+                </li>
+
+                <li>
+                    <p>
+                        <em>Selector de id</em>: Estos, a diferencia de los dos selectores anteriores, delimitan sus reglas de estilos a los elementos &uacute;nicos que han sido definidos con el atributo <em>id</em>. Su sintaxis se basa en anteponer un numeral al identificador del id seleccionado:
+                    </p>
+
+                    <pre>
+                        <code class = 'css'>
+    #id{
+        /* RULES */
+    }
+                        </code>
+                    </pre>
+
+                    <p>
+                        Este selector es muy espec&iacute;fico, por lo que es priorizado ante cualquier otro. Ejemplo:
+                    </p>
+
+                    <p><i>
+                        HTML
+                    </i></p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este p&aacute;rrafo no es importante.
+    &lt;/p&gt;
+
+    &lt;p class=&quot;important&quot; id="flawless"&gt;
+        Este p&aacute;rrafo es perfecto.
+    &lt;/p&gt;
+
+    &lt;p class=&quot;important&quot;&gt;
+        Este p&aacute;rrafo es importante.
+    &lt;/p&gt;
+    
+    &lt;p class=&quot;important&quot;&gt;
+        Este p&aacute;rrafo es importante.
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+
+                    <p><i>
+                        CSS
+                    </i></p>
+
+                    <pre>
+                        <code class = 'css'>
+    #flawless{
+        color: green;
+        text-shadow: 2px 2px lightblue;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <p>
+                            Este p&aacute;rrafo no es importante.
+                        </p>
+
+                        <p class="important" id="flawless">
+                            Este p&aacute;rrafo es perfecto.
+                        </p>
+
+                        <p class="important">
+                            Este p&aacute;rrafo es importante.
+                        </p>
+                        
+                        <p class="important">
+                            Este p&aacute;rrafo es importante.
+                        </p>
+
+                        <style>
+                            #flawless{
+                                color: green;
+                                text-shadow: 2px 2px lightblue;
+                            }
+                        </style>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="operation">
+            <h3>
+                Combinaci&oacute;n de selectores.
+            </h3>
+
+            <p>
+                Normalmente no solo se har&aacute; uso de selectores simples; el la pr&aacute;ctica existen situaciones que requieren de la combinaci&oacute;n de dos o mas selectores, por lo que existen los siguientes operadores:
+            </p>
+
+            <ul>
+                <li>
+                    <p>
+                        <em>Combinador elementos individuales</em>: El aperador <em>,</em> selecciona ambos elementos listados;
+                    </p>
+
+                    <p><i>
+                        Sintaxis
+                    </i></p>
+
+                    <pre>
+                        <code class = 'css'>
+    A , B{
+        /* Rules */
+    }
+                        </code>
+                    </pre>
+
+                    <p><i>
+                        Ejemplo
+                    </i></p>
+                    
+                    <pre>
+                        <code class = 'html'>
+    &lt;h1&gt;
+        Título pricipal
+    &lt;/h1&gt;
+
+    &lt;h2&gt;
+        Subtítulo
+    &lt;/h2&gt;
+
+    &lt;p&gt;
+        Párrafo 1
+    &lt;/p>
+                        </code>
+                    </pre>
+
+                    <pre>
+                        <code class = 'css'>
+    h1 , p{
+        /* Seleccionará el h1 y el p */
+
+        background: #F8BBD0;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview" id="ex1">
+                        <h1>
+                            Título
+                        </h1>
+
+                        <h2>
+                            Subtítulo
+                        </h2>
+
+                        <p id="ex11">
+                            Párrafo 1
+                        </p>
+
+                        <style>
+                            #ex1 h1, #ex1 p#ex11{
+                                background: #F8BBD0;
+                            }
+                        </style>
+                    </div>
+
+                </li>
+
+                <li>
+                    <p>
+                        <em>Combinador de hermanos adyacentes</em>: El aperador <em>+</em> selecciona hermanos adyacentes; Esto significa el segundo elemento que sigue directamente al primero, y ambos comparten el mismo padre.
+                    </p>
+
+                    <p><i>
+                        Sintaxis
+                    </i></p>
+
+                    <pre>
+                        <code class = 'css'>
+    A + B{
+        /* Rules */
+    }
+                        </code>
+                    </pre>
+
+                    <p><i>
+                        Ejemplo
+                    </i></p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;h1&gt;
+        Título
+    &lt;/h1&gt;
+
+    &lt;p&gt;
+        P&aacute;rrafo 1
+    &lt;/p&gt;
+
+    &lt;p&gt;
+        P&aacute;rrafo 2
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+
+                    <pre>
+                        <code class = 'css'>
+    h1 + p{
+        /*
+            Seleccionar&aacute; el p&aacute;rrafo 1.
+        */
+
+        border: 1px #000 solid;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview" id="ex2">
+                        <h1>
+                            Título
+                        </h1>
+
+                        <p>
+                            Párrafo 1
+                        </p>
+
+                        <p>
+                            Párrafo 2
+                        </p>
+
+                        <style>
+                            #ex2 h1+p{
+                                border: 1px solid #000;
+                            }
+                        </style>
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Combinador de hermanos general</em>: El operador <em>~</em> selecciona a todos los hermanos de un mismo tipo; Esto significa todos los elementos que siguen directamente al primero, y que comparten el mismo padre.
+                    </p>
+
+                    <p><i>
+                        Sintaxis
+                    </i></p>
+
+                    <pre>
+                        <code class = 'css'>
+    A ~ B{
+        /* Rules */
+    }
+                        </code>
+                    </pre>
+
+                    <p><i>
+                        Ejemplo
+                    </i></p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;h1&gt;
+        Título
+    &lt;/h1&gt;
+
+    &lt;p&gt;
+        P&aacute;rrafo 1
+    &lt;/p&gt;
+
+    &lt;p&gt;
+        Párrafo 2
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+
+                    <pre>
+                        <code class = 'css'>
+    h1 ~ p{
+        /*
+            Seleccionará ambos párrafos
+        */
+
+        border: 1px solid #000;
+        border-radius: 5px; 
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview" id="ex3">
+                        <h1>
+                            Título
+                        </h1>
+
+                        <p>
+                            Párrafo 1
+                        </p>
+
+                        <p>
+                            Párrafo 2
+                        </p>
+
+                        <style>
+                            #ex3 h1~p{
+                                border: 1px solid #000;
+                                border-radius: 3px; 
+                            }
+                        </style>
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Selector de hijos directos</em>: El operador <em>></em> selecciona a todos los hijos directos de un mismo tipo dentro de un elemento.
+                    </p>
+
+                    <p><i>
+                        Sintaxis
+                    </i></p>
+
+                    <pre>
+                        <code class = 'css'>
+    A > B{
+        /* Rules */
+    }
+                        </code>
+                    </pre>
+
+                    <p><i>
+                        Ejemplo
+                    </i></p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;body&gt;
+        &lt;h1&gt;Título principal&lt;/h1&gt;
+        
+        &lt;p&gt;
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quas minus eos obcaecati. Consequuntur animi minus tenetur doloremque, repudiandae ipsam porro repellendus itaque libero labore consectetur enim impedit quia nihil.
+        &lt;/p&gt;
+
+        &lt;section id=&quot;sect1&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam suscipit et sapiente accusamus explicabo sunt dicta fugit optio earum, assumenda eius laboriosam veritatis maxime, quae minima quas! Placeat, omnis dicta.
+            &lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;sect2&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas nisi qui, sunt deleniti vitae omnis dignissimos fugiat aspernatur illo voluptatum ad rerum alias consequuntur nihil odio debitis velit. Dignissimos, vel?
+            &lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+                        </code>
+                    </pre>
+
+                    <pre>
+                        <code class = 'css'>
+    h1 > p{
+        /*
+            Seleccionará el primer párrafo
+        */
+
+        text-align: right;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview" id="ex4">
+                        <h1>Título principal</h1>
+    
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quas minus eos obcaecati. Consequuntur animi minus tenetur doloremque, repudiandae ipsam porro repellendus itaque libero labore consectetur enim impedit quia nihil.
+                        </p>
+                
+                        <section id="sect1">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam suscipit et sapiente accusamus explicabo sunt dicta fugit optio earum, assumenda eius laboriosam veritatis maxime, quae minima quas! Placeat, omnis dicta.
+                            </p>
+                        </section>
+                
+                        <section id="sect2">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas nisi qui, sunt deleniti vitae omnis dignissimos fugiat aspernatur illo voluptatum ad rerum alias consequuntur nihil odio debitis velit. Dignissimos, vel?
+                            </p>
+                        </section>
+
+                        <style>
+                            #ex4>p{
+                                text-align: right;
+                            }
+                        </style>
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <em>Selector de hijos</em>: El operador <em>" "</em> (espacio) selecciona a todos los hijos de un mismo tipo en cualquier nivel de jerarquía, dentro de un elemento.
+                    </p>
+
+                    <p><i>
+                        Sintaxis
+                    </i></p>
+
+                    <pre>
+                        <code class = 'css'>
+    A  B{
+        /* Rules */
+    }
+                        </code>
+                    </pre>
+
+                    <p><i>
+                        Ejemplo
+                    </i></p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;body&gt;
+        &lt;h1&gt;Título principal&lt;/h1&gt;
+        
+        &lt;p&gt;
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quas minus eos obcaecati. Consequuntur animi minus tenetur doloremque, repudiandae ipsam porro repellendus itaque libero labore consectetur enim impedit quia nihil.
+        &lt;/p&gt;
+
+        &lt;section id=&quot;sect1&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam suscipit et sapiente accusamus explicabo sunt dicta fugit optio earum, assumenda eius laboriosam veritatis maxime, quae minima quas! Placeat, omnis dicta.
+            &lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;sect2&quot;&gt;
+            &lt;p&gt;
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas nisi qui, sunt deleniti vitae omnis dignissimos fugiat aspernatur illo voluptatum ad rerum alias consequuntur nihil odio debitis velit. Dignissimos, vel?
+            &lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+                        </code>
+                    </pre>
+
+                    <pre>
+                        <code class = 'css'>
+    h1  p{
+        /*
+            Seleccionará todos los párrafos
+        */
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview" id="ex5">
+                        <h1>Título principal</h1>
+    
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quas minus eos obcaecati. Consequuntur animi minus tenetur doloremque, repudiandae ipsam porro repellendus itaque libero labore consectetur enim impedit quia nihil.
+                        </p>
+                
+                        <section id="sect1">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam suscipit et sapiente accusamus explicabo sunt dicta fugit optio earum, assumenda eius laboriosam veritatis maxime, quae minima quas! Placeat, omnis dicta.
+                            </p>
+                        </section>
+                
+                        <section id="sect2">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas nisi qui, sunt deleniti vitae omnis dignissimos fugiat aspernatur illo voluptatum ad rerum alias consequuntur nihil odio debitis velit. Dignissimos, vel?
+                            </p>
+                        </section>
+
+                        <style>
+                            #ex5 p{
+                                border-bottom: 2px dotted purple;
+                            }
+                        </style>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="tip">
+                <h3>
+                    Practicando
+                </h3>
+
+                <p>
+                    Para ahondar mas en el tema de selectores y operadores de selectores, se recomienda realizar la siguiente práctica virtual:
+                </p>
+
+                <figure>
+                    <img style='width: 100%' src='../../assets/images/laboratorios/laboratorio2/virtual.png' alt='Inserte RIPIO aqui'>
+                </figure>
+
+                <p style='padding-left:1.5em;'>
+                    Referencia a CSS Dinner: <a href='http://flukeout.github.io/' target = '_blank'>Práctica virtual</a>
+                </p>
+            </div>
+        </section>
+    </article>
+
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                    “I have been, and always shall be, your friend.”
+                </em></p>
+
+            <p id="author">
+                Spock.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../assets/js/javaScript.js"></script>
+<script src="../../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+</html>
