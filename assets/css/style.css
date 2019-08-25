@@ -9,6 +9,7 @@
     --table-head:#5C6BC0;
     --table-bg-1:#FAFAFA;
     --table-bg-2:#EEEEEE;
+    --table-bg-3:rgb(212, 211, 211);
     --nav-color-1: #512DA8;
     --nav-color-2: #1976D2;
     --nav-color-3: #00BCD4;
@@ -90,6 +91,10 @@ thead{
 
 td{
     font-size: 0.8em
+}
+
+td:hover{
+    background: var(--table-bg-3);
 }
 
 tbody>tr:nth-child(odd){
@@ -523,4 +528,17 @@ ol img{
 }
 .warning-content p{
     padding: 4px;
+}
+
+div.preview{
+    width: 80%;
+    border: var(--down-btn) 2px solid;
+    padding: 1em;
+    margin: 0 auto 0 auto;
+
+}
+
+p.previewText{
+    color:var(--down-btn);
+    margin: 0 0 1em 0;
 }

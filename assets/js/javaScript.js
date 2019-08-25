@@ -116,5 +116,14 @@ function setAnimationToLinks(){
     })
 }
 
+function addPreview(){
+    let previews = document.querySelectorAll(".preview");
+
+    previews.forEach((element, index) => {
+        element.innerHTML = "<p class='previewText'>Preview:</p>"+element.innerHTML
+    })
+}
+
+addPreview();
 setAnimationToLinks();
 

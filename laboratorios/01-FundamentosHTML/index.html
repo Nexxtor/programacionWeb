@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/solarized-dark.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="icon" href="../../assets/images/icons/web.png">
+
+    <title>Fundamentos de HTML</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación Web.<br>
+        Ciclo 02/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('../../assets/images/main/laboratorio1.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#intro">   Introducción</a><i class="fas fa-star-of-life"></i></li>
+                        <li><a href="#textTags">   Etiq. Texto</a><i class="fas fa-text-height"></i></li>
+                        <li><a href="#listTags">   Etiq. Listas</a><i class="fas fa-list"></i></li>
+                        <li><a href="#tableTags">   Etiq. Tablas</a><i class="fas fa-table"></i></li>
+                        <li><a href="#formTags">   Etiq. Formularios</a><i class="fas fa-keyboard"></i></li>
+                        <li><a href="#exercices">   Ejercicios</a><i class="fas fa-dumbbell"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Laboratorio 1</h1>
+                <h3>19-23 de agosto de 2019</h3>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Fundamentos de HTML.</h1>
+            </div>
+            <div id="content-brand">
+                <h5>Etiquetas básicas, tablas y formularios.</h5>
+            </div>
+        </header>
+
+        <section id="intro">
+            <h3>
+                Introducción.
+            </h3>
+
+            <h4>
+                ¿Qué es HTML?
+            </h4>
+
+            <p>
+                HTML define el contenido de una página web haciendo uso de etiquetas. Deriba de el lenguaje XML el cual sirve para describir información y HTML sirve para darle formato y presentarla en un navegador.
+            </p>
+
+            <h4>
+                Estructura Básica de un documento HTML.
+            </h4>
+
+            <pre>
+                <code class = 'html'>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt; Título &lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;!-- Code --&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <p>
+                Al inicio de todo documento HTML debería de haber una etiqueta que indique el tipo de documento. Esto es para informar al navegador de ciertas reglas para interpretar el código. Para documentos que utilizan la versión HTML5, esto se logra con: &lt;!DOCTYPE html&gt;.
+            </p>
+
+            <p>
+                Seguido al tipo de documento se utiliza la etiqueta &lt;html&gt;. Todo lo que pertenezca a la página web es colocado dentro de esta etiqueta. Este contenedor representa la raiz del documento.
+            </p>
+            
+            <p>
+                Dentro de la etiqueta &lt;html&gt; se coloca el <strong>encabezado</strong> con la etiqueta &lt;head&gt;, que contiene elementos que no son incluidos en el contenido visual del documento, pero son escenciales para los buscadores y navegadores. Es dentro de esta etiqueta donde se coloca la <strong>meta-data</strong> (información sobre el documento), como es el título, autor y descripción de la página.
+            </p>
+
+            <p>
+                El título es una indicación del contenido de la página, este ayuda a buscadores y facilita la navegación si se tienen varias pestañas abiertas en el navegador. El título se coloca dentro de la etiqueta &lt;title&gt;, que a su vez está dentro de la etiqueta &lt;head&gt;. Es importante no omitir esta etiqueta, ¿Confiaría en una página que no muestre su título?
+            </p>
+
+            <p>
+                Lo último para completar la estructura HTML, es agregar el <em>cuerpo del documento</em>. Este último es colocado junto al encabezado con la etiqueta &lt;body&gt;. Es aquí donde se incluye todo el contenido del documento y es mostrado por el <em>navegador</em>.
+            </p>
+
+            <h4>
+                Etiquetas y atributos.
+            </h4>
+
+            <p>
+                Una etiqueta es una marca con clase que delimita una bloque en los lenguajes basados en XML. Los atributos son modificadores de la etiquetas, siempre son escritos después de esta y dentro de los delimitadores < >. Es posible agregar más de un atributo a una etiqueta.
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;etiqueta atributo1= "Valor" atributo2= "Valor"&gt;
+                </code>
+            </pre>
+
+            <p>
+                Los atributos son utilizados debido a que muchas etiquetas por si solas no contienen suficiente información, con los atributos es posible agregar mucha información extra. Por ejemplo:
+            </p>
+            
+            <pre>
+                <code class = 'html'>
+    &lt;html lang="es"&gt;
+                </code>
+            </pre>
+
+            <p>
+                Con el atributo lang se está indicando que el documento está escrito en idioma español. También se utilizan atributos al utilizar imágenes:
+            </p>
+
+            <figure>
+                <img style='width: 25em' src='https://images.unsplash.com/photo-1507289872412-523fc6b2db5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=20ca9d0eba2016344894aec7bb453a2d&auto=format&fit=crop&w=748&q=80' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                En este caso la etiqueta <em>img</em> fué modificada con el atributo <em>src</em>, lo que le indica al navegador que obtenga la información de la imagen desde: <a href="https://images.unsplash.com/photo-1507289872412-523fc6b2db5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=20ca9d0eba2016344894aec7bb453a2d&auto=format&fit=crop&w=748&q=80">https://images.unsplash.com/photo-1507289872412-523fc6b2db5f</a>
+            </p>
+        </section>
+
+        <section id="textTags">
+            <h3>
+                Etiquetas de texto.
+            </h3>
+
+            <ol>
+                <li>
+                    <em>El elemento <b>&lt;p&gt;</b></em>: Su uso es bastante frecuente en la mayoría de sitios web y sirve para representar párrafos. Ejemplo:
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este es un parrafo.
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <p>
+                            Este es un parrafo.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <em>Los elementos desde <b>&lt;h1&gt;</b> hasta <b>&lt;h6&gt;</b></em>: Son utilizados para representar encabezados, desde el que tiene más importancia hasta el que tiene menos, respectivamente.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;h1&gt;Encabezado 1&lt;/h1&gt;
+    &lt;h2&gt;Encabezado 2&lt;/h2&gt;
+    &lt;h3&gt;Encabezado 3&lt;/h3&gt;
+    &lt;h4&gt;Encabezado 4&lt;/h4&gt;
+    &lt;h5&gt;Encabezado 5&lt;/h5&gt;
+    &lt;h6&gt;Encabezado 6&lt;/h6&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <h1 style="font-size: 2em">Encabezado 1</h1>
+                        <h2>Encabezado 2</h2>
+                        <h3>Encabezado 3</h3>
+                        <h4>Encabezado 4</h4>
+                        <h5>Encabezado 5</h5>
+                        <h6>Encabezado 6</h6>
+                    </div>
+
+                    <p>
+                        Cabe mencionar que tanto los elementos &lt;p&gt; como los elementos  &lt;h1&gt; hasta los &lt;h6&gt; poseen un valor semántico, por consiguiente el uso que se les dé cumplir con las reglas de semántica establecidas.
+                    </p>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;a&gt;</b></em>: sirve para definir un hipervínculo que, por lo general, redirige a otra página en el mismo sitio o a otro completamente diferente. Es importante mencionar que el navegador implementa ciertos diseños a éste elemento, de ahí el cambio de aspecto a diferencia de un elemento &lt;p&gt; convencional.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este link redirige a otra &lt;a href="google.com" target="_blank"&gt;página&lt;/a&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <p>
+                            Este link redirige a otra <a href="http://google.com" target="_blank">página</a>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;q&gt;</b></em>: Sirve para indicar que el texto contenido en él, representa una cita corta en línea.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Como lo dijo un antiguo filósofo griego:
+        &lt;q cite="https://www.imdb.com/title/tt0062622/quotes/qt0396921"&gt;
+            Dime con quién andas y te diré quién eres
+        &lt;/q&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Como lo dijo un antiguo filósofo griego:
+                            <q cite= "https://www.imdb.com/title/tt0062622/quotes/qt0396921">
+                                Dime con quién andas y te diré quién eres
+                            </q>
+                        </p>
+                    </div>
+                </li>
+
+            </ol>
+
+        </section>
+
+        <section id="formatTags">
+            <h3>
+                Etiquetas de formato.
+            </h3>
+
+            <p>
+                HTML nos ofrece la posibilidad de dar formato al texto tal como lo hacen aplicaciones como Word o cualquier otro software de edición de texto.
+            </p>
+
+            <p>
+                Algunos de los elementos que existen para tal finalidad son las siguientes:
+            </p>
+
+            <ol>
+                <li>
+                    <em>El elemento <b>&lt;b&gt;</b></em>: Aplica el formato de negrita al texto que esté dentro de esta etiqueta.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto está en &lt;b&gt;negrita.&lt;/b&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está en <b>negrita</b>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;strong&gt;</b></em>: Al igual que &lt;b&gt;, aplica el formato de negrita al texto que se encuentre encerrado; la diferencia radica en que &lt;strong&gt; tiene significado semántico, cuando &lt;b&gt;, únicamente aplica un efecto visual.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto está &lt;strong&gt;resaltado.&lt;/strong&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está <strong>resaltado</strong>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;i&gt;</b></em>: Aplica el formato de cursiva al texto que esté dentro de esta etiqueta.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto está en &lt;i&gt;cursiva.&lt;/i&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está en <i>cursiva</i>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;em&gt;</b></em>: Al igual que &lt;i&gt;, aplica el formato de cursiva al texto que se encuentre encerrado; la diferencia radica en que &lt;em&gt; tiene significado semántico, cuando &lt;i&gt;, únicamente aplica un efecto visual.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto está &lt;em&gt;resaltado.&lt;/em&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está <em>resaltado</em>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;u&gt;</b></em>: Aplica el formato de subrrayado al texto que esté dentro de esta etiqueta.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto está &lt;u&gt;subrrayado.&lt;/u&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está <u>subrrayado</u>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;small&gt;</b></em>: Reduce el tamaño del texto que esté dentro de esta etiqueta.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto es más &lt;small&gt;pequeño.&lt;/small&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto es más <small>pequeño</small>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;big&gt;</b></em>: Aumenta el tamaño del texto que esté dentro de esta etiqueta.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto es más &lt;big&gt;grande.&lt;/big&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto es más <big>grande</big>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;sub&gt;</b></em>: Aplica el formato de subíndice al texto que esté dentro de esta etiqueta.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto es un &lt;sub&gt;subíndice.&lt;/sub&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto es un <sub>subíndice</sub>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;sup&gt;</b></em>: Aplica el formato de superíndice al texto que esté dentro de esta etiqueta.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto es un &lt;sup&gt;superíndice.&lt;/sub&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto es un <sup>superíndice</sup>.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <em>El elemento <b>&lt;del&gt;</b></em>: Aplica el formato de tachado al texto que esté dentro de esta etiqueta.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;p&gt;
+        Este texto está &lt;del&gt;tachado.&lt;/del&gt;
+    &lt;/p&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <p>
+                            Este texto está <del>tachado</del>.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="listTags">
+            <h3>
+                Etiquetas de listas.
+            </h3>
+
+            <p>
+                HTML ofrece algunos metodos para especificar listas de información. Todas las listas deben contener uno a más elementos. Existen tres tipos de listas:
+            </p>
+
+            <ol>
+                <li>
+                    <h4>
+                        Listas Ordenadas.
+                    </h4>
+
+                    <p>
+                        Las listas ordenadas son utilizadas cuando se desea enfatizar un orden en la información presentada.Se representan con las etiquetas &lt;ol&gt; &lt;/ol&gt;. Cada elemento de la lista se escribe dentro las etiquetas: &lt;li&gt; &lt;/li&gt;. Visualmente cada elemento de la lista se enmunera automaticamente. Ejemplo:
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;ol&gt;
+        &lt;li&gt;
+            Galletas
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            Lechuga
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            Chocolate
+        &lt;/li&gt;
+    &lt;/ol&gt;
+                        </code>
+                    </pre>
+                    
+                    <div class="preview">
+                        <ol>
+                            <li>
+                                Galletas
+                            </li>
+    
+                            <li>
+                                Lechuga
+                            </li>
+    
+                            <li>
+                                Chocolate
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+
+                <li>
+                    <h4>
+                        Listas no ordenadas
+                    </h4>
+
+                    <p>
+                        Las listas no ordenadas van dentro de la etiqueta de apertura &lt;ul&gt; y de su cierre &lt;/ul&gt;. Cada punto que se quiera añadir a la lista, se hará dentro de la etiqueta de apertura &lt;li&gt; y su cierre &lt;/li&gt;. La caracteristica principal es que los elementos de la lista se van marcando por símbolos y su orden no interesa. Ejemplo:
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;ul&gt;
+        &lt;li&gt;
+            Mercurio
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            Venus
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            La Tierra
+        &lt;/li&gt;
+    &lt;/ul&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <ul>
+                            <li>
+                                Mercurio
+                            </li>
+    
+                            <li>
+                                Venus
+                            </li>
+    
+                            <li>
+                                La Tierra
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <h4>
+                        Listas de definiciones
+                    </h4>
+
+                    <p>
+                        Las listas de definiciones se conforman por una serie de pares término/definición, en ellas se utilizan las etiquetas &lt;dl&gt;, &lt;dt&gt; y &lt;dd&gt;. A continuación se explicarán cada una de estas:
+                    </p>
+
+                    <p>
+                        La etiqueta &lt;dl&gt; deriva del término <em>Definiton list</em>, e indica que dentro de ella se escribirá una lista de definiciones.
+                    </p>
+
+                    <p>
+                        La etiqueta &lt;dt&gt; deriva del término <em>Definition term</em> y dentro de ella irá el término que sera definido.
+                    </p>
+
+                    <p>
+                        Finalmente, la etiqueta &lt;dd&gt; deriva del término <em>Definition description</em> e indica que dentro de ésta irá la definición.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;dl&gt;
+        &lt;dt&gt;
+            Protón
+        &lt;dt&gt;
+        &lt;dd&gt;
+            Partícula elemental del núcleo del átomo, provisto de carga eléctrica positiva.
+        &lt;/dd&gt;
+
+        &lt;dt&gt;
+            Electrón
+        &lt;dt&gt;
+        &lt;dd&gt;
+            Partícula elemental del núcleo del átomo, provisto de carga eléctrica negativa.
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <dl>
+                            <dt>
+                                Protón
+                            </dt>
+                            <dd>
+                                Partícula elemental del núcleo del átomo, provisto de carga eléctrica positiva.
+                            </dd>
+    
+                            <dt>
+                                Electrón
+                            </dt>
+                            <dd>
+                                Partícula elemental del núcleo del átomo, provisto de carga eléctrica negativa.
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+            </ol>
+
+        </section>
+
+        <section id="tableTags">
+            <h3>
+                Etiquetas de tablas.
+            </h3>
+
+            <p>
+                La primera etiqueta a utilizar es &lt;table&gt; &lt;/table&gt;. Esta es la etiqueta que define el comienzo y final de una tabla.
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;table&gt;
+
+        &lt;!-- Contenido de la tabla --&gt;
+    
+    &lt;/table&gt;
+                </code>
+            </pre>
+
+            <p>
+                En HTML las tablas se crean fila por fila, y posteriormente las celdas, por ende se hace uso de las siguientes etiquetas:
+            </p>
+
+            <ul>
+                <li>
+                    <b>&lt;tr&gt; &lt;/tr&gt;</b>: define el comienzo y el final de una fila de la tabla.
+                </li>
+
+                <li>
+                    <b>&lt;td&gt; &lt;/td&gt;</b>: define el comienzo y el final de una celda de la tabla.
+                </li>
+            </ul>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio1/example1.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <pre>
+                <code class = 'html'>
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                1 1
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                1 2
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                1 3
+            &lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+            &lt;td&gt;
+                2 1
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                2 2
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                2 3
+            &lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+            &lt;td&gt;
+                3 1
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                3 2
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                3 3
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <table>
+                    <tr>
+                        <td>
+                            1 1
+                        </td>
+    
+                        <td>
+                            1 2
+                        </td>
+    
+                        <td>
+                            1 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            2 1
+                        </td>
+    
+                        <td>
+                            2 2
+                        </td>
+    
+                        <td>
+                            2 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            3 1
+                        </td>
+    
+                        <td>
+                            3 2
+                        </td>
+    
+                        <td>
+                            3 3
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>
+                Para escribir los encabezados de la tabla, como “Nombre”, “Edad” y “País”, se hace uso de la etiqueta &lt;th&gt; &lt;/th&gt;
+            </p>
+
+            <p>
+                Para asignarle nombre a una tabla e informar rápidamente al visitante sobre el contenido de la misma, se hace uso de la etiqueta &lt;caption&gt; &lt;/caption&gt;
+            </p>
+            <pre>
+                <code class="html">
+    &lt;table&gt;
+        &lt;caption&gt;
+            Tabla Ejemplo.
+        &lt;/caption&gt;
+
+        &lt;tr&gt;
+            &lt;th&gt;
+                Columna 1
+            &lt;/th&gt;
+
+            &lt;th&gt;
+                Columna 2
+            &lt;/th&gt;
+
+            &lt;th&gt;
+                Columna 3
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                1 1
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                1 2
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                1 3
+            &lt;/td&gt;
+        &lt;/tr&gt;
+
+        ...
+
+    &lt;/table&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <table>
+                    <caption>
+                        Tabla ejemplo.
+                    </caption>
+    
+                    <tr>
+                        <th>
+                            Columna 1
+                        </th>
+    
+                        <th>
+                            Columna 2
+                        </th>
+    
+                        <th>
+                            Columna 3
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            1 1
+                        </td>
+    
+                        <td>
+                            1 2
+                        </td>
+    
+                        <td>
+                            1 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            2 1
+                        </td>
+    
+                        <td>
+                            2 2
+                        </td>
+    
+                        <td>
+                            2 3
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            3 1
+                        </td>
+    
+                        <td>
+                            3 2
+                        </td>
+    
+                        <td>
+                            3 3
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>
+                Si la tabla es bastante grande, lo mejor es dividirla en varias partes. Para esto, las siguientes etiquetas HTML se utilizan para definir los tres «campos» de la tabla; cabe resaltar que estas añade valor semántico a la tabla:
+            </p>
+
+            <ol>
+                <li>
+                    <b>&lt;thead&gt;&lt;/thead&gt;</b>: Define el encabezado de la tabla
+                </li>
+                <li>
+                    <b>&lt;tbody&gt;&lt;/tbody&gt;</b>: Define el cuerpo de la tabla
+                </li>
+                <li>
+                    <b>&lt;tfooter&gt;&lt;/tfooter&gt;</b>: Define el pie de página de la tabla
+                </li>
+            </ol>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio1/example2.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <pre>
+                <code class="html">
+    &lt;table&gt;
+        &lt;caption&gt;
+            Tabla Ejemplo.
+        &lt;/caption&gt;
+        
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;
+                    Columna 1
+                &lt;/th&gt;
+
+                &lt;th&gt;
+                    Columna 2
+                &lt;/th&gt;
+
+                &lt;th&gt;
+                    Columna 3
+                &lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    1 1
+                &lt;/td&gt;
+
+                &lt;td&gt;
+                    1 2
+                &lt;/td&gt;
+
+                &lt;td&gt;
+                    1 3
+                &lt;/td&gt;
+            &lt;/tr&gt;
+
+            ...
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <table>
+                    <caption>
+                        Tabla ejemplo.
+                    </caption>
+    
+                    <thead>
+                        <tr>
+                            <th>
+                                Columna 1
+                            </th>
+        
+                            <th>
+                                Columna 2
+                            </th>
+        
+                            <th>
+                                Columna 3
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1 1
+                            </td>
+        
+                            <td>
+                                1 2
+                            </td>
+        
+                            <td>
+                                1 3
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td>
+                                2 1
+                            </td>
+        
+                            <td>
+                                2 2
+                            </td>
+        
+                            <td>
+                                2 3
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td>
+                                3 1
+                            </td>
+        
+                            <td>
+                                3 2
+                            </td>
+        
+                            <td>
+                                3 3
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="formTags">
+            <h3>
+                Manejo de formularios.
+            </h3>
+
+            <p>
+                Un formulario es un conjunto de controles (botones, cajas de texto, casillas de verificación, botones radio, etc) que permiten al usuario introducir datos, para su posterior procesamiento.
+            </p>
+
+            <p>
+                La etiqueta encargada de delimitar un formulario en HTML es &lt;form&gt; &lt;/form&gt;. Dentro de esta se colocan todos los elementos con los que el usuario puede interactuar.
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;form action=&quot;index.html&quot; method=&quot;GET&quot;&gt;
+        
+        &lt;!-- Contenido del formulario --&gt;
+
+    &lt;/form&gt;
+                </code>
+            </pre>
+
+            <p>
+                Se puede observar que junto a la etiqueta se encuentran dos atributos. El primero, <em>action</em>, indica la página o agente que se encargará del procesamiento de datos.
+            </p>
+
+            <p>
+                El segundo, <em>method</em>, indica el método HTTP por el cual se realizará la petición al servidor, en este caso GET. Esto se detallará en la guía dedicada a peticiones HTTP y servicios en la Web.
+            </p>
+
+            <p>
+                Algunos de los elementos más utilizados en el manejo de formularios son los siguientes:
+            </p>
+
+            <h4>
+                &lt;input&gt;
+            </h4>
+
+            <p>
+                Es un campo de entrada donde el usuario puede ingresar datos. Uno de los atributos que posee la etiqueta <em>input</em> es <b><em>type</em></b>, que especifica el tipo de entrada de datos; entre ellos se pueden encontrar los botones, checkbox, entre otros. A continuación se detallarán los tipos de <em>input</em> más utilizados:
+            </p>
+
+            <p>
+                <u><i>Entrada de texto:</i></u>
+            </p>
+
+            <ul>
+                <li>
+                    <b>text</b>: Permite al usuario ingresar texto plano.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;text&quot; name=&quot;plainText&quot; placeholder=&quot;ej. Hola que tal&quot;&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="text" name="plainText" placeholder="ej. Hola que tal">
+                    </div>
+                </li>
+
+                <li>
+                    <b>password</b>: Permite al usuario ingresar contraseñas; visualmente aplica un filtro de privacidad.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Ingrese contraseña&quot; required&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="password" name="passwordText" placeholder="Ingrese contraseña" required>
+                    </div>
+                </li>
+
+                <li>
+                    <b>email</b>: Permite al usuario ingresar direcciones de email; añade valor semántico por lo que permite a los buscadores sugerir correos ya utilizados.
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;email&quot; name=&quot;emailText&quot; placeholder=&quot;00000000@uca.edu.sv&quot; required&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="email" name="emailText" placeholder="00000000@uca.edu.sv">
+                    </div>
+                </li>
+
+                <li>
+                    <b>search</b>: Permite al usuario ingresar términos de búsqueda;  La diferencia con un campo de texto normal, es únicamente estética, aunque puede ofrecer alguna funcionalidad semántica extra como un histórico de últimos términos introducidos o ayuda para el borrado.
+
+                    <pre>
+                        <code class = 'html '>
+    &lt;input type=&quot;search&quot; name=&quot;searchText&quot;&gt;
+                        </code>
+                    </pre>
+    
+                    <div class="preview">
+                        <input type="search" name="searchText">
+                    </div>
+                </li>
+            </ul>
+
+            <p>
+                <u><i>Selección múltiple:</i></u>
+            </p>
+
+            <ul>
+                <li>
+                    <p>
+                        <b>radio</b>: Permite desplegar varias opciones al usuario, pero solo seleccionar una. Para delimitar el conjunto de opciones se hace uso del atributo <em>name</em>, donde todos los elementos con el mismo valor pertenecen al mismo conjunto.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;radio&quot; name=&quot;radio1&quot; value=&quot;Mercurio&quot;&gt; Mercurio
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio1&quot; value=&quot;Venus&quot;&gt; Venus
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio1&quot; value=&quot;La Tierra&quot;&gt; La Tierra
+    
+    &lt;hr&gt;
+
+    &lt;input type=&quot;radio&quot; name=&quot;radio2&quot; value=&quot;Kit Kat&quot;&gt; KitKat
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio2&quot; value=&quot;Lollipop&quot;&gt; Lollipop
+    &lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio2&quot; value=&quot;Marshmellow&quot;&gt; Marshmellow
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="radio" name="radio1" value="Mercurio"> Mercurio
+                        <br>
+                        <input type="radio" name="radio1" value="Venus"> Venus
+                        <br>
+                        <input type="radio" name="radio1" value="La Tierra"> La Tierra
+                        
+                        <hr>
+    
+                        <input type="radio" name="radio2" value="Kit Kat"> KitKat
+                        <br>
+                        <input type="radio" name="radio2" value="Lollipop"> Lollipop
+                        <br>
+                        <input type="radio" name="radio2" value="Marshmellow"> Marshmellow
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>checkbox</b>: Permite desplegar varias opciones al usuario, y seleccionar varias de estas. Para delimitar el conjunto de opciones se hace uso del atributo <em>name</em>, donde todos los elementos con el mismo valor pertenecen al mismo conjunto.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox1&quot; value=&quot;Mercurio&quot;&gt; Mercurio
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox1&quot; value=&quot;Venus&quot;&gt; Venus
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox1&quot; value=&quot;La Tierra&quot;&gt; La Tierra
+    
+    &lt;hr&gt;
+
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot; value=&quot;Kit Kat&quot;&gt; KitKat
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot; value=&quot;Lollipop&quot;&gt; Lollipop
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot; value=&quot;Marshmellow&quot;&gt; Marshmellow
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="checkbox" name="checkbox1" value="Mercurio"> Mercurio
+                        <br>
+                        <input type="checkbox" name="checkbox1" value="Venus"> Venus
+                        <br>
+                        <input type="checkbox" name="checkbox1" value="La Tierra"> La Tierra
+                        
+                        <hr>
+    
+                        <input type="checkbox" name="checkbox2" value="Kit Kat"> KitKat
+                        <br>
+                        <input type="checkbox" name="checkbox2" value="Lollipop"> Lollipop
+                        <br>
+                        <input type="checkbox" name="checkbox2" value="Marshmellow"> Marshmellow
+                    </div>
+                </li>
+            </ul>
+
+            <p>
+                <u><i>Botones:</i></u>
+            </p>
+
+            <ul>
+                <li>
+                    <p>
+                        <b>button</b>: es un botón que no posee acción, a menos que sea especificado en el atributo onClick.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type="button" name="plainButton" value="Botón simple"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="button" name="plainButton" value="Botón simple">
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>reset</b>: botón que permite reiniciar los valores de todos los componentes de un formulario. Para funcionar este componente debe de encontrarse en un contexto de formulario.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type="reset" name="resetButton" value="Reset"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="reset" name="resetButton" value="Reset">
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>submit</b>: botón que permite enviar los resultados de un formulario a la página o agente encargado del procesamiento. Para funcionar este componente debe de encontrarse en un contexto de formulario.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type="submit" name="submitButton" value="Send"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="submit" name="submitButton" value="Send">
+                    </div>
+                </li>
+            </ul>
+
+            <p>
+                <u><i>Varios:</i></u>
+            </p>
+
+            <ul>
+                <li>
+                    <p>
+                        <b>date</b>: Permite ingresar una fecha con el formato dd/mm/aaaa. 
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type=&quot;date&quot; name=&quot;satePicker&quot;&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="date" name="satePicker">
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>file</b>: Es un botón que permite seleccionar un archivo local para ser cargado. 
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type="file" name="filePicker"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="file" name="filePicker">
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>color</b>: Permite selecionar un color de una paleta. 
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    Color: &lt;input type="color" name="colorPicker"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        Color: <input type="color" name="colorPicker">
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>number</b>: Permite ingresar al usuario un número. Posee atributos específicos para el control de los datos ingrsados.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type="number" name="numberInput" min="0" max="50" step="5"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="number" name="numberInput" min="0" max="50" step="2">
+                    </div>
+                </li>
+
+                <li>
+                    <p>
+                        <b>range</b>: Permite ingresar al usuario un rango de números, a partir de un deslizante. Posee atributos específicos para el control de los datos ingrsados.
+                    </p>
+
+                    <pre>
+                        <code class = 'html'>
+    &lt;input type="range" name="rangeInput" min="0" max="50" step="5"&gt;
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <input type="range" name="rangeInput" min="0" max="50" step="5">
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="tip">
+                <h3>
+                    Atributos.
+                </h3>
+
+                <p>
+                    Muchos atributos de estas etiquetas han sido omitidos, pero son útilies; para ampliar el conocimiento de estas etiquetas y sus atributos se recomienda la lectura del siguiente enlace.
+                </p>
+
+                <p style='padding-left:1.5em;'>
+                    Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input' target = '_blank'>Elemento input</a>.
+                </p>
+            </div>
+
+            <h4>
+                &lt;select&gt;
+            </h4>
+
+            <p>
+                Es una lista desplegable con distintos elementos que pueden ser seleccionados. Es comparable con el input de tipo <em>radio</em>.
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;select name=&quot;select1&quot;&gt;
+        &lt;option value=&quot;Toyota&quot;&gt;Toyota&lt;/option&gt;
+        &lt;option value=&quot;Nissan&quot;&gt;Nissan&lt;/option&gt;
+        &lt;option value=&quot;Honda&quot;&gt;Honda&lt;/option&gt;
+    &lt;/select&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <select name="select1">
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Honda">Honda</option>
+                </select>
+            </div>
+
+            <h4>
+                &lt;textarea&gt;
+            </h4>
+
+            <p>
+                Permite al usuario ingresar múltiples líneas. Se puede especificar el ancho y el alto de las líneas visibles mediante los atributos cols y rows. 
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;textarea name=&quot;textArea&quot; cols=&quot;50&quot; rows=&quot;15&quot;&gt;&lt;/textarea&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <textarea name="textArea" cols="50" rows="15"></textarea>
+            </div>
+
+            <h4>
+                &lt;label&gt;
+            </h4>
+
+            <p>
+                Define la etiqueta de un input. 
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;label for=&quot;name&quot;&gt;Name: &lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <label for="name">Name: </label>
+                <input type="text" name="name">
+            </div>
+
+            <h4>
+                &lt;fieldset&gt;
+            </h4>
+
+            <p>
+                Permite agrupar elementos que estén relacionados entre sí, tanto gráficamente como semánticamente. 
+            </p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;fieldset&gt; 
+        &lt;legend&gt;
+            Personal information:
+        &lt;/legend&gt;
+
+        Name: &lt;input type=&quot;text&quot;&gt;
+        Email: &lt;input type=&quot;email&quot;&gt;
+        Date of birth: &lt;input type=&quot;date&quot;&gt;
+    &lt;/fieldset&gt;
+                </code>
+            </pre>
+
+            <div class="preview">
+                <fieldset> 
+                    <legend>
+                        Personal information:
+                    </legend>
+
+                    Name: <input type="text">
+                    Email: <input type="email">
+                    Date of birth: <input type="date">
+                </fieldset>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h3>
+                Ejercicios.
+            </h3>
+
+            <p>
+                A continuación se presentan una serie de imágenes, las cuales represantan sitos web construidos a partir de HTML. Aplique los conocimentos adquiridos para re-hacer los sitios web. Anexe los resultados en su portafolio dentro de la carpeta <em>laboratorios > laboratorio1</em>. 
+            </p>
+
+            <ol>
+                <li>
+                    <p>
+                        Investigue una temática que le interese y estrucutre la información de la siguiente forma:
+                    </p>
+
+                    <div class="preview">
+                        <figure>
+                            <a href="../../assets/images/laboratorios/laboratorio1/ex1.png" target="_blank">
+                                <img style='width: 100%' src='../../assets/images/laboratorios/laboratorio1/ex1.png' alt='Inserte RIPIO aqui'>
+                            </a>
+                        </figure>
+                    </div>
+                    <p>
+                        Por lo menos deben de existir dos enlaces a sitios web externos, y dos imágenes. Además resalte y aplique formato a la información que sea relevante para la página.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        A partir del uso de tablas, genere su horario de clases de la siguiente manera. Resalte con algún modificador de formato su horario de laboratorio.
+                    </p>
+
+                    <div class="preview">
+                        <figure>
+                            <a href="../../assets/images/laboratorios/laboratorio1/ex2.png" target="_blank"><img style='width: 100%' src='../../assets/images/laboratorios/laboratorio1/ex2.png' alt='Inserte RIPIO aqui'></a>
+                        </figure>
+                    </div>
+
+                    <p>
+                        Investigue los atributos <em>rowspan</em> y <em>colspan</em>, para combinar celdas.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Genere el siguiente formulario de creación de correo electrónico, a partir del uso del apartado que especifica la interacción con el usuario.
+                    </p>
+
+                    <div class="preview">
+                        <figure>
+                            <a href="../../assets/images/laboratorios/laboratorio1/ex3.png" target="_blank"><img style='width: 100%' src='../../assets/images/laboratorios/laboratorio1/ex3.png' alt='Inserte RIPIO aqui'></a>
+                        </figure>
+                    </div>
+                </li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                    “I have been, and always shall be, your friend.”
+                </em></p>
+
+            <p id="author">
+                Spock.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../assets/js/javaScript.js"></script>
+<script src="../../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+</html>
