@@ -1,0 +1,53 @@
+/***************************************************
+** Sin modificar el HTML dado, aplique todas las **
+** reglas solicitadas                            **
+** PAra todos los selectores asegurar que los    **
+** botones tengan la clase btn                   **
+***************************************************/
+
+/*
+    Sección General
+    Para los botones con la clase btn:
+        -Borde solido de 1px, color trasparente
+        -Radio de borde 0.3em
+        -Sin sombra
+        -padding interno de 1em:
+        -opacidad de 0.8
+        -Trasformar automáticamente el texto a mayúscula
+        
+    Opcional:
+        -Aplicar en hover opacidad al 1.0
+*/
+
+/*
+    Sección Tamaños
+    
+    Para los botones con clases btn y small:
+        -Tamaño de fuente de 0.7em
+    
+    Para los botones con clases btn y big:
+        -Tamaño de fuente de 1.1em
+*/
+
+/*
+    Sección Colores
+
+    Para todos los botones ccon clases referentes a colores:
+        -black: Fondo #1A237E; color de texto blanco
+        -green: Fondo #4CAF50; color de texto blanco
+        -sky: Fondo #00BCD4; color de texto blanco
+        -purple: Fondo #673AB7; color de texto blanco
+*/
+
+/*
+    Sección Bordes
+
+    Para los botones btn con la clase border, en general;
+        -Fondo transparente
+        -Color de borde y texto -> #1A237E
+
+    Para los botones btn border que impliquen colores:
+        -green: Color de borde y texto -> #4CAF50
+        -sky: Color de borde y texto -> #00BCD4
+        -purple: Color de borde y texto -> #673AB7
+*/
