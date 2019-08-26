@@ -45,7 +45,8 @@ article{
 }
 
 section{
-    margin-bottom: 2.5em;
+    padding-bottom: 2.5em;
+    border-bottom: 1px solid lightgray; 
 }
 
 li{
@@ -551,4 +552,9 @@ p.previewText{
     margin: 0 0 1em 0 !important;
     text-align: right !important;
     border: none!important;
+}
+
+code{
+    max-height: 50em!important;
+    overflow-x: scroll;
 }
