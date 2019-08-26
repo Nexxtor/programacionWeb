@@ -9,7 +9,7 @@ h2 {
     /* A font family name and a generic family name */
     font-family: Consolas,monaco,monospace; 
 }
-/* Puede consultar el porcetanje de uso de las fuentes en https://www.cssfontstack.com/ */
+/* Puede consultar el porcentaje de uso de las fuentes en https://www.cssfontstack.com/ */
 
 /*font-size*/
 
@@ -62,6 +62,5 @@ p {
 }
 
 .underover {
-    text-decoration: dashed underline 
-    ;
+    text-decoration: dashed underline;
 }
