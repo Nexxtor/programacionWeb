@@ -15,7 +15,7 @@
         
     <link rel="icon" href="../../assets/images/icons/web.png">
     
-    <title>Titulo</title>
+    <title>Modelos de caja y Posición</title>
 </head>
 
 <body id="id_body">
@@ -272,26 +272,320 @@
             </pre>
 
             <div class="preview">
-                <div id="example1">
+                <p><em>
+                    Float Izquierda
+                </em></p>
+
+                <div>
                     <p>
                         <span></span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur deleniti autem? Mollitia, iste reprehenderit provident voluptatibus laudantium quos itaque animi, recusandae doloremque maxime eos quaerat suscipit aut odio accusantium!                        
                     </p>
                     
                 </div>
 
+                <p><em>
+                    Float Derecha
+                </em></p>
+
+                <div id="example1">
+                    <p>
+                        <span>.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur deleniti autem? Mollitia, iste reprehenderit provident voluptatibus laudantium quos itaque animi, recusandae doloremque maxime eos quaerat suscipit aut odio accusantium!                        
+                    </p>
+                    
+                </div>
+
                 <style>
-                    #example1 span{
+                    .preview span{
+                        float:left;
+
                         width: 60px;
                         height: 60px;
 
                         margin: 10px;
 
                         background: blueviolet;
+                    }
+
+                    #example1 span{
+                        
 
                         float: right;
                     }
                 </style>
             </div>
+        </section>
+
+        <section id="flex">
+            <h3>
+                Posición con Flexbox.
+            </h3>
+
+            <p>
+                La propiedad "Flex" de una caja, es aquel modo de diseño que permite colocar sus elementos hijos de forma que, su comportamiento sea predecible en situaciones donde el diseño deba acomodarse a distintos tamaños de pantalla y diferentes dispositivos. Esto sugiere una mejora ante el modelo de posicionamiento por "bloques", ya que no se utiliza propiedades como float, ni se interfiere en los márgenes del los de´más contenedores.
+            </p>
+
+            <p>
+                El uso de cajas flexibles implican una mejora en el diseño de los sitios web ya que, se puede decidir la dirección de los elementos, el espacio entre ellos, su disposición con respecto al pardre, su peso entre los demás. entre otras propiedades. Aplgunos conceptos importantes de "flexbox" son los siguientes:
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='https://developer.mozilla.org/files/3739/flex_terms.png' alt='Inserte RIPIO aqui'>
+                <caption>Imágen de MDN</caption>
+            </figure>
+
+            <dl>
+                <dt>
+                    <b>flex-container</b>:
+                </dt>
+                <dd>
+                    Contenedor padre; a este elemento es aplicado la propiedad "display: flex;", y todas aquellas propiedades relacionadas al comportamiento de los elementos hijos anidados en él.
+                </dd>
+
+                <dt>
+                    <b>flex-chlid</b>:
+                </dt>
+                <dd>
+                    Elemento directamente anidado en el contenedor padre. Su posición es ajustada en factor de las propiedades del padre.
+                </dd>
+
+                <dt>
+                    <b>Axis</b>:
+                </dt>
+                <dd>
+                    Son los ejes por los que el posicionamiento de flex se guía para disponer de los hijos inmediatos. Exsiten dos principalmente:
+                    <ul>
+                        <li>
+                            Eje principal: es el eje a lo largo del cual los elementos flexibles se suceden unos a otros.
+                        </li>
+
+                        <li>
+                            Eje Secundario: es el eje perpendicular al eje principal.
+                        </li>
+                    </ul>
+                </dd>
+
+                <dt>
+                    <b>Lines</b>:
+                </dt>
+                <dd>
+                    Determinan la posición de las nuevas líneas de elementos con respecto al eje principal.
+                </dd>
+
+                <dt>
+                    <b>Directions</b>:
+                </dt>
+                <dd>
+                    Los términos equivalentes a "altura" y "anchura" usados en los elementos flexibles son tamaño principal (main size) and tamaño secundario (cross size), que respectivamente siguen al eje principal y al eje secundario del contenedor flexible.
+                </dd>
+            </dl>
+
+            <h4>
+                Tabla de propiedades de flexbox.
+            </h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Propiedad.
+                        </th>
+                        <th>
+                            Descripción.
+                        </th>
+                        <th>
+                            Posibles valores.
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            flex-direction
+                        </td>
+                        <td>
+                            Define la dirección del eje principal.
+                        </td>
+                        <td>
+                            row | row-reverse | column | column-reverse
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            flex-wrap
+                        </td>
+                        <td>
+                            Determina si los elementos hijos deben ser ubicados en una sola línea o si se deben reubicar en varias.
+                        </td>
+                        <td>
+                            nowrap | wrap | wrap-reverse
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            flex-flow
+                        </td>
+                        <td>
+                            Propiedad que abrevia la propiedad flex-direction y flex-wrap.
+                        </td>
+                        <td>
+                            &lt;flex-direction&gt; &lt;flex-wrap&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            align-items
+                        </td>
+                        <td>
+                            Alineará los items de una línea con respecto al eje cruzado o secundario.
+                        </td>
+                        <td>
+                                stretch | flex-start | flex-end |center
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            align-content
+                        </td>
+                        <td>
+                            Ajusta las líneas dentro de un contenedor flex cuando hay espacio extra en el eje transversal.
+                        </td>
+                        <td>
+                            space-between | space-around | space-evenly | stretch | center | start | end | flex-start | flex-end
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            justify-content
+                        </td>
+                        <td>
+                            Ajusta la posición de los items con respecto al eje principal.
+                        </td>
+                        <td>
+                            space-between | space-around | space-evenly | stretch | center | start | end | flex-start | flex-end
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Estos son algunas de las porpiedades mas importantes de flexbox, pero existen más.
+            </p>
+
+            <h4>
+                Ejemplo
+            </h4>
+
+            <p><em>
+                HTML
+            </em></p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;div id=&quot;example2&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_A.svg/200px-Playing_card_club_A.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_2.svg/200px-Playing_card_club_2.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_3.svg/200px-Playing_card_club_3.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_4.svg/200px-Playing_card_club_4.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_5.svg/200px-Playing_card_club_5.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_6.svg/200px-Playing_card_club_6.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_7.svg/200px-Playing_card_club_7.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_8.svg/200px-Playing_card_club_8.svg.png&quot;&gt;
+    &lt;/div&gt;
+                </code>
+            </pre>
+
+            <p><em>
+                CSS
+            </em></p>
+
+            <pre>
+                <code class = 'css'>
+    #example2>img{
+        width: 10em;
+        margin: 0.5em;
+    }
+
+    #example2{
+        display: flex;
+
+        flex-flow: row wrap;
+        justify-content: center;
+        
+        border: 1px solid black;
+    }
+                </code>
+            </pre>
+
+            <div class="preview">
+                <div id="example2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_A.svg/200px-Playing_card_club_A.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_2.svg/200px-Playing_card_club_2.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_3.svg/200px-Playing_card_club_3.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_4.svg/200px-Playing_card_club_4.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_5.svg/200px-Playing_card_club_5.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_6.svg/200px-Playing_card_club_6.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_7.svg/200px-Playing_card_club_7.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_8.svg/200px-Playing_card_club_8.svg.png">
+                </div>
+
+                <p>
+                    Para ver el efecto de flexbox, se debe modificar el zoom de visaulización del navegador
+                </p>
+
+                <style>
+                    #example2>img{
+                        width: 10em;
+                        margin: 0.5em;
+                    }
+
+                    #example2{
+                        display: flex;
+
+                        flex-flow: row wrap;
+                        justify-content: center;
+                        
+                        border: 1px solid black;
+                    }
+                </style>
+            </div>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a W3Schools: <a href='https://www.w3schools.com/css/css3_flexbox.asp' target = '_blank'>Flexbox</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceptos_Basicos_de_Flexbox' target = '_blank'>Conceptos báscios de flexBox</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a CSSTricks: <a href='https://css-tricks.com/snippets/css/a-guide-to-flexbox/' target = '_blank'>Guide to Flexbox</a>
+            </p>
+
+            <div class="tip">
+                <h3>
+                    Prácticando.
+                </h3>
+
+                <p>
+                    Para practicar los conceptos del posicionamiento flexbox, se sugiere la práctica virtual de "FlexboxFroggy"
+                </p>
+
+                <figure>
+                    <img style='width: 60%' src='../../assets/images/laboratorios/laboratorio3/flexbox.png' alt='Inserte RIPIO aqui'>
+                </figure>
+
+                <p style='padding-left:1.5em;'>
+                    Referencia a Práctica Flexbox: <a href='https://flexboxfroggy.com/#es' target = '_blank'>FlexboxFroaggy</a>
+                </p>
+            </div>
+
+        </section>
+
+        <section id="grid">
+            <h3>
+                Posición con GridLayout.
+            </h3>
         </section>
     </article>
 
