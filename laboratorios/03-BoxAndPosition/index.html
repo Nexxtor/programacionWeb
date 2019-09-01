@@ -223,6 +223,76 @@
                 </div>
             </div>
         </section>
+
+        <section id="float">
+            <h3>
+                Posición con Float.
+            </h3>
+
+            <p>
+                Cuando un elemento se coloca bajo el modelo de posicionamiento float, automáticamente se convierte en una caja flotante, lo que significa que se desplaza al inicio o hasta el final del contenedor padre de manera horizontal. Esta disposición de elementos de forma horizontal es la mas básica dentro de CSS.
+            </p>
+
+            <p><em>
+                Ejemplo:
+            </em></p>
+
+            <p><em>
+                HTML
+            </em></p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;div id=&quot;example1&quot;&gt;
+        &lt;p&gt;
+            &lt;span&gt;&lt;/span&gt; Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur deleniti autem? Mollitia, iste reprehenderit provident voluptatibus laudantium quos itaque animi, recusandae doloremque maxime eos quaerat suscipit aut odio accusantium!                        
+        &lt;/p&gt;
+        
+    &lt;/div&gt;
+                </code>
+            </pre>
+
+            <p><em>
+                CSS
+            </em></p>
+
+            <pre>
+                <code class = 'css'>
+    #example1 span{
+        width: 60px;
+        height: 60px;
+
+        margin: 10px;
+
+        background: blueviolet;
+
+        float: right;
+    }
+                </code>
+            </pre>
+
+            <div class="preview">
+                <div id="example1">
+                    <p>
+                        <span></span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur deleniti autem? Mollitia, iste reprehenderit provident voluptatibus laudantium quos itaque animi, recusandae doloremque maxime eos quaerat suscipit aut odio accusantium!                        
+                    </p>
+                    
+                </div>
+
+                <style>
+                    #example1 span{
+                        width: 60px;
+                        height: 60px;
+
+                        margin: 10px;
+
+                        background: blueviolet;
+
+                        float: right;
+                    }
+                </style>
+            </div>
+        </section>
     </article>
 
     <!-- Footer Implementation -->
