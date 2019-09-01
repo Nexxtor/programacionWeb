@@ -658,6 +658,227 @@
                     </figure>
                 </dd>
             </dl>
+
+            <h4>
+                Tabla de propiedades de GridLayout.
+            </h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Elemento</th>
+                        <th>Descripción </th>
+                        <th>Valores posibles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>grid-template-columns</td>
+                        <td>Contenedor</td>
+                        <td>Establece el patrón de columnas en la cadrícula</td>
+                        <td>
+                            <p>
+                                Ejemplo: 1fr 1fr 1fr
+                            </p>
+                            <p>
+                                Generaría una cuadrícula con 3 columnas.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>grid-template-rowa</td>
+                        <td>Contenedor</td>
+                        <td>Establece el patrón de filas en la cuadrícula</td>
+                        <td>
+                            <p>
+                                Ejemplo: 1fr 1fr 1fr
+                            </p>
+                            <p>
+                                Generaría una cuadrícula con filas columnas.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>grid-gap</td>
+                        <td>Contenedor</td>
+                        <td>Establece la separación entre celdas de la cuadrícula</td>
+                        <td>Valor de separación</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row-start</td>
+                        <td>Hijo</td>
+                        <td>Establece la posción inicial de un hijo con respecto a las filas. Utiliza de referencia las líneas del grid.</td>
+                        <td>Número de la línea inicial</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row-end</td>
+                        <td>Hijo</td>
+                        <td>Establece la posción final de un hijo con respecto a las filas. Utiliza de referencia las líneas del grid.</td>
+                        <td>Número de la línea final</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column-start</td>
+                        <td>Hijo</td>
+                        <td>Establece la posción inicial de un hijo con respecto a las columnas. Utiliza de referencia las líneas del grid.</td>
+                        <td>Número de la línea inicial</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column-end</td>
+                        <td>Hijo</td>
+                        <td>Establece la posción final de un hijo con respecto a las columnas. Utiliza de referencia las líneas del grid.</td>
+                        <td>Número de la línea final</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row</td>
+                        <td>Hijo</td>
+                        <td>Propiedad abreviada de "grid-row-start" y "grid-row-end"</td>
+                        <td>&lt;Número de la línea inicial&gt; &lt;Número de la línea final&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column</td>
+                        <td>Hijo</td>
+                        <td>Propiedad abreviada de "grid-column-start" y "grid-column-end"</td>
+                        <td>&lt;Número de la línea inicial&gt; &lt;Número de la línea final&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Estas son algunas propiedades de GridLayout, pero existen mas.
+            </p>
+
+            <h4>
+                Ejemplo
+            </h4>
+
+            <p><em>
+                HTML
+            </em></p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;div id=&quot;example3&quot;&gt;
+        &lt;span class=&quot;one&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;two&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;three&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;four&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;five&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+                </code>
+            </pre>
+
+            <p><em>
+                CSS
+            </em></p>
+
+            <pre>
+                <code class = 'css'>
+    #example3{
+        display: grid;
+
+        justify-content: center;
+
+        grid-template: 100px 100px 100px/ 100px 100px 100px;
+        grid-gap: 5px;
+    }
+
+    #example3>span{
+        width: 100%;
+        height: 100%;
+
+        margin: 0; 
+    }
+
+    #example3>.one{
+        background: grey;
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    #example3>.two{
+        background: hotpink;
+        grid-column: 2/4;
+        grid-row: 1/2;
+    }
+
+    #example3>.three{
+        background: indianred;
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    #example3>.four{
+        background: tomato;
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+    #example3>.five{
+        background: skyblue;
+        grid-column: 3/4;
+        grid-row: 2/4;
+    }
+                </code>
+            </pre>
+
+            <div class="preview">
+                <div id="example3">
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
+                    <span class="four"></span>
+                    <span class="five"></span>
+                </div>
+
+                <style>
+                    #example3{
+                        display: grid;
+
+                        justify-content: center;
+
+                        grid-template: 100px 100px 100px/ 100px 100px 100px;
+                        grid-gap: 5px;
+                    }
+
+                    #example3>span{
+                        width: 100%;
+                        height: 100%;
+
+                        margin: 0; 
+                    }
+
+                    #example3>.one{
+                        background: grey;
+                        grid-column: 1/2;
+                        grid-row: 1/3;
+                    }
+
+                    #example3>.two{
+                        background: hotpink;
+                        grid-column: 2/4;
+                        grid-row: 1/2;
+                    }
+
+                    #example3>.three{
+                        background: indianred;
+                        grid-column: 2/3;
+                        grid-row: 2/3;
+                    }
+
+                    #example3>.four{
+                        background: tomato;
+                        grid-column: 1/3;
+                        grid-row: 3/4;
+                    }
+
+                    #example3>.five{
+                        background: skyblue;
+                        grid-column: 3/4;
+                        grid-row: 2/4;
+                    }
+                </style>
+            </div>
         </section>
     </article>
 
