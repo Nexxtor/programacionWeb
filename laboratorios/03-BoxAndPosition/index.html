@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/solarized-dark.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        
+    <link rel="icon" href="../../assets/images/icons/web.png">
+    
+    <title>Titulo</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación Web.<br>
+        Ciclo 02/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('https://internetingishard.com/html-and-css/flexbox/footer-flexible-items-static-widths-af0a32.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#Simple">Parrafos simples</a><i class="fab fa-node-js"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Laboratorio 03.</h1>
+                <h3>02 - 06 de septiembre de 2019.</h3>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Modelo de caja y posición.</h1>
+            </div>
+            <div id="content-brand">
+                <h5>Propedades / Flexbox / Grid.</h5>
+            </div>
+        </header>
+
+        <section id="box">
+            <h3>
+                Modelo de caja.
+            </h3>
+
+            <p>
+                Cada elemento HTML que existe dentro de una página web se encuentra dentro de una caja rectangular, la cual posee diversas propiedades y atributos que la constituyen. 
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='https://hackernoon.com/hn-images/1*2jZwpWH9XO_QllhEpyGqMA.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <dl>
+                <dt>
+                    <strong>Contenido</strong>: 
+                </dt>
+                <dd>
+                    En él se encuenta todos los elementos procesados que han sido declarado dentro del mismo. Por ejemplo: Texto, imágenes, otras etiquetas.
+                </dd>
+
+                <dt>
+                    <strong>Margenes Internos</strong>: 
+                </dt>
+                <dd>
+                    O padding; es el espacio que se encuentra entre el contenido y el borde de la caja. 
+                </dd>
+
+                <dt>
+                    <strong>Bordes</strong>: 
+                </dt>
+                <dd>
+                    Es el espacio que delimita el contenido interno del elemento; puede considerarse como la frontera del elemento.
+                </dd>
+
+                <dt>
+                    <strong>Margenes Externos</strong>: 
+                </dt>
+                <dd>
+                    O "margin"; es el espacio que separa la caja de un elemento con la de los demas; esta propiedad ya no es considerada en el tamaño de la caja.
+                </dd>
+            </dl>
+
+            <h4>
+                Cálculo del tamaño de una caja.
+            </h4>
+
+            <p>
+                Cada elemento posee una propiedad llamada "box-sizing", la cual determina la forma en que el tamaño de la caja es calculado. Estos valores son calculados a partir del valor asignado a las propiedades del Ancho y Alto, "width" y "height" respectivamente. Por defecto se establece el valor de content-box. A continuación se presentan los principales valores que esta propiedad puede tomar.
+            </p>
+
+            <div class="grid-div two-columns">
+                <div class="article-body">
+                    <p style="text-align: center"><em>
+                        Content-box
+                    </em></p>
+
+                    <p>
+                        Establece el valor del "width" y "height" al contenido; los valores tanto del padding como del borde se agragan al tamaño del contenido, formando un tamaño mayor al establecido en el ancho y alto.
+                    </p>
+
+                    <p><u>Ejemplo:</u></p>
+
+                    <pre>
+                        <code class = 'css'>
+    .content1{
+        box-sizing: content-box; 
+
+        width: 100px;
+        height: 50px;
+
+        padding: 10px 5px;
+
+        border: 5px solid black;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <div class="content1">
+                            
+                        </div>
+
+                        <p><em>
+                            Cálculo resultante:
+                        </em></p>
+
+                        <figure>
+                            <img style='width: 60%' src='../../assets/images/laboratorios/laboratorio3/box1.png' alt='Inserte RIPIO aqui'>
+                        </figure>
+
+                        <style>
+                            .content1{
+                                box-sizing: content-box; 
+
+                                width: 100px;
+                                height: 50px;
+
+                                padding: 10px 5px;
+
+                                border: 5px solid black;
+                            }
+                        </style>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <p style="text-align: center"><em>
+                        Border-box
+                    </em></p>
+
+                    <p>
+                        Establece el valor del "width" y "height" a toda la caja; los valores tanto del padding como del borde son distribuidos junto al contenido, formando un tamaño igual al establecido en el ancho y alto.
+                    </p>
+
+                    <p><u>Ejemplo:</u></p>
+
+                    <pre>
+                        <code class = 'css'>
+    .content1{
+        box-sizing: border-box; 
+
+        width: 100px;
+        height: 50px;
+
+        padding: 10px 5px;
+
+        border: 5px solid black;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <div class="content2">
+                            
+                        </div>
+
+                        <p><em>
+                            Cálculo resultante:
+                        </em></p>
+
+                        <figure>
+                            <img style='width: 60%' src='../../assets/images/laboratorios/laboratorio3/box2.png' alt='Inserte RIPIO aqui'>
+                        </figure>
+
+                        <style>
+                            .content2{
+                                box-sizing: border-box; 
+
+                                width: 100px;
+                                height: 50px;
+
+                                padding: 10px 5px;
+
+                                border: 5px solid black;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                “A man who doesn't spend time with his family can never be a real man.” 
+            </em></p>
+            
+            <p id="author">
+                Vito Corleone.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../assets/js/javaScript.js"></script>
+<script src="../../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+
+</html>
