@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+body{
+    box-sizing: border-box;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background-image: url("https://cdn.wallpapersafari.com/83/31/DBzikL.jpg"); 
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;   
+
+    padding: 1em 5%;
+    margin: 0; 
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*
+
+    Barra de navegacion
+
+*/
+
+nav{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+
+    flex-flow: row wrap;
+    justify-content: flex-end; 
+}
+
+.btn{
+    color: white;
+
+    margin: 0.5em;
+    padding: 0.8em;
+
+    background: gray;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 1px black; 
+}   
+
+.deep{
+    background: #673AB7;
+}
+
+.indigo{
+    background: #3F51B5; 
+}
+
+.red{
+    background: #D81B60;
+}
+
+/*
+
+    Contenido Central.
+
+*/
+
+main{
+    width: 50%;
+    height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+    flex-flow: wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+main>img{
+    width: 50%;
+    height: auto;
+
+    margin: 1em;
+
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px; 
+}
+
+main hr{
+    width: 75%;
+
+    background: white;
+    height: 7px;
+
+    border-radius: 5px; 
+    border: none;
+}
+
+main .logos{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+}
+
+.logos>img{
+    object-fit: cover; 
+    
+    width: 5em;
+    height: 5em;
+
+    margin: 0.5em;
+
+    background: whitesmoke;
+
+    border: 1px solid black;
+    border-radius: 100%;
+
+    opacity: 0.7;
+}
+
+.logos>img:hover{
+    opacity: 1;
+}
+
+/*
+
+    Footer
+
+*/
+
+footer{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+footer>span{
+    padding: 0.7em;
+
+    color: whitesmoke;
+
+    font-size: 0.8em;
+    text-decoration: underline;
+
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+}
