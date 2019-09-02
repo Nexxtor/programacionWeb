@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+body{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center; 
+
+    background: black;
+
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+}
+
+h1{
+    color: whitesmoke
+}
+
+.container{
+    display: grid;
+
+    grid-template-columns: repeat(8, 5em);
+    grid-auto-rows: 5em;
+    grid-auto-flow: dense;
+
+    grid-gap: 5px;
+}
+
+.container img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    margin: 0;
+}
+
+.wide-1{
+    grid-column: span 1;
+}
+
+.wide-2{
+    grid-column: span 2;
+}
+
+.wide-3{
+    grid-column: span 3;
+}
+
+.wide-4{
+    grid-column: span 4;
+}
+
+.wide-5{
+    grid-column: span 5;
+}
+
+.wide-6{
+    grid-column: span 6;
+}
+
+.wide-7{
+    grid-column: span 7;
+}
+
+.wide-8{
+    grid-column: span 8;
+}
+
+
+.tall-1{
+    grid-row: span 1;
+}
+
+.tall-2{
+    grid-row: span 2;
+}
+
+.tall-3{
+    grid-row: span 3;
+}
+
+.tall-4{
+    grid-row: span 4;
+}
+
+.tall-5{
+    grid-row: span 5;
+}
+
+.tall-6{
+    grid-row: span 6;
+}
+
+.tall-7{
+    grid-row: span 7;
+}
+
+.tall-8{
+    grid-row: span 8;
+}

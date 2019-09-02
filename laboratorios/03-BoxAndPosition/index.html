@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/solarized-dark.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        
+    <link rel="icon" href="../../assets/images/icons/web.png">
+    
+    <title>Modelos de caja y Posición</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación Web.<br>
+        Ciclo 02/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('https://internetingishard.com/html-and-css/flexbox/footer-flexible-items-static-widths-af0a32.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#box">Modelo de caja</a><i class="fas fa-box"></i></li>
+                        <li><a href="#float">Float</a><i class="fas fa-paper-plane"></i></li>
+                        <li><a href="#flex">FlexBox</a><i class="fas fa-skating"></i></li>
+                        <li><a href="#grid">Grid Layout</a><i class="fas fa-grip-vertical"></i></li>
+                        <li><a href="#exercise">Ejercicios</a><i class="fas fa-dumbbell"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Laboratorio 03.</h1>
+                <h3>02 - 06 de septiembre de 2019.</h3>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Modelo de caja y posición.</h1>
+            </div>
+            <div id="content-brand">
+                <h5>Propedades / Flexbox / Grid.</h5>
+            </div>
+        </header>
+
+        <section id="box">
+            <h3>
+                Modelo de caja.
+            </h3>
+
+            <p>
+                Cada elemento HTML que existe dentro de una página web se encuentra dentro de una caja rectangular, la cual posee diversas propiedades y atributos que la constituyen. 
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='https://hackernoon.com/hn-images/1*2jZwpWH9XO_QllhEpyGqMA.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <dl>
+                <dt>
+                    <strong>Contenido</strong>: 
+                </dt>
+                <dd>
+                    En él se encuenta todos los elementos procesados que han sido declarado dentro del mismo. Por ejemplo: Texto, imágenes, otras etiquetas.
+                </dd>
+
+                <dt>
+                    <strong>Margenes Internos</strong>: 
+                </dt>
+                <dd>
+                    O padding; es el espacio que se encuentra entre el contenido y el borde de la caja. 
+                </dd>
+
+                <dt>
+                    <strong>Bordes</strong>: 
+                </dt>
+                <dd>
+                    Es el espacio que delimita el contenido interno del elemento; puede considerarse como la frontera del elemento.
+                </dd>
+
+                <dt>
+                    <strong>Margenes Externos</strong>: 
+                </dt>
+                <dd>
+                    O "margin"; es el espacio que separa la caja de un elemento con la de los demas; esta propiedad ya no es considerada en el tamaño de la caja.
+                </dd>
+            </dl>
+
+            <h4>
+                Cálculo del tamaño de una caja.
+            </h4>
+
+            <p>
+                Cada elemento posee una propiedad llamada "box-sizing", la cual determina la forma en que el tamaño de la caja es calculado. Estos valores son calculados a partir del valor asignado a las propiedades del Ancho y Alto, "width" y "height" respectivamente. Por defecto se establece el valor de content-box. A continuación se presentan los principales valores que esta propiedad puede tomar.
+            </p>
+
+            <div class="grid-div two-columns">
+                <div class="article-body">
+                    <p style="text-align: center"><em>
+                        Content-box
+                    </em></p>
+
+                    <p>
+                        Establece el valor del "width" y "height" al contenido; los valores tanto del padding como del borde se agragan al tamaño del contenido, formando un tamaño mayor al establecido en el ancho y alto.
+                    </p>
+
+                    <p><u>Ejemplo:</u></p>
+
+                    <pre>
+                        <code class = 'css'>
+    .content1{
+        box-sizing: content-box; 
+
+        width: 100px;
+        height: 50px;
+
+        padding: 10px 5px;
+
+        border: 5px solid black;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <div class="content1">
+                            
+                        </div>
+
+                        <p><em>
+                            Cálculo resultante:
+                        </em></p>
+
+                        <figure>
+                            <img style='width: 60%' src='../../assets/images/laboratorios/laboratorio3/box1.png' alt='Inserte RIPIO aqui'>
+                        </figure>
+
+                        <style>
+                            .content1{
+                                box-sizing: content-box; 
+
+                                width: 100px;
+                                height: 50px;
+
+                                padding: 10px 5px;
+
+                                border: 5px solid black;
+                            }
+                        </style>
+                    </div>
+                </div>
+
+                <div class="article-body">
+                    <p style="text-align: center"><em>
+                        Border-box
+                    </em></p>
+
+                    <p>
+                        Establece el valor del "width" y "height" a toda la caja; los valores tanto del padding como del borde son distribuidos junto al contenido, formando un tamaño igual al establecido en el ancho y alto.
+                    </p>
+
+                    <p><u>Ejemplo:</u></p>
+
+                    <pre>
+                        <code class = 'css'>
+    .content1{
+        box-sizing: border-box; 
+
+        width: 100px;
+        height: 50px;
+
+        padding: 10px 5px;
+
+        border: 5px solid black;
+    }
+                        </code>
+                    </pre>
+
+                    <div class="preview">
+                        <div class="content2">
+                            
+                        </div>
+
+                        <p><em>
+                            Cálculo resultante:
+                        </em></p>
+
+                        <figure>
+                            <img style='width: 60%' src='../../assets/images/laboratorios/laboratorio3/box2.png' alt='Inserte RIPIO aqui'>
+                        </figure>
+
+                        <style>
+                            .content2{
+                                box-sizing: border-box; 
+
+                                width: 100px;
+                                height: 50px;
+
+                                padding: 10px 5px;
+
+                                border: 5px solid black;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="float">
+            <h3>
+                Posición con Float.
+            </h3>
+
+            <p>
+                Cuando un elemento se coloca bajo el modelo de posicionamiento float, automáticamente se convierte en una caja flotante, lo que significa que se desplaza al inicio o hasta el final del contenedor padre de manera horizontal. Esta disposición de elementos de forma horizontal es la mas básica dentro de CSS.
+            </p>
+
+            <p><em>
+                Ejemplo:
+            </em></p>
+
+            <p><em>
+                HTML
+            </em></p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;div id=&quot;example1&quot;&gt;
+        &lt;p&gt;
+            &lt;span&gt;&lt;/span&gt; Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur deleniti autem? Mollitia, iste reprehenderit provident voluptatibus laudantium quos itaque animi, recusandae doloremque maxime eos quaerat suscipit aut odio accusantium!                        
+        &lt;/p&gt;
+        
+    &lt;/div&gt;
+                </code>
+            </pre>
+
+            <p><em>
+                CSS
+            </em></p>
+
+            <pre>
+                <code class = 'css'>
+    #example1 span{
+        width: 60px;
+        height: 60px;
+
+        margin: 10px;
+
+        background: blueviolet;
+
+        float: right;
+    }
+                </code>
+            </pre>
+
+            <div class="preview">
+                <p><em>
+                    Float Izquierda
+                </em></p>
+
+                <div>
+                    <p>
+                        <span></span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur deleniti autem? Mollitia, iste reprehenderit provident voluptatibus laudantium quos itaque animi, recusandae doloremque maxime eos quaerat suscipit aut odio accusantium!                        
+                    </p>
+                    
+                </div>
+
+                <p><em>
+                    Float Derecha
+                </em></p>
+
+                <div id="example1">
+                    <p>
+                        <span>.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur deleniti autem? Mollitia, iste reprehenderit provident voluptatibus laudantium quos itaque animi, recusandae doloremque maxime eos quaerat suscipit aut odio accusantium!                        
+                    </p>
+                    
+                </div>
+
+                <style>
+                    .preview span{
+                        float:left;
+
+                        width: 60px;
+                        height: 60px;
+
+                        margin: 10px;
+
+                        background: blueviolet;
+                    }
+
+                    #example1 span{
+                        
+
+                        float: right;
+                    }
+                </style>
+            </div>
+        </section>
+
+        <section id="flex">
+            <h3>
+                Posición con Flexbox.
+            </h3>
+
+            <p>
+                La propiedad "Flex" de una caja, es aquel modo de diseño que permite colocar sus elementos hijos de forma que, su comportamiento sea predecible en situaciones donde el diseño deba acomodarse a distintos tamaños de pantalla y diferentes dispositivos. Esto sugiere una mejora ante el modelo de posicionamiento por "bloques", ya que no se utiliza propiedades como float, ni se interfiere en los márgenes del los de´más contenedores.
+            </p>
+
+            <p>
+                El uso de cajas flexibles implican una mejora en el diseño de los sitios web ya que, se puede decidir la dirección de los elementos, el espacio entre ellos, su disposición con respecto al pardre, su peso entre los demás. entre otras propiedades. Aplgunos conceptos importantes de "flexbox" son los siguientes:
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='https://developer.mozilla.org/files/3739/flex_terms.png' alt='Inserte RIPIO aqui'>
+                <caption>Imágen de MDN</caption>
+            </figure>
+
+            <dl>
+                <dt>
+                    <b>flex-container</b>:
+                </dt>
+                <dd>
+                    Contenedor padre; a este elemento es aplicado la propiedad "display: flex;", y todas aquellas propiedades relacionadas al comportamiento de los elementos hijos anidados en él.
+                </dd>
+
+                <dt>
+                    <b>flex-chlid</b>:
+                </dt>
+                <dd>
+                    Elemento directamente anidado en el contenedor padre. Su posición es ajustada en factor de las propiedades del padre.
+                </dd>
+
+                <dt>
+                    <b>Axis</b>:
+                </dt>
+                <dd>
+                    Son los ejes por los que el posicionamiento de flex se guía para disponer de los hijos inmediatos. Exsiten dos principalmente:
+                    <ul>
+                        <li>
+                            Eje principal: es el eje a lo largo del cual los elementos flexibles se suceden unos a otros.
+                        </li>
+
+                        <li>
+                            Eje Secundario: es el eje perpendicular al eje principal.
+                        </li>
+                    </ul>
+                </dd>
+
+                <dt>
+                    <b>Lines</b>:
+                </dt>
+                <dd>
+                    Determinan la posición de las nuevas líneas de elementos con respecto al eje principal.
+                </dd>
+
+                <dt>
+                    <b>Directions</b>:
+                </dt>
+                <dd>
+                    Los términos equivalentes a "altura" y "anchura" usados en los elementos flexibles son tamaño principal (main size) and tamaño secundario (cross size), que respectivamente siguen al eje principal y al eje secundario del contenedor flexible.
+                </dd>
+            </dl>
+
+            <h4>
+                Tabla de propiedades de flexbox.
+            </h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Propiedad.
+                        </th>
+                        <th>
+                            Descripción.
+                        </th>
+                        <th>
+                            Posibles valores.
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            flex-direction
+                        </td>
+                        <td>
+                            Define la dirección del eje principal.
+                        </td>
+                        <td>
+                            row | row-reverse | column | column-reverse
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            flex-wrap
+                        </td>
+                        <td>
+                            Determina si los elementos hijos deben ser ubicados en una sola línea o si se deben reubicar en varias.
+                        </td>
+                        <td>
+                            nowrap | wrap | wrap-reverse
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            flex-flow
+                        </td>
+                        <td>
+                            Propiedad que abrevia la propiedad flex-direction y flex-wrap.
+                        </td>
+                        <td>
+                            &lt;flex-direction&gt; &lt;flex-wrap&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            align-items
+                        </td>
+                        <td>
+                            Alineará los items de una línea con respecto al eje cruzado o secundario.
+                        </td>
+                        <td>
+                                stretch | flex-start | flex-end |center
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            align-content
+                        </td>
+                        <td>
+                            Ajusta las líneas dentro de un contenedor flex cuando hay espacio extra en el eje transversal.
+                        </td>
+                        <td>
+                            space-between | space-around | space-evenly | stretch | center | start | end | flex-start | flex-end
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            justify-content
+                        </td>
+                        <td>
+                            Ajusta la posición de los items con respecto al eje principal.
+                        </td>
+                        <td>
+                            space-between | space-around | space-evenly | stretch | center | start | end | flex-start | flex-end
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Estos son algunas de las porpiedades mas importantes de flexbox, pero existen más.
+            </p>
+
+            <h4>
+                Ejemplo
+            </h4>
+
+            <p><em>
+                HTML
+            </em></p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;div id=&quot;example2&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_A.svg/200px-Playing_card_club_A.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_2.svg/200px-Playing_card_club_2.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_3.svg/200px-Playing_card_club_3.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_4.svg/200px-Playing_card_club_4.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_5.svg/200px-Playing_card_club_5.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_6.svg/200px-Playing_card_club_6.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_7.svg/200px-Playing_card_club_7.svg.png&quot;&gt;
+        &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_8.svg/200px-Playing_card_club_8.svg.png&quot;&gt;
+    &lt;/div&gt;
+                </code>
+            </pre>
+
+            <p><em>
+                CSS
+            </em></p>
+
+            <pre>
+                <code class = 'css'>
+    #example2>img{
+        width: 10em;
+        margin: 0.5em;
+    }
+
+    #example2{
+        display: flex;
+
+        flex-flow: row wrap;
+        justify-content: center;
+        
+        border: 1px solid black;
+    }
+                </code>
+            </pre>
+
+            <div class="preview">
+                <div id="example2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_A.svg/200px-Playing_card_club_A.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_2.svg/200px-Playing_card_club_2.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_3.svg/200px-Playing_card_club_3.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_4.svg/200px-Playing_card_club_4.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_5.svg/200px-Playing_card_club_5.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_6.svg/200px-Playing_card_club_6.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_7.svg/200px-Playing_card_club_7.svg.png">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_8.svg/200px-Playing_card_club_8.svg.png">
+                </div>
+
+                <p>
+                    Para ver el efecto de flexbox, se debe modificar el zoom de visaulización del navegador
+                </p>
+
+                <style>
+                    #example2>img{
+                        width: 10em;
+                        margin: 0.5em;
+                    }
+
+                    #example2{
+                        display: flex;
+
+                        flex-flow: row wrap;
+                        justify-content: center;
+                        
+                        border: 1px solid black;
+                    }
+                </style>
+            </div>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a W3Schools: <a href='https://www.w3schools.com/css/css3_flexbox.asp' target = '_blank'>Flexbox</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Conceptos_Basicos_de_Flexbox' target = '_blank'>Conceptos báscios de flexBox</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a CSSTricks: <a href='https://css-tricks.com/snippets/css/a-guide-to-flexbox/' target = '_blank'>Guide to Flexbox</a>
+            </p>
+
+            <div class="tip">
+                <h3>
+                    Prácticando.
+                </h3>
+
+                <p>
+                    Para practicar los conceptos del posicionamiento flexbox, se sugiere la práctica virtual de "FlexboxFroggy"
+                </p>
+
+                <figure>
+                    <img style='width: 60%' src='../../assets/images/laboratorios/laboratorio3/flex-froggy.png' alt='Inserte RIPIO aqui'>
+                </figure>
+
+                <p style='padding-left:1.5em;'>
+                    Referencia a Práctica Flexbox: <a href='https://flexboxfroggy.com/#es' target = '_blank'>FlexboxFroaggy</a>
+                </p>
+            </div>
+
+        </section>
+
+        <section id="grid">
+            <h3>
+                Posición con GridLayout.
+            </h3>
+
+            <p>
+                Uno de los procesos más problematicos de CSS, sobre todo para novatos o principiantes, es el referido con colocar y distribuir los elementos de manera no lineal a lo largo de una página. Mecanismos como posicionamiento, floats o elementos en bloque o en línea, suelen ser insuficientes (o muy simples) para crear un layout o estructuras mas demandantes para páginas web actuales.
+            </p>
+
+            <p>
+                Grid CSS nace de esa necesidad, y recoge las ventajas de ese sistema, añadiendole numerosas mejoras y características que permiten crear rápidamente cuadrículas sencillas y potentes.
+            </p>
+
+            <p>
+                Grid es un sistema de posicionamiento cuyo diseño funciona en base a mallas y cuadriculas. Permite dividir un contenedor en secciones o partes, diferenciandolo de todas las estructuras primitivas de HTML.
+            </p>
+
+            <p>
+                Los contenedores a quienes es aplicada la propiedad "display: grid;", son transfomados en una cuadrícula, en la cual pueden definirse propiedades como la cantidad de filas y columnas, el comportamiento de los hijos anidados, separación de celdas, etc. A continuación se presentan algunos conceptos importantes del "GridLayout".
+            </p>
+
+            <dl>
+                <dt><b>
+                    Grid
+                </b></dt>
+                <dd>
+                    Es un conjunto de líneas horizontales y verticales que crean filas y columnas.
+                </dd>
+
+                <dt><b>
+                    Grid Container
+                </b></dt>
+                <dd>
+                    Se refiere al área que es declarada como un grid. Es decir, cuando se declara un elemento como "display:grid" o "display:inline-grid".
+                </dd>
+
+                <dt><b>
+                    Grid Lines
+                </b></dt>
+                <dd>
+                    Son las líneas horizontales y verticales que dividen el Grid. Éstas se encuentran a cada lado de una fila o columna.
+                    <figure>
+                        <img style='width: 15em' src='../../assets/images/laboratorios/laboratorio3/grid-1.jpg' alt='Inserte RIPIO aqui'>
+                    </figure>
+                </dd>
+
+                <dt><b>
+                    Grid Tracks
+                </b></dt>
+                <dd>
+                    Es el espacio que hay entre dos Grid Lines, ya sean horizontales o verticales.
+                    <figure>
+                        <img style='width: 15em' src='../../assets/images/laboratorios/laboratorio3/grid-2.jpg' alt='Inserte RIPIO aqui'>
+                    </figure>
+                </dd>
+
+                <dt><b> 
+                    Grid Cells
+                </b></dt>
+                <dd>
+                    Es el espacio que se encuentra entre cuatro Grid Lines continuas. La típica celda de una tabla.
+                    <figure>
+                        <img style='width: 15em' src='../../assets/images/laboratorios/laboratorio3/grid-3.jpg' alt='Inserte RIPIO aqui'>
+                    </figure>
+                </dd>
+
+                <dt><b>
+                    Grid Area
+                </b></dt>
+                <dd>
+                    Se trata del espacio que hay entre cuatro Grid Lines que a su vez contiene varios Grid Cells.
+                    <figure>
+                        <img style='width: 15em' src='../../assets/images/laboratorios/laboratorio3/grid-4.jpg' alt='Inserte RIPIO aqui'>
+                    </figure>
+                </dd>
+            </dl>
+
+            <h4>
+                Tabla de propiedades de GridLayout.
+            </h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Elemento</th>
+                        <th>Descripción </th>
+                        <th>Valores posibles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>grid-template-columns</td>
+                        <td>Contenedor</td>
+                        <td>Establece el patrón de columnas en la cadrícula</td>
+                        <td>
+                            <p>
+                                Ejemplo: 1fr 1fr 1fr
+                            </p>
+                            <p>
+                                Generaría una cuadrícula con 3 columnas.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>grid-template-rowa</td>
+                        <td>Contenedor</td>
+                        <td>Establece el patrón de filas en la cuadrícula</td>
+                        <td>
+                            <p>
+                                Ejemplo: 1fr 1fr 1fr
+                            </p>
+                            <p>
+                                Generaría una cuadrícula con filas columnas.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>grid-gap</td>
+                        <td>Contenedor</td>
+                        <td>Establece la separación entre celdas de la cuadrícula</td>
+                        <td>Valor de separación</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row-start</td>
+                        <td>Hijo</td>
+                        <td>Establece la posción inicial de un hijo con respecto a las filas. Utiliza de referencia las líneas del grid.</td>
+                        <td>Número de la línea inicial</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row-end</td>
+                        <td>Hijo</td>
+                        <td>Establece la posción final de un hijo con respecto a las filas. Utiliza de referencia las líneas del grid.</td>
+                        <td>Número de la línea final</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column-start</td>
+                        <td>Hijo</td>
+                        <td>Establece la posción inicial de un hijo con respecto a las columnas. Utiliza de referencia las líneas del grid.</td>
+                        <td>Número de la línea inicial</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column-end</td>
+                        <td>Hijo</td>
+                        <td>Establece la posción final de un hijo con respecto a las columnas. Utiliza de referencia las líneas del grid.</td>
+                        <td>Número de la línea final</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row</td>
+                        <td>Hijo</td>
+                        <td>Propiedad abreviada de "grid-row-start" y "grid-row-end"</td>
+                        <td>&lt;Número de la línea inicial&gt; &lt;Número de la línea final&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column</td>
+                        <td>Hijo</td>
+                        <td>Propiedad abreviada de "grid-column-start" y "grid-column-end"</td>
+                        <td>&lt;Número de la línea inicial&gt; &lt;Número de la línea final&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Estas son algunas propiedades de GridLayout, pero existen mas.
+            </p>
+
+            <h4>
+                Ejemplo
+            </h4>
+
+            <p><em>
+                HTML
+            </em></p>
+
+            <pre>
+                <code class = 'html'>
+    &lt;div id=&quot;example3&quot;&gt;
+        &lt;span class=&quot;one&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;two&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;three&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;four&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;five&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+                </code>
+            </pre>
+
+            <p><em>
+                CSS
+            </em></p>
+
+            <pre>
+                <code class = 'css'>
+    #example3{
+        display: grid;
+
+        justify-content: center;
+
+        grid-template: 100px 100px 100px/ 100px 100px 100px;
+        grid-gap: 5px;
+    }
+
+    #example3>span{
+        width: 100%;
+        height: 100%;
+
+        margin: 0; 
+    }
+
+    #example3>.one{
+        background: grey;
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    #example3>.two{
+        background: hotpink;
+        grid-column: 2/4;
+        grid-row: 1/2;
+    }
+
+    #example3>.three{
+        background: indianred;
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    #example3>.four{
+        background: tomato;
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+    #example3>.five{
+        background: skyblue;
+        grid-column: 3/4;
+        grid-row: 2/4;
+    }
+                </code>
+            </pre>
+
+            <div class="preview">
+                <div id="example3">
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
+                    <span class="four"></span>
+                    <span class="five"></span>
+                </div>
+
+                <style>
+                    #example3{
+                        display: grid;
+
+                        justify-content: center;
+
+                        grid-template: 100px 100px 100px/ 100px 100px 100px;
+                        grid-gap: 5px;
+                    }
+
+                    #example3>span{
+                        width: 100%;
+                        height: 100%;
+
+                        margin: 0; 
+                    }
+
+                    #example3>.one{
+                        background: grey;
+                        grid-column: 1/2;
+                        grid-row: 1/3;
+                    }
+
+                    #example3>.two{
+                        background: hotpink;
+                        grid-column: 2/4;
+                        grid-row: 1/2;
+                    }
+
+                    #example3>.three{
+                        background: indianred;
+                        grid-column: 2/3;
+                        grid-row: 2/3;
+                    }
+
+                    #example3>.four{
+                        background: tomato;
+                        grid-column: 1/3;
+                        grid-row: 3/4;
+                    }
+
+                    #example3>.five{
+                        background: skyblue;
+                        grid-column: 3/4;
+                        grid-row: 2/4;
+                    }
+                </style>
+            </div>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout' target = '_blank'>CSS Grid Layout</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a W3Schools: <a href='https://www.w3schools.com/css/css_grid.asp' target = '_blank'>Grid CSS</a>
+            </p>
+
+            <div class="tip">
+                <h3>
+                    Prácticando.
+                </h3>
+
+                <p>
+                    Para practicar los conceptos del posicionamiento GridLayout, se sugiere la práctica virtual de "GridGarden"
+                </p>
+
+                <figure>
+                    <img style='width: 60%' src='../../assets/images/laboratorios/laboratorio3/Garden-Game.png' alt='Inserte RIPIO aqui'>
+                </figure>
+
+                <p style='padding-left:1.5em;'>
+                    Referencia a Práctica GridLayout: <a href='http://cssgridgarden.com/#es' target = '_blank'>GridGarden</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="exercise">
+            <h3>
+                Ejercicios.
+            </h3>
+
+            <p>
+                A partir de los conceptos introducidos y las prácticas virtuales, resuelva las siguientes problemáticas.
+            </p>
+
+            <ol>
+                <li>
+                    <p>
+                        Recree, utilizando una temática distinta, la siguiente galeria de imágenes. Debe de hacer uso de GridLayout.
+                    </p>
+
+                    <figure>
+                        <a href="../../assets/images/laboratorios/laboratorio3/exercice1.png" target="_blank"><img style='width: 70%' src='../../assets/images/laboratorios/laboratorio3/exercice1.png' alt='Inserte RIPIO aqui'></a>
+                    </figure>
+                </li>
+
+                <li>
+                    <p>
+                        Recree el siguiente sitio web de logotipos; haga uso de botones, hovers, y colores llamativos. Debe hacer uso de Flexbox.
+                    </p>
+
+                    <figure>
+                        <a href="../../assets/images/laboratorios/laboratorio3/exercise2.png" target="_blank"><img style='width: 70%' src='../../assets/images/laboratorios/laboratorio3/exercise2.png' alt='Inserte RIPIO aqui'></a>
+                    </figure>
+                </li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                “A man who doesn't spend time with his family can never be a real man.” 
+            </em></p>
+            
+            <p id="author">
+                Vito Corleone.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../assets/js/javaScript.js"></script>
+<script src="../../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+
+</html>
