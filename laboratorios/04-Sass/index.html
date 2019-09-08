@@ -8,7 +8,7 @@
 
     <!-- Stylesheets references -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/highlight_styles/solarized-dark.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/obsidian.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -306,8 +306,151 @@
                 Las reglas anidadas permiten expresar reglas CSS de forma menos repetitiva y más legible. Naturalmente la mayoria de selectores poseen un carácter de anidación, por lo que este tipo de sintaxis resulta intuitiva al momento de aplicar bloques de reglas CSS. Son utilies al momento de manejar estilos y plantillas complejas. 
             </p>
 
+            <p>
+                <em>
+                    Scss
+                </em>
+            </p>
+
+            <pre>
+                <code class = 'scss'>
+    div{
+        width: 80%;
+        height: 100px;
+    
+        color: $accent_color;
+    
+        margin: $standar_margin;
+        padding: $standar_padding;
+    
+        border: $standar_border;
+
+        /*
+            Anidación nivel 1
+        */
+    
+        ul{
+            list-style: none;
+    
+            display: flex;
+            flex-flow: row wrap;
             
+            /*
+                Anidación nivel 2
+            */
+
+            li{
+                background: $secondary_color;
+    
+                text-decoration: none;
+                
+                padding: $standar_padding;
+                margin: $standar_margin;
+
+                /*
+                    Anidación nivel 3
+                */
+            }
+        }
+    }
+                </code>
+            </pre>
+
+            <p>
+                <em>
+                    CSS procesado.
+                </em>
+            </p>
+
+            <pre>
+                <code class = 'css'>
+    div {
+        width: 80%;
+        height: 100px;
+        color: #FF5722;
+        margin: 8px;
+        padding: 4px;
+        border: 1px solid #3F51B5;
+    }
+    
+    div ul {
+        list-style: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+    }
+    
+    div ul li {
+        background: #9C27B0;
+        text-decoration: none;
+        padding: 4px;
+        margin: 8px;
+    }
+                </code>
+            </pre>
         </section>
+
+        <section id="andOperator">
+            <h3>
+                Operador <em>&</em>
+            </h3>
+
+            <p>
+                El caracter u operador <em>&</em> es traducido y entendido como el padre de la anidación en la que se encuentra su declaración; este trabajo es realizado por el pre-procesador, y es aplicado como un nuevo bloque de reglas. Dicha funcionalidad resulta útli cuando se aplican pseudo-clases o pseudo-elementos al padre. Por ejemplo:
+            </p>
+
+            <p><em>
+                Scss
+            </em></p>
+
+            <pre>
+                <code class = 'scss'>
+    li{
+        background: $primary_color;
+
+        text-decoration: none;
+        
+        padding: $standar_padding;
+        margin: $standar_margin;
+
+        /*
+            Hace referencia al mismo li
+        */
+
+        &:hover{
+            background: $secondary_color;
+            text-decoration: underline;
+        }
+    }
+                </code>
+            </pre>
+
+            <p><em>
+                CSS procesado
+            </em></p>
+
+            <pre>
+                <code class = 'css'>
+    div ul li {
+        background: #3F51B5;
+        text-decoration: none;
+        padding: 4px;
+        margin: 8px;
+    }
+        
+    div ul li:hover {
+        background: #9C27B0;
+        text-decoration: underline;
+    }
+                </code>
+            </pre>
+        </section>
+
+
 
     </article>
 
@@ -315,11 +458,11 @@
     <footer>
         <article>
             <p><em>
-                “A man who doesn't spend time with his family can never be a real man.” 
+                “Your eyes can deceive you. Don’t trust them.” 
             </em></p>
             
             <p id="author">
-                Vito Corleone.
+                Obi-Wan Kenobi.
             </p>
         </article>
     </footer>
