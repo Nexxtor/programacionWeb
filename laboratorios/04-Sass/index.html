@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/solarized-dark.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        
+    <link rel="icon" href="../../assets/images/icons/web.png">
+    
+    <title>Sass</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación Web.<br>
+        Ciclo 02/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('https://miro.medium.com/max/5000/1*lpWLZ75HSCAYYQvx0wxYDQ.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#box">Modelo de caja</a><i class="fas fa-box"></i></li>
+                        <li><a href="#float">Float</a><i class="fas fa-paper-plane"></i></li>
+                        <li><a href="#flex">FlexBox</a><i class="fas fa-skating"></i></li>
+                        <li><a href="#grid">Grid Layout</a><i class="fas fa-grip-vertical"></i></li>
+                        <li><a href="#exercise">Ejercicios</a><i class="fas fa-dumbbell"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Laboratorio 04.</h1>
+                <h3>09 - 13 de septiembre de 2019.</h3>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>Sass</h1>
+            </div>
+            <div id="content-brand">
+                <h5>Preprocesador de CSS</h5>
+            </div>
+        </header>
+
+        <section id="intro">
+            <h3>
+                Introducción a Sass.
+            </h3>
+
+            <p>
+                Sass, del acrónimo en inglés "<em>Syntactically Awesome Stylesheets</em>", es un metalenguaje de Hojas de Estilo en Cascada, el cual extiende e implementan nuevas funcionalidades a CSS. Normalmente un navegador no es capaz de interpretar los estilos declarados en un archivo con estádares Sass, pero haciendo uso de pre-procesadores de código se pueden traducir a archivos con estándares CSS. 
+            </p>
+
+            <p>
+                Este metalenguaje soporta dos tipos de extenciones de archivos <em>.sass</em> y <em>.scss</em>; cada uno de ellos representa una sintaxis diferente para la escritura de las hojas de estilos en Sass.
+            </p>
+
+            <dl>
+                <dt>
+                    <em>
+                        .sass
+                    </em>
+                </dt>
+                <dd>
+                    Sintaxis basada en la indentación del código para declarar los bloques de código y separar las reglas y propiedades.
+
+                    <pre>
+                        <code class = 'sass'>
+    #A
+        color: red
+
+        #B
+            border: 1px solid black
+
+            #C
+                font-size: 2em
+                        </code>
+                    </pre>
+                </dd>
+
+                <dt>
+                    <em>
+                        .scss
+                    </em>
+                </dt>
+                <dd>
+                    Sintaxis más tradicional, que hace uso de llaves ("<em>{ }</em>") para separar bloques, y punto y coma (<em>";"</em>) para separar reglas y propiedades.
+
+                    <pre>
+                        <code class = 'scss'>
+    #A{
+        color: red;
+
+        #B{
+            border: 1px solid black;
+
+            #C{
+                font-size: 2em;
+            }
+        }
+    }
+                        </code>
+                    </pre>
+                </dd>
+            </dl>
+
+            <p>
+                Como la sintaxis de <em>.scss</em> es la más parecida a la sintaxis de CSS, es la que se hará uso dentro del desarrollo de la presente guía.
+            </p>
+
+            <h4>
+                ¿Por qué hacer uso de Sass/Scss?
+            </h4>
+
+            <ul>
+                <li>
+                    <p>
+                        <em>
+                            Reglas Anidadas:
+                        </em>
+                    </p>
+
+                    <p>
+                        Propiedad que permite la anidación de propiedades sin la necesidad de múltiples bloques de reglas separados. Esto permite un código CSS más legible y limpio.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>
+                            Superconjunto de CSS
+                        </em>
+                    </p>
+
+                    <p>
+                        Cualquier sintaxis o derivación de Sass es un super conjunto de CSS, por lo que toda regla escrita en CSS que funcione, seguirá funcionando en Sass.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>
+                            Variables:
+                        </em>
+                    </p>
+
+                    <p> 
+                        A diferencia de las variables estándares de CSS, las variables de Sass permiten mayor flexibilidad al momento de operarlas, cambiarlas, recorrerlas, etc. Por lo que su uso es altamente recomendado para sitios con una mayor complejidad. 
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>
+                            Mejores operadores: 
+                        </em>
+                    </p>
+
+                    <p>
+                        A diferencia de los cálculos en CSS, los cuales requerían el uso de la función <em>calc()</em>, los cálculos en Sass son mas intuitivos y sencillos debido que su implementación se simplifica a solo utilizar los operadores aritméticos.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>
+                            Funciones:
+                        </em>
+                    </p>
+
+                    <p>
+                        Sass permite la declaración de bloques de reglas CSS como funciones reutilizables, permitiendo la generalización de funcionalidades CSS comunes en sitios complejos.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <em>
+                            Mixins:
+                        </em>
+                    </p>
+
+                    <p>
+                        Son un conjunto de propiedades CSS declaradas una vez, las cuales se reutilizan mezclandolas con cualquier otra definición CSS existente. Esto permite la existencia de temas en distintos "<em>layouts</em>".
+                    </p>
+                </li>
+            </ul>
+
+            <figure>
+                <img style='width: 40em' src='https://miro.medium.com/max/5000/1*lpWLZ75HSCAYYQvx0wxYDQ.png' alt='Inserte RIPIO aqui'>
+            </figure>
+        </section>
+
+        <section id="var">
+            <h3>
+                Declaración y uso de variables.
+            </h3>
+
+            <p>
+                La variables utilizadas en Sass/Scss son diferentes de las utilizadas en CSS. Estas inician con el signo de dolar antes del identificador que representan la variable. Además, esta pueden poseer distintos valores y tipos de propiedades.
+            </p>
+
+            <p>
+                Para su uso, solo deben invocarse en cualquier definición CSS dentro del documento.
+            </p>
+
+            <p>
+                <em>
+                    Por ejemplo.
+                </em>
+            </p>
+
+            <p>
+                <em>
+                    Scss
+                </em>
+            </p>
+
+            <pre>
+                <code class = 'scss'>
+    /*
+
+        Definición de variables
+    
+    */
+
+    $primary_color : #3F51B5;
+    $secondary_color : #9C27B0;
+    $accent_color : #FF5722;
+
+    $standar_margin : 8px;
+    $standar_padding : 4px;
+    $standar_border : 1px solid $primary_color;
+
+    /*
+    
+        Uso de las variables
+    
+    */
+
+    div{
+        width: 80%;
+        height: 100px;
+    
+        color: $accent_color;
+    
+        margin: $standar_margin;
+        padding: $standar_padding;
+    
+        border: $standar_border;
+    }
+                </code>
+            </pre>
+
+            <p>
+                <em>
+                    CSS procesado.
+                </em>
+            </p>
+
+            <pre>
+            <code class = 'css'>
+    div {
+            width: 80%;
+            height: 100px;
+            color: #FF5722;
+            margin: 8px;
+            padding: 4px;
+            border: 1px solid #3F51B5;
+        }
+                </code>
+            </pre>
+
+        </section>
+
+        <section id="nested">
+            <h3>
+                Reglas anidadas.
+            </h3>
+
+            <p>
+                Las reglas anidadas permiten expresar reglas CSS de forma menos repetitiva y más legible. Naturalmente la mayoria de selectores poseen un carácter de anidación, por lo que este tipo de sintaxis resulta intuitiva al momento de aplicar bloques de reglas CSS. Son utilies al momento de manejar estilos y plantillas complejas. 
+            </p>
+
+            
+        </section>
+
+    </article>
+
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                “A man who doesn't spend time with his family can never be a real man.” 
+            </em></p>
+            
+            <p id="author">
+                Vito Corleone.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../assets/js/javaScript.js"></script>
+<script src="../../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+
+</html>
