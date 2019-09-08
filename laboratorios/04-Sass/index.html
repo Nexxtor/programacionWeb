@@ -539,7 +539,40 @@
             </pre>
         </section>
 
+        <section id="operations">
+            <h3>
+                Operaciones Aritméticas.
+            </h3>
 
+            <p>
+                El uso de cálculos en las hojas CSS es fundamental. Sass, a diferencia de CSS, permite realizar operaciones aritméticas básicas como la suma, resta, multiplicación y división, haciendo uso unicamente de sus operadores comunes (<em>+</em>, <em>-</em> , <em>*</em>, <em>/</em>, respectivamente). Por ejemplo:
+            </p>
+
+            <pre>
+                <code class = 'scss'>
+    div{
+        width: 600px/320px * 100%;
+    }
+
+    img{
+        height: 100vh/3 + 25vh;
+    }
+                </code>
+            </pre>
+
+            <pre>
+                <code class = 'css'>
+    div {
+        width: 187.5%;
+    }
+    
+    img {
+        height: 58.33333vh;
+    }
+                </code>
+            </pre>
+
+        </section>
     </article>
 
     <!-- Footer Implementation -->
