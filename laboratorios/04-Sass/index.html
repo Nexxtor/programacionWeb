@@ -450,6 +450,94 @@
             </pre>
         </section>
 
+        <section id="mixin">
+            <h3>
+                Mixins
+            </h3>
+
+            <p>
+                Los mixins son un conjunto de reglas CSS agrupadas en un bloque, el cual posee como propiedad principal que puede invocarse en cualquier otro bloque de reglas CSS, volviendose altamente reusable y versatil. Además permite el uso de argumentos en su cuerpo, ampliando el uso de los mismos en el diseño de sitios complejos, permitiendo diversos valores en las propiedades o cálculos específicos. 
+            </p>
+
+            <P>
+                Para invocar cualquier mixin declarado dentro de la hoja de estilos, se hace uso de la directiva <em>@include</em>, seguida de identificador y paramentros del mixin que se desee utilizar. Por ejemplo:
+            </P>
+
+            <pre>
+                <code class = 'sccs'>
+    /*
+        Declaracion de los mixin              
+    */
+
+    @mixin centerBox(){
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    @mixin simetricSpace($distance){
+        margin: $distance;
+        padding: $distance;
+    }
+
+    /*
+        Invocación de los mixin
+    */
+
+    .box{
+        @include centerBox();
+
+        width: 100%;
+        height: 100vh;
+
+        @include simetricSpace(20px);
+    }
+
+    .itemm{
+        object-fit: cover;
+
+        width: 100px;
+        height: 100px; 
+
+        @include simetricSpace(5px);
+    }
+                </code>
+            </pre>
+
+            <p><em>
+                CSS procesado
+            </em></p>
+
+            <pre>
+                <code class = 'css'>
+    .box {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        width: 100%;
+        height: 100vh;
+        margin: 20px;
+        padding: 20px;
+    }
+        
+    .itemm {
+        -o-object-fit: cover;
+            object-fit: cover;
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        padding: 5px;
+    }
+                </code>
+            </pre>
+        </section>
 
 
     </article>
