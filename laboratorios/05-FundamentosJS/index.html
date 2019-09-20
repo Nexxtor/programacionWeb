@@ -461,13 +461,198 @@
                 Sentencias
             </h3>
 
-            
+            <p>
+                Como se mecionó previamente, la sintaxis de JavaScript es muy parecida a la de lenguajes de programación comunes, por lo que es natural pensar que la mayoría de sus sentencias son iguales. A continuación se presenta la sintaxis de las mas utilizadas:
+            </p>
+
+            <h4>
+                Condiciones <em>if...else</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    if(condition){
+      //Code Block
+    }else{
+      //Code Block.
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Condiciones <em>switch</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    switch(variable){
+      case value1:
+        //Code Block
+        break;
+      default:
+        //Code Block
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Bucle <em>for</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    for(i=0; i&lt;n; i++){
+      //Code Block
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Bucle <em>while</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    while(condition){
+      //Code Block
+    }
+                </code>
+            </pre>
+
+            <h4>
+                Bucle <em>do-while</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    do{
+      //Code Block
+    }while(condition);
+                </code>
+            </pre>
+
+            <h4>
+                <em>try-catch</em>
+            </h4>
+
+            <pre>
+                <code class="js">
+    try{
+      //Code Block
+    }catch(err){
+      //Code Block
+    }
+                </code>
+            </pre>
+
         </section>
 
         <section id="funct">
             <h3>
                 Funciones
             </h3>
+
+            <p>
+                En términos generales, una función es un "subprograma" que puede ser llamado por código externo (o interno en caso de recursión) a la función. Al igual que el programa en sí mismo, una función se compone de una secuencia de declaraciones, que conforman el cuerpo. Se pueden pasar valores a una función, y la función puede devolver un valor. [MDN]
+            </p>
+
+            <p>
+                En JavaScript existen diversas formas de declarar una función, entre las que figuran:
+            </p>
+
+            <h4>
+                La instrucción function
+            </h4>
+
+            <p>
+                Esta instrucción declara una función con un identificador y parámetros específicos. Posee la siguiente sintaxis:
+            </p>
+
+            <pre>
+                <code class="js">
+    function &lt;name&gt; ([Param1,[Param2,[Param3[,...]]]]){
+
+      //instructions
+    
+    }
+                </code>
+            </pre>
+
+            <h4>
+                El operador function
+            </h4>
+            
+            <p>
+                Este operador es parecido a la instrucción anterior, con la diferencia que este es utilizado para declarar funciones dentro de expresiones, es decir ser almacendas en variables o procesos mayores. Su sintaxis es la siguiente:
+            </p>
+            
+            <pre>
+                <code class="js">
+    function [name] ([Param1,[Param2,[Param3[,...]]]]){ 
+        //instructions 
+    }
+                </code>
+            </pre>
+
+            <p><em>
+                Ejemplos:
+            </em></p>
+
+            <pre>
+                <code class="js">
+    var procesoA =  function (i,j){ 
+        return i*j; 
+    }
+
+    elementX.onclick(function (i,j){ 
+        return (i*j)/(i); 
+    });
+                </code>
+            </pre>
+
+            <h4>
+                La notación flecha.
+            </h4>
+
+            <p>
+                Esta notación es la simplificación de la definición y sintaxis de una función; en general tiene las misma propiedades que el operador funtion, por lo que su utilidad reside en ser asignada a expresiones y procesos mayores. Fue implementada a partir de ECMAScript 6. 
+            </p>
+
+            <pre>
+                <code class="js">
+    ([Param1,[Param2[,...]]]) => {
+        //instructions 
+    }
+                </code>
+            </pre>
+
+            <p>
+                Aplicando esta notación a los ejemplos anteriores:
+            </p>
+
+            <pre>
+                <code class="js">
+    var procesoA = (i,j) => { 
+        return i*j; 
+    }
+
+    elementX.onclick((i,j) => { 
+        return (i*j)/(i); 
+    });
+                </code>
+            </pre>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones' target = '_blank'>Funciones</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/function' target = '_blank'>Operador function</a>
+            </p>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/function' target = '_blank'>Operador function</a>
+            </p>
         </section>
 
         <section id="object">
