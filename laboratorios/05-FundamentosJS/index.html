@@ -8,7 +8,7 @@
 
     <!-- Stylesheets references -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/highlight_styles/obsidian.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/androidstudio.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -82,6 +82,10 @@
             </p>
 
             <p>
+                JavaScript es multi-paradigma, siendo sus pricipales vertientes la programación funcional, programación imperativa y el paradigma orientado a objetos. La sintaxis básica del mismo es similar a Java y C++, con el fin de minimizar su curva de aprendizaje; sentencias como <em>if, try...catch, for, while y switch</em>, funcionan de forma similar como lo hacen en dichos lenguajes.
+            </p>
+
+            <p>
                 <blockquote style="text-align: justify">
                     "JavaScript no debe ser confundido con el lenguaje de programación Java. Ambos "Java" y "Javascript" son marcas registradas de Oracle en Estados Unidos y otros países. Sin embargo, los dos lenguajes de programación tienen muchas diferencias en las sintaxis, semántica y usos."
                 </blockquote>
@@ -94,24 +98,396 @@
             <figure>
                 <img style='width: 30em' src='https://thedevs.network/static/img/posts/you-have-been-using-console-wrong-the-whole-time.jpg' alt='Inserte RIPIO aqui'>
             </figure>
+
+            <h4>
+                Primeros pasos.
+            </h4>
+
+            <p>
+                Para empezar a hacer uso de esta herramienta, se debe importar o definir el script dentro del documento HTML. Para ello existen diversas formas:
+            </p>
+
+            <ul>
+                <li>
+                    <h4>
+                        Script embebido en las etiquetas.
+                    </h4>
+
+                    <p>
+                        Como su nombre indica, este método consiste en definir el script dentro de los atributos que controlan los eventos de una etiqueta. Cabe mencionar que esto se debe de evitar, a menos que se quisiera invocar una función externa en cierto evento específico.
+                    </p>
+
+                    <pre>
+                        <code class="html">
+    &lt;span onclick = "alert('Hice click');"&gt;
+        Haz click aqui!
+    &lt;/span&gt;
+                        </code>
+                    </pre>
+                </li>
+
+                <li>
+                    <h4>
+                        Uso de la etiqueta Script.
+                    </h4>
+
+                    <p>
+                        Dentro de HTML existe una etiqueta específica para la definición de scripts, la cual puede ser embebida en cualquier punto del documento. Esta se ejecutará en el momento en que es definida.
+                    </p>
+
+                    <pre>
+                        <code class="html">
+    &lt;script&gt;
+        //Imprimir en consola.
+
+        console.log("Hello World!")
+
+    &lt;/script&gt;
+                        </code>
+                    </pre>
+                </li>
+
+                <li>
+                    <h4>
+                        Uso de archivos externos
+                    </h4>
+
+                    <p>
+                        Generalmente los scripts son definidos en archivos externos (con extención .js). Para aplicarlos, se debe de hacer uso del atributo src de la etiquta script, donde se indica la dirección relativa del archivo.
+                    </p>
+
+                    <pre>
+                        <code class="html">
+    &lt;script src=&quot;assets/js/javaScript.js&quot;&gt;&lt;/script&gt;
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+
+            <div class="tip">
+                <h3>
+                    Estructura de archivos.
+                </h3>
+
+                <p>
+                    A este punto ya se han abarcado varias temáticas que requieren el uso de archivos externos (CSS, SCSS, JS), por lo que es recomendable hacer uso de una organización de directorios y archivos para mantener el orden dentro de la estructura del sitio web. Por ejemplo:
+                </p>
+
+                <ul>
+                    <li>
+                        root
+
+                        <ul>
+                            <li>
+                                index.html
+                            </li>
+                            <li>
+                                assets
+                                <ul>
+                                    <li>
+                                        css
+
+                                        <ul>
+                                            <li>
+                                                styles.css
+                                            </li>
+                                            <li>
+                                                extras.css
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        scss
+
+                                        <ul>
+                                            <li>
+                                                styles.scss
+                                            </li>
+                                            <li>
+                                                _variables.scss
+                                            </li>
+                                            <li>
+                                                _mixins.scss
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        js
+
+                                        <ul>
+                                            <li>
+                                                main.js
+                                            </li>
+                                            <li>
+                                                nav_animation.js
+                                            </li>
+                                            <li>
+                                                jquery.js
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        images
+
+                                        <ul>
+                                            <li>
+                                                imagen1.jpg
+                                            </li>
+                                            <li>
+                                                imagen2.png
+                                            </li>
+                                            <li>
+                                                imagen3.gif
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section id="var">
+            <h3>
+                Variables.
+            </h3>
 
+            <p>
+                En primer lugar, se debe comprender que una variable es un contenedor para algún valor cualquiera a utilizar; este podría ser un número, una cadena de texto, un estado booleano, etc. La característica pricipal de las variables es que este valor contenido puede cambiar durante el tiempo de ejecución.
+            </p>
+
+            <p>
+                Otra característica importante acerca de estas estructuras, es que ellas no solo almacenan datos primitivos, sino que pueden llegar a contener estructuras de datos complejas, objetos, e incluso definiciones de funciones. Dado a lo anterior, se debe de realizar una diferencia, entre el valor y la variable, donde esta última simplemente sirve de contenedor, y no es el valor en sí.
+            </p>
+
+            <h4>
+                Declaración de una variable.
+            </h4>
+
+            <p>
+                Para poder hacer uso de una variable, primero debe de declarar dentro del script. Esto se logra con la palabras reservadas <em>var</em> o <em>let</em> seguido de un identificador o nombre para la misma.
+            </p>
+
+            <pre>
+                <code class="js">
+    var birthDate;
+    let viewHolder;
+    var contAux;
+    let progWeb;
+                </code>
+            </pre>
+
+            <h4>
+                Inicializar una variable.
+            </h4>
+
+            <p>
+                Al igual que en la mayoría de lenguajes de programación, el operador de asignación dentro de JavaScript es el igual (=). Su uso es trivial, donde se iguala una variable a un valor específico.
+            </p>
+
+            <pre>
+                <code class="js">
+    birthDate = '2018-09-21';
+    contAux = 0;
+    comp2 = true //Global
+    progWeb = "Este es el labo 05";
+                </code>
+            </pre>
+
+            <p>
+                Además se puede Inicializar una variable mientras la declaramos.
+            </p>
+
+            <pre>
+                <code class="js">
+    let offsetX= 45;
+    let offsetY= 12;
+    let volInit = 2;
+                </code>
+            </pre>
+
+            <h4>
+                Operar variables.
+            </h4>
+
+            <p>
+                De igual forma que muchos lenguajes de programación, JavaScript cuenta con las operaciones matemáticas básicas (+ - * / %) y comparativas (&lt; &gt; == !=), para la manipulación primitiva de variables. Ademas, conceptos como contadores y acumuladores, expresiones regulares, etc, también son aplicables en este ámbito.
+            </p>
+
+            <pre>
+                <code class="js">
+    offsetX = 54 + posX;
+    impuestos = valor * 1.13;
+    total = total + impuestos;
+    contAux = contAux + 1;
+    comp2 = aux1 &lt;= aux2;
+                </code>
+            </pre>
+
+            <h4>
+                Diferencia entre <em>let</em> y <em>var</em>.
+            </h4>
+
+            <p>
+                La diferencia fundamental entre ambas instruciones, es el alcance que otorgan a las variables. La instrucción let limita el contexto de la variable al bloque, declaración, sentencia o expresión en que se este utilizando. Por ejemplo:
+            </p>
+
+            <pre>
+                <code class="js">
+    let total = 0;
+    for(i=0; i&lt;5; i++){
+    
+      let sqrtValue = i*i;
+      total = total + sqrtValue;
+    
+    }
+                </code>
+            </pre>
+
+            <p>
+                La variable sqrtValue solamente puede ser accesible desde el contexto encerrado en el bucle for. Si tratamos de acceder a esta fuera de su contexto, será disparado un error.
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio5/let_error.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <p>
+                Por su parte la instrucción var limita la variable a un contexto local dentro de una función sin importar el contexto particular del bloque o sentencia en la que se esté utilizando. Aplicando el mismo ejemplo anterior con <em>var</em>:
+            </p>
+
+            <pre>
+                <code class="js">
+    let total = 0;
+    for(i=0; i&lt;5; i++){
+    
+      var sqrtValue = i*i;
+      total = total + sqrtValue;
+    
+    }
+                </code>
+            </pre>
+
+            <p>
+                Ahora la variable sqrtValue pertence al contexto de la función y no al bloque <em>for</em>, por lo que se puede acceder a ella desde otro contexto dentro de la misma función.
+            </p>
+
+            <figure>
+                <img style='width: 30em' src='../../assets/images/laboratorios/laboratorio5/var_ex.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <div class="tip">
+                <h3>
+                    Nombres de variables.
+                </h3>
+
+                <p>
+                    A la hora de elegir un identificador para las variables se debe de garantizar que este cumpla su función de la mejor manera. Para ello se recomeinda seguir los siguientes estándares:
+                </p>
+
+                <ol>
+                    <li>
+                        Ultilizar solamente carateres alfanuméricos (A-Z a-z 0-9) y el guión bajo.
+                    </li>
+                    <li>
+                        Evitar guión bajo al inicio del identificador. Está reservado en JS.
+                    </li>
+                    <li>
+                        No inciar el identificador con un número. Causará error.
+                    </li>
+                    <li>
+                        Usar nombres representativos para las variables, según el contenido que almacenan.
+                    </li>
+                    <li>
+                        Usar minuscula en la primera letra. Si es una composición de varias palabras, escribirlas juntas y aplicar mayúsculas a las primeras letras de cada una (Ej: contAux).
+                    </li>
+                    <li>
+                        Tener preacución ya que los identificadores son "key-sensitive".
+                    </li>
+                    <li>
+                        No utilizar palabras reservadas como identificadores.
+                    </li>
+                </ol>
+
+                <div class="good">
+                    <ul>
+                        <li>
+                            myVariable
+                        </li>
+                        <li>
+                            age
+                        </li>
+                        <li>
+                            init
+                        </li>
+                        <li>
+                            gameInit4
+                        </li>
+                        <li>
+                            cont_aux
+                        </li>
+                    </ul>
+                </div>
+                <div class="wrong">
+                    <ul>
+                        <li>
+                            MyAge
+                        </li>
+                        <li>
+                            myage
+                        </li>
+                        <li>
+                            99var
+                        </li>
+                        <li>
+                            _initvar
+                        </li>
+                        <li>
+                            let
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style='padding-left:1.5em;'>
+                Referencia a MDN: <a href='https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables' target = '_blank'>Variables</a>
+            </p>
         </section>
 
-        <section id="object">
+        <section id="sentecias">
+            <h3>
+                Sentencias
+            </h3>
 
-        </section>
-
-        <section id="arrays">
-
+            
         </section>
 
         <section id="funct">
-
+            <h3>
+                Funciones
+            </h3>
         </section>
-        
+
+        <section id="object">
+            <h3>
+                Objetos
+            </h3>
+        </section>
+
+        <section id="classes">
+            <h3>
+                Clases
+            </h3>
+        </section>
+
+        <section id="arrays">
+            <h3>
+                Colección de datos
+            </h3>
+        </section>
+
     </article>
 
     <!-- Footer Implementation -->
