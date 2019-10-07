@@ -35,3 +35,28 @@ menuTrigger.addEventListener('click', () => {
 }, false);
 
 
+let query_selector_list = document.querySelectorAll("ul>li.list_item")
+let query_selector_item = query_selector_list[0] //Priemr elemento de la lista.
+
+query_selector_item = document.querySelector("ul>li.list_item") //Es equivalente a la línea 2
+
+let dom_object_list = document.anchors
+let dom_object_item = dom_object_list[0] //Primer elemnto de la coleccion de enlaces
+
+function verifyLength( ) {
+    var input = document.getElementById("input-pass");
+    var msg = document.getElementById("alert-content");
+    
+    if(input.value.length < 5){
+        msg.textContent = "La contraseña debe ser mayor a 5 caracteres";
+    }
+    
+}
+
+function verifyLength( ) {
+    // Se define y se crea la función
+    
+}
+    
+var element = document.getElementById("input-first"); // Se obtiene el elemento
+element.addEventListener('keyup',verifyLength,false)
