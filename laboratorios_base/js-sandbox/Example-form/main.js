@@ -58,9 +58,17 @@ let addStudent = (carnet, schedule, late)=>{
         })
     })
 
-
-
     cell_conteiner.appendChild(new_btn)
+    new_row.appendChild(cell_conteiner)
+    
+    cell_conteiner = document.createElement("td")
+
+    let new_input = document.createElement("input")
+    new_input.setAttribute("type", "text")
+    new_input.classList.add("form-control")
+
+    cell_conteiner.appendChild(new_input)
+    
     new_row.appendChild(cell_conteiner)
 
     /**

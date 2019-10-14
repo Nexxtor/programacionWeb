@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylesheets references -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/highlight_styles/androidstudio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        
+    <link rel="icon" href="../../assets/images/icons/web.png">
+    
+    <title>JavaScript</title>
+</head>
+
+<body id="id_body">
+
+    <!-- Eductional basic information -->
+    <p class="subject">
+        Universidad Centroamericana "José Simeón Cañas".<br>
+        Programación Web.<br>
+        Ciclo 02/19.
+    </p>
+
+    <!-- Front image -->
+    <header id="front-img" style="background-image: url('https://s3-us-west-2.amazonaws.com/devcodepro/media/tutorials/funciones-en-javascript-t1.png');">
+        <div class="blackManta">
+            <!-- Float menu implementation -->
+            <div class="float-menu">
+                <div class="menu-content">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav class="menu-side">
+                    <div></div>
+                    <ul>
+                        <li><a href="#intro">Definición del problema</a><i class="fas fa-star-of-life"></i></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-front">
+                <h1>Laboratorio 08.</h1>
+                <h3>14 - 18 de octubre de 2019.</h3>
+                <i class="fas fa-chevron-down" id="down-button"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content">
+        <!-- Main title -->
+        <header class="title-content" id="title-content">
+            <div id="brand">
+                <h1>JavaScript</h1>
+            </div>
+            <div id="content-brand">
+                <h5>Ejercicio guiado</h5>
+            </div>
+        </header>
+
+        <section id="intro">
+            <h3>
+                Problema a resolver.
+            </h3>
+
+            <dl>
+                <dt>
+                    Parte Guiada
+                </dt>
+                <dd>
+                    Basandose en el ejercicio del laboratorio anterior, añada a cada registro ingresado un botón de eliminado. La funcionalidad consiste en, a partir del uso de un identifiador de registro, el usuario pueda eliminar cualquier registro que él desee.
+                </dd>
+
+                <dt>
+                    Parte Individual
+                </dt>
+                <dd>
+                    <ul>
+                        <li>
+                            Añada un campo mas a la tabla. 
+                        </li>
+
+                        <li>
+                            Este campo contendrá un input de texto dentro de él.
+                        </li>
+
+                        <li>
+                            Añada la siguiente restricción: "Para poder eliminar cualquier registro, el usuario debe ingresar, en el campo de texto, el carnet de la fila que desee eliminar" 
+                        </li>
+                    </ul> 
+                </dd>
+            </dl>
+
+            <h4>
+                HTML Base
+            </h4>
+
+            <pre>
+                <code class = 'html'>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang=&quot;en&quot;&gt;
+                    &lt;head&gt;
+                        &lt;meta charset=&quot;UTF-8&quot;&gt;
+                        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+                        &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap.css&quot;&gt;
+                        &lt;title&gt;Register form&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div class=&quot;container&quot;&gt;
+                            &lt;br&gt;
+                            &lt;div class=&quot;jumbotron&quot;&gt;
+                                &lt;h1&gt;
+                                    Registro de laboratorio.
+                                &lt;/h1&gt;
+                    
+                                &lt;div class=&quot;form-group&quot;&gt;
+                                    &lt;label for=&quot;carnet&quot; class=&quot;col-sm-2 col-form-label&quot;&gt;Ingrese el carnet: &lt;/label&gt;&lt;br&gt;
+                                    &lt;input class=&quot;form-control&quot; type=&quot;text&quot; name=&quot;carnet&quot; id=&quot;carnet_field&quot;&gt;
+                                &lt;/div&gt;
+                    
+                                &lt;div class=&quot;form-group&quot;&gt;
+                                    &lt;label for=&quot;schedule&quot;&gt;Seleccione el horario:&lt;/label&gt;
+                                    &lt;select name=&quot;schedule&quot; class=&quot;form-control&quot; id=&quot;schedule_field&quot;&gt;
+                                        &lt;option&gt;Lunes de 9:00 a 11.00&lt;/option&gt;
+                                        &lt;option&gt;Martes de 13:30 a 15:30&lt;/option&gt;
+                                        &lt;option&gt;Miércoles de 9:00 a 11.00&lt;/option&gt;
+                                        &lt;option&gt;Jueves de 13:30 a 15:30&lt;/option&gt;
+                                        &lt;option&gt;Viernes de 9:00 a 11.00&lt;/option&gt;
+                                        &lt;option&gt;Viernes de 15:30 a 17:30&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;form-group&quot;&gt;
+                                    &lt;div class=&quot;custom-control custom-switch&quot;&gt;
+                                        &lt;input type=&quot;checkbox&quot; class=&quot;custom-control-input&quot; id=&quot;late_switch&quot;&gt;
+                                        &lt;label class=&quot;custom-control-label&quot; for=&quot;late_switch&quot;&gt;Llegó tarde?&lt;/label&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                    
+                                &lt;div class=&quot;form-group&quot;&gt;
+                                    &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot; id=&quot;submit_btn&quot; disabled&gt;Ingresar&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                    
+                            &lt;hr&gt;
+                    
+                            &lt;section&gt;
+                                &lt;table class=&quot;table table-hover&quot;&gt;
+                                    &lt;thead&gt;
+                                        &lt;tr class=&quot;table-dark&quot;&gt;
+                                            &lt;th scope=&quot;col&quot;&gt;Carnet&lt;/th&gt;
+                                            &lt;th scope=&quot;col&quot;&gt;Horario de laboratorio&lt;/th&gt;
+                                            &lt;th scope=&quot;col&quot;&gt;Hora de ingreso&lt;/th&gt;
+                                            &lt;th scope=&quot;col&quot;&gt;Tarde?&lt;/th&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/thead&gt;
+                                    &lt;tbody id=&quot;table_body&quot;&gt;
+                    
+                                    &lt;/tbody&gt;
+                                &lt;/table&gt;
+                            &lt;/section&gt;
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <h4>
+                JAvaScript Base
+            </h4>
+
+            <pre>
+                <pre>
+                    <code class = 'js'>
+    let carnet_field =  document.querySelector("#carnet_field")
+    let schedule_dropdown =  document.querySelector("#schedule_field")
+    let late_switch =  document.querySelector("#late_switch")
+    let submit_btn =  document.querySelector("#submit_btn")
+
+    let table_body = document.querySelector("#table_body")
+    let carnet_regex= new RegExp('^[0-9]{8}$')
+
+    /*
+        Función para agregar un hijo a la tabla
+    */
+
+    let addStudent = (carnet, schedule, late)=>{
+        let new_row = document.createElement("tr")
+        let datetime = new Date()
+        
+        new_row.classList.add("table-active")
+        new_row.innerHTML = 
+            `&lt;th scope=&#39;row&#39;&gt;${carnet}&lt;/th&gt;
+            &lt;td&gt;${schedule}&lt;/td&gt;
+            &lt;td&gt;${datetime.toLocaleString()}&lt;/td&gt;
+            &lt;td&gt;${late}&lt;/td&gt;`
+        table_body.appendChild(new_row)
+    }
+
+    /*
+        Función para parsear el valor booleano del late_switch
+    */
+
+    let parseLateSwitch= (value)=>{
+        if(value){
+            return "Tardisimo"
+        }
+        return "A tiempo"
+    }
+
+    /*
+        Listener para detectar el click en el boton
+    */
+
+    submit_btn.addEventListener("click", ()=>{
+        let carnet = carnet_field.value
+        let schedule = schedule_dropdown.options[schedule_dropdown.selectedIndex].text
+        let late = parseLateSwitch(late_switch.checked)
+
+        addStudent(carnet, schedule, late)
+
+        if(carnet_regex.test(carnet)){
+            addStudent(carnet, schedule, late)
+        }else{
+            alert("Formáto de carnet no válido")
+        }
+    })
+
+    carnet_field.addEventListener("keyup", (e)=>{
+        let keyCode = e.keyCode
+    /*
+        Listener para disparar el botón cuando se aprete enter
+    */
+
+    carnet_field.addEventListener("keyup", (event)=>{
+        let keyCode = event.keyCode
+        let carnet = carnet_field.value
+
+        if(keyCode == 13){
+            submit_btn.click()
+        }
+
+        if(carnet_regex.test(carnet)){
+        submit_btn.disabled = false; 
+        }else{
+            submit_btn.disabled = true; 
+        }
+    })
+                    </code>
+                </pre>
+            </pre>
+
+            <h4>
+                Ejemplo de solución guiada
+            </h4>
+
+            <figure>
+                <img style='width: 100%' src='../../assets/images/laboratorios/laboratorio8/1.png' alt='Inserte RIPIO aqui'>
+            </figure>
+            <figure>
+                <img style='width: 100%' src='../../assets/images/laboratorios/laboratorio8/2.png' alt='Inserte RIPIO aqui'>
+            </figure>
+            <figure>
+                <img style='width: 100%' src='../../assets/images/laboratorios/laboratorio8/3.png' alt='Inserte RIPIO aqui'>
+            </figure>
+            <figure>
+                <img style='width: 100%' src='../../assets/images/laboratorios/laboratorio8/4.png' alt='Inserte RIPIO aqui'>
+            </figure>
+
+            <h4>
+                Ejemplo de solución Individual
+            </h4>
+
+            <figure>
+                <img style='width: 100%' src='../../assets/images/laboratorios/laboratorio8/5.png' alt='Inserte RIPIO aqui'>
+            </figure>
+        </section>
+
+    </article>
+
+    <!-- Footer Implementation -->
+    <footer>
+        <article>
+            <p><em>
+                “No cost too great. No mind to think. No will to break. No voice to cry suffering. Born of God and Void. You shall seal the blinding light that plagues their dreams. You are the Vessel.” 
+            </em></p>
+            
+            <p id="author">
+                The Pale King.
+            </p>
+        </article>
+    </footer>
+
+    <!-- Home Button -->
+    <span id="HomeBtn"><i class="fas fa-chevron-up"></i></span>
+</body>
+
+<!-- JS scripts area -->
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../assets/js/javaScript.js"></script>
+<script src="../../assets/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    sideMenuControl();
+    homeBtnControl();
+</script>
+
+
+</html>
