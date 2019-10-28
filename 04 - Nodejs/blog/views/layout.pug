@@ -1,7 +1,18 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= title
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+		link(rel="stylesheet", href="assets/css/main.css")
+	body(class="is-preload")
+		div(id="wrapper")
+			block content
+		div#bg
+		script(src="assets/js/jquery.min.js")
+		script(src="assets/js/browser.min.js")
+		script(src="assets/js/breakpoints.min.js")
+		script(src="assets/js/util.js")
+		script(src="assets/js/main.js")
+
+		
