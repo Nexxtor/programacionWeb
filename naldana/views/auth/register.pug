@@ -1,9 +1,0 @@
-extends ../layout
-
-block main
-  form(action="/register" method="post")
-    label(for="username") Username
-    input#username(type="text", name="username" value=user?user.username:'')
-    label(for="password") Password
-    input#password(type="password", name="password")
-    input(type="submit", value="Sign Up")
