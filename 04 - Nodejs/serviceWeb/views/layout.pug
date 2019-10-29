@@ -2,6 +2,16 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+    link(rel='stylesheet', href='assets/css/main.css')
   body
-    block content
+    #page-wrapper
+      block content
+    script(src="assets/js/jquery.min.js")
+    script(src="assets/js/jquery.dropotron.min.js")
+    script(src="assets/js/jquery.scrollex.min.js")
+    script(src="assets/js/browser.min.js")
+    script(src="assets/js/breakpoints.min.js")
+    script(src="assets/js/util.js")
+    script(src="assets/js/main.js")
