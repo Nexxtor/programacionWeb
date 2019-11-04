@@ -1,5 +1,6 @@
 var express = require('express'),
     router = express.Router();
+var Cat = require('../models/Cat');
 
 // Main Page
 router.get('/', function (req, res, next) {
@@ -20,16 +21,15 @@ router.post('/register', function (req, res, next) {
 
 
 router.post('/', function (req, res, next) {
-    var bad = req.body.password != "nestorguapo";
- 
-    console.log("---------->", bad);
-   
-    res.render('login', {
-        error: {
-            bad,
-            msg: "Ustede no se sabe la contraseña"
+    var gato =  new Cat({name: req.body.user});
+    gato.save((err, gatoDb) => {
+        if (err)
+            res.json({name})
+        else {
+            res.json(gatoDb)
         }
     });
+    res.json("hola");
 });
 
 

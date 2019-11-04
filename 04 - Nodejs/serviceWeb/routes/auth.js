@@ -1,5 +1,6 @@
 var express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    Cat = require('../models/Cat');
 
 router.get("/", function (req, res, next) {
     res.render('login', {
@@ -34,12 +35,21 @@ router.post("/", function (req, res, next) {
 // Register Page
 router.get('/register', function (req, res, next) {
     // TODO: Cambiar el render
-     res.render('login', {error: {bad: false}});
+     res.render('cat');
  });
  
  // Register Page
  router.post('/register', function (req, res, next) {
-     // TODO :Mostrar un HTML con los datos recibidos
+    var nCat = new Cat({
+        name: req.body.name,
+        lastname: req.body.lastname,
+        age: req.body.age
+    });
+   
+    nCat.save(function(err, gato){
+        if (err) res.json({err})
+        res.json(gato);
+    })
   });
  
 

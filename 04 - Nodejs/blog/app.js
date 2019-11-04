@@ -8,6 +8,17 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://nexxtor:nexxtor@cluster0-dfleo.mongodb.net/ejemplo', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then( ()=> {
+  console.log("Database Wiiiiii");
+});
+
+mongoose.Promise =  global.Promise;
+
 var app = express();
 
 // view engine setup

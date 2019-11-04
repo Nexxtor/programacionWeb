@@ -3,10 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
+
+mongoose.connect("mongodb+srv://nexxtor:nexxtor@cluster0-dfleo.mongodb.net/ejemplo", { useNewUrlParser: true, useUnifiedTopology: true } )
+.then(() => {
+  console.log("DB ON");
+})
+
+mongoose.Promise = global.Promise;
 
 var app = express();
 
