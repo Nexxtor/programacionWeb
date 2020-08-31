@@ -47,7 +47,7 @@ Debe hacer uso de las etiquetas de HTML5 Semántico (Secciones, artículos, énf
 
 La tarea deberá ser entregada a través de la plataforma moodle, con un enlace a la carpeta de la Tarea en su repositorio publico de GitHub. Los Commit que modifiquen el código fuente despues del tiempo establecido no se tomaran en cuenta.
 
-Fecha límite: Martes 27 de agosto de 2019 hasta las 09:00.
+Fecha límite: <Insert Date>.
 
 ## Anexos
 

@@ -15,7 +15,7 @@
             <input type="text" name="name" id="name">
 
             <label for="lastname">Last Name</label>
-            <input type="text" name="lastname" id="lastname">
+            <input type="text" name="lastName" id="lastname">
         
             <label for="tel">Number Phone</label>
             <input type="tel" name="tel" id="tel">
@@ -40,6 +40,11 @@
                     <input type="radio" name="gender" value="f">
                     Female
                 </label>
+
+                <label>
+                    <input type="radio" name="gender" value="o">
+                    Otros
+                </label>
             </fieldset>
 
         </fieldset>
@@ -56,9 +61,9 @@
             <div>
                 <label for="pet-select">Choose a pet:</label>
 
-                <select id="pet-select">
+                <select id="pet-select" name="pet">
                     <option value="">--Please choose an option--</option>
-                    <option value="dog">Dog</option>
+                    <option value="dog">Perro</option>
                     <option value="cat">Cat</option>
                     <option value="hamster">Hamster</option>
                     <option value="parrot">Parrot</option>
