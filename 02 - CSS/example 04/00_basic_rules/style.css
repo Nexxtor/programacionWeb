@@ -1,0 +1,28 @@
+/* Seleccioná todos los elementos P que tiene la clase text-danger*/
+p.text-danger {
+  color: tomato;
+}
+
+/* Seleccioná todas las P que estén dentro de un div*/
+div p {
+  color: green;
+}
+
+/* Selecciona todas las P que tienen como padre un div*/
+div > p {
+  color: green;
+}
+
+/* Aplica la misma declaración a todo los selectores separado por coma*/
+h1,
+h2,
+h3 {
+  color: darkorange;
+}
+
+#sitie-name {
+  color: blue;
+  /* color: rgb(0,255,255);*/
+  /* color: #00FF00;*/
+
+}
