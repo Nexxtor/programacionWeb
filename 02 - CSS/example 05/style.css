@@ -1,66 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,900');
+body {
+  /* background-color: lightpink; /* Por Valor Nombre */
+  /* background-color: #ff0000; /* Por Valor Hexadecimal */
+  /* background-color: rgb(255,255,0); /* Por Valor RGB */
+ /* background-color: hsl(0, 63%, 76%); /* Por Nombre */
+  /* background-image: url("./img/tree_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; */
 
-/*font-family*/
+  /* Shorthand */
+  background: rgba(255,255,255,0.3) url("./img/tree_background.jpg") no-repeat  center fixed ;
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
 h1 {
-    font-family: 'Roboto', sans-serif;  /*Cambia el tipo de fuente*/
+  background-color: green;
+  opacity: 0.5;
 }
 
-h2 {
-    /* A font family name and a generic family name */
-    font-family: Consolas,monaco,monospace; 
-}
-/* Puede consultar el porcentaje de uso de las fuentes en https://www.cssfontstack.com/ */
+ /*p {
+   background-color: lightgray;
+} */
 
-/*font-size*/
-
-    /* Con pixeles */
-h3 {
-    font-size: 32px;
-}
-
-p {
-    font-size: 20px;
-}
-    /* Con em */
-
-span {
-    font-size: 2.0em;
-}
-
-/*font-weight*/
-
-span {
-    font-weight: 700;
-}
-
-/*line-height*/
-
-.line-h{
-    line-height: 1.5;
-}
-
-/*text-align*/
-p {
-    text-align: justify;
-}
-
-/*text-decoration*/
-.under {
-    text-decoration: wavy underline red;
-}
-
-.over {
-    text-decoration: wavy overline lime;
-}
-
-.line {
-    text-decoration: line-through;
-}
-
-.plain {    
-    text-decoration: none;
-}
-
-.underover {
-    text-decoration: dashed underline;
+.transparent {
+  background-color: rgba(0,128,0,0.3);
 }
