@@ -1,0 +1,32 @@
+body {
+  color: #4e4e4e;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: -3px;
+  text-shadow: 2px 2px 5px red;
+}
+
+p {
+  text-indent: 50px;
+  text-align: left;
+  line-height: 1.5;
+  word-spacing: 2px;
+  white-space: nowrap;
+  /* direction: rtl;
+    unicode-bidi: bidi-override;*/
+}
+
+img.top {
+  vertical-align: top;
+}
+img.middle {
+  vertical-align: middle;
+}
+
+a {
+  color: red;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
