@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    max-width: 1900px;
+    margin: 0 auto;
+}
+
+.panel {
+  max-width: 80%;
+  margin: 1rem auto;
+  font-size: 1.2em;
+  border-left: 10px solid rgb(32, 102, 128);
+  background-color: lightblue;
+  padding-left: 1em;
+}
+
+.panel img {
+  width: 200px;
+  height: auto;
+  float: left;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.prueba-rem {
+  font-size: 0.5em; /*8px*/
+}
+
+.prueba-rem > div {
+  border: 1px solid green;
+  font-size: 0.5em; /* 6px */
+}
+
+
+.prueba-rem > div > div {
+  border: 1px solid purple;
+  font-size: 0.5rem; /* 6px */
+} 
