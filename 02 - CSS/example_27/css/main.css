@@ -52,3 +52,95 @@ input, select, textarea {
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none; }
+
+:root {
+  box-sizing: inherit; }
+
+body {
+  box-sizing: border-box;
+  background-color: #262626; }
+
+.header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../images/bg.jpeg") center no-repeat;
+  background-size: cover; }
+  .header .brand {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    display: flex;
+    align-items: center; }
+  .header-banner {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .logo img {
+    width: 100%;
+    height: 100%; }
+
+.main-name {
+  font-family: Nunito, sans-serif;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #bbb;
+  white-space: nowrap;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bolder; }
+
+.sub-name {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: #bbb;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
+.main-heading {
+  font-family: "Dancing Script", cursive;
+  font-size: 100px;
+  font-weight: 300;
+  color: #d3ab55;
+  margin-bottom: 30px;
+  text-align: center; }
+
+.sub-heading {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+  color: #bbb;
+  margin-bottom: 80px;
+  text-align: center; }
+
+.main-btn {
+  width: 170px;
+  height: 45px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #d3ab55;
+  background-color: transparent;
+  border: 1px solid #d3ab55;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s; }
+  .main-btn:hover {
+    background-color: #d3ab55;
+    color: #262626; }

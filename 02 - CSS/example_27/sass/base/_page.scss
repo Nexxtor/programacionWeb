@@ -1,0 +1,20 @@
+// Colors
+$color-dark: #262626;
+$color-black: #000;
+$color-primary: #d3ab55;
+$color-secondary: #bbb;
+$color-white: #fff;
+
+// fonts
+$font-dancingScript: 'Dancing Script', cursive;
+$font-josefinSans: 'Josefin Sans', sans-serif;
+$font-nunito: Nunito, sans-serif;
+
+:root {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-dark;
+}

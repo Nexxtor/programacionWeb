@@ -1,0 +1,30 @@
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-right: 15px;
+  @include flexLayout;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.main-name {
+  font-family: $font-nunito;
+  font-size: 40px;
+  line-height: 1.5;
+  color: $color-secondary;
+  white-space: nowrap;
+  @include textStyle;
+  font-weight: bolder;
+}
+
+.sub-name {
+  font-family: $font-josefinSans;
+  text-align: center;
+  font-size: 18px;
+  color: $color-secondary;
+  @include textStyle;
+
+}

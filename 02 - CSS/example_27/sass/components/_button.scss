@@ -1,0 +1,19 @@
+.main-btn {
+  width: 170px;
+  height: 45px;
+  font-family: $font-josefinSans;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $color-primary;
+  background-color: transparent;
+  border: 1px solid $color-primary;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-dark;
+  }
+}
