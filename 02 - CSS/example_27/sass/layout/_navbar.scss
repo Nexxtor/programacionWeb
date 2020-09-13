@@ -13,6 +13,10 @@
       left: -50vw;
       transition: left 0.8s cubic-bezier(1,0,0,1);
 
+      @media (max-width: 900px) {
+        display: none;
+      }
+
       .left-img {
           width: 50%;
           position: absolute;
@@ -44,6 +48,11 @@
       right: -50vw;
       @include flexLayout;
       transition: right 0.8s cubic-bezier(1,0,0,1);
+
+      @media (max-width: 900px) {
+        width: 100vw;
+        right: -100vw;
+      }
     }
 
     .nav-list {
@@ -62,6 +71,10 @@
         margin: 20px;
         transition: all 0.5s;
 
+        @media (max-width: 1000px) {
+          font-size: 30px;
+        }
+        
         &:hover {
           color: $color-primary;
           letter-spacing: 4px;

@@ -28,6 +28,10 @@
       &:hover {
         color: $color-primary;
       }
+
+      @media (max-width: 1000px) {
+        font-size: 35px;
+      }
     }
   }
 
@@ -37,5 +41,10 @@
     color: $color-secondary;
     @include textStyle(capitalize);
     text-align: center;
+
+    @media (max-width: 800px) {
+      width: 70%;
+      margin: auto;
+    }
   }
 }

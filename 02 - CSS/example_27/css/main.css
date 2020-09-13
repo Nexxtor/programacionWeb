@@ -63,6 +63,14 @@ input, select, textarea {
 body {
   box-sizing: border-box;
   background-color: #262626; }
+  body {
+    font-size: 16px; }
+    @media screen and (min-width: 320px) {
+      body {
+        font-size: calc(16px + 8 * ((100vw - 320px) / 1580)); } }
+    @media screen and (min-width: 1900px) {
+      body {
+        font-size: 24px; } }
 
 .navbar {
   position: relative;
@@ -76,6 +84,9 @@ body {
       position: fixed;
       left: -50vw;
       transition: left 0.8s cubic-bezier(1, 0, 0, 1); }
+      @media (max-width: 900px) {
+        .navbar-navigation-left {
+          display: none; } }
       .navbar-navigation-left .left-img {
         width: 50%;
         position: absolute;
@@ -100,6 +111,10 @@ body {
       justify-content: center;
       align-items: center;
       transition: right 0.8s cubic-bezier(1, 0, 0, 1); }
+      @media (max-width: 900px) {
+        .navbar-navigation-right {
+          width: 100vw;
+          right: -100vw; } }
     .navbar-navigation .nav-list-item {
       list-style-type: none; }
     .navbar-navigation .nav-list-link {
@@ -113,6 +128,9 @@ body {
       display: block;
       margin: 20px;
       transition: all 0.5s; }
+      @media (max-width: 1000px) {
+        .navbar-navigation .nav-list-link {
+          font-size: 30px; } }
       .navbar-navigation .nav-list-link:hover {
         color: #d3ab55;
         letter-spacing: 4px; }
@@ -160,10 +178,21 @@ body {
   height: 90vh;
   display: flex;
   align-items: center; }
+  @media (max-width: 900px) {
+    .about-us {
+      min-height: 70vh;
+      height: auto;
+      padding: 1rem 0; } }
   .about-us-left {
     width: 40%;
     position: relative;
     left: -200px; }
+    @media (max-width: 1300px) {
+      .about-us-left {
+        left: -150px; } }
+    @media (max-width: 800px) {
+      .about-us-left {
+        display: none; } }
     .about-us-left img {
       width: 100%;
       opacity: 0.7; }
@@ -173,12 +202,24 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 0 100px; }
+    @media (max-width: 1300px) {
+      .about-us-right {
+        padding: 0 50px; } }
+    @media (max-width: 800px) {
+      .about-us-right {
+        width: 100%; } }
     .about-us-right .starts {
       margin: 30px 0; }
+      @media (max-width: 1000px) {
+        .about-us-right .starts {
+          margin: 15px 0; } }
     .about-us-right .star {
       font-size: 15px;
       color: #d3ab55;
       margin-left: 10px; }
+      @media (max-width: 1000px) {
+        .about-us-right .star {
+          margin: 12px 0; } }
     .about-us-right .description {
       font-family: "Josefin Sans", sans-serif;
       font-size: 25px;
@@ -186,6 +227,12 @@ body {
       text-align: justify; }
       .about-us-right .description::first-letter {
         padding-left: 1rem; }
+      @media (max-width: 1600px) {
+        .about-us-right .description {
+          font-size: 18px; } }
+      @media (max-width: 1000px) {
+        .about-us-right .description {
+          font-size: 14px; } }
 
 .gallery .cards-wrapper {
   display: flex;
@@ -215,6 +262,9 @@ body {
       transition: color 0.7s; }
       .footer .social-media-link:hover {
         color: #d3ab55; }
+      @media (max-width: 1000px) {
+        .footer .social-media-link {
+          font-size: 35px; } }
   .footer-copyright-paragraph {
     font-family: "Josefin Sans", sans-serif;
     font-size: 18px;
@@ -223,6 +273,10 @@ body {
     letter-spacing: 2px;
     text-transform: capitalize;
     text-align: center; }
+    @media (max-width: 800px) {
+      .footer-copyright-paragraph {
+        width: 70%;
+        margin: auto; } }
 
 .logo {
   width: 90px;
@@ -231,6 +285,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 1000px) {
+    .logo {
+      width: 70px;
+      height: 70px; } }
   .logo img {
     width: 100%;
     height: 100%; }
@@ -245,6 +303,12 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: bolder; }
+  @media (max-width: 1000px) {
+    .main-name {
+      font-size: 30px; } }
+  @media (max-width: 800px) {
+    .main-name {
+      font-size: 20px; } }
 
 .sub-name {
   font-family: "Josefin Sans", sans-serif;
@@ -254,6 +318,9 @@ body {
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase; }
+  @media (max-width: 800px) {
+    .sub-name {
+      font-size: 12px; } }
 
 .main-heading {
   font-family: "Dancing Script", cursive;
@@ -262,6 +329,16 @@ body {
   color: #d3ab55;
   margin-bottom: 30px;
   text-align: center; }
+  @media (max-width: 1600px) {
+    .main-heading {
+      font-size: 80px; } }
+  @media (max-width: 1000px) {
+    .main-heading {
+      font-size: 60px; } }
+  @media (max-width: 500px) {
+    .main-heading {
+      font-size: 50px;
+      margin-bottom: 15px; } }
 
 .sub-heading {
   font-family: "Josefin Sans", sans-serif;
@@ -270,6 +347,21 @@ body {
   color: #bbb;
   margin-bottom: 80px;
   text-align: center; }
+  @media (max-width: 1600px) {
+    .sub-heading {
+      font-size: 50px;
+      margin-bottom: 50px; } }
+  @media (max-width: 1300px) {
+    .sub-heading {
+      font-size: 40px;
+      margin-bottom: 30px; } }
+  @media (max-width: 1000px) {
+    .sub-heading {
+      font-size: 30px; } }
+  @media (max-width: 500px) {
+    .sub-heading {
+      font-size: 20px;
+      margin-bottom: 10px; } }
 
 .main-btn {
   width: 170px;
@@ -287,6 +379,11 @@ body {
   .main-btn:hover {
     background-color: #d3ab55;
     color: #262626; }
+  @media (max-width: 800px) {
+    .main-btn {
+      width: 150px;
+      height: 35px;
+      font-size: 12px; } }
 
 .card {
   width: 33.3333%;
@@ -294,6 +391,10 @@ body {
   position: relative;
   overflow: hidden;
   text-align: center; }
+  @media (max-width: 500px) {
+    .card {
+      width: 50%;
+      height: auto; } }
   .card:hover .card-overlay {
     left: 0; }
   .card-img {
@@ -317,6 +418,9 @@ body {
       letter-spacing: 2px;
       text-transform: capitalize;
       font-size: 30px; }
+      @media (max-width: 900px) {
+        .card-overlay-heading {
+          font-size: 15px; } }
     .card-overlay-paragraph {
       font-family: Nunito, sans-serif;
       font-weight: 300;
@@ -324,6 +428,12 @@ body {
       text-transform: capitalize;
       font-size: 16px;
       margin-bottom: 30px; }
+      @media (max-width: 900px) {
+        .card-overlay-paragraph {
+          font-size: 12px; } }
+      @media (max-width: 650px) {
+        .card-overlay-paragraph {
+          font-size: 10px; } }
     .card-overlay-btn {
       width: 150px;
       height: 40px;
@@ -338,6 +448,16 @@ body {
       border-radius: 30px;
       outline: none;
       cursor: pointer; }
+      @media (max-width: 900px) {
+        .card-overlay-btn {
+          font-size: 12px;
+          width: 130px;
+          height: 30px; } }
+      @media (max-width: 650px) {
+        .card-overlay-btn {
+          font-size: 10px;
+          width: 100px;
+          height: 20px; } }
 
 .hamburger-menu {
   width: 40px;
@@ -346,6 +466,14 @@ body {
   top: 5%;
   right: 5%;
   z-index: 300; }
+  @media (max-width: 800px) {
+    .hamburger-menu {
+      width: 35px;
+      height: 35px; } }
+  @media (max-width: 500px) {
+    .hamburger-menu {
+      width: 25px;
+      height: 25px; } }
   .hamburger-menu .menu {
     display: flex;
     flex-direction: column;
@@ -357,3 +485,9 @@ body {
       height: 4px;
       background-color: #d3ab55;
       transform-origin: right; }
+      @media (max-width: 800px) {
+        .hamburger-menu .menu-line {
+          height: 3px; } }
+      @media (max-width: 500px) {
+        .hamburger-menu .menu-line {
+          height: 2px; } }

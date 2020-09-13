@@ -5,6 +5,11 @@
   overflow: hidden;
   text-align: center;
 
+  @media (max-width: 500px) {
+    width: 50%;
+    height: auto;
+  }
+
   &:hover .card-overlay {
     left: 0;
   }
@@ -31,6 +36,10 @@
       font-family: $font-nunito;
       @include textStyle(capitalize);
       font-size: 30px;
+
+      @media (max-width: 900px) {
+        font-size: 15px;
+      }
     }
 
     &-paragraph {
@@ -38,6 +47,14 @@
       @include textStyle(capitalize);
       font-size: 16px;
       margin-bottom: 30px;
+
+      @media (max-width: 900px) {
+        font-size: 12px;
+      }
+
+      @media (max-width: 650px) {
+        font-size: 10px;
+      }
     }
 
     &-btn {
@@ -54,6 +71,18 @@
       border-radius: 30px;
       outline: none;
       cursor: pointer; 
+
+      @media (max-width: 900px) {
+        font-size: 12px;
+        width: 130px;
+        height: 30px;
+      }
+
+      @media (max-width: 650px) {
+        font-size: 10px;
+        width: 100px;
+        height: 20px;
+      }
     }
   }
 }

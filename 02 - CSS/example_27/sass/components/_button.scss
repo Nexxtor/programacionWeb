@@ -16,4 +16,10 @@
     background-color: $color-primary;
     color: $color-dark;
   }
+
+  @media (max-width: 800px) {
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+  }
 }

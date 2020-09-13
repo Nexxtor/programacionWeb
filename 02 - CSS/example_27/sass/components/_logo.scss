@@ -4,6 +4,11 @@
   margin-right: 15px;
   @include flexLayout;
 
+  @media (max-width: 1000px) {
+    width: 70px;
+    height: 70px;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -18,6 +23,15 @@
   white-space: nowrap;
   @include textStyle;
   font-weight: bolder;
+
+  @media (max-width: 1000px) {
+    font-size: 30px;
+  }
+  
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
+
 }
 
 .sub-name {
@@ -27,4 +41,7 @@
   color: $color-secondary;
   @include textStyle;
 
+  @media (max-width: 800px) {
+    font-size: 12px;
+  }
 }

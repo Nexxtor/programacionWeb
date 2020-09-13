@@ -6,6 +6,16 @@
   right: 5%;
   z-index: 300;
 
+  @media (max-width: 800px){
+    width: 35px;
+    height: 35px;
+  }
+
+  @media (max-width: 500px) {
+    width: 25px;
+    height: 25px;
+  }
+
   .menu {
     @extend %fullSpace;
     display: flex;
@@ -19,6 +29,14 @@
       height: 4px;
       background-color: $color-primary;
       transform-origin: right;
+      
+      @media (max-width: 800px) {
+        height: 3px;
+      }
+
+      @media(max-width: 500px) {
+        height: 2px;
+      }
     }
   }
 }

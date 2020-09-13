@@ -1,3 +1,9 @@
+// vars
+$min_width: 320px;
+$max_width: 1900px;
+$min_font: 16px;
+$max_font: 24px;
+
 // Colors
 $color-dark: #262626;
 $color-black: #000;
@@ -23,4 +29,5 @@ $font-nunito: Nunito, sans-serif;
 body {
   box-sizing: border-box;
   background-color: $color-dark;
+  @include fluid-type($min-width, $max-width, $min_font,$max-font);
 }
