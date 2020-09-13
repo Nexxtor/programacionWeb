@@ -1,0 +1,46 @@
+.about-us {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+
+  &-left {
+    width: 40%;
+    position: relative;
+    left: -200px;
+
+    img {
+      width: 100%;
+      opacity: 0.7;
+    }
+  }
+
+  &-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 100px;
+
+    .starts {
+      margin: 30px 0;
+    }
+
+    .star {
+      font-size: 15px;
+      color: $color-primary;
+      margin-left: 10px;
+    }
+
+    .description {
+      font-family: $font-josefinSans;
+      font-size: 25px;
+      color: $color-secondary;
+      text-align: justify;
+
+      &::first-letter {
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+
