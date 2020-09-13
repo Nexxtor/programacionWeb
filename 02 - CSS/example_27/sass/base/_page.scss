@@ -10,6 +10,12 @@ $font-dancingScript: 'Dancing Script', cursive;
 $font-josefinSans: 'Josefin Sans', sans-serif;
 $font-nunito: Nunito, sans-serif;
 
+
+%fullSpace {
+  width: 100%;
+  height: 100%;
+}
+
 :root {
   box-sizing: inherit;
 }
