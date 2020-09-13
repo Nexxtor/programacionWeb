@@ -1,0 +1,96 @@
+.navbar {
+  position: relative;
+  z-index: 200;
+
+  &-navigation {
+    display: flex;
+    
+    &-left {
+      width: 50vw;
+      height: 100vh;
+      background-color: $color-dark;
+      position: fixed;
+      left: -50vw;
+      transition: left 0.8s cubic-bezier(1,0,0,1);
+
+      .left-img {
+          width: 50%;
+          position: absolute;
+          box-shadow: 0 15px 60px rgba($color-black, 0.4);
+          border-radius: 20px;
+     
+        &-1 {
+          top: 15%;
+          left: 15%
+        }
+
+        &-2 {
+          top: 35%;
+          left: 25%
+        }
+
+        &-3 {
+          top: 55%;
+          left: 35%
+        }
+      }
+    }
+
+    &-right {
+      width: 50vw;
+      height: 100vh;
+      background-color: #1f1d1d;
+      position: fixed;
+      right: -50vw;
+      @include flexLayout;
+      transition: right 0.8s cubic-bezier(1,0,0,1);
+    }
+
+    .nav-list {
+      
+      &-item {
+        list-style-type: none;
+      }
+
+      &-link {
+        font-family: $font-nunito;
+        font-size: 50px;
+        @include textStyle(capitalize);
+        color: $color-secondary;
+        text-decoration: none;
+        display: block;
+        margin: 20px;
+        transition: all 0.5s;
+
+        &:hover {
+          color: $color-primary;
+          letter-spacing: 4px;
+        }
+      }
+    }
+  }
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-left {
+  left: 0;
+}
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+  right: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu {
+  transform: rotateZ(90deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1{
+  transform: rotateZ(-40deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2{
+  opacity: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3{
+  transform: rotateZ(40deg);
+}
