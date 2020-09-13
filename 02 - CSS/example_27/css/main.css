@@ -120,6 +120,39 @@ body {
   display: flex;
   flex-wrap: wrap; }
 
+.footer {
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .footer-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px; }
+  .footer .social-media {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    margin-bottom: 70px; }
+    .footer .social-media-item {
+      list-style: none; }
+    .footer .social-media-link {
+      text-decoration: none;
+      font-size: 50px;
+      color: #bbb;
+      transition: color 0.7s; }
+      .footer .social-media-link:hover {
+        color: #d3ab55; }
+  .footer-copyright-paragraph {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    color: #bbb;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: center; }
+
 .logo {
   width: 90px;
   height: 90px;
