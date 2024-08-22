@@ -1,2 +1,0 @@
-# An awesome image grid
-
