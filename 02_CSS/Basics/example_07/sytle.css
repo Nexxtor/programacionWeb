@@ -1,0 +1,20 @@
+* {
+  box-sizing: inherit;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 1px;
+  border: 1px solid;
+  box-sizing: border-box;
+  height: 200px;
+  width: 200px;
+  outline-style: dotted;
+}
+
+.panel {
+  box-sizing: content-box;
+}

@@ -1,0 +1,54 @@
+/*Fuentes se base en familias
+    Serif
+    Sans-serif
+    Monospace
+*/
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+.serif {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.monospace {
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+p.impact {
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+p.normal {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+p.bold {
+  font-weight: 800;
+  font-variant: small-caps;
+}
+
+h1 {
+  font-family: "Indie Flower", cursive;
+  font-size: 0.875em; /* 14px/16px = 0.875em */
+}
+
+h1 {
+  font-size: 2vw;
+}
+
+p.b {
+  font:
+    italic small-caps bold 0.75em/1em "Indie Flower",
+    cursive;
+}

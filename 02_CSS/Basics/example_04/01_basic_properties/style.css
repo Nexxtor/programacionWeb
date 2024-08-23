@@ -1,0 +1,23 @@
+h1 {
+  border: 1px solid black;
+  background-color: darkorange;
+  height: 100px;
+  width: 100px;
+  overflow: auto;
+}
+
+/* NO se aplica si el elemento tiene display inline*/
+a.biblo {
+  height: 100px;
+  width: 100px;
+  background-color: green;
+}
+
+h2 {
+  margin: 29px 10px 30px 5px;
+}
+
+.biblo {
+  padding: 10px 1px 3px;
+  background-color: pink;
+}
