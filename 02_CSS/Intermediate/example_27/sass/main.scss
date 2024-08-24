@@ -1,21 +1,21 @@
 // Mixin
-@import "mixin";
-@import "functions";
+@import 'mixin';
+@import 'functions';
 
 // Base Style
-@import "base/reset";
-@import "base/page";
+@import 'base/reset';
+@import 'base/page';
 
 // Layout
-@import "layout/navbar";
-@import "layout/header";
-@import "layout/about";
-@import "layout/gallery";
-@import "layout/footer";
+@import 'layout/navbar';
+@import 'layout/header';
+@import 'layout/about';
+@import 'layout/gallery';
+@import 'layout/footer';
 
 // Components
-@import "components/logo";
-@import "components/heading";
-@import "components/button";
-@import "components/card";
-@import "components/hamburger";
+@import 'components/logo';
+@import 'components/heading';
+@import 'components/button';
+@import 'components/card';
+@import 'components/hamburger';

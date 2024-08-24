@@ -6,42 +6,42 @@
 
 /* Contact */
 
-	ul.contact {
-		list-style: none;
-		padding: 0;
+ul.contact {
+  list-style: none;
+  padding: 0;
 
-		li {
-			@include icon;
-			border-top: solid 1px _palette(border);
-			margin: 1.5em 0 0 0;
-			padding: 1.5em 0 0 3em;
-			position: relative;
+  li {
+    @include icon;
+    border-top: solid 1px _palette(border);
+    margin: 1.5em 0 0 0;
+    padding: 1.5em 0 0 3em;
+    position: relative;
 
-			&:before {
-				color: _palette(accent);
-				display: inline-block;
-				font-size: 1.5em;
-				height: 1.125em;
-				left: 0;
-				line-height: 1.125em;
-				position: absolute;
-				text-align: center;
-				top: (1.5em / 1.5);
-				width: 1.5em;
-			}
+    &:before {
+      color: _palette(accent);
+      display: inline-block;
+      font-size: 1.5em;
+      height: 1.125em;
+      left: 0;
+      line-height: 1.125em;
+      position: absolute;
+      text-align: center;
+      top: (1.5em / 1.5);
+      width: 1.5em;
+    }
 
-			&:first-child {
-				border-top: 0;
-				margin-top: 0;
-				padding-top: 0;
+    &:first-child {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
 
-				&:before {
-					top: 0;
-				}
-			}
+      &:before {
+        top: 0;
+      }
+    }
 
-			a {
-				color: inherit;
-			}
-		}
-	}
+    a {
+      color: inherit;
+    }
+  }
+}

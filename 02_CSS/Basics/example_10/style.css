@@ -3,10 +3,10 @@
     Sans-serif
     Monospace
 */
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 .serif {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .sansserif {
@@ -14,7 +14,7 @@
 }
 
 .monospace {
-  font-family: "Lucida Console", Courier, monospace;
+  font-family: 'Lucida Console', Courier, monospace;
 }
 
 p.impact {
@@ -39,7 +39,7 @@ p.bold {
 }
 
 h1 {
-  font-family: "Indie Flower", cursive;
+  font-family: 'Indie Flower', cursive;
   font-size: 0.875em; /* 14px/16px = 0.875em */
 }
 
@@ -49,6 +49,6 @@ h1 {
 
 p.b {
   font:
-    italic small-caps bold 0.75em/1em "Indie Flower",
+    italic small-caps bold 0.75em/1em 'Indie Flower',
     cursive;
 }

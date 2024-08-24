@@ -21,11 +21,11 @@
   margin-bottom: 0.25em;
   text-transform: uppercase;
   font-weight: 400;
-  font-family: "Baloo Tammudu", cursive;
+  font-family: 'Baloo Tammudu', cursive;
 }
 
 .panel > h2 {
   text-transform: capitalize;
   font-size: 1.2em;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }

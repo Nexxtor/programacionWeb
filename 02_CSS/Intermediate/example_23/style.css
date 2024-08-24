@@ -10,27 +10,27 @@ a[target] {
   background-color: red;
 }
 
-a[target="_blank"] {
+a[target='_blank'] {
   background-color: purple;
 }
 
-a[class~="end"] {
+a[class~='end'] {
   background-color: black;
 }
 
-a[class|="top"] {
+a[class|='top'] {
   border: 1px solid pink;
 }
 
-a[class^="top"] {
+a[class^='top'] {
   padding: 1rem;
   display: block;
 }
 
-a[class$="test"] {
+a[class$='test'] {
   border-radius: 10px;
 }
 
-a[class*="a"] {
+a[class*='a'] {
   background-color: salmon;
 }

@@ -10,7 +10,7 @@ body {
   background-attachment: fixed; */
 
   /* Shorthand */
-  background: rgba(255, 255, 255, 0.3) url("./img/tree_background.jpg")
+  background: rgba(255, 255, 255, 0.3) url('./img/tree_background.jpg')
     no-repeat center fixed;
   background-size: cover;
   background-blend-mode: overlay;
