@@ -14,3 +14,8 @@ ol {
 ul li {
   background-color: yellow;
 }
+
+ul li:nth-child(2n) {
+  background-color: blue;
+  color: white;
+}

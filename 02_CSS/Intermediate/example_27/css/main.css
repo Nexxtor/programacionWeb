@@ -118,7 +118,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -289,7 +289,7 @@ body {
   position: relative;
   background:
     linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
-    url("../images/bg.jpeg") center no-repeat;
+    url('../images/bg.jpeg') center no-repeat;
   background-size: cover;
 }
 .header .brand {
@@ -376,7 +376,7 @@ body {
   }
 }
 .about-us-right .description {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 25px;
   color: #bbb;
   text-align: justify;
@@ -436,7 +436,7 @@ body {
   }
 }
 .footer-copyright-paragraph {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
   color: #bbb;
   font-weight: 300;
@@ -493,7 +493,7 @@ body {
 }
 
 .sub-name {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   text-align: center;
   font-size: 18px;
   color: #bbb;
@@ -508,7 +508,7 @@ body {
 }
 
 .main-heading {
-  font-family: "Dancing Script", cursive;
+  font-family: 'Dancing Script', cursive;
   font-size: 100px;
   font-weight: 300;
   color: #d3ab55;
@@ -533,7 +533,7 @@ body {
 }
 
 .sub-heading {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 60px;
   font-weight: 300;
   color: #bbb;
@@ -567,7 +567,7 @@ body {
 .main-btn {
   width: 170px;
   height: 45px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -658,7 +658,7 @@ body {
   height: 40px;
   color: #d3ab55;
   background-color: #fff;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;

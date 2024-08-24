@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-input[type="text"] {
+input[type='text'] {
   width: 100%;
   padding: 12px 10px;
   margin: 8px 0;
@@ -16,13 +16,13 @@ input[type="text"] {
   color: black;
 }
 
-input[type="text"]:focus {
+input[type='text']:focus {
   border: none;
   border-bottom: 2px solid blue;
 }
 
-.search input[type="text"] {
-  background-image: url("./img/baseline_search_white_24dp.png");
+.search input[type='text'] {
+  background-image: url('./img/baseline_search_white_24dp.png');
   background-position: 10px 12px;
   background-size: 15px;
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@ input[type="text"]:focus {
   transition: width 0.4s ease-in-out;
 }
 
-.search input[type="text"]:focus {
+.search input[type='text']:focus {
   width: 100%;
 }
 
@@ -44,9 +44,9 @@ select {
   background-color: #f1f1f1;
 }
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
   border: none;
   color: white;
   padding: 16px 32px;
@@ -56,8 +56,8 @@ input[type="reset"] {
   background-color: #333;
 }
 
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
+input[type='button']:hover,
+input[type='submit']:hover,
+input[type='reset']:hover {
   background-color: rgb(27, 27, 27);
 }
