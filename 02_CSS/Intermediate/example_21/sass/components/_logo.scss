@@ -1,0 +1,46 @@
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-right: 15px;
+  @include flexLayout;
+
+  @media (max-width: 1000px) {
+    width: 70px;
+    height: 70px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.main-name {
+  font-family: $font-nunito;
+  font-size: 40px;
+  line-height: 1.5;
+  color: $color-secondary;
+  white-space: nowrap;
+  @include textStyle;
+  font-weight: bolder;
+
+  @media (max-width: 1000px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
+}
+
+.sub-name {
+  font-family: $font-josefinSans;
+  text-align: center;
+  font-size: 18px;
+  color: $color-secondary;
+  @include textStyle;
+
+  @media (max-width: 800px) {
+    font-size: 12px;
+  }
+}
