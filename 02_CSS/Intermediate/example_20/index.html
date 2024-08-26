@@ -2,54 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Example 20</title>
+    <title>CSS Position Property Examples</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container-fluid">
-      <header class="header">
-        <h1>Example 20</h1>
-      </header>
+    <h1>CSS Position Property Examples</h1>
 
-      <div class="clearfix">
-        <!-- Columna 1-->
-        <div class="column menu">
-          <nav>
-            <ul>
-              <li><a href="item1">Item 1</a></li>
-              <li><a href="item2">Item 2</a></li>
-              <li><a href="item3">Item 3</a></li>
-              <li><a href="item4">Item 4</a></li>
-            </ul>
-          </nav>
-        </div>
-        <!-- Columna 2-->
-        <div class="column content">
-          <article>
-            <header>
-              <h2>Lorem, ipsum</h2>
-            </header>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-              obcaecati ad, ut placeat omnis repellat cupiditate harum
-              reprehenderit commodi facere assumenda. Culpa doloribus quae optio
-              nobis esse inventore ratione nostrum.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
-              saepe inventore explicabo aspernatur recusandae nobis. Impedit
-              vero sed minus esse necessitatibus possimus earum cumque ut, eius
-              dolores sapiente. Modi, illum.
-            </p>
-          </article>
-        </div>
-      </div>
-
-      <footer class="footer">
-        <p>Lorem, ipsum dolor.</p>
-      </footer>
+    <!-- Container with relative positioning context -->
+    <div class="container">
+      <div class="static-box">Static Positioning (default)</div>
+      <div class="relative-box">Relative Positioning</div>
+      <div class="absolute-box">Absolute Positioning</div>
     </div>
+
+    <div class="fixed-box">Fixed Positioning</div>
+
+    <p>
+      The container with the relative positioning context allows the absolute
+      positioning to be relative to it.
+    </p>
+    <p>
+      The fixed positioning box will stay fixed at the top-right corner of the
+      viewport regardless of scrolling.
+    </p>
   </body>
 </html>

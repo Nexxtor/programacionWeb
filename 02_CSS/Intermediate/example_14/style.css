@@ -1,32 +1,73 @@
-table {
-  border-collapse: collapse;
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* Root settings */
+:root {
+  box-sizing: border-box;
+}
+
+/*Clear Fix*/
+.row::after {
+  clear: both;
+  content: ' ';
+  display: block;
+}
+
+/*Layout util*/
+[class*='col-'] {
+  float: left;
+  margin-top: 0;
+}
+
+.col-1 {
+  width: 8.3333%;
+}
+.col-2 {
+  width: 16.6667%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.3333%;
+}
+.col-5 {
+  width: 41.6667%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.3333%;
+}
+.col-8 {
+  width: 66.6667%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.3333%;
+}
+.col-11 {
+  width: 91.6667%;
+}
+.col-12 {
   width: 100%;
 }
 
-/*table, th, td {
-    border: 1px solid black
-}*/
-
-th,
-td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: solid 1px black;
-}
-
-tr:nth-child(even) {
-  background-color: #504f4f;
-}
-
-tr:hover {
-  background-color: rgb(235, 129, 129);
-}
-
-th {
-  background-color: teal;
+.box {
+  padding: 20px;
+  text-align: center;
+  background-color: #4a90e2;
   color: white;
+  margin-bottom: 10px;
 }
 
-tfoot {
-  background-color: rgb(62, 146, 146);
-}
+/* Homework: Change the logic to mobile first and 
+Use 4 columns for mobile, 8 columns for tablets, and 12 for desktop
+Maybe you need to add somo suffix like col-md col-xl  */

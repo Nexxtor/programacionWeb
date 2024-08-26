@@ -1,5 +1,7 @@
 * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 :root {
@@ -7,50 +9,52 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
 }
 
+/* Container styling */
 .container {
-  max-width: 1900px;
-  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 40px;
+  background-color: #f0f0f0;
+  padding: 20px;
 }
 
-.panel {
-  max-width: 80%;
-  margin: 1rem auto;
-  font-size: 1.2em;
-  border-left: 10px solid rgb(32, 102, 128);
-  background-color: lightblue;
-  padding-left: 1em;
+/* Individual item styling */
+.container div {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
 
-.panel img {
-  width: 200px;
-  height: auto;
-  float: left;
+/* Example 1: Grid auto-flow row */
+.grid-auto-flow-row {
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(2, 30px);
+  grid-auto-flow: row;
 }
 
-.clearfix {
-  overflow: auto;
+/* Example 2: Grid auto-flow column */
+.grid-auto-flow-column {
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(2, 30px);
+  grid-auto-flow: column;
 }
 
-.clearfix::after {
-  content: '';
-  clear: both;
-  display: table;
+/* Example 3: Grid auto-flow row dense */
+.grid-auto-flow-row-dense {
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(2, 30px);
+  grid-auto-flow: row dense;
 }
 
-.prueba-rem {
-  font-size: 0.5em; /*8px*/
-}
-
-.prueba-rem > div {
-  border: 1px solid green;
-  font-size: 0.5em; /* 6px */
-}
-
-.prueba-rem > div > div {
-  border: 1px solid purple;
-  font-size: 0.5rem; /* 6px */
+/* Example 4: Grid auto-flow column dense */
+.grid-auto-flow-column-dense {
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(2, 30px);
+  grid-auto-flow: column dense;
 }

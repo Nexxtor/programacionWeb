@@ -1,4 +1,80 @@
-.cloud-red {
-  color: red;
-  font-size: 2em;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 1vw;
+}
+
+.question {
+  color: #ffffff;
+  font-size: 5vw;
+  font-weight: unset;
+}
+
+.profiles {
+  display: flex;
+  gap: 2vw;
+}
+
+.profiles .profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1vw;
+}
+
+.profile img {
+  height: 10vw;
+  max-height: 200px;
+  max-width: 200px;
+  min-height: 84px;
+  min-width: 84px;
+  border-radius: 4px;
+}
+
+.profile p {
+  color: #bebebe;
+  font-size: 1vw;
+}
+/* Homework: Find the way to fix the moving image when the mouse is hover*/
+.profile:hover img {
+  border: 3px solid #ffffff;
+}
+
+.profile:hover p {
+  color: #ffffff;
+}
+
+button {
+  padding: 0.5em;
+  outline: 0;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #808080;
+  color: #808080;
+  font-size: 2vh;
+  letter-spacing: 2px;
+  margin: 2em 0 1em;
+  padding: 0.5em 1.5em;
+}
+
+button:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  outline: 2px #b0acac;
 }

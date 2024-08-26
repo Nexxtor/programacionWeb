@@ -1,0 +1,31 @@
+/* Basic reset rule */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit; /* This allow to change easy the box-sizing in cascade */
+}
+
+/* Set the desired default value for our page, all tags will used the same value*/
+:root {
+  box-sizing: border-box;
+}
+
+/* When is needed to use a different value of box-sizing for some elements, if enough change
+the value of the parent element and the inner elements will use the same value.
+you con use class like .content-box and .border-box */
+.content-box {
+  box-sizing: content-box;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border: 5px solid #3345ef;
+  margin: 30px;
+  background-color: #ade6d0;
+}

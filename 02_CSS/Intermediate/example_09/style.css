@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border: 5px solid #3345ef;
+  margin: 30px;
+  background-color: #de860c;
+}
+
+.inline .box {
+  display: inline-block;
+}

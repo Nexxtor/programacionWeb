@@ -1,21 +1,117 @@
-ul {
-  list-style-type: none;
-  list-style-position: outside;
-
-  list-style: square outside;
-  background-color: tomato;
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-ol {
-  list-style-type: upper-roman;
-  /* list-style-image: url('./img/list.png');*/
+/* Root settings */
+:root {
+  box-sizing: border-box;
+  --primary-color: #4a90e2; /* Primary color */
+  --secondary-color: #50e3c2; /* Secondary color */
+  --background-color: #f5f7fa; /* Background color */
+  --nav-background-color: #003366; /* Navigation background color */
+  --nav-hover-color: #f5a623; /* Hover color */
+  --nav-text-color: #ffffff; /* Navigation text color */
+  --font-family: 'Poppins', sans-serif; /* Main font */
 }
 
-ul li {
-  background-color: yellow;
+/* Body style */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+  font-family: var(--font-family);
 }
 
-ul li:nth-child(2n) {
-  background-color: blue;
-  color: white;
+/* Main navigation bar style for mobile-first */
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--nav-background-color);
+  padding: 1em;
+}
+
+/* Navigation title style */
+.main-nav h1 {
+  color: var(--primary-color);
+  padding: 0.5em 0;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Navigation list style */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+
+/* Navigation list item links */
+.main-nav ul li a {
+  text-decoration: none;
+  color: var(--nav-text-color);
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 1em;
+  text-align: center;
+  display: block;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Hover effect for list items */
+.main-nav ul li:hover {
+  background-color: var(--nav-hover-color);
+}
+
+.main-nav ul li:hover a {
+  color: var(--nav-background-color);
+}
+
+/* Tablet view: Adjust layout for medium-sized screens */
+@media (min-width: 600px) {
+  .main-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-nav ul li {
+    flex: 1 1 calc(50% - 1em); /* Two columns layout */
+    max-width: 45%;
+  }
+}
+
+/* Desktop view: Restore original layout for large screens */
+@media (min-width: 1024px) {
+  .main-nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 1em;
+  }
+
+  .main-nav ul li {
+    flex: none; /* Reset flex behavior */
+  }
+
+  .main-nav ul li a {
+    padding: 1em 2em; /* Increase padding for desktop */
+  }
 }

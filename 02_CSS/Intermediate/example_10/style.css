@@ -1,54 +1,121 @@
-/*Fuentes se base en familias
-    Serif
-    Sans-serif
-    Monospace
-*/
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
-.serif {
-  font-family: 'Times New Roman', Times, serif;
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-.sansserif {
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  box-sizing: border-box;
 }
 
-.monospace {
-  font-family: 'Lucida Console', Courier, monospace;
+section {
+  background-color: #619b8a;
+  padding: 10px;
+  margin: 10px;
 }
 
-p.impact {
-  font-family: Impact, Charcoal, sans-serif;
+.flex {
+  background-color: #233d4d;
+  display: flex;
+  margin: 10px;
 }
 
-p.normal {
-  font-style: normal;
+.box1 {
+  background-color: #fe7f2d;
 }
 
-p.italic {
-  font-style: italic;
+.box2 {
+  background-color: #fcca46;
 }
 
-p.oblique {
-  font-style: oblique;
+.box3 {
+  background-color: #a1c181;
 }
 
-p.bold {
-  font-weight: 800;
-  font-variant: small-caps;
+/* Flex direction */
+
+.flex-row {
+  flex-direction: row;
 }
 
-h1 {
-  font-family: 'Indie Flower', cursive;
-  font-size: 0.875em; /* 14px/16px = 0.875em */
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 
-h1 {
-  font-size: 2vw;
+.flex-column {
+  flex-direction: column;
 }
 
-p.b {
-  font:
-    italic small-caps bold 0.75em/1em 'Indie Flower',
-    cursive;
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Justify Content*/
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* align-items */
+
+.flex.align {
+  height: 50px;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.flex.align.font-size {
+  height: auto;
+}
+
+.font-size .box1 {
+  font-size: 3em;
+}
+
+.font-size .box2 {
+  font-size: 9em;
+}
+
+.font-size .box3 {
+  font-size: 1em;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.gap {
+  gap: 10px;
 }

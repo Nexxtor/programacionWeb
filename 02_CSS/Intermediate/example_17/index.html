@@ -2,19 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./sytle.css" />
+    <title>CSS Grid Justify-Items Examples</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <header></header>
+    <h1>CSS Grid Justify-Items Examples</h1>
+
+    <!-- Example 1: Justify items start -->
+    <div class="grid-container grid-example-1">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
     </div>
-    <div class="container-fluid">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
-      aperiam blanditiis, hic aut eaque, mollitia esse excepturi labore
-      consectetur odit, quisquam nesciunt ipsum unde dolorem minus sint enim
-      beatae illum.
+    <p>Items aligned to the start edge of their cell.</p>
+
+    <!-- Example 2: Justify items end -->
+    <div class="grid-container grid-example-2">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
     </div>
+    <p>Items aligned to the end edge of their cell.</p>
+
+    <!-- Example 3: Justify items center -->
+    <div class="grid-container grid-example-3">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </div>
+    <p>Items aligned in the center of their cell.</p>
+
+    <!-- Example 4: Justify items stretch (default) -->
+    <div class="grid-container grid-example-4">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </div>
+    <p>Items stretched to fill the entire width of their cell.</p>
   </body>
 </html>

@@ -2,53 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>example 14 | tables</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive Layout Example with float</title>
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Head 1</th>
-          <th>Head 2</th>
-          <th>Head 3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Dato 1</td>
-          <td>Dato 2</td>
-          <td>Dato 3</td>
-        </tr>
-        <tr>
-          <td>Dato 4</td>
-          <td>Dato 5</td>
-          <td>Dato 6</td>
-        </tr>
-        <tr>
-          <td>Dato 7</td>
-          <td>Dato 8</td>
-          <td>Dato 9</td>
-        </tr>
-        <tr>
-          <td>Dato 7</td>
-          <td>Dato 8</td>
-          <td>Dato 9</td>
-        </tr>
-        <tr>
-          <td>Dato 7</td>
-          <td>Dato 8</td>
-          <td>Dato 9</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>Resultado 1</td>
-          <td>Resultado 2</td>
-          <td>Resultado 3</td>
-        </tr>
-      </tfoot>
-    </table>
+    <!-- Row container -->
+    <div class="row">
+      <!-- Full width column -->
+      <div class="col-12 box">Full width column (12/12)</div>
+    </div>
+
+    <div class="row">
+      <!-- Half width column -->
+      <div class="col-6 box">Half width column (6/12)</div>
+      <div class="col-6 box">Half width column (6/12)</div>
+    </div>
+
+    <div class="row">
+      <!-- One third width column -->
+      <div class="col-4 box">One third width column (4/12)</div>
+      <div class="col-4 box">One third width column (4/12)</div>
+      <div class="col-4 box">One third width column (4/12)</div>
+    </div>
+
+    <div class="row">
+      <!-- Two third width column -->
+      <div class="col-8 box">Two thirds width column (8/12)</div>
+      <div class="col-4 box">One third width column (4/12)</div>
+    </div>
+
+    <div class="row">
+      <!-- Column combinations -->
+      <div class="col-3 box">Column 3/12</div>
+      <div class="col-6 box">Column 6/12</div>
+      <div class="col-3 box">Column 3/12</div>
+    </div>
   </body>
 </html>

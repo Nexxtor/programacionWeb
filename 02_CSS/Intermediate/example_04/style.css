@@ -1,0 +1,21 @@
+ul {
+  list-style-type: none;
+  list-style-position: outside;
+
+  list-style: square outside;
+  background-color: tomato;
+}
+
+ol {
+  list-style-type: upper-roman;
+  /* list-style-image: url('./img/list.png');*/
+}
+
+ul li {
+  background-color: yellow;
+}
+
+ul li:nth-child(2n) {
+  background-color: blue;
+  color: white;
+}

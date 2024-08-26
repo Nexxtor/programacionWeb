@@ -1,18 +1,77 @@
-a:link,
-a:visited {
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  margin: 10px;
-  text-decoration: none;
-  display: inline-block;
-  border: 1px solid transparent;
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-a:hover,
-a:active {
-  background-color: white;
-  color: gray;
-  border: 1px solid gray;
+/* Root settings */
+:root {
+  box-sizing: border-box;
+  --primary-color: #4a90e2; /* Primary color */
+  --secondary-color: #50e3c2; /* Secondary color */
+  --background-color: #f5f7fa; /* Background color */
+  --nav-background-color: #003366; /* Navigation background color */
+  --nav-hover-color: #f5a623; /* Hover color */
+  --nav-text-color: #ffffff; /* Navigation text color */
+  --font-family: 'Poppins', sans-serif; /* Main font */
+}
+
+/* Body style */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+}
+
+/* Main navigation bar style */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--nav-background-color);
+  padding: 1em;
+}
+
+/* Navigation title style */
+.main-nav h1 {
+  color: var(--primary-color);
+  padding-inline-start: 0.5em;
+  font-size: 1.5em;
+}
+
+/* Navigation list style */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+/* Navigation list item links */
+.main-nav ul li a {
+  text-decoration: none;
+  color: var(--nav-text-color);
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 1em 2em;
+  text-align: center;
+  display: block;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Hover effect for list items */
+.main-nav ul li:hover {
+  background-color: var(--nav-hover-color);
+}
+
+.main-nav ul li:hover a {
+  color: var(--nav-background-color);
 }

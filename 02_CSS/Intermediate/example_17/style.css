@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 40px;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+/* Styling for individual items */
+.grid-container div {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Example 1: Justify items start */
+.grid-example-1 {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: start;
+}
+
+/* Example 2: Justify items end */
+.grid-example-2 {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: end;
+}
+
+/* Example 3: Justify items center */
+.grid-example-3 {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+/* Example 4: Justify items stretch (default) */
+.grid-example-4 {
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: stretch;
+}

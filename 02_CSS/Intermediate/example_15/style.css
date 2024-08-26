@@ -1,11 +1,64 @@
-.src-only {
-  display: none;
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
 }
 
-a {
-  display: block;
+.grid-container {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 40px;
+  background-color: #f0f0f0;
+  padding: 20px;
 }
 
-li {
-  display: block;
+.grid-container div {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Example 1: Simple 2-column grid */
+.grid-example-1 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+/* Example 2: Responsive grid using fr units */
+.grid-example-2 {
+  grid-template-columns: minmax(10px, 1fr) 3fr;
+  grid-template-rows: 50px auto 50px;
+}
+
+/* Example 3: Repeating grid */
+.grid-example-3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 100px;
+}
+
+/* Example 4: Fixed and flexible track sizes */
+.grid-example-4 {
+  grid-template-columns: 50px auto 100px 1fr;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+/* Example 5: Grid with named lines */
+.grid-example-5 {
+  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+  grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+}
+
+/* Example 6: Using repeat() with named lines */
+.grid-example-6 {
+  grid-template-columns: repeat(3, 20px [col-start]);
+  grid-template-rows: 50px 50px;
+}
+
+/* Example 7: Fractional units with fixed column */
+.grid-example-7 {
+  grid-template-columns: 1fr 50px 1fr 1fr;
+  grid-template-rows: 100px;
 }
