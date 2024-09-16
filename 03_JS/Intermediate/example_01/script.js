@@ -1,4 +1,4 @@
-"use strict"; // use strict mode
+'use strict'; // use strict mode
 
 // Simulating API call with Promise
 function fetchDataWithPromise() {
@@ -6,9 +6,9 @@ function fetchDataWithPromise() {
     setTimeout(() => {
       const success = true; // Simulate success or failure
       if (success) {
-        resolve("Data fetched successfully using Promise!");
+        resolve('Data fetched successfully using Promise!');
       } else {
-        reject("Error fetching data using Promise.");
+        reject('Error fetching data using Promise.');
       }
     }, 2000); // Simulate a 2-second delay
   });
@@ -17,15 +17,18 @@ function fetchDataWithPromise() {
 // Using Promise to handle the API call
 document.getElementById('promiseBtn').addEventListener('click', () => {
   const promiseResult = document.getElementById('promiseResult');
-  promiseResult.textContent = "Fetching data...";
+  promiseResult.textContent = 'Fetching data...';
 
   fetchDataWithPromise()
-    .then(result => {
+    .then((result) => {
       promiseResult.textContent = result;
     })
-    .catch(error => {
+    .then(() => console.log('Otro then'))
+    .catch((error) => {
       promiseResult.textContent = error;
     });
+
+    console.log('Linea');
 });
 
 // Simulating API call with async/await
@@ -34,9 +37,9 @@ async function fetchDataWithAsync() {
     setTimeout(() => {
       const success = true; // Simulate success or failure
       if (success) {
-        resolve("Data fetched successfully using Async/Await!");
+        resolve('Data fetched successfully using Async/Await!');
       } else {
-        reject("Error fetching data using Async/Await.");
+        reject('Error fetching data using Async/Await.');
       }
     }, 2000); // Simulate a 2-second delay
   });
@@ -45,7 +48,7 @@ async function fetchDataWithAsync() {
 // Using async/await to handle the API call
 document.getElementById('asyncBtn').addEventListener('click', async () => {
   const asyncResult = document.getElementById('asyncResult');
-  asyncResult.textContent = "Fetching data...";
+  asyncResult.textContent = 'Fetching data...';
 
   try {
     const result = await fetchDataWithAsync();
