@@ -1,0 +1,28 @@
+@import '../styles/variables.css';
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-large);
+}
+
+.input {
+  flex: 1;
+  padding: var(--spacing-medium);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-right: var(--spacing-medium);
+}
+
+.button {
+  padding: var(--spacing-medium) var(--spacing-large);
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #218838;
+}

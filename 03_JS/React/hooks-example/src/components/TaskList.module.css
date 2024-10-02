@@ -1,0 +1,29 @@
+@import '../styles/variables.css';
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-medium);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-small);
+  background-color: #f9f9f9;
+}
+
+.button {
+  background-color: var(--secondary-color);
+  border: none;
+  color: #fff;
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #c82333;
+}

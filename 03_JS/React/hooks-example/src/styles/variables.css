@@ -1,0 +1,15 @@
+:root {
+  --primary-color: #28a745;
+  --secondary-color: #dc3545;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --border-color: #ccc;
+
+  --spacing-small: 5px;
+  --spacing-medium: 10px;
+  --spacing-large: 20px;
+
+  --font-size-small: 12px;
+  --font-size-medium: 16px;
+  --font-size-large: 24px;
+}
