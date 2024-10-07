@@ -12,7 +12,7 @@ const TaskList = () => {
     <ul className={styles.list}>
       {state.tasks.map((task, index) => (
         <li key={index} className={styles.item}>
-          {task}{' '}
+          {task}
           <button
             className={styles.button}
             onClick={() => handleRemoveTask(index)}>
