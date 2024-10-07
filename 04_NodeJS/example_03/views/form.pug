@@ -1,0 +1,8 @@
+html
+  head
+    title Greeting Form
+  body
+    h1 Enter your name to be greeted:
+    form(action="/greet" method="POST")
+      input(type="text" name="name" placeholder="Your Name" required)
+      button(type="submit") Submit
