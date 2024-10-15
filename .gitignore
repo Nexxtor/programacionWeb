@@ -1,3 +1,5 @@
 node_modules/*
 .DS*
 .vscode
+04_nodeJS/example_04/node_modules
+04_nodeJS/example_poke/node_modules

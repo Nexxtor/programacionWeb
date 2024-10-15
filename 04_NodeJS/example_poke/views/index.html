@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon API CRUD</title>
+</head>
+<body>
+    <h1>CRUD de Pokémon</h1>
+    
+    <h2>Crear un nuevo Pokémon</h2>
+    <form id="pokemonForm">
+        <input type="text" id="pokemonName" placeholder="Nombre del Pokémon" required>
+        <button type="submit">Create</button>
+    </form>
+
+    <h2>Lista de Pokémon</h2>
+    <ul id="pokemonList"></ul>
+
+    <h2>Actualizar Pokémon</h2>
+    <form id="updateForm">
+        <input type="text" id="oldName" placeholder="Nombre actual" required>
+        <input type="text" id="newName" placeholder="Nuevo nombre" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <h2>Eliminar un Pokémon</h2>
+    <form id="deleteForm">
+        <input type="text" id="deleteName" placeholder="Nombre del Pokémon" required>
+        <button type="submit">Delete</button>
+    </form>
+
+    <script>
+        // Función para cargar la lista de Pokémon
+        async function loadPokemonList() {
+            const response = await fetch('/api/pokemon');
+            const pokemonList = await response.json();
+            const listElement = document.getElementById('pokemonList');
+            listElement.innerHTML = ''; // Limpiar la lista existente
+
+            pokemonList.forEach(pokemon => {
+                const li = document.createElement('li');
+                li.innerHTML = `${pokemon.name} <img src="${pokemon.image}" alt="${pokemon.name}" width="50">`;
+                listElement.appendChild(li);
+            });
+        }
+
+        // Crear un nuevo Pokémon
+        document.getElementById('pokemonForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+
+            const pokemonName = document.getElementById('pokemonName').value;
+
+            try {
+                const response = await fetch('/api/pokemon', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name: pokemonName }),
+                });
+
+                if (response.ok) {
+                    const newPokemon = await response.json();
+                    alert(`Pokémon ${newPokemon.name} creado exitosamente!`);
+                    document.getElementById('pokemonName').value = ''; // Limpiar el input
+                    loadPokemonList(); // Recargar la lista de Pokémon
+                } else {
+                    const message = await response.text();
+                    alert(message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al crear el Pokémon.');
+            }
+        });
+
+        // Actualizar un Pokémon
+        document.getElementById('updateForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+
+            const oldName = document.getElementById('oldName').value;
+            const newName = document.getElementById('newName').value;
+
+            try {
+                const response = await fetch(`/api/pokemon/${oldName}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ newName }),
+                });
+
+                if (response.ok) {
+                    const updatedPokemon = await response.json();
+                    alert(`Pokémon actualizado a ${updatedPokemon.name} exitosamente!`);
+                    document.getElementById('oldName').value = ''; // Limpiar el input
+                    document.getElementById('newName').value = ''; // Limpiar el input
+                    loadPokemonList(); // Recargar la lista de Pokémon
+                } else {
+                    const message = await response.text();
+                    alert(message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al actualizar el Pokémon.');
+            }
+        });
+
+        // Eliminar un Pokémon
+        document.getElementById('deleteForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+
+            const deleteName = document.getElementById('deleteName').value;
+
+            try {
+                const response = await fetch(`/api/pokemon/${deleteName}`, {
+                    method: 'DELETE',
+                });
+
+                if (response.ok) {
+                    alert(`Pokémon ${deleteName} eliminado exitosamente!`);
+                    document.getElementById('deleteName').value = ''; // Limpiar el input
+                    loadPokemonList(); // Recargar la lista de Pokémon
+                } else {
+                    const message = await response.text();
+                    alert(message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al eliminar el Pokémon.');
+            }
+        });
+
+        // Cargar la lista de Pokémon al iniciar la página
+        loadPokemonList();
+    </script>
+</body>
+</html>
