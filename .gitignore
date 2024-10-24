@@ -3,3 +3,6 @@ node_modules/*
 .vscode
 04_nodeJS/example_04/node_modules
 04_nodeJS/example_poke/node_modules
+04_nodeJS/WebSocket/example1/node_modules
+04_nodeJS/WebSocket/node_modules
+node_modules
