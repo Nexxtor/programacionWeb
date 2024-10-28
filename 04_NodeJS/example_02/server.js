@@ -3,7 +3,7 @@ const fs = require('fs');
 const url = require('url');
 const querystring = require('querystring');
 
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 function renderForm(response) {
   response.writeHead(200, { 'Content-Type': 'text/html' });
@@ -57,6 +57,6 @@ http
       res.end();
     }
   })
-  .listen(3000, () => {
+  .listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);
   });
