@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.IO Client</title>
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #messages {
+        border: 1px solid #ccc;
+        height: 200px;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+      #sendButton {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Socket.IO Chat Client</h1>
+    <div id="messages"></div>
+
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button id="sendButton">Send Public Message</button>
+
+    <h2>Send Private Message</h2>
+    <input type="text" id="recipientInput" placeholder="Recipient ID" />
+    <input
+      type="text"
+      id="privateMessageInput"
+      placeholder="Type a private message..." />
+    <button id="sendPrivateButton">Send Private Message</button>
+
+    <script src="client.js"></script>
+  </body>
+</html>
